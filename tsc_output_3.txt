@@ -1,0 +1,2 @@
+.next/types/validator.ts(137,39): error TS2306: File 'E:/APPLICATIONS/applications/applications/bfa/src/app/privacy/page.tsx' is not a module.
+.next/types/validator.ts(155,39): error TS2306: File 'E:/APPLICATIONS/applications/applications/bfa/src/app/terms/page.tsx' is not a module.

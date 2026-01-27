@@ -1,0 +1,231 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  image         String?
+  password      String?
+  role          UserRole  @default(BUYER)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  permissions   Json?
+  accounts      Account[]
+  invoices      Invoice[]
+  orders        Order[]
+  quotes        Quote[]
+  sessions      Session[]
+  vendor        Vendor?
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model Vendor {
+  id          String    @id @default(cuid())
+  userId      String    @unique
+  storeName   String
+  description String?
+  logo        String?
+  banner      String?
+  location    String?
+  rating      Float     @default(0)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  isVerified  Boolean   @default(false)
+  businessType String?   @default("retailer")
+  products    Product[]
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Product {
+  id          String      @id @default(cuid())
+  vendorId    String
+  name        String
+  description String
+  price           Float
+  wholesalePrice  Float?
+  minWholesaleQty Int?
+  isWholesale     Boolean     @default(false)
+  isRetail        Boolean     @default(true)
+  images          String[]
+  category        String
+  stock           Int         @default(0)
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+  currency        String      @default("USD")
+  isFeatured      Boolean     @default(false)
+  orderItems  OrderItem[]
+  vendor      Vendor      @relation(fields: [vendorId], references: [id], onDelete: Cascade)
+  quoteItems  QuoteItem[]
+}
+
+model Order {
+  id        String      @id @default(cuid())
+  userId    String
+  status    String      @default("PENDING")
+  total     Float
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+  currency  String      @default("USD")
+  invoice   Invoice?
+  user      User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  items     OrderItem[]
+}
+
+model OrderItem {
+  id        String  @id @default(cuid())
+  orderId   String
+  productId String
+  quantity  Int
+  price     Float
+  order     Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+}
+
+model Quote {
+  id         String      @id @default(cuid())
+  userId     String
+  status     String      @default("REQUESTED")
+  total      Float?
+  currency   String      @default("USD")
+  validUntil DateTime?
+  createdAt  DateTime    @default(now())
+  updatedAt  DateTime    @updatedAt
+  user       User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  items      QuoteItem[]
+}
+
+model QuoteItem {
+  id          String  @id @default(cuid())
+  quoteId     String
+  productId   String
+  quantity    Int
+  targetPrice Float?
+  product     Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  quote       Quote   @relation(fields: [quoteId], references: [id], onDelete: Cascade)
+}
+
+model Invoice {
+  id        String        @id @default(cuid())
+  orderId   String?       @unique
+  userId    String
+  status    String        @default("UNPAID")
+  total     Float
+  currency  String        @default("USD")
+  dueDate   DateTime
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+  order     Order?        @relation(fields: [orderId], references: [id])
+  user      User          @relation(fields: [userId], references: [id])
+  items     InvoiceItem[]
+}
+
+model InvoiceItem {
+  id          String  @id @default(cuid())
+  invoiceId   String
+  description String
+  quantity    Int
+  price       Float
+  invoice     Invoice @relation(fields: [invoiceId], references: [id], onDelete: Cascade)
+}
+
+model Currency {
+  id        String   @id @default(cuid())
+  code      String   @unique
+  name      String
+  symbol    String
+  rate      Float
+  updatedAt DateTime @updatedAt
+}
+
+model CMSConfig {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  value     String
+  updatedAt DateTime @updatedAt
+}
+
+model Category {
+  id           String     @id @default(cuid())
+  name         String     @unique
+  slug         String     @unique
+  image        String?
+  isFeatured   Boolean    @default(false)
+  displayOrder Int        @default(0)
+  parentId     String?
+  parent       Category?  @relation("CategoryToSubcategory", fields: [parentId], references: [id], onDelete: SetNull)
+  subcategories Category[] @relation("CategoryToSubcategory")
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+}
+
+model AboutPage {
+  id                  String   @id @default("singleton")
+  heroTitle           String   @default("About Buy from Africa")
+  heroDescription     String   @default("")
+  heroCTA             String   @default("Explore Our Vendors")
+  storyTitle          String   @default("Our Story")
+  storyContent        String   @default("")
+  storyImage          String?
+  missionTitle        String   @default("Our Mission")
+  missionDescription  String   @default("")
+  missionPoints       Json     @default("[]")
+  teamDescription     String   @default("")
+  teamMembers         Json     @default("[]")
+  partnersDescription String   @default("")
+  partners            Json     @default("[]")
+  impactTitle         String   @default("Our Impact")
+  impactDescription   String   @default("")
+  impactStats         Json     @default("[]")
+  countriesTitle      String   @default("Where We Work")
+  countriesDescription String  @default("")
+  countries           String[] @default([])
+  updatedAt           DateTime @updatedAt
+}
+
+enum UserRole {
+  BUYER
+  VENDOR
+  ADMIN
+  SUPER_ADMIN
+}

@@ -1,0 +1,23 @@
+.next/types/validator.ts(59,39): error TS2306: File 'E:/APPLICATIONS/applications/applications/bfa/src/app/dashboard/buyer/messages/page.tsx' is not a module.
+.next/types/validator.ts(65,39): error TS2306: File 'E:/APPLICATIONS/applications/applications/bfa/src/app/dashboard/buyer/orders/page.tsx' is not a module.
+.next/types/validator.ts(71,39): error TS2306: File 'E:/APPLICATIONS/applications/applications/bfa/src/app/dashboard/buyer/page.tsx' is not a module.
+.next/types/validator.ts(77,39): error TS2306: File 'E:/APPLICATIONS/applications/applications/bfa/src/app/dashboard/buyer/saved/page.tsx' is not a module.
+.next/types/validator.ts(89,39): error TS2306: File 'E:/APPLICATIONS/applications/applications/bfa/src/app/dashboard/vendor/messages/page.tsx' is not a module.
+.next/types/validator.ts(95,39): error TS2306: File 'E:/APPLICATIONS/applications/applications/bfa/src/app/dashboard/vendor/orders/page.tsx' is not a module.
+.next/types/validator.ts(101,39): error TS2306: File 'E:/APPLICATIONS/applications/applications/bfa/src/app/dashboard/vendor/page.tsx' is not a module.
+.next/types/validator.ts(107,39): error TS2306: File 'E:/APPLICATIONS/applications/applications/bfa/src/app/dashboard/vendor/products/add/page.tsx' is not a module.
+.next/types/validator.ts(113,39): error TS2306: File 'E:/APPLICATIONS/applications/applications/bfa/src/app/dashboard/vendor/products/page.tsx' is not a module.
+.next/types/validator.ts(119,39): error TS2306: File 'E:/APPLICATIONS/applications/applications/bfa/src/app/dashboard/vendor/storefront/page.tsx' is not a module.
+.next/types/validator.ts(137,39): error TS2306: File 'E:/APPLICATIONS/applications/applications/bfa/src/app/privacy/page.tsx' is not a module.
+.next/types/validator.ts(155,39): error TS2306: File 'E:/APPLICATIONS/applications/applications/bfa/src/app/terms/page.tsx' is not a module.
+src/app/dashboard/layout.tsx(135,16): error TS2367: This comparison appears to be unintentional because the types '"vendor"' and '"buyer"' have no overlap.
+src/app/dashboard/layout.tsx(152,16): error TS2367: This comparison appears to be unintentional because the types '"vendor"' and '"admin"' have no overlap.
+src/app/dashboard/layout.tsx(284,16): error TS2367: This comparison appears to be unintentional because the types '"vendor"' and '"buyer"' have no overlap.
+src/app/dashboard/layout.tsx(301,16): error TS2367: This comparison appears to be unintentional because the types '"vendor"' and '"admin"' have no overlap.
+src/app/dashboard/layout.tsx(398,18): error TS2367: This comparison appears to be unintentional because the types '"vendor"' and '"buyer"' have no overlap.
+src/app/dashboard/layout.tsx(419,18): error TS2367: This comparison appears to be unintentional because the types '"vendor"' and '"admin"' have no overlap.
+src/app/dashboard/page.tsx(25,24): error TS7031: Binding element 'country' implicitly has an 'any' type.
+src/app/dashboard/page.tsx(496,58): error TS2339: Property 'customer' does not exist on type '{ id: string; date: string; customer: string; amount: number; status: string; items: number; country: string; } | { id: string; date: string; vendor: string; amount: number; status: string; items: number; country: string; }'.
+  Property 'customer' does not exist on type '{ id: string; date: string; vendor: string; amount: number; status: string; items: number; country: string; }'.
+src/app/dashboard/page.tsx(496,75): error TS2339: Property 'vendor' does not exist on type '{ id: string; date: string; customer: string; amount: number; status: string; items: number; country: string; } | { id: string; date: string; vendor: string; amount: number; status: string; items: number; country: string; }'.
+  Property 'vendor' does not exist on type '{ id: string; date: string; customer: string; amount: number; status: string; items: number; country: string; }'.
