@@ -10,8 +10,6 @@ import {
   Star, 
   Mail, 
   Factory, 
-  Truck, 
-  Store, 
   Globe,
   Shirt,
   Palette,
@@ -226,7 +224,7 @@ const globalCountries = [
 
 export default function RegisterPage() {
   const [selectedRole, setSelectedRole] = useState('buyer');
-  const [selectedVendorType, setSelectedVendorType] = useState('retailer');
+  const [selectedVendorType, setSelectedVendorType] = useState('artisan');
   const [badgeType, setBadgeType] = useState('blue');
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 
@@ -435,54 +433,54 @@ export default function RegisterPage() {
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                     <div 
                       className={`border rounded-lg p-4 flex flex-col items-center cursor-pointer transition ${
-                        selectedVendorType === 'manufacturer' 
+                        selectedVendorType === 'artisan' 
                           ? 'border-blue-500 bg-blue-50' 
                           : 'border-gray-300 hover:border-blue-300'
                       }`}
-                      onClick={() => setSelectedVendorType('manufacturer')}
+                      onClick={() => setSelectedVendorType('artisan')}
                     >
-                      <Factory className={`h-8 w-8 mb-2 cursor-pointer ${selectedVendorType === 'manufacturer' ? 'text-blue-600' : 'text-gray-500'}`} />
-                      <h4 className="font-medium text-center cursor-pointer">Manufacturer</h4>
-                      <p className="text-xs text-gray-500 text-center mt-1 cursor-pointer">Produce goods</p>
+                      <Palette className={`h-8 w-8 mb-2 cursor-pointer ${selectedVendorType === 'artisan' ? 'text-blue-600' : 'text-gray-500'}`} />
+                      <h4 className="font-medium text-center cursor-pointer">African Artisan / Maker</h4>
+                      <p className="text-xs text-gray-500 text-center mt-1 cursor-pointer">Produce authentic goods</p>
                     </div>
                     
                     <div 
                       className={`border rounded-lg p-4 flex flex-col items-center cursor-pointer transition ${
-                        selectedVendorType === 'distributor' 
+                        selectedVendorType === 'brand' 
                           ? 'border-green-500 bg-green-50' 
                           : 'border-gray-300 hover:border-green-300'
                       }`}
-                      onClick={() => setSelectedVendorType('distributor')}
+                      onClick={() => setSelectedVendorType('brand')}
                     >
-                      <Truck className={`h-8 w-8 mb-2 cursor-pointer ${selectedVendorType === 'distributor' ? 'text-green-600' : 'text-gray-500'}`} />
-                      <h4 className="font-medium text-center cursor-pointer">Distributor</h4>
-                      <p className="text-xs text-gray-500 text-center mt-1 cursor-pointer">Logistics network</p>
+                      <Shirt className={`h-8 w-8 mb-2 cursor-pointer ${selectedVendorType === 'brand' ? 'text-green-600' : 'text-gray-500'}`} />
+                      <h4 className="font-medium text-center cursor-pointer">African Brand / Designer</h4>
+                      <p className="text-xs text-gray-500 text-center mt-1 cursor-pointer">Unique African designs</p>
                     </div>
                     
                     <div 
                       className={`border rounded-lg p-4 flex flex-col items-center cursor-pointer transition ${
-                        selectedVendorType === 'wholesaler' 
+                        selectedVendorType === 'factory' 
                           ? 'border-yellow-500 bg-yellow-50' 
                           : 'border-gray-300 hover:border-yellow-300'
                       }`}
-                      onClick={() => setSelectedVendorType('wholesaler')}
+                      onClick={() => setSelectedVendorType('factory')}
                     >
-                      <Star className={`h-8 w-8 mb-2 cursor-pointer ${selectedVendorType === 'wholesaler' ? 'text-yellow-600' : 'text-gray-500'}`} />
-                      <h4 className="font-medium text-center cursor-pointer">Wholesaler</h4>
-                      <p className="text-xs text-gray-500 text-center mt-1 cursor-pointer">Bulk quantities</p>
+                      <Factory className={`h-8 w-8 mb-2 cursor-pointer ${selectedVendorType === 'factory' ? 'text-yellow-600' : 'text-gray-500'}`} />
+                      <h4 className="font-medium text-center cursor-pointer">African Manufacturer / Factory</h4>
+                      <p className="text-xs text-gray-500 text-center mt-1 cursor-pointer">Mass production scale</p>
                     </div>
                     
                     <div 
                       className={`border rounded-lg p-4 flex flex-col items-center cursor-pointer transition ${
-                        selectedVendorType === 'retailer' 
+                        selectedVendorType === 'export' 
                           ? 'border-purple-500 bg-purple-50' 
                           : 'border-gray-300 hover:border-purple-300'
                       }`}
-                      onClick={() => setSelectedVendorType('retailer')}
+                      onClick={() => setSelectedVendorType('export')}
                     >
-                      <Store className={`h-8 w-8 mb-2 cursor-pointer ${selectedVendorType === 'retailer' ? 'text-purple-600' : 'text-gray-500'}`} />
-                      <h4 className="font-medium text-center cursor-pointer">Retailer</h4>
-                      <p className="text-xs text-gray-500 text-center mt-1 cursor-pointer">Consumer sales</p>
+                      <Globe className={`h-8 w-8 mb-2 cursor-pointer ${selectedVendorType === 'export' ? 'text-purple-600' : 'text-gray-500'}`} />
+                      <h4 className="font-medium text-center cursor-pointer">African Distributor / Export Agent</h4>
+                      <p className="text-xs text-gray-500 text-center mt-1 cursor-pointer">Logistics & export</p>
                     </div>
                   </div>
                 </div>
@@ -592,161 +590,109 @@ export default function RegisterPage() {
                   </div>
                   
                   {/* Specific fields based on vendor type */}
-                  {selectedVendorType === 'manufacturer' && (
+                  {selectedVendorType === 'artisan' && (
                     <div className="space-y-4 p-4 bg-blue-50 rounded-lg">
-                      <h4 className="font-medium text-gray-900">Manufacturer Information</h4>
+                      <h4 className="font-medium text-gray-900">Artisan / Maker Information</h4>
+                      <div>
+                        <label className="block text-sm font-bold text-gray-700 mb-3">
+                          Product Categories Crafted
+                        </label>
+                        <CategorySelection />
+                        <p className="text-xs text-gray-500 mt-4 font-medium italic">Click to select all relevant categories for your work.</p>
+                      </div>
+                      
+                      <div>
+                        <label htmlFor="artisanCapacity" className="block text-sm font-medium text-gray-700 mb-1">
+                          Monthly Production Capacity
+                        </label>
+                        <input
+                          type="text"
+                          id="artisanCapacity"
+                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                          placeholder="e.g., 50 items"
+                        />
+                      </div>
+                    </div>
+                  )}
+                  
+                  {selectedVendorType === 'brand' && (
+                    <div className="space-y-4 p-4 bg-green-50 rounded-lg">
+                      <h4 className="font-medium text-gray-900">Brand / Designer Information</h4>
+                      <div>
+                        <label className="block text-sm font-bold text-gray-700 mb-3">
+                          Product Categories
+                        </label>
+                        <CategorySelection />
+                        <p className="text-xs text-gray-500 mt-4 font-medium italic">Click to select all relevant categories for your brand.</p>
+                      </div>
+                      <div>
+                        <label htmlFor="brandVision" className="block text-sm font-medium text-gray-700 mb-1">
+                          Brand Vision / Story
+                        </label>
+                        <textarea
+                          id="brandVision"
+                          rows={3}
+                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                          placeholder="Briefly describe your design philosophy..."
+                        />
+                      </div>
+                    </div>
+                  )}
+                  
+                  {selectedVendorType === 'factory' && (
+                    <div className="space-y-4 p-4 bg-yellow-50 rounded-lg">
+                      <h4 className="font-medium text-gray-900">Manufacturer / Factory Information</h4>
                       <div>
                         <label className="block text-sm font-bold text-gray-700 mb-3">
                           Product Categories Manufactured
                         </label>
                         <CategorySelection />
-                        <p className="text-xs text-gray-500 mt-4 font-medium italic">Click to select all relevant categories for your business.</p>
+                        <p className="text-xs text-gray-500 mt-4 font-medium italic">Click to select all relevant categories for your factory.</p>
                       </div>
                       
                       <div>
-                        <label htmlFor="productionCapacity" className="block text-sm font-medium text-gray-700 mb-1">
+                        <label htmlFor="factoryCapacity" className="block text-sm font-medium text-gray-700 mb-1">
                           Monthly Production Capacity
                         </label>
                         <input
                           type="text"
-                          id="productionCapacity"
+                          id="factoryCapacity"
                           className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                          placeholder="e.g., 5000 units"
+                          placeholder="e.g., 10,000 units"
                         />
                       </div>
                     </div>
                   )}
                   
-                  {selectedVendorType === 'distributor' && (
-                    <div className="space-y-4 p-4 bg-green-50 rounded-lg">
-                      <h4 className="font-medium text-gray-900">Distributor Information</h4>
+                  {selectedVendorType === 'export' && (
+                    <div className="space-y-4 p-4 bg-purple-50 rounded-lg">
+                      <h4 className="font-medium text-gray-900">Distributor / Export Agent Information</h4>
                       <div>
-                        <label htmlFor="servicesOffered" className="block text-sm font-medium text-gray-700 mb-1">
+                        <label htmlFor="exportServices" className="block text-sm font-medium text-gray-700 mb-1">
                           Services Offered
                         </label>
                         <div className="space-y-2">
                           <div className="flex items-center">
-                            <input type="checkbox" id="logistics" className="h-4 w-4 text-green-600 border-gray-300 rounded" />
-                            <label htmlFor="logistics" className="ml-2 text-sm text-gray-700">Logistics</label>
+                            <input type="checkbox" id="export_logistics" className="h-4 w-4 text-purple-600 border-gray-300 rounded" />
+                            <label htmlFor="export_logistics" className="ml-2 text-sm text-gray-700">Logistics & Shipping</label>
                           </div>
                           <div className="flex items-center">
-                            <input type="checkbox" id="warehousing" className="h-4 w-4 text-green-600 border-gray-300 rounded" />
-                            <label htmlFor="warehousing" className="ml-2 text-sm text-gray-700">Warehousing</label>
+                            <input type="checkbox" id="export_customs" className="h-4 w-4 text-purple-600 border-gray-300 rounded" />
+                            <label htmlFor="export_customs" className="ml-2 text-sm text-gray-700">Customs Brokerage</label>
                           </div>
                           <div className="flex items-center">
-                            <input type="checkbox" id="customs" className="h-4 w-4 text-green-600 border-gray-300 rounded" />
-                            <label htmlFor="customs" className="ml-2 text-sm text-gray-700">Customs Clearance</label>
-                          </div>
-                          <div className="flex items-center">
-                            <input type="checkbox" id="fulfillment" className="h-4 w-4 text-green-600 border-gray-300 rounded" />
-                            <label htmlFor="fulfillment" className="ml-2 text-sm text-gray-700">Order Fulfillment</label>
+                            <input type="checkbox" id="export_sourcing" className="h-4 w-4 text-purple-600 border-gray-300 rounded" />
+                            <label htmlFor="export_sourcing" className="ml-2 text-sm text-gray-700">Product Sourcing</label>
                           </div>
                         </div>
                       </div>
                       
                       <div>
-                        <label htmlFor="distributionRegions" className="block text-sm font-medium text-gray-700 mb-1">
-                          Distribution Regions
-                        </label>
-                        <select
-                          id="distributionRegions"
-                          multiple
-                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                        >
-                          <option value="west_africa">West Africa</option>
-                          <option value="east_africa">East Africa</option>
-                          <option value="central_africa">Central Africa</option>
-                          <option value="southern_africa">Southern Africa</option>
-                          <option value="north_africa">North Africa</option>
-                          <option value="international">International</option>
-                        </select>
-                        <p className="text-xs text-gray-500 mt-1">Hold Ctrl/Cmd to select multiple</p>
-                      </div>
-                    </div>
-                  )}
-                  
-                  {selectedVendorType === 'wholesaler' && (
-                    <div className="space-y-4 p-4 bg-yellow-50 rounded-lg">
-                      <h4 className="font-medium text-gray-900">Wholesaler Information</h4>
-                      <div>
-                        <label htmlFor="minOrderValue" className="block text-sm font-medium text-gray-700 mb-1">
-                          Minimum Order Value (USD)
-                        </label>
-                        <input
-                          type="number"
-                          id="minOrderValue"
-                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                          placeholder="e.g., 500"
-                        />
-                      </div>
-                      
-                      <div>
-                        <label htmlFor="typicalDiscounts" className="block text-sm font-medium text-gray-700 mb-1">
-                          Typical Wholesale Discount (%)
-                        </label>
-                        <input
-                          type="number"
-                          id="typicalDiscounts"
-                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                          placeholder="e.g., 30"
-                        />
-                      </div>
-                      
-                      <div>
                         <label className="block text-sm font-bold text-gray-700 mb-3">
-                          Product Categories Offered
+                          Focus Product Categories
                         </label>
                         <CategorySelection />
-                        <p className="text-xs text-gray-500 mt-4 font-medium italic">Click to select all relevant categories for your business.</p>
-                      </div>
-                    </div>
-                  )}
-                  
-                  {selectedVendorType === 'retailer' && (
-                    <div className="space-y-4 p-4 bg-purple-50 rounded-lg">
-                      <h4 className="font-medium text-gray-900">Retailer Information</h4>
-                      <div>
-                        <label htmlFor="storeType" className="block text-sm font-medium text-gray-700 mb-1">
-                          Store Type
-                        </label>
-                        <select
-                          id="storeType"
-                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                        >
-                          <option value="">Select store type</option>
-                          <option value="physical">Physical Store</option>
-                          <option value="online">Online Store</option>
-                          <option value="both">Both Physical & Online</option>
-                          <option value="market">Market Stall</option>
-                        </select>
-                      </div>
-                      
-                      <div>
-                        <label className="block text-sm font-bold text-gray-700 mb-3">
-                          Product Categories Offered
-                        </label>
-                        <CategorySelection />
-                        <p className="text-xs text-gray-500 mt-4 font-medium italic">Click to select all relevant categories for your business.</p>
-                      </div>
-                      
-                      <div>
-                        <label htmlFor="shippingOptions" className="block text-sm font-medium text-gray-700 mb-1">
-                          Shipping Options Provided
-                        </label>
-                        <div className="space-y-2">
-                          <div className="flex items-center">
-                            <input type="checkbox" id="international" className="h-4 w-4 text-purple-600 border-gray-300 rounded" />
-                            <label htmlFor="international" className="ml-2 text-sm text-gray-700">International Shipping</label>
-                          </div>
-                          <div className="flex items-center">
-                            <input type="checkbox" id="express" className="h-4 w-4 text-purple-600 border-gray-300 rounded" />
-                            <label htmlFor="express" className="ml-2 text-sm text-gray-700">Express Delivery</label>
-                          </div>
-                          <div className="flex items-center">
-                            <input type="checkbox" id="free" className="h-4 w-4 text-purple-600 border-gray-300 rounded" />
-                            <label htmlFor="free" className="ml-2 text-sm text-gray-700">Free Shipping Options</label>
-                          </div>
-                        </div>
+                        <p className="text-xs text-gray-500 mt-4 font-medium italic">Click to select all relevant categories you handle.</p>
                       </div>
                     </div>
                   )}

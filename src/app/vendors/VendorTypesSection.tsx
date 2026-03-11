@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { Shield, Star, Factory, Truck, Store } from 'lucide-react';
+import { Shield, Star, Factory, Palette, Shirt, Globe } from 'lucide-react';
 
 export default function VendorTypesSection() {
   return (
@@ -17,60 +17,60 @@ export default function VendorTypesSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-yellow-50 rounded-xl p-8 text-center md:text-left hover:shadow-lg transition flex flex-col md:flex-row items-center">
             <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mb-6 md:mb-0 md:mr-6 flex-shrink-0">
-              <Factory className="h-10 w-10 text-blue-600" />
+              <Palette className="h-10 w-10 text-blue-600" />
             </div>
             <div>
               <div className="flex items-center justify-center md:justify-start mb-4">
-                <h3 className="text-xl font-semibold text-gray-900 mr-3">Manufacturers</h3>
-                <div className="bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded-full">PRODUCER</div>
+                <h3 className="text-xl font-semibold text-gray-900 mr-3">African Artisan / Makers</h3>
+                <div className="bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded-full">ARTISAN</div>
               </div>
               <p className="text-gray-700">
-                Direct access to African manufacturers producing high-quality goods. Source directly from the creators of authentic African products without intermediaries.
+                Direct access to skilled African artisans and master makers producing authentic, handcrafted goods. Source unique products that reflect rich cultural heritage.
               </p>
             </div>
           </div>
           
           <div className="bg-yellow-50 rounded-xl p-8 text-center md:text-left hover:shadow-lg transition flex flex-col md:flex-row items-center">
             <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-6 md:mb-0 md:mr-6 flex-shrink-0">
-              <Truck className="h-10 w-10 text-green-600" />
+              <Shirt className="h-10 w-10 text-green-600" />
             </div>
             <div>
               <div className="flex items-center justify-center md:justify-start mb-4">
-                <h3 className="text-xl font-semibold text-gray-900 mr-3">Distributors</h3>
-                <div className="bg-green-600 text-white text-xs font-bold px-2 py-1 rounded-full">DISTRIBUTOR</div>
+                <h3 className="text-xl font-semibold text-gray-900 mr-3">African Brand / Designers</h3>
+                <div className="bg-green-600 text-white text-xs font-bold px-2 py-1 rounded-full">DESIGNER</div>
               </div>
               <p className="text-gray-700">
-                Established distribution networks that can handle larger orders with efficient logistics solutions across Africa and internationally. Ideal for businesses seeking reliable supply chains.
+                Established African brands and designers combining modern aesthetics with traditional techniques. Ideal for those seeking premium, design-led African products.
               </p>
             </div>
           </div>
           
           <div className="bg-yellow-50 rounded-xl p-8 text-center md:text-left hover:shadow-lg transition flex flex-col md:flex-row items-center">
             <div className="w-20 h-20 bg-yellow-100 rounded-full flex items-center justify-center mb-6 md:mb-0 md:mr-6 flex-shrink-0">
-              <Star className="h-10 w-10 text-yellow-600" />
+              <Factory className="h-10 w-10 text-yellow-600" />
             </div>
             <div>
               <div className="flex items-center justify-center md:justify-start mb-4">
-                <h3 className="text-xl font-semibold text-gray-900 mr-3">Wholesalers</h3>
-                <div className="bg-yellow-600 text-white text-xs font-bold px-2 py-1 rounded-full">WHOLESALER</div>
+                <h3 className="text-xl font-semibold text-gray-900 mr-3">African Manufacturer / Factories</h3>
+                <div className="bg-yellow-600 text-white text-xs font-bold px-2 py-1 rounded-full">FACTORY</div>
               </div>
               <p className="text-gray-700">
-                Bulk suppliers offering competitive pricing for larger quantities. Perfect for retailers and businesses looking to stock inventories with authentic African products at wholesale rates.
+                Large-scale African manufacturing facilities capable of handling high-volume production. Connect with factories that meet international standards for mass distribution.
               </p>
             </div>
           </div>
           
           <div className="bg-yellow-50 rounded-xl p-8 text-center md:text-left hover:shadow-lg transition flex flex-col md:flex-row items-center">
             <div className="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mb-6 md:mb-0 md:mr-6 flex-shrink-0">
-              <Store className="h-10 w-10 text-purple-600" />
+              <Globe className="h-10 w-10 text-purple-600" />
             </div>
             <div>
               <div className="flex items-center justify-center md:justify-start mb-4">
-                <h3 className="text-xl font-semibold text-gray-900 mr-3">Retailers</h3>
-                <div className="bg-purple-600 text-white text-xs font-bold px-2 py-1 rounded-full">RETAILER</div>
+                <h3 className="text-xl font-semibold text-gray-900 mr-3">African Distributor / Export Agents</h3>
+                <div className="bg-purple-600 text-white text-xs font-bold px-2 py-1 rounded-full">EXPORT</div>
               </div>
               <p className="text-gray-700">
-                Curated selections of African products available in smaller quantities. Ideal for individual consumers or small businesses looking for specialized items without minimum order requirements.
+                Reliable logistics partners and export agents specialized in moving African goods globally. Streamline your supply chain with experts in international trade and shipping.
               </p>
             </div>
           </div>

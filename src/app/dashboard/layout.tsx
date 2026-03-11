@@ -5,7 +5,6 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { 
-  Home, 
   ShoppingBag, 
   Package, 
   Users, 
@@ -18,39 +17,45 @@ import {
   User,
   ChevronDown,
   Heart,
-  BookmarkIcon
+  BookmarkIcon,
+  LayoutDashboard
 } from 'lucide-react';
+import { signOut, useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 
 // Make the layout component a client component so we can use useState
 // In a real app, you would fetch the user and role from a context or auth service
 type UserRole = 'buyer' | 'vendor' | 'admin';
-
-interface UserProfile {
-  name: string;
-  email: string;
-  avatar: string;
-  role: UserRole;
-  notifications: number;
-  messages: number;
-}
 
 export default function DashboardLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  // Mobile menu state
+  const { data: session, status } = useSession();
+  const router = useRouter();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   
-  // This would normally be determined from user auth context
-  const userRole = "vendor" as UserRole;
+  if (status === "loading") {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-yellow-500"></div>
+      </div>
+    );
+  }
+
+  if (status === "unauthenticated") {
+    router.push("/login");
+    return null;
+  }
+
+  const userRole = (session?.user?.role as UserRole) || "buyer";
   
-  // This would normally come from a user profile in a real app
-  const user: UserProfile = {
-    name: "John Smith",
-    email: "john@example.com",
-    avatar: "/images/avatar.jpg", // This would be a real image in production
+  const user = {
+    name: session?.user?.name || "Guest User",
+    email: session?.user?.email || "guest@example.com",
+    avatar: "/images/avatar.jpg",
     role: userRole,
     notifications: 3,
     messages: 2
@@ -59,7 +64,7 @@ export default function DashboardLayout({
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* Top Navigation Bar */}
-      <header className="bg-white shadow-sm w-full border-b border-gray-200">
+      <header className="bg-white shadow-sm w-full border-b border-gray-200 relative z-20">
         <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             {/* Logo and Mobile Menu Button */}
@@ -84,7 +89,7 @@ export default function DashboardLayout({
               
               {/* Logo */}
               <div className="flex-shrink-0 flex items-center">
-                <Link href="/" className="flex items-center">
+                <Link href="/dashboard" className="flex items-center">
                   <Image 
                     src="/logo.png" 
                     alt="Buy from Africa" 
@@ -211,7 +216,7 @@ export default function DashboardLayout({
                 {/* Dropdown menu */}
                 {userMenuOpen && (
                   <div 
-                    className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" 
+                    className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-50" 
                     role="menu" 
                     aria-orientation="vertical" 
                     aria-labelledby="user-menu-button" 
@@ -231,13 +236,13 @@ export default function DashboardLayout({
                     >
                       Settings
                     </Link>
-                    <Link 
-                      href="/logout" 
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" 
+                    <button 
+                      onClick={() => signOut({ callbackUrl: '/' })}
+                      className="w-full text-left block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" 
                       role="menuitem"
                     >
                       Sign out
-                    </Link>
+                    </button>
                   </div>
                 )}
               </div>
@@ -331,12 +336,12 @@ export default function DashboardLayout({
                 >
                   Settings
                 </Link>
-                <Link 
-                  href="/logout" 
-                  className="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100"
+                <button 
+                  onClick={() => signOut({ callbackUrl: '/' })}
+                  className="w-full text-left block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100"
                 >
                   Sign out
-                </Link>
+                </button>
               </div>
             </div>
           </div>
@@ -359,7 +364,7 @@ export default function DashboardLayout({
                   href="/dashboard" 
                   className="text-gray-900 group flex items-center px-3 py-3 text-sm font-medium rounded-md bg-yellow-50"
                 >
-                  <Home className="text-yellow-600 mr-3 flex-shrink-0 h-5 w-5" />
+                  <LayoutDashboard className="text-yellow-600 mr-3 flex-shrink-0 h-5 w-5" />
                   <span className="truncate">Overview</span>
                 </Link>
                 
@@ -447,13 +452,13 @@ export default function DashboardLayout({
                 </Link>
                 
                 <div className="pt-8">
-                  <Link 
-                    href="/logout" 
-                    className="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-3 py-3 text-sm font-medium rounded-md"
+                  <button 
+                    onClick={() => signOut({ callbackUrl: '/' })}
+                    className="w-full text-left text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-3 py-3 text-sm font-medium rounded-md"
                   >
                     <LogOut className="text-gray-500 group-hover:text-gray-600 mr-3 flex-shrink-0 h-5 w-5" />
                     <span className="truncate">Log out</span>
-                  </Link>
+                  </button>
                 </div>
               </div>
             </div>

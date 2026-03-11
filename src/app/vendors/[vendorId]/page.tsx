@@ -20,11 +20,12 @@ import {
   // Removed Filter as it's not used
   ArrowUpDown,
   Factory,
-  Store,
   CheckCircle,
   Calendar,
   Award,
-  CreditCard
+  CreditCard,
+  Palette,
+  Shirt
 } from 'lucide-react';
 
 // Define type for country flags
@@ -117,7 +118,7 @@ const mockVendor = {
   isVerified: true,
   badge: 'gold',
   badgeType: 'Registered Business',
-  businessType: 'manufacturer',
+  businessType: 'artisan',
   regNumber: 'RC-123456-NGR',
   joinDate: 'January 2023',
   profileImage: '/images/vendors/african-textiles.jpg',
@@ -238,33 +239,37 @@ interface BusinessTypeInfo {
 // Get business type display info
 const getBusinessTypeInfo = (type: string): BusinessTypeInfo => {
   switch(type) {
-    case 'manufacturer':
+    case 'artisan':
+    case 'manufacturer': // fallback for old data
       return { 
-        icon: <Factory className="h-5 w-5 text-blue-600" />, 
+        icon: <Palette className="h-5 w-5 text-blue-600" />, 
         color: 'text-blue-800', 
         bgColor: 'bg-blue-100',
-        description: 'This vendor produces their own products directly, offering authentic goods directly from the source.' 
+        description: 'This vendor is a skilled artisan or craft maker, producing unique handmade goods.' 
       };
-    case 'distributor':
+    case 'brand':
+    case 'distributor': // fallback for old data
       return { 
-        icon: <Truck className="h-5 w-5 text-green-600" />, 
+        icon: <Shirt className="h-5 w-5 text-green-600" />, 
         color: 'text-green-800', 
         bgColor: 'bg-green-100',
-        description: 'This vendor specializes in logistics and distribution, helping move products efficiently across borders.' 
+        description: 'This vendor is an African brand or designer, creating distinctive products and collections.' 
       };
-    case 'wholesaler':
+    case 'factory':
+    case 'wholesaler': // fallback for old data
       return { 
-        icon: <Star className="h-5 w-5 text-yellow-600" />, 
+        icon: <Factory className="h-5 w-5 text-yellow-600" />, 
         color: 'text-yellow-800', 
         bgColor: 'bg-yellow-100',
-        description: 'This vendor specializes in bulk sales at competitive prices, ideal for retailers and businesses.' 
+        description: 'This vendor is an African manufacturer or factory, producing goods at scale.' 
       };
-    case 'retailer':
+    case 'export':
+    case 'retailer': // fallback for old data
       return { 
-        icon: <Store className="h-5 w-5 text-purple-600" />, 
+        icon: <Globe className="h-5 w-5 text-purple-600" />, 
         color: 'text-purple-800', 
         bgColor: 'bg-purple-100',
-        description: 'This vendor sells products directly to consumers, offering flexible quantities and personalized service.' 
+        description: 'This vendor is a distributor or export agent, specializing in logistics and international trade.' 
       };
     default:
       return { 
@@ -437,7 +442,7 @@ export default function VendorDetailPage() {
             </h2>
             <p className="text-gray-700">{businessTypeInfo.description}</p>
             
-            {mockVendor.businessType === 'manufacturer' && (
+            {(mockVendor.businessType === 'artisan' || mockVendor.businessType === 'factory') && (
               <div className="mt-3 grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <h3 className="text-sm font-medium text-gray-900">Production Capacity</h3>
@@ -457,7 +462,7 @@ export default function VendorDetailPage() {
               </div>
             )}
             
-            {(mockVendor.businessType === 'wholesaler' || mockVendor.businessType === 'retailer') && (
+            {(mockVendor.businessType === 'brand' || mockVendor.businessType === 'export') && (
               <div className="mt-3">
                 <h3 className="text-sm font-medium text-gray-900">Order Requirements</h3>
                 <p className="text-sm text-gray-700">{mockVendor.minimumOrderQuantity}</p>
@@ -720,7 +725,7 @@ export default function VendorDetailPage() {
                 </div>
               </div>
               
-              {mockVendor.businessType === 'manufacturer' && (
+              {(mockVendor.businessType === 'artisan' || mockVendor.businessType === 'factory') && (
                 <div className="mt-6 pt-6 border-t border-gray-200">
                   <h4 className="font-medium text-gray-900 mb-2">Certifications & Production Capacity</h4>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

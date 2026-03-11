@@ -1,9 +1,9 @@
-// File: app/login/page.tsx
 "use client";
 
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { signIn } from 'next-auth/react';
 import { LogIn, Mail, Lock, EyeOff, Eye, ArrowRight } from 'lucide-react';
 
 export default function LoginPage() {
@@ -17,32 +17,37 @@ export default function LoginPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Reset error state
     setError('');
     
-    // Validate form
     if (!email || !password) {
       setError('Please fill in all fields');
       return;
     }
     
-    // Show loading state
     setIsLoading(true);
     
     try {
-      // In a real app, this would be an API call to your authentication endpoint
-      // For demo purposes, we'll just simulate a login
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      // Check for demo credentials (in a real app, this would be handled by your backend)
-      if (email === 'demo@buyfromafrica.com' && password === 'demo123') {
-        // Successful login, redirect to dashboard
-        router.push('/dashboard');
-      } else {
-        // Show error for invalid credentials
+      const result = await signIn('credentials', {
+        email,
+        password,
+        redirect: false,
+      });
+
+      if (result?.error) {
         setError('Invalid email or password');
         setIsLoading(false);
+      } else {
+        // Fetch session to determine role
+        const sessionRes = await fetch('/api/auth/session');
+        const session = await sessionRes.json();
+        
+        if (session?.user?.role === 'VENDOR') {
+          router.push('/vendor/dashboard');
+        } else if (session?.user?.role === 'ADMIN' || session?.user?.role === 'SUPER_ADMIN') {
+          router.push('/admin');
+        } else {
+          router.push('/dashboard');
+        }
       }
     } catch (err: unknown) {
       console.error('Login error:', err);
@@ -203,13 +208,6 @@ export default function LoginPage() {
             </div>
           </div>
           
-          {/* Demo Credentials Notice */}
-          <div className="mt-6 text-center text-gray-600 text-sm">
-            <p>For demo purposes, use: <br />
-              <strong>Email:</strong> demo@buyfromafrica.com <br />
-              <strong>Password:</strong> demo123
-            </p>
-          </div>
         </div>
       </div>
     </React.Fragment>

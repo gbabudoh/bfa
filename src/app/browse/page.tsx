@@ -10,13 +10,15 @@ import {
   Filter,
   Star,
   Shield,
-  Truck,
   XCircle,
   Heart,
   Factory,
   Store,
   Loader2,
-  MapPin
+  MapPin,
+  Palette,
+  Shirt,
+  Globe
 } from 'lucide-react';
 
 // Define types for live data
@@ -485,10 +487,10 @@ function FilterContent({
         <div className="space-y-3">
           {[
             { id: 'all', name: 'All Origins', icon: <MapPin className="h-4 w-4" /> },
-            { id: 'manufacturer', name: 'Manufacturers', icon: <Factory className="h-4 w-4 text-blue-600" /> },
-            { id: 'distributor', name: 'Distributors', icon: <Truck className="h-4 w-4 text-green-600" /> },
-            { id: 'wholesaler', name: 'Wholesalers', icon: <Star className="h-4 w-4 text-yellow-600" /> },
-            { id: 'retailer', name: 'Retailers', icon: <Store className="h-4 w-4 text-purple-600" /> }
+            { id: 'artisan', name: 'Artisan / Maker', icon: <Palette className="h-4 w-4 text-blue-600" /> },
+            { id: 'brand', name: 'Brand / Designer', icon: <Shirt className="h-4 w-4 text-green-600" /> },
+            { id: 'factory', name: 'Manufacturer / Factory', icon: <Factory className="h-4 w-4 text-yellow-600" /> },
+            { id: 'export', name: 'Distributor / Export Agent', icon: <Globe className="h-4 w-4 text-purple-600" /> }
           ].map((type) => (
             <label key={type.id} className="flex items-center group cursor-pointer">
               <input

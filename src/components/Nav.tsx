@@ -8,9 +8,11 @@ import {
   Shirt, Palmtree, Gem, Coffee, Leaf, 
   Music, Smartphone, Home, HeartPulse, Shapes,
   ArrowRight, ShoppingBag, Sparkles, Users,
-  Package, Factory, Briefcase, Calculator
+  Package, Factory, Briefcase, Calculator,
+  LayoutDashboard
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useSession } from 'next-auth/react';
 
 interface Category {
   id: string;
@@ -59,12 +61,21 @@ const getCategoryIcon = (slug: string, name: string) => {
 };
 
 const Nav = () => {
+  const { data: session, status } = useSession();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [categories, setCategories] = useState<Category[]>([]);
   const [isCategoriesOpen, setIsCategoriesOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+
+  const getDashboardUrl = () => {
+    if (!session?.user) return '/login';
+    const role = session.user.role;
+    if (role === 'VENDOR') return '/vendor/dashboard';
+    if (role === 'ADMIN' || role === 'SUPER_ADMIN') return '/admin';
+    return '/dashboard';
+  };
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -257,18 +268,30 @@ const Nav = () => {
 
           {/* Right-side buttons */}
           <div className="hidden lg:flex items-center space-x-6">
-            <Link href="/login" className="text-sm font-bold text-gray-700 hover:text-yellow-600 transition-colors flex items-center group">
-              <div className="bg-gray-100 p-2 rounded-xl mr-2 group-hover:bg-yellow-50 group-hover:text-yellow-600 transition-colors">
-                <User className="h-5 w-5" />
-              </div>
-              Login
-            </Link>
-            <Link 
-              href="/register" 
-              className="bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-3 rounded-2xl text-sm font-black tracking-wide transition-all duration-300 shadow-xl shadow-yellow-200 hover:shadow-yellow-300 active:scale-95"
-            >
-              Get Started
-            </Link>
+            {status === 'authenticated' ? (
+              <Link 
+                href={getDashboardUrl()} 
+                className="bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-3 rounded-2xl text-sm font-black tracking-wide transition-all duration-300 shadow-xl shadow-yellow-200 hover:shadow-yellow-300 active:scale-95 flex items-center"
+              >
+                <LayoutDashboard className="w-4 h-4 mr-2" />
+                Go to Dashboard
+              </Link>
+            ) : (
+              <>
+                <Link href="/login" className="text-sm font-bold text-gray-700 hover:text-yellow-600 transition-colors flex items-center group">
+                  <div className="bg-gray-100 p-2 rounded-xl mr-2 group-hover:bg-yellow-50 group-hover:text-yellow-600 transition-colors">
+                    <User className="h-5 w-5" />
+                  </div>
+                  Login
+                </Link>
+                <Link 
+                  href="/register" 
+                  className="bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-3 rounded-2xl text-sm font-black tracking-wide transition-all duration-300 shadow-xl shadow-yellow-200 hover:shadow-yellow-300 active:scale-95"
+                >
+                  Get Started
+                </Link>
+              </>
+            )}
           </div>
 
           {/* Mobile menu button */}
@@ -385,18 +408,30 @@ const Nav = () => {
               </div>
 
               <div className="pt-8 border-t border-gray-100 grid grid-cols-2 gap-4">
-                <Link 
-                  href="/login" 
-                  className="flex items-center justify-center p-4 rounded-2xl border border-gray-200 font-bold text-gray-700 active:bg-gray-50"
-                >
-                  Login
-                </Link>
-                <Link 
-                  href="/register" 
-                  className="flex items-center justify-center p-4 rounded-2xl bg-yellow-600 text-white font-black active:scale-95 transition-transform"
-                >
-                  Sign Up
-                </Link>
+                {status === 'authenticated' ? (
+                  <Link 
+                    href={getDashboardUrl()} 
+                    className="col-span-2 flex items-center justify-center p-4 rounded-2xl bg-yellow-600 text-white font-black active:scale-95 transition-transform"
+                  >
+                    <LayoutDashboard className="w-5 h-5 mr-2" />
+                    Go to Dashboard
+                  </Link>
+                ) : (
+                  <>
+                    <Link 
+                      href="/login" 
+                      className="flex items-center justify-center p-4 rounded-2xl border border-gray-200 font-bold text-gray-700 active:bg-gray-50"
+                    >
+                      Login
+                    </Link>
+                    <Link 
+                      href="/register" 
+                      className="flex items-center justify-center p-4 rounded-2xl bg-yellow-600 text-white font-black active:scale-95 transition-transform"
+                    >
+                      Sign Up
+                    </Link>
+                  </>
+                )}
               </div>
             </div>
           </motion.div>

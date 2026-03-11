@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { Users, ChevronRight, Search, Star, Shield, Factory, Truck, Store } from 'lucide-react';
+import { Users, ChevronRight, Search, Star, Shield, Factory, Palette, Shirt, Globe } from 'lucide-react';
 
 export default function VendorsLayout({
   children,
@@ -92,32 +92,32 @@ export default function VendorsLayout({
               All Vendors
             </Link>
             <Link 
-              href="/vendors?type=manufacturer" 
-              className={getTypeLinkClass('manufacturer', 'bg-blue-100 text-blue-800')}
+              href="/vendors?type=artisan" 
+              className={getTypeLinkClass('artisan', 'bg-blue-100 text-blue-800')}
+            >
+              <Palette className="h-4 w-4 mr-2" />
+              Artisan / Makers
+            </Link>
+            <Link 
+              href="/vendors?type=brand" 
+              className={getTypeLinkClass('brand', 'bg-green-100 text-green-800')}
+            >
+              <Shirt className="h-4 w-4 mr-2" />
+              Brand / Designers
+            </Link>
+            <Link 
+              href="/vendors?type=factory" 
+              className={getTypeLinkClass('factory', 'bg-yellow-100 text-yellow-800')}
             >
               <Factory className="h-4 w-4 mr-2" />
-              Manufacturers
+              Manufacturer / Factories
             </Link>
             <Link 
-              href="/vendors?type=distributor" 
-              className={getTypeLinkClass('distributor', 'bg-green-100 text-green-800')}
+              href="/vendors?type=export" 
+              className={getTypeLinkClass('export', 'bg-purple-100 text-purple-800')}
             >
-              <Truck className="h-4 w-4 mr-2" />
-              Distributors
-            </Link>
-            <Link 
-              href="/vendors?type=wholesaler" 
-              className={getTypeLinkClass('wholesaler', 'bg-yellow-100 text-yellow-800')}
-            >
-              <Star className="h-4 w-4 mr-2" />
-              Wholesalers
-            </Link>
-            <Link 
-              href="/vendors?type=retailer" 
-              className={getTypeLinkClass('retailer', 'bg-purple-100 text-purple-800')}
-            >
-              <Store className="h-4 w-4 mr-2" />
-              Retailers
+              <Globe className="h-4 w-4 mr-2" />
+              Distributor / Export Agents
             </Link>
           </div>
         </div>

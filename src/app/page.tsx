@@ -206,7 +206,7 @@ export default function HomePage() {
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Featured Categories</h2>
               <p className="mt-4 text-xl text-gray-600">
-                Discover products and services across various industries
+                Discover made in Africa products across various industries
               </p>
             </div>
             <Link href="/browse" className="hidden md:flex items-center text-yellow-600 hover:text-yellow-700 font-medium">

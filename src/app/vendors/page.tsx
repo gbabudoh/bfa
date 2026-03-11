@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
-import { ChevronLeft, ChevronRight, Filter, MapPin, Star, Shield, Tag, Factory, Truck, Store, XCircle, Loader2, Users } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Filter, MapPin, Star, Shield, Tag, Factory, Store, XCircle, Loader2, Users, Palette, Shirt, Globe } from 'lucide-react';
 
 // Define country flags
 interface CountryFlags {
@@ -75,14 +75,18 @@ interface BusinessTypeInfo {
 // Get business type display info
 const getBusinessTypeInfo = (type: string): BusinessTypeInfo => {
   switch(type) {
-    case 'manufacturer':
-      return { icon: <Factory className="h-4 w-4" />, color: 'bg-blue-100 text-blue-800' };
-    case 'distributor':
-      return { icon: <Truck className="h-4 w-4" />, color: 'bg-green-100 text-green-800' };
-    case 'wholesaler':
-      return { icon: <Star className="h-4 w-4" />, color: 'bg-yellow-100 text-yellow-800' };
-    case 'retailer':
-      return { icon: <Store className="h-4 w-4" />, color: 'bg-purple-100 text-purple-800' };
+    case 'artisan':
+    case 'manufacturer': // fallback for old data
+      return { icon: <Palette className="h-4 w-4" />, color: 'bg-blue-100 text-blue-800' };
+    case 'brand':
+    case 'distributor': // fallback for old data
+      return { icon: <Shirt className="h-4 w-4" />, color: 'bg-green-100 text-green-800' };
+    case 'factory':
+    case 'wholesaler': // fallback for old data
+      return { icon: <Factory className="h-4 w-4" />, color: 'bg-yellow-100 text-yellow-800' };
+    case 'export':
+    case 'retailer': // fallback for old data
+      return { icon: <Globe className="h-4 w-4" />, color: 'bg-purple-100 text-purple-800' };
     default:
       return { icon: <Tag className="h-4 w-4" />, color: 'bg-gray-100 text-gray-800' };
   }
@@ -196,57 +200,57 @@ export default function VendorsPage() {
                   <div className="flex items-center">
                     <input
                       type="radio"
-                      id="business-manufacturer"
+                      id="business-artisan"
                       name="businessType"
                       className="h-4 w-4 text-yellow-600 focus:ring-yellow-500 border-gray-300"
-                      checked={selectedBusinessType === 'manufacturer'}
-                      onChange={() => updateFilters('type', 'manufacturer')}
+                      checked={selectedBusinessType === 'artisan'}
+                      onChange={() => updateFilters('type', 'artisan')}
                     />
-                    <label htmlFor="business-manufacturer" className="ml-2 text-sm text-gray-700 flex items-center">
-                      <Factory className="h-3 w-3 text-blue-600 mr-1" />
-                      Manufacturers
+                    <label htmlFor="business-artisan" className="ml-2 text-sm text-gray-700 flex items-center">
+                      <Palette className="h-3 w-3 text-blue-600 mr-1" />
+                      African Artisan / Makers
                     </label>
                   </div>
                   <div className="flex items-center">
                     <input
                       type="radio"
-                      id="business-distributor"
+                      id="business-brand"
                       name="businessType"
                       className="h-4 w-4 text-yellow-600 focus:ring-yellow-500 border-gray-300"
-                      checked={selectedBusinessType === 'distributor'}
-                      onChange={() => updateFilters('type', 'distributor')}
+                      checked={selectedBusinessType === 'brand'}
+                      onChange={() => updateFilters('type', 'brand')}
                     />
-                    <label htmlFor="business-distributor" className="ml-2 text-sm text-gray-700 flex items-center">
-                      <Truck className="h-3 w-3 text-green-600 mr-1" />
-                      Distributors
+                    <label htmlFor="business-brand" className="ml-2 text-sm text-gray-700 flex items-center">
+                      <Shirt className="h-3 w-3 text-green-600 mr-1" />
+                      African Brand / Designers
                     </label>
                   </div>
                   <div className="flex items-center">
                     <input
                       type="radio"
-                      id="business-wholesaler"
+                      id="business-factory"
                       name="businessType"
                       className="h-4 w-4 text-yellow-600 focus:ring-yellow-500 border-gray-300"
-                      checked={selectedBusinessType === 'wholesaler'}
-                      onChange={() => updateFilters('type', 'wholesaler')}
+                      checked={selectedBusinessType === 'factory'}
+                      onChange={() => updateFilters('type', 'factory')}
                     />
-                    <label htmlFor="business-wholesaler" className="ml-2 text-sm text-gray-700 flex items-center">
-                      <Star className="h-3 w-3 text-yellow-600 mr-1" />
-                      Wholesalers
+                    <label htmlFor="business-factory" className="ml-2 text-sm text-gray-700 flex items-center">
+                      <Factory className="h-3 w-3 text-yellow-600 mr-1" />
+                      African Manufacturer / Factories
                     </label>
                   </div>
                   <div className="flex items-center">
                     <input
                       type="radio"
-                      id="business-retailer"
+                      id="business-export"
                       name="businessType"
                       className="h-4 w-4 text-yellow-600 focus:ring-yellow-500 border-gray-300"
-                      checked={selectedBusinessType === 'retailer'}
-                      onChange={() => updateFilters('type', 'retailer')}
+                      checked={selectedBusinessType === 'export'}
+                      onChange={() => updateFilters('type', 'export')}
                     />
-                    <label htmlFor="business-retailer" className="ml-2 text-sm text-gray-700 flex items-center">
-                      <Store className="h-3 w-3 text-purple-600 mr-1" />
-                      Retailers
+                    <label htmlFor="business-export" className="ml-2 text-sm text-gray-700 flex items-center">
+                      <Globe className="h-3 w-3 text-purple-600 mr-1" />
+                      African Distributor / Export Agents
                     </label>
                   </div>
                 </div>
