@@ -4,305 +4,227 @@ import React from 'react';
 import Link from 'next/link';
 import { 
   ShoppingBag, 
-  Package, 
-  CreditCard, 
-  Truck, 
-  AlertCircle, 
-  CheckCircle,
   TrendingUp,
-  Users,
-  ArrowUpRight,
+  Plus,
+  Truck,
+  CheckCircle,
+  Package,
+  Heart,
   ChevronRight,
-  Clock,
-  MessageSquare
+  ExternalLink,
+  LucideIcon
 } from 'lucide-react';
+import { useSession } from 'next-auth/react';
+
+interface StatCardProps {
+  title: string;
+  value: string | number;
+  trend: string;
+  trendUp: boolean;
+  icon: LucideIcon;
+  color: string;
+  delay: string;
+}
+
+const StatCard = ({ title, value, trend, trendUp, icon: Icon, color, delay }: StatCardProps) => (
+  <div 
+    className={`group relative overflow-hidden p-6 rounded-[2.5rem] bg-white/40 border border-white/60 backdrop-blur-2xl transition-all duration-700 hover:scale-[1.02] hover:bg-white/60 hover:border-[#D9A606]/30 shadow-xl animate-in fade-in slide-in-from-bottom-5 ${delay}`}
+  >
+    <div className={`absolute -right-8 -bottom-8 w-32 h-32 ${color.replace('text-', 'bg-')}/5 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-1000`}></div>
+    <div className="relative z-10 flex flex-col h-full justify-between">
+      <div className="flex items-center justify-between mb-8">
+        <div className={`p-4 rounded-2xl ${color.replace('text-', 'bg-')}/10 ${color} backdrop-blur-md border border-white/50 transition-all duration-700 group-hover:rotate-12 group-hover:scale-110 shadow-sm`}>
+          <Icon className="w-6 h-6" />
+        </div>
+        <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/80 border border-white lg:backdrop-blur-md shadow-sm">
+          <TrendingUp className={`w-3 h-3 ${trendUp ? 'text-green-500' : 'text-red-500 rotate-180'}`} />
+          <span className="text-[10px] font-black tracking-tighter text-zinc-600">{trend}</span>
+        </div>
+      </div>
+      <div>
+        <h3 className="text-[10px] font-black text-zinc-400 uppercase tracking-[0.3em] mb-1">{title}</h3>
+        <p className="text-4xl font-black text-zinc-900 tracking-tighter relative">
+          {value}
+          <span className={`absolute -right-4 top-0 text-[40px] opacity-[0.03] font-black uppercase pointer-events-none`}>{title[0]}</span>
+        </p>
+      </div>
+    </div>
+  </div>
+);
 
 export default function VendorDashboardPage() {
-  // Reuse mock data from original dashboard
+  const { data: session } = useSession();
+  
   const recentOrders = [
-    {
-      id: 'ORD-123456',
-      date: '2025-03-22',
-      customer: 'Global Imports Co.',
-      amount: 1250.00,
-      status: 'processing',
-      items: 3,
-      country: 'United States'
-    },
-    {
-      id: 'ORD-123455',
-      date: '2025-03-20',
-      customer: 'European Textiles Ltd.',
-      amount: 2340.50,
-      status: 'shipped',
-      items: 5,
-      country: 'Germany'
-    },
-    {
-      id: 'ORD-123454',
-      date: '2025-03-18',
-      customer: 'Fashion Retailers Inc.',
-      amount: 890.25,
-      status: 'delivered',
-      items: 2,
-      country: 'Canada'
-    },
-    {
-      id: 'ORD-123453',
-      date: '2025-03-15',
-      customer: 'Boutique Stores Ltd.',
-      amount: 1120.75,
-      status: 'delivered',
-      items: 4,
-      country: 'United Kingdom'
-    },
+    { id: 'ORD-123456', product: 'African Textiles & Crafts', date: '21/03/2025', customer: 'Global Imports Co.', amount: 345.00, status: 'processing' },
+    { id: 'ORD-123455', product: 'Premium Ankara Print', date: '20/03/2025', customer: 'European Ltd.', amount: 125.50, status: 'shipped' },
+    { id: 'ORD-123454', product: 'Handmade Beaded Jewelry', date: '19/03/2025', customer: 'Fashion Retail', amount: 89.25, status: 'delivered' },
+    { id: 'ORD-123453', product: 'Organic Shea Butter', date: '18/03/2025', customer: 'Boutique Stores', amount: 210.75, status: 'delivered' },
   ];
-
-  const notifications = [
-    {
-      id: 1,
-      type: 'order',
-      message: 'New order received (ORD-123456)',
-      time: '12 minutes ago'
-    },
-    {
-      id: 2,
-      type: 'stock',
-      message: 'Low stock alert: Premium Ankara Fabric (2 units left)',
-      time: '2 hours ago'
-    },
-    {
-      id: 3,
-      type: 'message',
-      message: 'New message from Global Imports Co.',
-      time: '5 hours ago'
-    }
-  ];
-
-  const renderStatusBadge = (status: string) => {
-    switch(status) {
-      case 'processing':
-        return (
-          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-            <Clock className="mr-1 h-3 w-3" />
-            Processing
-          </span>
-        );
-      case 'shipped':
-        return (
-          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
-            <Truck className="mr-1 h-3 w-3" />
-            Shipped
-          </span>
-        );
-      case 'delivered':
-        return (
-          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
-            <CheckCircle className="mr-1 h-3 w-3" />
-            Delivered
-          </span>
-        );
-      default:
-        return (
-          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
-            {status}
-          </span>
-        );
-    }
-  };
 
   return (
-    <div>
-      <div className="mb-6 flex justify-between items-center">
-        <div>
-          <h1 className="text-2xl font-bold text-gray-900">Vendor Command Center</h1>
-          <p className="mt-1 text-sm text-gray-600">
-            Welcome back! Here&apos;s an overview of your business performance.
-          </p>
-        </div>
-        <div className="flex space-x-3">
-          <Link href="/vendor/dashboard/products/new" className="bg-yellow-600 hover:bg-yellow-700 text-white px-4 py-2 rounded-xl text-sm font-bold transition shadow-md shadow-yellow-100">
-            Add New Product
-          </Link>
-        </div>
-      </div>
+    <div className="space-y-6 pb-20">
+      {/* ── Premium Welcome Banner (Buyer Pattern) ── */}
+      <section className="relative overflow-hidden group">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#D9A606] via-[#F2B705] to-[#D9A606] rounded-[3rem] shadow-2xl shadow-[#D9A606]/20"></div>
+        <div className="absolute top-0 right-0 w-[600px] h-full bg-white/10 skew-x-[-20deg] translate-x-32 group-hover:translate-x-24 transition-transform duration-1000"></div>
+        
+        <div className="relative z-10 p-12 flex flex-col md:flex-row items-center justify-between gap-8 text-white">
+          <div className="max-w-xl">
+             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-[10px] font-black uppercase tracking-[0.3em] mb-6">
+                <span className="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+                Live Account Status: Active
+             </div>
+             <h1 className="text-5xl md:text-6xl font-black tracking-tighter leading-none mb-6">
+                Hello, {session?.user?.name?.split(' ')[0] || 'Store Owner'}!
+             </h1>
+             <p className="text-lg font-bold text-white/90 leading-relaxed tracking-tight max-w-md">
+                Your global trade terminal is ready. You have <span className="underline decoration-2 underline-offset-4 font-black">12 pending orders</span> requiring synchronization.
+             </p>
+          </div>
 
-      {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        <div className="bg-white overflow-hidden shadow rounded-lg border border-gray-100">
-          <div className="p-5">
-            <div className="flex items-center">
-              <div className="flex-shrink-0 bg-indigo-100 rounded-xl p-3">
-                <ShoppingBag className="h-6 w-6 text-indigo-600" />
-              </div>
-              <div className="ml-5 w-0 flex-1">
-                <dl>
-                  <dt className="text-sm font-medium text-gray-500 truncate">Total Orders</dt>
-                  <dd className="text-lg font-bold text-gray-900">248</dd>
-                </dl>
-              </div>
-            </div>
-          </div>
-          <div className="bg-gray-50 px-5 py-3">
-            <div className="text-sm flex items-center">
-              <span className="text-green-600 flex items-center font-medium">
-                <TrendingUp className="h-3 w-3 mr-1" />
-                12.5%
-              </span>
-              <span className="text-gray-500 ml-1">from last month</span>
-            </div>
+          <div className="flex items-center gap-4">
+            <Link 
+              href="/vendor/dashboard/products" 
+              className="bg-white text-[#D9A606] px-10 py-5 rounded-[2rem] text-sm font-black uppercase tracking-widest shadow-xl hover:scale-105 active:scale-95 transition-all"
+            >
+              Manage Products
+            </Link>
+            <button className="p-5 rounded-full bg-white/20 backdrop-blur-md border border-white/30 hover:bg-white/30 transition-all group/settings">
+               <Plus className="w-6 h-6 group-hover/settings:rotate-90 transition-transform duration-500" />
+            </button>
           </div>
         </div>
+      </section>
 
-        <div className="bg-white overflow-hidden shadow rounded-lg border border-gray-100">
-          <div className="p-5">
-            <div className="flex items-center">
-              <div className="flex-shrink-0 bg-green-100 rounded-xl p-3">
-                <CreditCard className="h-6 w-6 text-green-600" />
-              </div>
-              <div className="ml-5 w-0 flex-1">
-                <dl>
-                  <dt className="text-sm font-medium text-gray-500 truncate">Monthly Revenue</dt>
-                  <dd className="text-lg font-bold text-gray-900">$9,850.20</dd>
-                </dl>
-              </div>
-            </div>
-          </div>
-          <div className="bg-gray-50 px-5 py-3">
-            <div className="text-sm flex items-center">
-              <span className="text-green-600 flex items-center font-medium">
-                <TrendingUp className="h-3 w-3 mr-1" />
-                18.2%
-              </span>
-              <span className="text-gray-500 ml-1">from last month</span>
-            </div>
-          </div>
-        </div>
+      {/* ── Stats Grid (Buyer Pattern) ── */}
+      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <StatCard 
+          title="Orders" 
+          value="12" 
+          trend="+20%" 
+          trendUp={true} 
+          icon={ShoppingBag} 
+          color="text-blue-500" 
+          delay="duration-700" 
+        />
+        <StatCard 
+          title="Pending" 
+          value="03" 
+          trend="-5%" 
+          trendUp={false} 
+          icon={Truck} 
+          color="text-amber-500" 
+          delay="duration-700 delay-100" 
+        />
+        <StatCard 
+          title="Delivered" 
+          value="08" 
+          trend="+12%" 
+          trendUp={true} 
+          icon={CheckCircle} 
+          color="text-emerald-500" 
+          delay="duration-700 delay-200" 
+        />
+        <StatCard 
+          title="Inventory" 
+          value="45" 
+          trend="+4" 
+          trendUp={true} 
+          icon={Package} 
+          color="text-purple-500" 
+          delay="duration-700 delay-300" 
+        />
+      </section>
 
-        <div className="bg-white overflow-hidden shadow rounded-lg border border-gray-100">
-          <div className="p-5">
-            <div className="flex items-center">
-              <div className="flex-shrink-0 bg-yellow-100 rounded-xl p-3">
-                <Package className="h-6 w-6 text-yellow-600" />
-              </div>
-              <div className="ml-5 w-0 flex-1">
-                <dl>
-                  <dt className="text-sm font-medium text-gray-500 truncate">Active Products</dt>
-                  <dd className="text-lg font-bold text-gray-900">36</dd>
-                </dl>
-              </div>
-            </div>
-          </div>
-          <div className="bg-gray-50 px-5 py-3">
-            <div className="text-sm">
-              <Link href="/vendor/dashboard/products" className="font-medium text-yellow-600 hover:text-yellow-500 flex items-center">
-                Manage Inventory <ArrowUpRight className="h-3 w-3 ml-1" />
-              </Link>
-            </div>
-          </div>
-        </div>
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        {/* Recent Transactions (Buyer Table Pattern) */}
+        <div className="lg:col-span-8 space-y-6">
+          <div className="p-10 rounded-[3rem] bg-white/40 border border-white/60 backdrop-blur-3xl shadow-xl overflow-hidden relative group">
+             <div className="flex items-center justify-between mb-10">
+                <div>
+                   <h3 className="text-xl font-black text-zinc-900 tracking-tight">Recent Transactions</h3>
+                   <span className="text-[10px] font-black text-zinc-400 uppercase tracking-widest">Monitoring your latest inventory flows</span>
+                </div>
+                <button className="p-3 rounded-2xl bg-gray-100 hover:bg-white border border-gray-200 transition-all">
+                   <ExternalLink className="w-4 h-4 text-zinc-400" />
+                </button>
+             </div>
 
-        <div className="bg-white overflow-hidden shadow rounded-lg border border-gray-100">
-          <div className="p-5">
-            <div className="flex items-center">
-              <div className="flex-shrink-0 bg-blue-100 rounded-xl p-3">
-                <Users className="h-6 w-6 text-blue-600" />
-              </div>
-              <div className="ml-5 w-0 flex-1">
-                <dl>
-                  <dt className="text-sm font-medium text-gray-500 truncate">Total Customers</dt>
-                  <dd className="text-lg font-bold text-gray-900">124</dd>
-                </dl>
-              </div>
-            </div>
-          </div>
-          <div className="bg-gray-50 px-5 py-3">
-            <div className="text-sm">
-              <Link href="/vendor/dashboard/customers" className="font-medium text-blue-600 hover:text-blue-500 flex items-center">
-                View Audience <ArrowUpRight className="h-3 w-3 ml-1" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div className="lg:col-span-2">
-          <div className="bg-white shadow rounded-xl border border-gray-100">
-            <div className="px-6 py-5 border-b border-gray-200">
-              <div className="flex items-center justify-between">
-                <h3 className="text-lg font-black text-gray-900">Recent Vendor Orders</h3>
-                <Link href="/vendor/dashboard/orders" className="text-sm font-bold text-yellow-600 hover:text-yellow-700 flex items-center">
-                  View All <ChevronRight className="ml-1 h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-            <div className="overflow-x-auto">
-              <table className="min-w-full divide-y divide-gray-200">
-                <thead className="bg-gray-50">
-                  <tr>
-                    <th scope="col" className="px-6 py-3 text-left text-[10px] font-black text-gray-400 uppercase tracking-widest">Order ID</th>
-                    <th scope="col" className="px-6 py-3 text-left text-[10px] font-black text-gray-400 uppercase tracking-widest">Date</th>
-                    <th scope="col" className="px-6 py-3 text-left text-[10px] font-black text-gray-400 uppercase tracking-widest">Customer</th>
-                    <th scope="col" className="px-6 py-3 text-left text-[10px] font-black text-gray-400 uppercase tracking-widest">Amount</th>
-                    <th scope="col" className="px-6 py-3 text-left text-[10px] font-black text-gray-400 uppercase tracking-widest">Status</th>
-                  </tr>
-                </thead>
-                <tbody className="bg-white divide-y divide-gray-100">
-                  {recentOrders.map((order) => (
-                    <tr key={order.id} className="hover:bg-gray-50 transition-colors">
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-yellow-600 uppercase tracking-tighter">
-                        <Link href={`/vendor/dashboard/orders/${order.id}`}>{order.id}</Link>
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 font-medium">{new Date(order.date).toLocaleDateString()}</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-black">{order.customer}</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-bold">${order.amount.toFixed(2)}</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm">{renderStatusBadge(order.status)}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+             <div className="overflow-x-auto">
+               <table className="w-full">
+                 <thead>
+                   <tr className="text-[10px] font-black text-zinc-400 uppercase tracking-widest text-left border-b border-gray-200/50">
+                     <th className="pb-6">Product</th>
+                     <th className="pb-6 text-center">ID</th>
+                     <th className="pb-6 text-center">Amount</th>
+                     <th className="pb-6 text-right">Status</th>
+                   </tr>
+                 </thead>
+                 <tbody className="divide-y divide-gray-100/50">
+                   {recentOrders.map((order) => (
+                     <tr key={order.id} className="group/row hover:bg-white/20 transition-colors">
+                       <td className="py-6">
+                         <div className="flex items-center gap-4">
+                            <div className="w-12 h-12 rounded-2xl bg-gray-100 border border-gray-200 flex items-center justify-center text-zinc-400 group-hover/row:bg-white transition-all">
+                               <Package className="w-5 h-5" />
+                            </div>
+                            <div>
+                               <p className="text-sm font-black text-zinc-900 line-clamp-1">{order.product}</p>
+                               <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-tighter">{order.date}</p>
+                            </div>
+                         </div>
+                       </td>
+                       <td className="py-6 text-center font-mono text-[11px] font-bold text-zinc-400 group-hover/row:text-[#D9A606] transition-colors">#{order.id.split('-')[1]}</td>
+                       <td className="py-6 text-center">
+                          <span className="text-sm font-black text-zinc-900">${order.amount.toFixed(2)}</span>
+                          <span className="text-[9px] font-black text-zinc-400 ml-1">USD</span>
+                       </td>
+                       <td className="py-6 text-right">
+                          <span className={`px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest border transition-all ${
+                            order.status === 'processing' ? 'bg-blue-50 text-blue-600 border-blue-100' :
+                            order.status === 'shipped' ? 'bg-amber-50 text-amber-600 border-amber-100' :
+                            'bg-green-50 text-green-600 border-green-100'
+                          }`}>
+                            {order.status}
+                          </span>
+                       </td>
+                     </tr>
+                   ))}
+                 </tbody>
+               </table>
+             </div>
           </div>
         </div>
 
-        <div className="lg:col-span-1">
-          <div className="bg-white shadow rounded-xl border border-gray-100 h-full">
-            <div className="px-6 py-5 border-b border-gray-200">
-              <h3 className="text-lg font-black text-gray-900 uppercase tracking-tight">Activity Feed</h3>
-            </div>
-            <div className="px-6 py-5">
-              <ul className="space-y-6">
-                {notifications.map((notification) => (
-                  <li key={notification.id} className="flex space-x-3 group">
-                    <div className={`flex-shrink-0 h-10 w-10 rounded-xl flex items-center justify-center transition-colors ${
-                      notification.type === 'order' ? 'bg-blue-50 text-blue-600' : 
-                      notification.type === 'stock' ? 'bg-yellow-50 text-yellow-600' : 'bg-green-50 text-green-600'
-                    }`}>
-                      {notification.type === 'order' ? <ShoppingBag className="h-5 w-5" /> : 
-                       notification.type === 'stock' ? <AlertCircle className="h-5 w-5" /> : <MessageSquare className="h-5 w-5" />}
+        {/* Intelligence Side Card (Buyer Wishlist Pattern) */}
+        <div className="lg:col-span-4 space-y-6">
+           <div className="p-10 rounded-[3rem] bg-white/40 border border-white/60 backdrop-blur-3xl shadow-xl overflow-hidden relative group">
+              <div className="flex items-center justify-between mb-8">
+                 <div className="w-12 h-12 rounded-2xl bg-red-100 flex items-center justify-center text-red-500 shadow-sm border border-red-50">
+                    <Heart className="w-6 h-6 fill-current" />
+                 </div>
+                 <span className="text-[10px] font-black text-zinc-400 uppercase tracking-widest">Inventory Health</span>
+              </div>
+              <h3 className="text-2xl font-black text-zinc-900 tracking-tighter mb-4 uppercase">Low Stock Alerts</h3>
+              <p className="text-sm font-bold text-zinc-500 leading-relaxed mb-8">
+                 <span className="text-red-500 font-extrabold text-lg">04</span> products are currently below threshold limits. Immediate restock recommended.
+              </p>
+              
+              <div className="space-y-4">
+                 {[1, 2].map((i) => (
+                    <div key={i} className="p-4 rounded-3xl bg-white/60 border border-gray-100 group/item hover:border-[#D9A606]/30 transition-all flex items-center justify-between">
+                       <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 rounded-xl bg-gray-50 flex items-center justify-center">
+                             <TrendingUp className="w-4 h-4 text-zinc-400 group-hover/item:text-red-500 transition-colors" />
+                          </div>
+                          <span className="text-[11px] font-black uppercase tracking-tight text-zinc-700">Stock Sync Alert #{i}</span>
+                       </div>
+                       <ChevronRight className="w-4 h-4 text-zinc-300" />
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="text-sm font-bold text-gray-800 group-hover:text-yellow-600 transition-colors">{notification.message}</p>
-                      <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mt-0.5">{notification.time}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            
-            <div className="px-6 py-6 bg-gray-50/50 rounded-b-xl border-t border-gray-100">
-              <h4 className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-4">Quick Management</h4>
-              <div className="grid grid-cols-2 gap-3">
-                <Link href="/vendor/dashboard/products/new" className="bg-white rounded-xl py-3 px-3 text-xs font-black text-gray-700 hover:bg-yellow-500 hover:text-white transition-all border border-gray-200 text-center shadow-sm">
-                  NEW PRODUCT
-                </Link>
-                <Link href="/vendor/dashboard/orders" className="bg-white rounded-xl py-3 px-3 text-xs font-black text-gray-700 hover:bg-yellow-500 hover:text-white transition-all border border-gray-200 text-center shadow-sm">
-                  VIEW ORDERS
-                </Link>
+                 ))}
               </div>
-            </div>
-          </div>
+           </div>
         </div>
       </div>
     </div>

@@ -46,7 +46,7 @@ export default function LoginPage() {
         } else if (session?.user?.role === 'ADMIN' || session?.user?.role === 'SUPER_ADMIN') {
           router.push('/admin');
         } else {
-          router.push('/dashboard');
+          router.push('/buyer/dashboard');
         }
       }
     } catch (err: unknown) {

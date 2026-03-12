@@ -12,7 +12,7 @@ export async function GET(request: Request) {
     const search = searchParams.get('search');
     
     const where: Prisma.VendorWhereInput = {
-      ...(type && type !== 'all' ? { businessType: type } : {}),
+      ...(type && type !== 'all' ? { businessType: { contains: type, mode: 'insensitive' as const } } : {}),
       ...(badge && badge !== 'all' ? { isVerified: badge === 'gold' } : {}),
       ...(country && country !== 'all' ? { location: { contains: country, mode: 'insensitive' as const } } : {}),
       ...(category && category !== 'all' ? { 

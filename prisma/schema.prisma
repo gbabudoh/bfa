@@ -1,5 +1,6 @@
 generator client {
   provider = "prisma-client-js"
+  output   = "../src/generated/client"
 }
 
 datasource db {
@@ -69,10 +70,26 @@ model Vendor {
   banner      String?
   location    String?
   rating      Float     @default(0)
+  reviewCount Int       @default(0)
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
   isVerified  Boolean   @default(false)
   businessType String?   @default("retailer")
+  longDescription String?
+  badgeType     String?   @default("Registered Business")
+  regNumber     String?
+  categories    String[]  @default([])
+  shippingCountries String[] @default([])
+  paymentOptions String[] @default([])
+  contactEmail  String?
+  contactPhone  String?
+  website       String?
+  address       String?
+  businessHours String?
+  certifications String[] @default([])
+  productionCapacity String?
+  minOrderWholesale String?
+  minOrderRetail    String?
   products    Product[]
   user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
 }

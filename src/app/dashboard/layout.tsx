@@ -89,7 +89,7 @@ export default function DashboardLayout({
               
               {/* Logo */}
               <div className="flex-shrink-0 flex items-center">
-                <Link href="/dashboard" className="flex items-center">
+                <Link href={userRole === 'buyer' ? '/buyer/dashboard' : userRole === 'vendor' ? '/vendor/dashboard' : '/dashboard'} className="flex items-center">
                   <Image 
                     src="/logo.png" 
                     alt="Buy from Africa" 
@@ -106,7 +106,7 @@ export default function DashboardLayout({
             {/* Nav Links - Desktop */}
             <nav className="hidden lg:flex lg:space-x-8 lg:ml-8">
               <Link 
-                href="/dashboard" 
+                href={userRole === 'buyer' ? '/buyer/dashboard' : userRole === 'vendor' ? '/vendor/dashboard' : '/dashboard'}
                 className="border-yellow-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
               >
                 Dashboard
@@ -361,7 +361,7 @@ export default function DashboardLayout({
               </div>
               <div className="flex-1 space-y-1 pl-2 pr-6">
                 <Link 
-                  href="/dashboard" 
+                  href={userRole === 'buyer' ? '/buyer/dashboard' : userRole === 'vendor' ? '/vendor/dashboard' : '/dashboard'} 
                   className="text-gray-900 group flex items-center px-3 py-3 text-sm font-medium rounded-md bg-yellow-50"
                 >
                   <LayoutDashboard className="text-yellow-600 mr-3 flex-shrink-0 h-5 w-5" />

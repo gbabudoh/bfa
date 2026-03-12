@@ -9,8 +9,9 @@ export default function ConditionalLayout({ children }: { children: React.ReactN
   const isAdminRoute = pathname?.startsWith('/admin');
   const isVendorRoute = pathname?.startsWith('/vendor');
   const isDashboardRoute = pathname?.startsWith('/dashboard');
+  const isBuyerRoute = pathname?.startsWith('/buyer');
 
-  if (isAdminRoute || isVendorRoute || isDashboardRoute) {
+  if (isAdminRoute || isVendorRoute || isDashboardRoute || isBuyerRoute) {
     return <>{children}</>;
   }
 

@@ -74,22 +74,23 @@ interface BusinessTypeInfo {
 
 // Get business type display info
 const getBusinessTypeInfo = (type: string): BusinessTypeInfo => {
-  switch(type) {
-    case 'artisan':
-    case 'manufacturer': // fallback for old data
-      return { icon: <Palette className="h-4 w-4" />, color: 'bg-blue-100 text-blue-800' };
-    case 'brand':
-    case 'distributor': // fallback for old data
-      return { icon: <Shirt className="h-4 w-4" />, color: 'bg-green-100 text-green-800' };
-    case 'factory':
-    case 'wholesaler': // fallback for old data
-      return { icon: <Factory className="h-4 w-4" />, color: 'bg-yellow-100 text-yellow-800' };
-    case 'export':
-    case 'retailer': // fallback for old data
-      return { icon: <Globe className="h-4 w-4" />, color: 'bg-purple-100 text-purple-800' };
-    default:
-      return { icon: <Tag className="h-4 w-4" />, color: 'bg-gray-100 text-gray-800' };
+  const t = (type || '').toLowerCase();
+  
+  if (t.includes('artisan') || t.includes('maker')) {
+    return { icon: <Palette className="h-4 w-4" />, color: 'bg-blue-100 text-blue-800' };
   }
+  if (t.includes('brand') || t.includes('designer')) {
+    return { icon: <Shirt className="h-4 w-4" />, color: 'bg-green-100 text-green-800' };
+  }
+  if (t.includes('manufacturer') || t.includes('factory')) {
+    return { icon: <Factory className="h-4 w-4" />, color: 'bg-yellow-100 text-yellow-800' };
+  }
+  if (t.includes('distributor') || t.includes('export')) {
+    return { icon: <Globe className="h-4 w-4" />, color: 'bg-purple-100 text-purple-800' };
+  }
+
+  // Fallback for any other types
+  return { icon: <Tag className="h-4 w-4" />, color: 'bg-gray-100 text-gray-800' };
 };
 
 // Countries constant for filtering
