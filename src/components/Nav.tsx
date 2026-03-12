@@ -74,7 +74,7 @@ const Nav = () => {
     const role = session.user.role;
     if (role === 'VENDOR') return '/vendor/dashboard';
     if (role === 'ADMIN' || role === 'SUPER_ADMIN') return '/admin';
-    return '/dashboard';
+    return '/buyer/dashboard';
   };
 
   useEffect(() => {

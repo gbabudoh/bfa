@@ -100,3 +100,50 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: 'Failed to fetch products' }, { status: 500 });
   }
 }
+
+export async function POST(request: Request) {
+  try {
+    const body = await request.json();
+    const { 
+      name, 
+      description, 
+      price, 
+      category, 
+      stock, 
+      images, 
+      isWholesale, 
+      wholesalePrice, 
+      minWholesaleQty,
+      isRetail,
+      vendorId 
+    } = body;
+
+    // Validate required fields
+    if (!name || !description || !price || !category || !vendorId) {
+      return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
+    }
+
+    const product = await prisma.product.create({
+      data: {
+        name,
+        description,
+        price: parseFloat(price),
+        category,
+        stock: parseInt(stock) || 0,
+        images: images || [],
+        isWholesale: isWholesale || false,
+        wholesalePrice: wholesalePrice ? parseFloat(wholesalePrice) : null,
+        minWholesaleQty: minWholesaleQty ? parseInt(minWholesaleQty) : null,
+        isRetail: isRetail ?? true,
+        vendor: {
+          connect: { id: vendorId }
+        }
+      }
+    });
+
+    return NextResponse.json(product, { status: 201 });
+  } catch (error) {
+    console.error('Error creating product:', error);
+    return NextResponse.json({ error: 'Failed to create product' }, { status: 500 });
+  }
+}

@@ -151,7 +151,7 @@ export default function VendorDashboardLayout({
                           <button 
                             onClick={() => {
                               setIsUserMenuOpen(false);
-                              signOut();
+                              signOut({ callbackUrl: '/' });
                             }}
                             className="w-full flex items-center gap-3 px-5 py-4 rounded-2xl text-red-500 hover:bg-red-50/50 transition-all group"
                           >
@@ -219,7 +219,7 @@ export default function VendorDashboardLayout({
 
               <div className="mt-4 pt-4 border-t border-gray-100/50">
                 <button
-                  onClick={() => signOut()}
+                  onClick={() => signOut({ callbackUrl: '/' })}
                   className="w-full group flex items-center gap-4 px-5 py-4 rounded-2xl text-[11px] font-black text-red-600 transition-all hover:bg-red-50 hover:shadow-[0_10px_20px_rgba(220,38,38,0.1)] border border-transparent hover:border-red-100"
                 >
                   <LogOut className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
@@ -282,6 +282,15 @@ export default function VendorDashboardLayout({
                 );
               })}
             </nav>
+            <div className="mt-auto pt-6 border-t border-gray-100">
+              <button
+                onClick={() => signOut({ callbackUrl: '/' })}
+                className="w-full flex items-center gap-4 px-5 py-4 rounded-2xl text-[13px] font-black text-red-600 hover:bg-red-50 transition-all"
+              >
+                <LogOut className="w-5 h-5" />
+                <span className="uppercase tracking-widest">Sign Out</span>
+              </button>
+            </div>
           </div>
         </div>
       )}

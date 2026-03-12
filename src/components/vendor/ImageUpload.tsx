@@ -58,7 +58,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
 
   const containerClass = aspectRatio === "square" 
     ? "aspect-square w-32" 
-    : "aspect-[21/9] w-full";
+    : "aspect-[21/9] w-full max-h-48";
 
   return (
     <div className="space-y-2">

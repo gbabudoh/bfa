@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+button, 
+a, 
+svg, 
+i, 
+[role="button"] {
+  cursor: pointer;
+}
+
 
 /* Custom animations */
 @keyframes blob {
