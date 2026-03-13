@@ -16,6 +16,7 @@ import Image from 'next/image';
 import { Vendor } from '@/types/vendor';
 import VideoCall from './VideoCall';
 import { useSession } from 'next-auth/react';
+import { useTranslations } from 'next-intl';
 
 interface VendorHeaderProps {
   vendor: Vendor;
@@ -23,12 +24,14 @@ interface VendorHeaderProps {
 }
 
 const VendorHeader: React.FC<VendorHeaderProps> = ({ vendor, getCountryFlag }) => {
+  const t = useTranslations('VendorStorefront');
+  const tv = useTranslations('Vendors');
   const { data: session } = useSession();
   const [callMode, setCallMode] = React.useState<'voice' | 'video' | null>(null);
 
   const handleStartCall = (mode: 'voice' | 'video') => {
     if (!session) {
-      alert(`Please sign in to start a ${mode} call.`);
+      alert(t('signInPrompt', { mode }));
       return;
     }
     setCallMode(mode);
@@ -89,11 +92,15 @@ const VendorHeader: React.FC<VendorHeaderProps> = ({ vendor, getCountryFlag }) =
                     <div className="flex items-center gap-2">
                        <span className="bg-[#FFFBEB] text-[#D9A606] text-[10px] font-bold px-2 py-1 rounded-sm border border-[#FDE68A] flex items-center">
                         <Star className="h-3 w-3 mr-1 fill-current" />
-                        GOLD
+                        {t('goldBadge')}
                       </span>
                       <span className="bg-[#EBF5FF] text-[#1E40AF] text-[10px] font-bold px-2 py-1 rounded-sm border border-[#DBEAFE] flex items-center">
                         <Factory className="h-3 w-3 mr-1" />
-                        {vendor.businessType?.toUpperCase() || 'VENDOR'}
+                        {vendor.businessType === 'factory' || vendor.businessType === 'manufacturer' ? t('factoryBadge') : 
+                         vendor.businessType === 'artisan' ? t('artisanBadge') : 
+                         vendor.businessType === 'designer' ? t('brandBadge') : 
+                         vendor.businessType === 'exporter' ? t('exportBadge') : 
+                         vendor.businessType?.toUpperCase() || 'VENDOR'}
                       </span>
                     </div>
                   </div>
@@ -105,7 +112,7 @@ const VendorHeader: React.FC<VendorHeaderProps> = ({ vendor, getCountryFlag }) =
                       ))}
                       <Star className="h-5 w-5 text-[#D9A606] fill-current opacity-50" />
                     </div>
-                    <span className="ml-2 text-base font-medium text-gray-600">{vendor.rating} ({vendor.reviewCount} reviews)</span>
+                    <span className="ml-2 text-base font-medium text-gray-600">{vendor.rating} ({t('reviewsCount', { count: vendor.reviewCount })})</span>
                   </div>
                   
                   <div className="flex flex-wrap items-center mt-5 text-sm text-gray-500 gap-y-2">
@@ -117,16 +124,20 @@ const VendorHeader: React.FC<VendorHeaderProps> = ({ vendor, getCountryFlag }) =
                     </div>
                     <div className="flex items-center mr-6">
                       <Globe className="h-4 w-4 text-[#D9A606] mr-2" />
-                      {vendor.badgeType}
+                      {vendor.badgeType === 'Registered African business (Gold Badge Vendor)' 
+                        ? tv('goldBadgeDescription') 
+                        : vendor.badgeType === 'Individual or non-registered business (Blue Badge Vendor)' 
+                          ? tv('blueBadgeDescription') 
+                          : tv('defaultVendorDescription')}
                     </div>
                     <div className="flex items-center">
                       <Clock className="h-4 w-4 text-[#D9A606] mr-2" />
-                      Member since {vendor.joinDate}
+                      {t('memberSinceShort', { date: vendor.joinDate || '' })}
                     </div>
                   </div>
                   
                   <div className="mt-4 text-sm text-gray-600">
-                    <span className="font-semibold text-gray-900">Registration No:</span> {vendor.regNumber}
+                    <span className="font-semibold text-gray-900">{t('registrationNo')}</span> {vendor.regNumber}
                   </div>
                 </div>
                 
@@ -136,14 +147,14 @@ const VendorHeader: React.FC<VendorHeaderProps> = ({ vendor, getCountryFlag }) =
                     className="bg-[#D9A606] hover:bg-[#A37304] text-white px-5 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center shadow-sm cursor-pointer transform active:scale-95"
                   >
                     <Phone className="h-3.5 w-3.5 mr-2" /> 
-                    VOICE CALL
+                    {t('voiceCall')}
                   </button>
                   <button 
                     onClick={() => handleStartCall('video')}
                     className="bg-white hover:bg-gray-50 text-gray-800 border border-gray-200 px-5 py-2.5 rounded-xl text-xs font-bold transition-all shadow-sm flex items-center justify-center gap-2 transform active:scale-95 group cursor-pointer"
                   >
                     <Video className="h-3.5 w-3.5 text-[#D9A606] group-hover:scale-110 transition-transform" /> 
-                    VIDEO CALL
+                    {t('videoCall')}
                   </button>
                 </div>
               </div>
@@ -163,7 +174,7 @@ const VendorHeader: React.FC<VendorHeaderProps> = ({ vendor, getCountryFlag }) =
               <div className="mt-8 pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
                 <div className="flex flex-wrap gap-x-12 gap-y-6">
                   <div>
-                    <h3 className="text-sm font-semibold text-gray-900 mb-3">Payment Options</h3>
+                    <h3 className="text-sm font-semibold text-gray-900 mb-3">{t('paymentOptions')}</h3>
                     <div className="flex flex-wrap gap-3">
                       {vendor.paymentOptions.map((option: string, index: number) => (
                         <span key={index} className="bg-[#F3F4F6] text-gray-700 px-3 py-1.5 rounded-md text-xs font-medium flex items-center border border-gray-200">
@@ -175,7 +186,7 @@ const VendorHeader: React.FC<VendorHeaderProps> = ({ vendor, getCountryFlag }) =
                   </div>
                   
                   <div>
-                    <h3 className="text-sm font-semibold text-gray-900 mb-3">Shipping</h3>
+                    <h3 className="text-sm font-semibold text-gray-900 mb-3">{t('shipping')}</h3>
                     <div className="flex flex-wrap gap-3">
                       {vendor.shippingCountries.map((country: string, index: number) => (
                         <span key={index} className="bg-[#F3F4F6] text-gray-700 px-3 py-1.5 rounded-md text-xs font-medium flex items-center border border-gray-200">
@@ -190,11 +201,11 @@ const VendorHeader: React.FC<VendorHeaderProps> = ({ vendor, getCountryFlag }) =
                 <div className="flex items-center gap-6">
                   <button className="text-gray-500 hover:text-[#D9A606] transition flex items-center font-medium cursor-pointer">
                     <Heart className="h-5 w-5 mr-1.5" />
-                    Save
+                    {t('save')}
                   </button>
                   <button className="text-gray-500 hover:text-[#D9A606] transition flex items-center font-medium cursor-pointer">
                     <Share2 className="h-5 w-5 mr-1.5" />
-                    Share
+                    {t('share')}
                   </button>
                 </div>
               </div>

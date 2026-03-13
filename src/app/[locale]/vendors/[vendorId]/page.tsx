@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { 
@@ -90,6 +91,7 @@ const getCountryFlag = (location: string): string => {
 };
 
 export default function VendorDetailPage() {
+  const t = useTranslations('VendorStorefront');
   const params = useParams();
   const vendorId = params.vendorId as string;
   
@@ -108,7 +110,7 @@ export default function VendorDetailPage() {
           const mappedVendor: Vendor = {
             ...data,
             name: data.storeName,
-            joinDate: new Date(data.createdAt).toLocaleDateString('en-US', { month: 'long', year: 'numeric' }),
+            joinDate: new Date(data.createdAt).toLocaleDateString(params.locale as string || 'en', { month: 'long', year: 'numeric' }),
             badge: 'gold', // Default or fetch from DB
             minimumOrderQuantity: `Wholesale: ${data.minOrderWholesale || 'N/A'}, Retail: ${data.minOrderRetail || 'N/A'}`,
             contactInfo: {
@@ -132,14 +134,14 @@ export default function VendorDetailPage() {
     if (vendorId) {
       fetchVendorData();
     }
-  }, [vendorId]);
+  }, [vendorId, params.locale]);
 
   if (loading) {
     return (
       <div className="min-h-screen bg-[#FFFDF5] flex items-center justify-center">
         <div className="flex flex-col items-center gap-4">
           <div className="h-12 w-12 border-4 border-yellow-200 border-t-yellow-600 rounded-full animate-spin"></div>
-          <p className="font-bold text-gray-500 animate-pulse">Loading Storefront...</p>
+          <p className="font-bold text-gray-500 animate-pulse">{t('loading')}</p>
         </div>
       </div>
     );
@@ -149,10 +151,10 @@ export default function VendorDetailPage() {
     return (
       <div className="min-h-screen bg-[#FFFDF5] flex items-center justify-center p-8 text-center">
         <div>
-          <h1 className="text-4xl font-black text-gray-900 mb-4 tracking-tighter uppercase">Vendor Not Found</h1>
-          <p className="text-gray-500 max-w-md mb-8">The vendor you are looking for might have moved or is currently unavailable.</p>
+          <h1 className="text-4xl font-black text-gray-900 mb-4 tracking-tighter uppercase">{t('notFoundTitle')}</h1>
+          <p className="text-gray-500 max-w-md mb-8">{t('notFoundDesc')}</p>
           <Link href="/vendors" className="bg-[#D9A606] text-white px-8 py-4 rounded-2xl font-black shadow-lg hover:bg-[#A37304] transition-all">
-            EXPLORE ALL VENDORS
+            {t('exploreAll')}
           </Link>
         </div>
       </div>
@@ -175,9 +177,9 @@ export default function VendorDetailPage() {
         <div className="mb-10 border-b border-gray-200">
           <nav className="flex space-x-12">
             {[
-              { id: 'products', name: 'Products' },
-              { id: 'about', name: 'About' },
-              { id: 'reviews', name: 'Reviews' },
+              { id: 'products', name: t('tabs.products') },
+              { id: 'about', name: t('tabs.about') },
+              { id: 'reviews', name: t('tabs.reviews') },
             ].map((tab) => (
               <button 
                 key={tab.id}
@@ -201,17 +203,17 @@ export default function VendorDetailPage() {
         {activeTab === 'products' && (
           <div>
             <div className="flex justify-between items-center mb-10">
-              <h2 className="text-2xl font-bold text-gray-900">Products ({products.length})</h2>
+              <h2 className="text-2xl font-bold text-gray-900">{t('tabs.products')} ({products.length})</h2>
               <div className="flex items-center gap-3">
                 <select className="bg-white border border-gray-200 rounded-xl text-sm px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#D9A606] focus:border-transparent shadow-sm cursor-pointer">
-                  <option>All Categories</option>
+                  <option>{t('allCategories')}</option>
                   <option>Textiles</option>
                   <option>Clothing</option>
                   <option>Crafts</option>
                 </select>
                 <button className="bg-white border border-gray-200 px-4 py-2 rounded-xl text-sm font-bold flex items-center hover:bg-gray-50 transition-colors shadow-sm cursor-pointer">
                   <ArrowUpDown className="h-4 w-4 mr-2 text-[#D9A606]" />
-                  Sort
+                  {t('sort')}
                 </button>
               </div>
             </div>
@@ -229,12 +231,12 @@ export default function VendorDetailPage() {
                       <div className="absolute top-4 left-4 flex flex-col gap-2">
                         {product.isWholesale && (
                           <span className="bg-[#1D4ED8] text-white text-[10px] font-black px-2 py-1 rounded-sm uppercase tracking-tighter">
-                            Wholesale
+                            {t('wholesale')}
                           </span>
                         )}
                         {product.stock <= 0 && (
                           <span className="bg-[#DC2626] text-white text-[10px] font-black px-2 py-1 rounded-sm uppercase tracking-tighter">
-                            Out of Stock
+                            {t('outOfStock')}
                           </span>
                         )}
                       </div>
@@ -266,7 +268,7 @@ export default function VendorDetailPage() {
                   <div className="px-5 pb-5 pt-0 flex justify-between items-center mt-2">
                     <Link href={`/products/${product.id}`} className="bg-[#D9A606] hover:bg-[#A37304] text-white px-4 py-2 rounded-lg text-xs font-bold transition-colors flex items-center shadow-sm cursor-pointer">
                       <ShoppingBag className="h-3.5 w-3.5 mr-2" />
-                      View Details
+                      {t('viewDetails')}
                     </Link>
                     
                     <button className="text-gray-300 hover:text-[#DC2626] transition-colors p-2 cursor-pointer">
@@ -293,12 +295,12 @@ export default function VendorDetailPage() {
             <div className="bg-[#FFFBEB] p-4 rounded-full mb-4">
               <Star className="h-8 w-8 text-[#D9A606]" fill="currentColor" />
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-2">Customer Reviews</h3>
+            <h3 className="text-xl font-bold text-gray-900 mb-2">{t('customerReviews')}</h3>
             <p className="text-gray-500 max-w-md mx-auto">
-              This vendor currently has {vendor.rating || 0} average rating from {vendor.reviewCount || 0} reviews. We&apos;re currently updating our review interface to better showcase customer feedback.
+              {t('reviewPlaceholder', { rating: vendor.rating || 0, count: vendor.reviewCount || 0 })}
             </p>
             <button className="mt-6 bg-[#D9A606] text-white px-8 py-3 rounded-xl font-bold hover:bg-[#A37304] transition-colors shadow-sm cursor-pointer">
-              Write a Review
+              {t('writeReview')}
             </button>
           </div>
         )}
