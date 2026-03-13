@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import ImageUpload from './ImageUpload';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface VendorData {
   id: string;
@@ -57,10 +58,34 @@ const SHIPPING_REGIONS = [
 ];
 
 const PRODUCT_CATEGORIES = [
-  'Agriculture & Food', 'Fashion & Textiles', 'Arts & Crafts', 
-  'Beauty & Personal Care', 'Electronics', 'Home & Living',
-  'Health & Wellness', 'Industrial & Manufacturing', 'Jewelry & Accessories',
-  'Raw Materials', 'Packaging', 'Energy & Sustainability'
+  // Manufacturers
+  'Textiles and fabrics', 'Apparel and fashion accessories', 'Leather and leather goods',
+  'Footwear', 'Automotive assembly and components', 'Electrical equipment and cables',
+  'Electronics and small appliances', 'Industrial machinery and equipment',
+  'Furniture and fittings', 'Packaging materials',
+  // Artisans
+  'Handicrafts and souvenirs', 'Home décor and interior items',
+  'Traditional art, sculpture, and carvings', 'Jewellery and adornments',
+  'Cultural and religious items',
+  // Miners
+  'Minerals and ores', 'Precious metals and gemstones', 'Industrial minerals',
+  // Industrial
+  'Building materials and construction products', 'Metals and metal products',
+  'Wood and wood products', 'Paper, pulp, and printed materials',
+  'Chemicals and petrochemicals', 'Fertilizers and agro-inputs',
+  'Paints, coatings, and adhesives', 'Plastics and rubber products',
+  // Food and Agriculture
+  'Agricultural commodities', 'Processed foods and beverages',
+  'Livestock and animal products', 'Fisheries and aquaculture products',
+  // Health & Wellness
+  'Pharmaceuticals and medical supplies', 'Cosmetics, beauty, and personal care',
+  'Health and wellness products',
+  // Home & Living
+  'Cleaning and household care products', 'Eco-friendly and sustainable products',
+  'Educational and office supplies',
+  // Technology & Energy
+  'Renewable energy equipment', 'ICT hardware assembly',
+  'Digital content tied to physical goods',
 ];
 
 type TabType = 'identity' | 'contact' | 'business' | 'shipping' | 'preview';
@@ -699,7 +724,7 @@ export default function StorefrontSettingsForm() {
               {/* Banner */}
               <div className="h-48 bg-gradient-to-r from-gray-200 to-gray-300 relative">
                 {formData.banner && (
-                  <img src={formData.banner} alt="Banner" className="w-full h-full object-cover" />
+                  <Image src={formData.banner} alt="Banner" fill className="object-cover" unoptimized />
                 )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               </div>
@@ -709,7 +734,7 @@ export default function StorefrontSettingsForm() {
                 <div className="flex items-end gap-6">
                   <div className="w-32 h-32 rounded-2xl bg-white border-4 border-white shadow-lg overflow-hidden">
                     {formData.logo ? (
-                      <img src={formData.logo} alt="Logo" className="w-full h-full object-cover" />
+                      <Image src={formData.logo} alt="Logo" fill className="object-cover" unoptimized />
                     ) : (
                       <div className="w-full h-full bg-gray-100 flex items-center justify-center">
                         <Store className="w-12 h-12 text-gray-300" />

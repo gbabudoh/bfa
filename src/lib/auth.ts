@@ -13,7 +13,9 @@ export const authOptions: NextAuthOptions = {
         password: { label: "Password", type: "password" }
       },
       async authorize(credentials) {
+        console.log("Auth attempt for:", credentials?.email);
         if (!credentials?.email || !credentials?.password) {
+          console.log("Missing credentials");
           return null;
         }
 
@@ -23,16 +25,24 @@ export const authOptions: NextAuthOptions = {
             include: { vendor: { select: { id: true } } }
           });
 
-          if (!user || !user.password) {
+          if (!user) {
+            console.log("User not found in DB:", credentials.email);
+            return null;
+          }
+
+          if (!user.password) {
+            console.log("User has no password in DB:", credentials.email);
             return null;
           }
 
           const isValid = await bcrypt.compare(credentials.password, user.password);
+          console.log("Password comparison result:", isValid);
 
           if (!isValid) {
             return null;
           }
 
+          console.log("Login successful for:", user.email, "Role:", user.role);
           return {
             id: user.id,
             email: user.email,

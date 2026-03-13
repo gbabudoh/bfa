@@ -28,7 +28,6 @@ export default function VendorAddProductPage() {
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
   const [images, setImages] = useState<{ file: File; preview: string }[]>([]);
-  const [isUploading, setIsUploading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const additionalFileInputRef = useRef<HTMLInputElement>(null);
 
@@ -116,7 +115,6 @@ export default function VendorAddProductPage() {
       const uploadedImageUrls: string[] = [];
       
       if (images.length > 0) {
-        setIsUploading(true);
         for (const img of images) {
           const formData = new FormData();
           formData.append('file', img.file);
@@ -131,7 +129,6 @@ export default function VendorAddProductPage() {
             uploadedImageUrls.push(uploadData.url);
           }
         }
-        setIsUploading(false);
       }
 
       const response = await fetch('/api/products', {
@@ -162,7 +159,6 @@ export default function VendorAddProductPage() {
       setErrorMessage(msg);
     } finally {
       setIsSubmitting(false);
-      setIsUploading(false);
     }
   };
 
@@ -416,11 +412,63 @@ export default function VendorAddProductPage() {
                          onChange={handleInputChange}
                          className="w-full bg-white border-2 border-gray-300 rounded-2xl px-6 py-4 text-sm font-bold text-zinc-900 focus:outline-none focus:ring-2 focus:ring-[#D9A606]/30 focus:border-[#D9A606] transition-all appearance-none cursor-pointer"
                         >
-                          <option value="">Select Category</option>
-                          <option value="Home Decór">Home Decór</option>
-                          <option value="Art & Collectibles">Art & Collectibles</option>
-                          <option value="Fashion & Textiles">Fashion & Textiles</option>
-                       </select>
+                           <option value="">Select Category</option>
+                           <optgroup label="Manufacturers">
+                             <option value="Textiles and fabrics">Textiles and fabrics</option>
+                             <option value="Apparel and fashion accessories">Apparel and fashion accessories</option>
+                             <option value="Leather and leather goods">Leather and leather goods</option>
+                             <option value="Footwear">Footwear</option>
+                             <option value="Automotive assembly and components">Automotive assembly and components</option>
+                             <option value="Electrical equipment and cables">Electrical equipment and cables</option>
+                             <option value="Electronics and small appliances">Electronics and small appliances</option>
+                             <option value="Industrial machinery and equipment">Industrial machinery and equipment</option>
+                             <option value="Furniture and fittings">Furniture and fittings</option>
+                             <option value="Packaging materials">Packaging materials (paper, plastic, glass, metal)</option>
+                           </optgroup>
+                           <optgroup label="Artisans">
+                             <option value="Handicrafts and souvenirs">Handicrafts and souvenirs</option>
+                             <option value="Home décor and interior items">Home décor and interior items</option>
+                             <option value="Traditional art, sculpture, and carvings">Traditional art, sculpture, and carvings</option>
+                             <option value="Jewellery and adornments">Jewellery and adornments</option>
+                             <option value="Cultural and religious items">Cultural and religious items</option>
+                           </optgroup>
+                           <optgroup label="Miners">
+                             <option value="Minerals and ores">Minerals and ores</option>
+                             <option value="Precious metals and gemstones">Precious metals and gemstones</option>
+                             <option value="Industrial minerals">Industrial minerals (cement inputs, phosphates, etc.)</option>
+                           </optgroup>
+                           <optgroup label="Industrial">
+                             <option value="Building materials and construction products">Building materials and construction products</option>
+                             <option value="Metals and metal products">Metals and metal products (basic and fabricated)</option>
+                             <option value="Wood and wood products">Wood and wood products (sawn timber, panels, joinery)</option>
+                             <option value="Paper, pulp, and printed materials">Paper, pulp, and printed materials</option>
+                             <option value="Chemicals and petrochemicals">Chemicals and petrochemicals</option>
+                             <option value="Fertilizers and agro-inputs">Fertilizers and agro-inputs</option>
+                             <option value="Paints, coatings, and adhesives">Paints, coatings, and adhesives</option>
+                             <option value="Plastics and rubber products">Plastics and rubber products</option>
+                           </optgroup>
+                           <optgroup label="Food and Agriculture">
+                             <option value="Agricultural commodities">Agricultural commodities</option>
+                             <option value="Processed foods and beverages">Processed foods and beverages</option>
+                             <option value="Livestock and animal products">Livestock and animal products</option>
+                             <option value="Fisheries and aquaculture products">Fisheries and aquaculture products</option>
+                           </optgroup>
+                           <optgroup label="Health & Wellness">
+                              <option value="Pharmaceuticals and medical supplies">Pharmaceuticals and medical supplies</option>
+                              <option value="Cosmetics, beauty, and personal care">Cosmetics, beauty, and personal care</option>
+                              <option value="Health and wellness products">Health and wellness products (herbal remedies, supplements)</option>
+                            </optgroup>
+                            <optgroup label="Home & Living">
+                              <option value="Cleaning and household care products">Cleaning and household care products</option>
+                              <option value="Eco-friendly and sustainable products">Eco-friendly and sustainable products (organic, fair trade, recycled)</option>
+                              <option value="Educational and office supplies">Educational and office supplies</option>
+                            </optgroup>
+                            <optgroup label="Technology & Energy">
+                              <option value="Renewable energy equipment">Renewable energy equipment (solar components, small systems)</option>
+                              <option value="ICT hardware assembly">ICT hardware assembly (phones, devices)</option>
+                              <option value="Digital content tied to physical goods">Digital content tied to physical goods (branded merch, media-linked products)</option>
+                            </optgroup>
+                        </select>
                     </div>
                     <div className="space-y-2">
                        <label className="text-[9px] font-black text-zinc-500 uppercase tracking-widest ml-1">Origin Label</label>

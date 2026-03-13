@@ -7,7 +7,7 @@ const prisma = new PrismaClient();
 
 async function main() {
   const email = 'superadmin1@buyfromafrica.com';
-  const password = 'superadmin123';
+  const password = 'G1veSAaces2Dbkend';
   const hashedPassword = await bcrypt.hash(password, 10);
 
   console.log(`Upserting super admin: ${email}`);
