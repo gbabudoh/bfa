@@ -520,7 +520,11 @@ export default function VendorsPage() {
                   </div>
                   
                   <p className="mt-4 text-sm text-gray-600 line-clamp-2 leading-relaxed h-10">
-                    {vendor.description || t('defaultVendorDescription')}
+                    {vendor.description === 'Registered African business (Gold Badge Vendor)' 
+                      ? t('goldBadgeDescription') 
+                      : vendor.description === 'Individual or non-registered business (Blue Badge Vendor)' 
+                        ? t('blueBadgeDescription') 
+                        : (vendor.description || t('defaultVendorDescription'))}
                   </p>
                 </div>
                 

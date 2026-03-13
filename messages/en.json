@@ -276,7 +276,9 @@
     "exportBadge": "EXPORT",
     "paginationPrevious": "Previous",
     "paginationNext": "Next",
-    "defaultVendorDescription": "Verified African business partner providing quality goods and services."
+    "defaultVendorDescription": "Verified African business partner providing quality goods and services.",
+    "goldBadgeDescription": "Registered African business (Gold Badge Vendor)",
+    "blueBadgeDescription": "Individual or non-registered business (Blue Badge Vendor)"
   },
   "VendorTypes": {
     "title": "Verified African Business Partners",

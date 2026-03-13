@@ -276,7 +276,9 @@
     "exportBadge": "EXPORT",
     "paginationPrevious": "Précédent",
     "paginationNext": "Suivant",
-    "defaultVendorDescription": "Partenaire commercial africain vérifié fournissant des produits et services de qualité."
+    "defaultVendorDescription": "Partenaire commercial africain vérifié fournissant des produits et services de qualité.",
+    "goldBadgeDescription": "Entreprise africaine enregistrée (Vendeur Badge Or)",
+    "blueBadgeDescription": "Particulier ou entreprise non enregistrée (Vendeur Badge Bleu)"
   },
   "VendorTypes": {
     "title": "Partenaires Commerciaux Africains Vérifiés",
