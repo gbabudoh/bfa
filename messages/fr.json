@@ -1,0 +1,675 @@
+{
+  "Index": {
+    "title": "Bienvenue sur Buy From Africa",
+    "description": "Connecter les vendeurs africains au marché mondial."
+  },
+  "Hero": {
+    "title": "Connectez-vous avec des vendeurs africains du monde entier",
+    "description": "Découvrez des produits et services authentiques provenant directement d'entreprises africaines vérifiées.",
+    "explore": "Explorer les Produits",
+    "becomeVendor": "Devenir Vendeur"
+  },
+  "HowItWorks": {
+    "title": "Comment fonctionne Buy from Africa",
+    "subtitle": "Connectez-vous facilement avec des vendeurs africains vérifiés et accédez à des produits uniques",
+    "step1": {
+      "title": "S'inscrire",
+      "desc": "Créez votre compte pour obtenir un identifiant unique."
+    },
+    "step2": {
+      "title": "Parcourir",
+      "desc": "Explorez des produits authentiques de vendeurs vérifiés."
+    },
+    "step3": {
+      "title": "Connecter",
+      "desc": "Contactez les vendeurs en toute sécurité et négociez."
+    }
+  },
+  "FeaturedCategories": {
+    "title": "Catégories en Vedette",
+    "subtitle": "Découvrez des produits fabriqués en Afrique dans divers secteurs",
+    "viewAll": "Voir Toutes les Catégories"
+  },
+  "PlatformFeatures": {
+    "title": "Fonctionnalités Clés de la Plateforme",
+    "subtitle": "Tout ce dont vous avez besoin pour vous connecter, communiquer et effectuer des transactions avec des vendeurs africains",
+    "storefronts": {
+      "title": "Vitrines de Vendeurs",
+      "desc": "Vitrines personnalisables permettant aux vendeurs de présenter leurs produits et services avec des descriptions détaillées."
+    },
+    "messaging": {
+      "title": "Messagerie Sécurisée",
+      "desc": "Système de messagerie interne pour une communication sécurisée entre acheteurs et vendeurs."
+    },
+    "video": {
+      "title": "Vidéoconférence",
+      "desc": "Demandez des appels vidéo ou vocaux pour discuter des produits, négocier des accords et établir des relations."
+    },
+    "payments": {
+      "title": "Paiements Sécurisés",
+      "desc": "Plusieurs options de paiement approuvées pour garantir des transactions sûres et pratiques."
+    },
+    "shipping": {
+      "title": "Solutions d'Expédition",
+      "desc": "Partenaires d'expédition de confiance pour livrer des produits dans le monde entier de manière efficace et abordable."
+    },
+    "global": {
+      "title": "Accès Mondial",
+      "desc": "Connectez-vous avec des vendeurs africains de n'importe où dans le monde et découvrez des opportunités uniques."
+    }
+  },
+  "CTA": {
+    "title": "Prêt à acheter en Afrique ?",
+    "subtitle": "Rejoignez notre communauté croissante d'acheteurs et de vendeurs connectant les produits africains aux marchés mondiaux.",
+    "register": "S'inscrire Maintenant",
+    "browse": "Parcourir les Produits"
+  },
+  "Testimonials": {
+    "title": "Ce que disent nos utilisateurs",
+    "subtitle": "Histoires de réussite d'acheteurs et de vendeurs sur notre plateforme"
+  },
+  "Newsletter": {
+    "title": "Restez informé des nouveaux trésors africains",
+    "subtitle": "Rejoignez notre cercle restreint d'acheteurs d'élite. Découvrez en priorité les nouveaux vendeurs vérifiés et les produits en édition limitée.",
+    "placeholder": "nom@email.com",
+    "button": "S'abonner maintenant",
+    "privacy": "Nous respectons votre vie privée. Désabonnez-vous à tout moment."
+  },
+  "Nav": {
+    "browse": "Parcourir",
+    "categories": "Catégories",
+    "vendors": "Vendeurs",
+    "partnerships": "Partenariats",
+    "resources": "Ressources",
+    "about": "À Propos",
+    "login": "Connexion",
+    "register": "Commencer",
+    "dashboard": "Aller au Tableau de Bord",
+    "search": "Que recherchez-vous ?",
+    "industries": "Principales Industries",
+    "viewAll": "Voir Tout",
+    "nicheFallback": "Articles premium bientôt disponibles dans cette niche",
+    "discover": "Découvrez le Meilleur de l'Afrique",
+    "discoverDesc": "Survolez une catégorie à gauche pour explorer les produits spécialisés et les vendeurs vérifiés.",
+    "pressEsc": "Appuyez sur Esc pour fermer",
+    "trendingCategories": "Catégories Tendances",
+    "quickActions": "Actions Rapides",
+    "becomeVendor": "Devenir Vendeur",
+    "becomeVendorSubtitle": "Commencez à vendre vos produits à l'échelle mondiale",
+    "tradeResources": "Ressources Commerciales",
+    "tradeResourcesSubtitle": "Données sur les devises et la logistique",
+    "globalHub": "Hub Africain Mondial"
+  },
+  "Categories": {
+    "manufacturers": "Fabricants",
+    "textiles-and-fabrics": "Textiles et tissus",
+    "apparel-and-fashion-accessories": "Vêtements et accessoires de mode",
+    "leather-and-leather-goods": "Cuir et articles en cuir",
+    "footwear": "Chaussures",
+    "automotive-assembly-and-components": "Assemblage automobile et composants",
+    "electrical-equipment-and-cables": "Équipement électrique et câbles",
+    "electronics-and-small-appliances": "Électronique et petits appareils électroménagers",
+    "industrial-machinery-and-equipment": "Machines et équipements industriels",
+    "furniture-and-fittings": "Meubles et accessoires",
+    "packaging-materials": "Matériaux d'emballage",
+    "artisans": "Artisans",
+    "handicrafts-and-souvenirs": "Artisanat et souvenirs",
+    "home-decor-and-interior-items": "Décoration d'intérieur et articles de maison",
+    "traditional-art-sculpture-and-carvings": "Art traditionnel, sculpture et gravure",
+    "jewellery-and-adornments": "Bijoux et parures",
+    "cultural-and-religious-items": "Articles culturels et religieux",
+    "miners": "Mineurs",
+    "minerals-and-ores": "Minéraux et minerais",
+    "precious-metals-and-gemstones": "Métaux précieux et pierres gemmes",
+    "industrial-minerals": "Minéraux industriels",
+    "industrial": "Industriel",
+    "building-materials-and-construction-products": "Matériaux de construction et produits de bâtiment",
+    "metals-and-metal-products": "Métaux et produits métalliques",
+    "wood-and-wood-products": "Bois et produits du bois",
+    "paper-pulp-and-printed-materials": "Papier, pâte et imprimés",
+    "chemicals-and-petrochemicals": "Produits chimiques et pétrochimiques",
+    "fertilizers-and-agro-inputs": "Engrais et intrants agricoles",
+    "paints-coatings-and-adhesives": "Peintures, revêtements et adhésifs",
+    "plastics-and-rubber-products": "Plastiques et produits en caoutchouc",
+    "food-and-agriculture": "Alimentation et Agriculture",
+    "agricultural-commodities": "Produits de base agricoles",
+    "processed-foods-and-beverages": "Aliments transformés et boissons",
+    "livestock-and-animal-products": "Élevage et produits d'origine animale",
+    "fisheries-and-aquaculture-products": "Produits de la pêche et de l'aquaculture",
+    "health-and-wellness": "Santé et Bien-être",
+    "pharmaceuticals-and-medical-supplies": "Produits pharmaceutiques et fournitures médicales",
+    "cosmetics-beauty-and-personal-care": "Cosmétiques, beauté et soins personnels",
+    "health-and-wellness-products": "Produits de santé et de bien-être",
+    "home-and-living": "Maison et Art de vivre",
+    "cleaning-and-household-care-products": "Produits d'entretien et de soins ménagers",
+    "eco-friendly-and-sustainable-products": "Produits écologiques et durables",
+    "educational-and-office-supplies": "Fournitures scolaires et de bureau",
+    "technology-and-energy": "Technologie et Énergie",
+    "renewable-energy-equipment": "Équipements d'énergie renouvelable",
+    "ict-hardware-assembly": "Assemblage de matériel informatique",
+    "digital-content-tied-to-physical-goods": "Contenu numérique lié aux biens physiques",
+    "textiles": "Textiles et Vêtements",
+    "crafts": "Arts et Artisanat",
+    "food": "Alimentation et Agriculture",
+    "minerals": "Minéraux et Matériaux",
+    "jewelry": "Bijoux et Accessoires",
+    "beauty": "Santé et Beauté",
+    "tech": "Technologie et Services",
+    "home": "Maison et Décoration",
+    "viewAll": "Toutes les Catégories"
+  },
+  "CategoryPage": {
+    "home": "Accueil",
+    "breadcrumb": "Catégories",
+    "description": "Découvrez des produits {category} authentiques provenant de vendeurs vérifiés à travers l'Afrique.",
+    "specialized": "Produits et services spécialisés",
+    "sectionTitle": "Catégories de Produits",
+    "sectionSubtitle": "Découvrez des produits organisés par catégorie provenant de vendeurs africains",
+    "browseAll": "Parcourir Tous les Produits",
+    "browse": "Parcourir",
+    "category": "Catégorie"
+  },
+  "Products": {
+    "emptyState": {
+      "title": "Aucun produit trouvé",
+      "subtitle": "Essayez d'ajuster vos filtres ou parcourez d'autres catégories."
+    }
+  },
+  "Browse": {
+    "title": "Parcourir les Produits Africains",
+    "searchPlaceholder": "Rechercher des produits par nom ou description...",
+    "searchButton": "Rechercher",
+    "popular": "Populaire :",
+    "filters": "Filtres",
+    "clearAll": "Tout effacer",
+    "view": "Vue :",
+    "showing": "Affichage de {count} produits",
+    "sortBy": "Trier :",
+    "sortOptions": {
+      "newest": "Nouveautés",
+      "price-low": "Prix : Croissant",
+      "price-high": "Prix : Décroissant",
+      "popular": "Les plus populaires"
+    },
+    "loading": "Chargement des produits premium...",
+    "viewProducts": "Voir les Produits",
+    "resetFilters": "Réinitialiser tous les filtres",
+    "viewDetails": "Voir les détails",
+    "viewDetailsOrder": "Voir les détails et commander",
+    "bulk": "Gros :",
+    "unit": "/unité",
+    "verified": "Vérifié",
+    "outOfStock": "Rupture de stock",
+    "wholesale": "Vente en gros"
+  },
+  "Filters": {
+    "categories": "Catégories",
+    "allCategories": "Toutes les catégories",
+    "country": "Pays",
+    "salesType": "Type de vente",
+    "vendorOrigin": "Origine du vendeur",
+    "inStockOnly": "En stock uniquement"
+  },
+  "Countries": {
+    "all": "Tous les pays",
+    "Nigeria": "Nigéria",
+    "Ghana": "Ghana",
+    "Kenya": "Kenya",
+    "South Africa": "Afrique du Sud",
+    "Ethiopia": "Éthiopie",
+    "Tanzania": "Tanzanie",
+    "Morocco": "Maroc",
+    "Senegal": "Sénégal",
+    "Egypt": "Égypte",
+    "Rwanda": "Rwanda",
+    "Uganda": "Ouganda",
+    "Cameroon": "Cameroun",
+    "Ivory Coast": "Côte d'Ivoire",
+    "Zambia": "Zambie",
+    "Angola": "Angola"
+  },
+  "Vendors": {
+    "title": "Vendeurs Africains",
+    "subtitle": "Connectez-vous avec des entreprises vérifiées à travers toute la chaîne d'approvisionnement africaine",
+    "breadcrumbHome": "Accueil",
+    "breadcrumbVendors": "Vendeurs",
+    "becomeVendor": "Devenir Vendeur",
+    "allVendors": "Tous les Vendeurs",
+    "searchPlaceholder": "Rechercher des vendeurs par nom, produits ou emplacement...",
+    "ctaTitle": "Devenir Vendeur sur Buy from Africa",
+    "ctaSubtitle": "Présentez vos produits et connectez-vous avec des acheteurs du monde entier",
+    "ctaButton": "S'inscrire comme Vendeur",
+    "verificationSystem": "Notre Système de Vérification des Vendeurs",
+    "blueBadgeTitle": "Vendeurs Badge Bleu",
+    "blueBadgeDesc": "Vérification de base pour les entrepreneurs individuels",
+    "goldBadgeTitle": "Vendeurs Badge Or",
+    "goldBadgeDesc": "Vérification Premium pour les entreprises enregistrées",
+    "filters": "Filtres",
+    "businessType": "Type d'Entreprise",
+    "allBusinessTypes": "Tous les Types d'Entreprise",
+    "artisanMakers": "Artisans / Créateurs Africains",
+    "brandDesigners": "Marques / Designers Africains",
+    "manufacturerFactories": "Fabricants / Usines Africains",
+    "distributorExport": "Distributeurs / Agents d'Exportation Africains",
+    "verificationLevel": "Niveau de Vérification",
+    "goldBadge": "Vendeurs Badge Or",
+    "blueBadge": "Vendeurs Badge Bleu",
+    "activeFilters": "Filtres Actifs :",
+    "searchLabel": "Recherche :",
+    "typeLabel": "Type :",
+    "badgeLabel": "Badge :",
+    "countryLabel": "Pays :",
+    "categoryLabel": "Catégorie :",
+    "clearAll": "Tout effacer",
+    "loading": "Chargement des vendeurs vérifiés...",
+    "gold": "OR",
+    "blue": "BLEU",
+    "noLocation": "Emplacement non spécifié",
+    "spotlight": "Projecteur",
+    "viewProfile": "Voir le Profil de la Boutique",
+    "emptyTitle": "Aucun Vendeur Vérifié",
+    "emptyText": "Nous n'avons trouvé aucun vendeur correspondant à votre recherche ou à vos filtres actuels. Essayez d'élargir vos horizons de recherche.",
+    "resetAll": "Réinitialiser tous les paramètres",
+    "artisanBadge": "ARTISAN",
+    "brandBadge": "DESIGNER",
+    "factoryBadge": "USINE",
+    "exportBadge": "EXPORT",
+    "paginationPrevious": "Précédent",
+    "paginationNext": "Suivant",
+    "defaultVendorDescription": "Partenaire commercial africain vérifié fournissant des produits et services de qualité."
+  },
+  "VendorTypes": {
+    "title": "Partenaires Commerciaux Africains Vérifiés",
+    "subtitle": "Notre plateforme vous connecte avec des entreprises vérifiées sur l'ensemble de la chaîne d'approvisionnement africaine",
+    "artisanTitle": "Artisans / Créateurs Africains",
+    "artisanBadge": "ARTISAN",
+    "artisanDesc": "Accès direct à des artisans africains qualifiés et des maîtres créateurs produisant des articles authentiques et faits à la main. Trouvez des produits uniques reflétant un riche patrimoine culturel.",
+    "brandTitle": "Marques / Designers Africains",
+    "brandBadge": "DESIGNER",
+    "brandDesc": "Marques et designers africains établis combinant esthétique moderne et techniques traditionnelles. Idéal pour ceux qui recherchent des produits africains haut de gamme axés sur le design.",
+    "factoryTitle": "Fabricants / Usines Africains",
+    "factoryBadge": "USINE",
+    "factoryDesc": "Installations de fabrication africaines à grande échelle capables de gérer une production à haut volume. Connectez-vous avec des usines répondant aux normes internationales pour une distribution de masse.",
+    "exportTitle": "Distributeurs / Agents d'Exportation Africains",
+    "exportBadge": "EXPORT",
+    "exportDesc": "Partenaires logistiques fiables et agents d'exportation spécialisés dans le transport de marchandises africaines à l'échelle mondiale. Simplifiez votre chaîne d'approvisionnement avec des experts du commerce international.",
+    "badgeSystemTitle": "Système de Badge de Vérification",
+    "blueTitle": "Badge Bleu",
+    "blueSubtitle": "Vérification de base",
+    "goldTitle": "Badge Or",
+    "goldSubtitle": "Vérification Premium",
+    "checkIdentity": "Vérification d'identité",
+    "checkContact": "Informations de contact vérifiées",
+    "checkProductBasic": "Vérifications de base de l'authenticité des produits",
+    "checkRegistration": "Vérification de l'enregistrement de l'entreprise",
+    "checkBluePlus": "Toutes les vérifications du Badge Bleu",
+    "checkRegistrationOfficial": "Enregistrement officiel de l'entreprise vérifié",
+    "checkProductExtended": "Vérification approfondie de l'authenticité des produits",
+    "checkTradeDocs": "Licence commerciale et documentation d'exportation",
+    "blue": {
+      "title": "Vendeurs Badge Bleu",
+      "badge": "BLEU",
+      "desc": "Vérification de base pour les entrepreneurs individuels. Accès aux outils de vente de niveau d'entrée."
+    },
+    "gold": {
+      "title": "Vendeurs Badge Or",
+      "badge": "OR",
+      "desc": "Vérification premium pour les entreprises enregistrées. Accès à tous les outils de vente et analyses."
+    }
+  },
+  "SalesTypes": {
+    "all": "Tous les produits",
+    "retail": "Détail uniquement",
+    "wholesale": "Gros uniquement"
+  },
+  "VendorOrigins": {
+    "all": "Toutes les origines",
+    "artisan": "Artisan / Créateur",
+    "brand": "Marque / Designer",
+    "factory": "Fabricant / Usine",
+    "export": "Distributeur / Agent d'exportation"
+  },
+  "Footer": {
+    "description": "Connecter les vendeurs africains aux acheteurs mondiaux. Découvrez des produits et services authentiques de toute l'Afrique.",
+    "quickLinks": "Liens Rapides",
+    "browseProducts": "Parcourir les Produits",
+    "findVendors": "Trouver des Vendeurs",
+    "becomeVendor": "Devenir Vendeur",
+    "registerBuyer": "S'inscrire comme Acheteur",
+    "about": "À Propos de Nous",
+    "categories": "Catégories",
+    "contact": "Contactez-nous",
+    "address": "Siège de Buy from Africa, Lagos, Nigeria",
+    "terms": "Conditions de Service",
+    "privacy": "Politique de Confidentialité",
+    "faq": "FAQ"
+  },
+  "Admin": {
+    "navigation": {
+      "dashboard": "Tableau de bord",
+      "team": "Registre d'équipe",
+      "management": "Architecture système",
+      "settings": "Configuration globale",
+      "analytics": "Market Intelligence"
+    }
+  },
+  "NotFound": {
+    "title": "Page Non Trouvée",
+    "goHome": "Retour au Siège Global"
+  },
+  "Partnerships": {
+    "heroTitle": "Partenariats Stratégiques",
+    "heroSubtitle": "Connecter le marché BFA avec l'épine dorsale institutionnelle du commerce africain—des organismes de réglementation aux géants de la finance.",
+    "keyPartners": "Partenaires Clés",
+    "tradeIntelligence": "Régions et Infrastructures Commerciales",
+    "tradeIntelligenceSubtitle": "Renseignements essentiels sur les blocs continentaux et les systèmes financiers qui animent la prochaine ère du commerce africain.",
+    "continentalIntelligence": "Intelligence Continentale",
+    "learnMore": "EN SAVOIR PLUS",
+    "ctaTitle": "Devenez Partenaire de l'Écosystème BFA",
+    "ctaSubtitle": "Êtes-vous une institution ou un fournisseur de services soutenant le commerce africain ? Rejoignez notre réseau pour offrir des services vérifiés à des milliers de vendeurs et d'acheteurs.",
+    "applyButton": "Demander un Partenariat",
+    "ministriesCategory": "Ministères du Commerce",
+    "ministriesDesc": "Organismes gouvernementaux officiels réglementant et soutenant le commerce international au sein des nations africaines.",
+    "chambersCategory": "Chambres de Commerce",
+    "chambersDesc": "Associations du secteur privé stimulant la croissance des entreprises et le réseautage transfrontalier.",
+    "banksCategory": "Banques Commerciales et Institutions Financières",
+    "banksDesc": "Partenaires financiers spécialisés fournissant des financements commerciaux, des crédits et un soutien à l'investissement.",
+    "paymentCategory": "Traitement des Paiements",
+    "paymentDesc": "Infrastructure numérique pour des transactions transfrontalières sécurisées et le règlement des devises.",
+    "microfinanceCategory": "Banques de Microfinance",
+    "microfinanceDesc": "Autonomiser les petits commerçants et les artisans avec des services financiers accessibles.",
+    "regionRegional": "Régional",
+    "regionPanAfrican": "Panafricain",
+    "regionEastAfrica": "Afrique de l'Est",
+    "regionWestAfrica": "Afrique de l'Ouest",
+    "afcftaTitle": "Zone de Libre-Échange Continentale Africaine (ZLECAf)",
+    "afcftaDesc": "La plus grande zone de libre-échange au monde par le nombre de pays participants, visant à intégrer 54 des 55 États membres de l'Union Africaine dans un marché unique de 1,4 milliard de personnes.",
+    "afcftaBadge": "Marché Unique de l'UA",
+    "papssTitle": "Système Panafricain de Paiement et de Règlement (PAPSS)",
+    "papssDesc": "Cette infrastructure financière est essentielle pour réduire la dépendance à l'égard de devises étrangères comme le dollar américain en permettant des paiements transfrontaliers instantanés dans les monnaies locales.",
+    "papssBadge": "Infrastructure Financière",
+    "ecowasTitle": "Communauté Économique des États de l'Afrique de l'Ouest (CEDEAO)",
+    "ecowasDesc": "Ce bloc dispose d'une zone de libre-échange depuis 1990. En janvier 2025, le Mali, le Burkina Faso et le Niger se sont formellement retirés, bien que la libre circulation des citoyens devrait se poursuivre.",
+    "ecowasBadge": "Afrique de l'Ouest",
+    "eacTitle": "Communauté d'Afrique de l'Est (CAE)",
+    "eacDesc": "La CAE a mis en place une union douanière et établi un marché commun pour les biens, le commerce entre les membres étant exempt de droits et unifié sous un territoire douanier unique.",
+    "eacBadge": "Afrique de l'Est",
+    "sadcTitle": "Communauté de Développement de l'Afrique Australe (SADC)",
+    "sadcDesc": "La zone de libre-échange de la SADC a été créée en 2008 et compte 16 États membres, bien qu'actuellement 13 mettent activement en œuvre les mesures de la zone de libre-échange pour la croissance régionale.",
+    "sadcBadge": "Afrique Australe",
+    "comesaTitle": "Marché Commun de l'Afrique Orientale et Australe (COMESA)",
+    "comesaDesc": "Représentant un marché de plus de 500 millions de personnes, le COMESA a lancé une union douanière en 2009 pour faciliter l'intégration régionale et le développement économique.",
+    "comesaBadge": "Bloc Régional"
+  },
+  "Resources": {
+    "heroTitle": "Commerce : ",
+    "heroTitleHighlight": "Ressources",
+    "heroSubtitle": "Équiper les entreprises africaines de données sur les devises en temps réel, de renseignements réglementaires et de guides logistiques pour dominer le commerce mondial.",
+    "currencyTitle": "Intelligence des Devises",
+    "youConvert": "Vous Convertissez",
+    "youReceive": "Vous Recevez",
+    "liveRatesInfo": "Taux du marché en direct fournis à titre indicatif uniquement.",
+    "liveRatesTitle": "Taux en Direct",
+    "liveRatesUpdated": "Mis à jour",
+    "tradeRegionsTitle": "Principales Régions Commerciales",
+    "tradeRegionsSubtitle": "Comprendre les blocs régionaux favorisant l'intégration économique et la réduction des tarifs à travers le continent.",
+    "memberStates": "États Membres : {count}",
+    "logisticsTitle": "Expédition et Logistique",
+    "logisticsIntra": "Corridors Intra-Africains",
+    "logisticsIntraDesc": "Itinéraires optimisés pour le commerce régional entre l'Afrique de l'Ouest, de l'Est et Australe.",
+    "logisticsInsurance": "Assurance Maritime et Fret",
+    "logisticsInsuranceDesc": "Protection complète pour les biens artisanaux et industriels de grande valeur.",
+    "logisticsTracking": "Suivi de Port à Port",
+    "logisticsTrackingDesc": "Visibilité en temps réel pour les expéditions internationales depuis les principaux ports africains.",
+    "complianceTitle": "Droits et Taxes",
+    "complianceSubtitle": "La fiscalité et les droits de douane varient considérablement en fonction de l'origine des marchandises et de l'accord commercial en place.",
+    "exportDuties": "Droits d'Exportation",
+    "exportVariable": "Variable (0 - 5%)",
+    "customLevies": "Taxes Douanières",
+    "customProductBased": "Basé sur le Produit",
+    "afcftaExemption": "Exemption ZLECAf",
+    "afcftaReduced": "Jusqu'à 90% de Réduction",
+    "ctaTitle": "Besoin de conseils commerciaux spécialisés ?",
+    "ctaSubtitle": "Nos partenaires en conformité commerciale sont prêts à vous aider à naviguer dans les complexités du commerce transfrontalier.",
+    "ctaContact": "Contacter un Expert",
+    "ctaDownload": "Télécharger le Guide Commercial",
+    "currencies": {
+      "USD": "Dollar Américain",
+      "EUR": "Euro",
+      "GBP": "Livre Sterling",
+      "CNY": "Yuan Chinois",
+      "NGN": "Naira Nigérian",
+      "ZAR": "Rand Sud-Africain",
+      "KES": "Shilling Kenyan",
+      "GHS": "Cedi Ghanéen",
+      "EGP": "Livre Égyptienne",
+      "ETB": "Birr Éthiopien"
+    },
+    "regions": {
+      "AfCFTA": {
+        "name": "ZLECAf",
+        "fullName": "Zone de Libre-Échange Continentale Africaine",
+        "description": "La plus grande zone de libre-échange au monde, visant à éliminer 90% des tarifs sur les marchandises à travers l'Afrique."
+      },
+      "ECOWAS": {
+        "name": "CEDEAO",
+        "fullName": "Communauté Économique des États de l'Afrique de l'Ouest",
+        "description": "Promouvoir l'intégration économique dans 15 pays d'Afrique de l'Ouest à travers des marchés communs."
+      },
+      "EAC": {
+        "name": "CAE",
+        "fullName": "Communauté d'Afrique de l'Est",
+        "description": "Approfondir la coopération entre les États d'Afrique de l'Est avec une Union Douanière partagée."
+      },
+      "SADC": {
+        "name": "SADC",
+        "fullName": "Communauté de Développement de l'Afrique Australe",
+        "description": "Intégration régionale pour le développement socio-économique et la sécurité en Afrique Australe."
+      }
+    }
+  },
+  "About": {
+    "loading": "Authentification de l'Héritage",
+    "ourJourney": "Notre Parcours",
+    "heroTitle": "À Propos de Buy from Africa",
+    "heroDescription": "Connecter les entreprises africaines aux marchés mondiaux, stimuler la croissance économique et mettre en valeur la richesse des produits africains.",
+    "heroCTA": "Explorer Nos Vendeurs",
+    "getStarted": "Commencer",
+    "impactStats": {
+      "verifiedVendors": "Vendeurs Vérifiés",
+      "countries": "Pays Africains",
+      "revenue": "Revenus Générés",
+      "vendorGrowth": "Croissance Moyenne des Vendeurs"
+    },
+    "missionLabel": "Notre Objectif",
+    "missionTitle": "Notre Mission",
+    "missionSubtitle": "Que vous soyez une entreprise africaine cherchant à vous développer à l'international ou un acheteur à la recherche de produits africains authentiques, rejoignez notre communauté grandissante dès aujourd'hui.",
+    "missionPoints": {
+      "connect": {
+        "title": "Connecter",
+        "description": "Relier les vendeurs africains aux acheteurs du monde entier, créant une place de marché numérique qui transcende les frontières géographiques."
+      },
+      "empower": {
+        "title": "Responsabiliser",
+        "description": "Donner aux entreprises africaines les outils, la visibilité et l'accès au marché dont elles ont besoin pour évoluer et prospérer à l'échelle mondiale."
+      },
+      "sustain": {
+        "title": "Pérenniser",
+        "description": "Promouvoir des pratiques commerciales durables, le commerce équitable et une production éthique à travers toute la chaîne d'approvisionnement africaine."
+      }
+    },
+    "buildingBridgesLabel": "Bâtir des Ponts",
+    "buildingBridgesTitle": "Le commerce sans frontières.",
+    "storyTitle": "L'Histoire",
+    "storyTitleHighlight": "Complète.",
+    "storyParagraphs": [
+      "Buy from Africa a été fondée en 2023 avec la vision de transformer la façon dont le monde découvre et accède aux produits africains. Notre fondatrice, Sarah Johnson, a passé plus d'une décennie à travailler dans divers pays africains, observant directement l'incroyable qualité et diversité des produits qui peinaient à atteindre les marchés internationaux.",
+      "Ce qui a commencé comme une petite plateforme réunissant seulement 20 vendeurs est devenu la première place de marché d'Afrique, reliant des milliers d'entreprises vérifiées à des acheteurs du monde entier. Nous avons aidé les vendeurs à augmenter leurs revenus d'exportation de 40 % en moyenne, tout en veillant à ce que leurs marchandises atteignent des marchés qui leur étaient auparavant inaccessibles.",
+      "Aujourd'hui, nous opérons dans 15 pays africains avec l'ambition de nous étendre sur tout le continent, poursuivant notre mission de faire découvrir l'entrepreneuriat et l'artisanat africains au monde entier."
+    ],
+    "storyStats": {
+      "countriesServiced": "Pays Desservis",
+      "verifiedVendors": "Vendeurs Vérifiés",
+      "vendorGrowth": "Croissance des Vendeurs",
+      "totalRevenue": "Revenu Total"
+    },
+    "teamLabel": "Derrière la Vision",
+    "teamTitle": "Rencontrez L'Équipe",
+    "teamDescription": "Dirigée par des experts passionnés profondément enracinés en Afrique, notre équipe diversifiée rassemble des compétences en technologie, commerce international et gestion de la chaîne d'approvisionnement.",
+    "teamMembers": {
+      "sarah": {
+        "role": "Fondatrice et PDG",
+        "bio": "Sarah a fondé Buy from Africa après avoir travaillé pendant dix ans dans le développement international à travers divers pays africains. Elle est titulaire d'un MBA de la Harvard Business School et se passionne pour l'autonomisation économique par le commerce."
+      },
+      "daniel": {
+        "role": "Directeur Technique",
+        "bio": "Daniel dirige notre équipe technologique avec plus de 15 ans d'expérience dans la création de plateformes évolutives. Anciennement chez Amazon et Microsoft, il est retourné dans son pays natal, le Nigeria, pour contribuer au développement de technologies qui autonomisent les entreprises africaines."
+      },
+      "amina": {
+        "role": "Directrice des Opérations",
+        "bio": "Dotée d'une vaste expérience en logistique et en gestion de la chaîne d'approvisionnement en Afrique de l'Ouest, Amina veille à ce que notre plateforme fonctionne efficacement et que les vendeurs puissent tenir leurs promesses."
+      }
+    },
+    "countriesTitle": "Où Nous Travaillons",
+    "countriesDescription": "Nous mettons activement en relation des vendeurs et des acheteurs à travers ces pays africains, avec l'ambition d'étendre notre portée dans tout le continent.",
+    "partnersLabel": "Partenaires de Confiance de L'Écosystème",
+    "ctaTitle": "REJOIGNEZ LE MOUVEMENT.",
+    "ctaApplyVendor": "Devenir Vendeur",
+    "ctaApplyBuyer": "S'inscrire comme Acheteur"
+  },
+  "Terms": {
+    "title": "Conditions Générales",
+    "subtitle": "Veuillez lire attentivement ces conditions avant d'utiliser notre plateforme. Votre accès et votre utilisation de Buy from Africa sont conditionnés par votre acceptation de cet accord.",
+    "lastUpdated": "Dernière mise à jour",
+    "tableOfContents": "Sommaire",
+    "backToTop": "Retour en haut",
+    "downloadPdf": "Télécharger PDF",
+    "printTerms": "Imprimer",
+    "sections": {
+      "introduction": {
+        "title": "1. Introduction",
+        "content": "Bienvenue sur Buy from Africa. Ces conditions générales de service (\"Conditions\") régissent votre accès et votre utilisation de notre site web, de nos services et de nos applications (collectivement, le \"Service\"). En accédant ou en utilisant le Service, vous acceptez d'être lié par ces Conditions et notre Politique de confidentialité. Si vous n'êtes pas d'accord avec une partie de ces conditions, vous ne pouvez pas accéder au Service."
+      },
+      "account": {
+        "title": "2. Inscription & Responsabilités du Compte",
+        "content": "Pour accéder à certaines fonctionnalités du Service, vous devez créer un compte. Vous acceptez de fournir des informations exactes, à jour et complètes lors de l'inscription et de maintenir vos coordonnées à jour. Vous êtes entièrement responsable de la confidentialité de vos identifiants et de toutes les activités qui se déroulent sous votre compte."
+      },
+      "vendors": {
+        "title": "3. Conditions pour les Vendeurs",
+        "content": "Les vendeurs sur Buy from Africa doivent être des entités légalement enregistrées ayant le droit de vendre leurs produits à travers les frontières internationales. Les vendeurs s'engagent à fournir des descriptions de produits précises, à respecter les prix affichés et à exécuter les commandes en temps opportun. Nous nous réservons le droit de vérifier vos informations commerciales, de retenir les paiements pour des transactions contestées ou de suspendre votre compte en cas de violation des normes de qualité."
+      },
+      "buyers": {
+        "title": "4. Conditions pour les Acheteurs",
+        "content": "Les acheteurs acceptent d'utiliser la plateforme uniquement à des fins commerciales légitimes. Vous acceptez de payer tous les frais engagés par vous ou par tout utilisateur de votre compte aux prix en vigueur au moment où ces frais sont engagés. Vous devez vous conformer à toutes les lois d'importation, taxes et droits de douane applicables dans votre pays de réception."
+      },
+      "fees": {
+        "title": "5. Frais, Paiements et Abonnements",
+        "content": "Buy from Africa facture des frais de service pour les transactions réussies facilitées par la plateforme. Les structures tarifaires spécifiques sont détaillées sur notre page Tarifs et peuvent être mises à jour de temps à autre avec un préavis. Tous les paiements sont traités via nos prestataires tiers sécurisés."
+      },
+      "content": {
+        "title": "6. Contenu Généré par l'Utilisateur et Propriété Intellectuelle",
+        "content": "Vous conservez tous vos droits de propriété sur le contenu que vous soumettez à la plateforme. En soumettant du contenu (y compris des images de produits, des avis et des messages), vous nous accordez une licence mondiale, non exclusive et libre de droits pour utiliser, reproduire, afficher et distribuer ce contenu dans le cadre de la fourniture et de la promotion du Service."
+      },
+      "dispute": {
+        "title": "7. Résolution des Litiges et Remboursements",
+        "content": "En cas de litige entre un acheteur et un vendeur, les parties doivent d'abord tenter de résoudre le problème à l'amiable via notre système de messagerie. Si le problème n'est pas résolu, notre équipe de médiation interviendra. Les politiques de remboursement sont déterminées par les vendeurs individuels, mais doivent respecter nos normes de protection minimales."
+      },
+      "termination": {
+        "title": "8. Résiliation",
+        "content": "Nous pouvons résilier ou suspendre votre compte et interdire l'accès au Service immédiatement, sans préavis ni responsabilité, à notre seule discrétion, pour quelque raison que ce soit et sans limitation, y compris, mais sans s'y limiter, en cas de violation des Conditions."
+      },
+      "limitation": {
+        "title": "9. Limitation de Responsabilité",
+        "content": "En aucun cas Buy from Africa, ni ses directeurs, employés, partenaires, agents, fournisseurs ou affiliés, ne pourront être tenus responsables de tout dommage indirect, accessoire, spécial, consécutif ou punitif, y compris, sans limitation, de la perte de profits, de données, d'utilisation, de clientèle ou d'autres pertes intangibles, résultant de votre accès, de votre utilisation ou de votre incapacité à accéder ou à utiliser le Service."
+      }
+    },
+    "backToHome": "Retour à l'accueil"
+  },
+  "Privacy": {
+    "title": "Politique de Confidentialité",
+    "subtitle": "Votre vie privée est importante pour nous. Cette politique de confidentialité explique comment Buy from Africa collecte, utilise et protège vos informations personnelles lorsque vous utilisez notre plateforme.",
+    "lastUpdated": "Dernière mise à jour",
+    "tableOfContents": "Sommaire",
+    "backToTop": "Retour en haut",
+    "downloadPdf": "Télécharger PDF",
+    "printTerms": "Imprimer la Politique",
+    "sections": {
+      "introduction": {
+        "title": "1. Introduction",
+        "content": "Bienvenue dans la Politique de Confidentialité de Buy from Africa. Nous respectons votre vie privée et nous nous engageons à protéger vos données personnelles. Cette politique de confidentialité vous informera sur la façon dont nous prenons soin de vos données personnelles lorsque vous visitez notre site Web (quel que soit l'endroit d'où vous le visitez) et vous renseignera sur vos droits en matière de confidentialité et sur la manière dont la loi vous protège."
+      },
+      "dataWeCollect": {
+        "title": "2. Les Données que Nous Collectons à Votre Sujet",
+        "content": "Les données personnelles, ou informations personnelles, désignent toute information concernant un individu à partir de laquelle cette personne peut être identifiée. Nous pouvons collecter, utiliser, stocker et transférer différents types de données personnelles vous concernant, notamment des données d'identité (prénom, nom, nom d'utilisateur), des données de contact (adresse de facturation, adresse de livraison, adresse e-mail, numéros de téléphone), des données financières (coordonnées bancaires et carte de paiement) et des données de transaction (détails sur les paiements vers et depuis vous et d'autres détails sur les produits et services que vous nous avez achetés)."
+      },
+      "howWeCollect": {
+        "title": "3. Comment Vos Données Personnelles Sont-elles Collectées ?",
+        "content": "Nous utilisons différentes méthodes pour collecter des données auprès de vous et à votre sujet, y compris : Interactions directes. Vous pouvez nous fournir vos données d'identité, de contact et financières en remplissant des formulaires ou en correspondant avec nous par courrier, téléphone, e-mail ou autrement. Technologies ou interactions automatisées. À mesure que vous interagissez avec notre site Web, nous collecterons automatiquement des données techniques sur votre équipement, vos actions de navigation et vos modèles."
+      },
+      "howWeUse": {
+        "title": "4. Comment Nous Utilisons Vos Données Personnelles",
+        "content": "Nous n'utiliserons vos données personnelles que lorsque la loi nous y autorise. Le plus souvent, nous utiliserons vos données personnelles dans les circonstances suivantes : Lorsque nous devons exécuter le contrat que nous sommes sur le point de conclure ou que nous avons conclu avec vous. Lorsque cela est nécessaire pour nos intérêts légitimes (ou ceux d'un tiers) et que vos intérêts et droits fondamentaux ne prévalent pas sur ces intérêts. Lorsque nous devons nous conformer à une obligation légale."
+      },
+      "dataSecurity": {
+        "title": "5. Sécurité des Données",
+        "content": "Nous avons mis en place des mesures de sécurité appropriées pour éviter que vos données personnelles ne soient accidentellement perdues, utilisées ou consultées de manière non autorisée, altérées ou divulguées. De plus, nous limitons l'accès à vos données personnelles à ces employés, agents, sous-traitants et autres tiers qui ont besoin de les connaître pour des raisons professionnelles. Ils ne traiteront vos données personnelles que sur nos instructions et ils sont soumis à un devoir de confidentialité."
+      },
+      "dataRetention": {
+        "title": "6. Conservation des Données",
+        "content": "Nous ne conserverons vos données personnelles que le temps raisonnablement nécessaire pour atteindre les objectifs pour lesquels nous les avons collectées, y compris aux fins de satisfaire à toute exigence légale, réglementaire, fiscale, comptable ou de reporting. Nous pouvons conserver vos données personnelles plus longtemps en cas de plainte ou si nous pensons raisonnablement qu'il y a une perspective de litige concernant notre relation avec vous."
+      },
+      "yourRights": {
+        "title": "7. Vos Droits Légaux",
+        "content": "Dans certaines circonstances, vous disposez de droits en vertu des lois sur la protection des données concernant vos données personnelles. Ceux-ci incluent le droit de : Demander l'accès à vos données personnelles. Demander la correction de vos données personnelles. Demander l'effacement de vos données personnelles. Vous opposer au traitement de vos données personnelles. Demander la limitation du traitement de vos données personnelles. Demander le transfert de vos données personnelles. Droit de retirer votre consentement."
+      },
+      "cookies": {
+        "title": "8. Cookies",
+        "content": "Vous pouvez configurer votre navigateur pour refuser tout ou partie des cookies de navigation, ou pour vous alerter lorsque des sites web définissent ou accèdent à des cookies. Si vous désactivez ou refusez les cookies, veuillez noter que certaines parties de ce site web peuvent devenir inaccessibles ou ne pas fonctionner correctement. Pour plus d'informations sur les cookies que nous utilisons, veuillez consulter notre Politique en matière de cookies."
+      },
+      "contact": {
+        "title": "9. Nous Contacter",
+        "content": "Si vous avez des questions concernant cette politique de confidentialité ou nos pratiques en matière de confidentialité, veuillez nous contacter à l'adresse privacy@buyfromafrica.com."
+      }
+    },
+    "backToHome": "Retour à l'accueil"
+  },
+  "FAQ": {
+    "title": "Foire Aux Questions",
+    "subtitle": "Trouvez des réponses aux questions courantes sur l'achat et la vente sur Buy from Africa. Si vous ne trouvez pas ce que vous cherchez, n'hésitez pas à contacter notre équipe d'assistance.",
+    "categories": {
+      "general": "Général",
+      "buyers": "Pour les Acheteurs",
+      "vendors": "Pour les Vendeurs",
+      "shipping": "Expédition et Logistique"
+    },
+    "questions": {
+      "whatIsBfa": {
+        "question": "Qu'est-ce que Buy from Africa ?",
+        "answer": "Buy from Africa est une plateforme de commerce électronique B2B et B2C de premier plan dédiée à la mise en relation des fabricants, artisans et entreprises africains avec des acheteurs mondiaux. Nous facilitons le commerce sécurisé, la logistique et la résolution des litiges pour garantir une expérience de commerce transfrontalier fluide."
+      },
+      "howToRegister": {
+        "question": "Comment puis-je créer un compte ?",
+        "answer": "Vous pouvez vous inscrire en cliquant sur le bouton « S'inscrire » dans le coin supérieur droit du site web. Vous devrez choisir si vous vous inscrivez en tant qu'acheteur ou vendeur, et fournir les informations professionnelles ou personnelles nécessaires."
+      },
+      "buyerFees": {
+        "question": "Y a-t-il des frais pour les acheteurs ?",
+        "answer": "La création d'un compte acheteur est entièrement gratuite. Vous ne payez que les produits que vous achetez, ainsi que les frais d'expédition et de douane applicables, qui sont clairement affichés lors du paiement."
+      },
+      "vendorRequirements": {
+        "question": "Quelles sont les conditions pour devenir vendeur ?",
+        "answer": "Pour devenir vendeur, vous devez posséder une entreprise enregistrée dans un pays africain, passer notre processus de vérification et accepter nos normes de qualité et nos politiques d'exécution. Nous exigeons une preuve d'immatriculation de l'entreprise et d'identité."
+      },
+      "shippingMethods": {
+        "question": "Quelles sont les méthodes d'expédition disponibles ?",
+        "answer": "Nous travaillons en partenariat avec les principaux prestataires logistiques mondiaux (tels que DHL, FedEx et UPS) ainsi qu'avec des services de messagerie africains locaux certifiés. Les options et les coûts d'expédition varient en fonction de la destination, du poids et des dimensions de votre commande."
+      },
+      "disputeResolution": {
+        "question": "Comment gérez-vous les litiges entre acheteurs et vendeurs ?",
+        "answer": "Nous disposons d'une équipe de médiation dédiée qui intervient si les acheteurs et les vendeurs ne parviennent pas à résoudre un problème directement. Nous conservons les fonds sur un compte séquestre jusqu'à ce que l'acheteur confirme la réception des marchandises dans un état satisfaisant, offrant ainsi un niveau de protection aux deux parties."
+      }
+    },
+    "contactSupport": "Contacter l'Assistance",
+    "stillHaveQuestions": "Vous avez encore des questions ?",
+    "backToHome": "Retour à l'accueil"
+  }
+}

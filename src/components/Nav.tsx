@@ -3,16 +3,20 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useParams } from 'next/navigation';
+import { usePathname, useRouter } from '@/i18n/navigation';
 import { 
   Menu, X, User, Search, ChevronDown, 
   Shirt, Palmtree, Gem, Coffee, Leaf, 
   Music, Smartphone, Home, HeartPulse, Shapes,
   ArrowRight, ShoppingBag, Sparkles, Users,
   Package, Factory, Briefcase, Calculator,
-  LayoutDashboard
+  LayoutDashboard, Globe
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useSession } from 'next-auth/react';
+import { languages, locales } from '@/i18n/config';
+import { useTranslations } from 'next-intl';
 
 interface Category {
   id: string;
@@ -61,13 +65,33 @@ const getCategoryIcon = (slug: string, name: string) => {
 };
 
 const Nav = () => {
+  const t = useTranslations('Nav');
   const { data: session, status } = useSession();
+  const ct = useTranslations('Categories');
+  const pathname = usePathname();
+  const router = useRouter();
+  const params = useParams();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [categories, setCategories] = useState<Category[]>([]);
   const [isCategoriesOpen, setIsCategoriesOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [isLangOpen, setIsLangOpen] = useState(false);
+
+  // Get current locale from params or pathname
+  const currentLocale = (params?.locale as string) || 
+    locales.find(loc => pathname?.startsWith(`/${loc}/`) || pathname === `/${loc}`) || 'en';
+  const currentLanguage = languages.find(lang => lang.code === currentLocale) || languages[0];
+
+  const switchLanguage = (newLocale: string) => {
+    // Preserve current query parameters
+    const searchParams = new URLSearchParams(window.location.search);
+    const queryString = searchParams.toString();
+    const targetPath = queryString ? `${pathname}?${queryString}` : pathname;
+    
+    router.replace(targetPath, { locale: newLocale });
+  };
 
   const getDashboardUrl = () => {
     if (!session?.user) return '/login';
@@ -111,7 +135,7 @@ const Nav = () => {
 
   return (
     <nav className="bg-white/80 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="flex justify-between items-center h-20">
           {/* Logo and Brand */}
           <div className="flex-shrink-0 flex items-center mr-16">
@@ -132,7 +156,7 @@ const Nav = () => {
           {/* Main Navigation - Desktop */}
           <div className="hidden lg:flex items-center space-x-10">
             <Link href="/browse" className="text-sm font-bold text-gray-700 hover:text-yellow-600 transition-colors flex items-center">
-              Browse
+              {t('browse')}
             </Link>
             
             {/* Mega Menu Trigger */}
@@ -142,7 +166,7 @@ const Nav = () => {
               onMouseLeave={() => setIsCategoriesOpen(false)}
             >
               <button className="flex items-center text-sm font-bold text-gray-700 group-hover:text-yellow-600 transition-colors">
-                Categories <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-300 ${isCategoriesOpen ? 'rotate-180' : ''}`} />
+                {t('categories')} <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-300 ${isCategoriesOpen ? 'rotate-180' : ''}`} />
               </button>
 
               <AnimatePresence>
@@ -157,7 +181,7 @@ const Nav = () => {
                     <div className="flex divide-x divide-gray-50 h-[400px]">
                       {/* Left side: Main Categories list */}
                       <div className="w-1/3 overflow-y-auto p-4 space-y-1">
-                        <h3 className="px-4 py-2 text-[10px] font-black uppercase tracking-widest text-gray-400 mb-2">Main Industries</h3>
+                        <h3 className="px-4 py-2 text-[10px] font-black uppercase tracking-widest text-gray-400 mb-2">{t('industries')}</h3>
                         {parentCategories.map((category) => (
                           <button
                             key={category.id}
@@ -168,7 +192,7 @@ const Nav = () => {
                               <div className={`p-2 rounded-xl mr-3 ${activeCategory === category.id ? 'bg-yellow-200 shadow-inner' : 'bg-gray-100'}`}>
                                 {getCategoryIcon(category.slug, category.name)}
                               </div>
-                              <span className="font-bold text-sm tracking-tight">{category.name}</span>
+                              <span className="font-bold text-sm tracking-tight">{ct(category.slug)}</span>
                             </div>
                             <ArrowRight className={`w-4 h-4 transition-transform duration-300 ${activeCategory === category.id ? 'translate-x-0 opacity-100' : '-translate-x-2 opacity-0'}`} />
                           </button>
@@ -189,7 +213,7 @@ const Nav = () => {
                               <div className="col-span-2 flex justify-between items-end border-b border-gray-100 pb-4 mb-2">
                                 <div>
                                   <h4 className="text-xl font-black text-gray-900">
-                                    {categories.find(c => c.id === activeCategory)?.name}
+                                    {ct(categories.find(c => c.id === activeCategory)?.slug || '')}
                                   </h4>
                                   <p className="text-xs text-gray-500 font-medium mt-1">Specialized products and services</p>
                                 </div>
@@ -197,7 +221,7 @@ const Nav = () => {
                                   href={`/category/${categories.find(c => c.id === activeCategory)?.slug}`}
                                   className="text-yellow-600 text-xs font-black uppercase tracking-widest hover:underline flex items-center"
                                 >
-                                  View All <ArrowRight className="ml-1 w-3 h-3" />
+                                  {t('viewAll')} <ArrowRight className="ml-1 w-3 h-3" />
                                 </Link>
                               </div>
 
@@ -211,7 +235,7 @@ const Nav = () => {
                                     {getCategoryIcon(sub.slug, sub.name)}
                                   </div>
                                   <div>
-                                    <span className="block font-bold text-gray-800 text-sm mb-1 group-hover:text-yellow-600 transition-colors">{sub.name}</span>
+                                    <span className="block font-bold text-gray-800 text-sm mb-1 group-hover:text-yellow-600 transition-colors">{ct(sub.slug)}</span>
                                     <span className="text-[10px] text-gray-400 font-medium uppercase tracking-tighter">Explore dynamic selection</span>
                                   </div>
                                 </Link>
@@ -220,7 +244,7 @@ const Nav = () => {
                               {(!categories.find(c => c.id === activeCategory)?.subcategories || categories.find(c => c.id === activeCategory)?.subcategories?.length === 0) && (
                                 <div className="col-span-2 py-12 text-center">
                                    <Sparkles className="w-12 h-12 text-yellow-200 mx-auto mb-4" />
-                                   <p className="text-gray-400 font-medium italic">Premium items coming soon to this niche</p>
+                                   <p className="text-gray-400 font-medium italic">{t('nicheFallback')}</p>
                                 </div>
                               )}
                             </motion.div>
@@ -229,8 +253,8 @@ const Nav = () => {
                                <div className="w-20 h-20 bg-yellow-101 rounded-full flex items-center justify-center mb-6">
                                   <ShoppingBag className="w-10 h-10 text-yellow-600" />
                                </div>
-                               <h4 className="text-xl font-black text-gray-400">Discover Africa&apos;s Finest</h4>
-                               <p className="text-sm text-gray-400 mt-2 max-w-xs">Hover over a category on the left to explore specialized products and verified vendors.</p>
+                               <h4 className="text-xl font-black text-gray-400">{t('discover')}</h4>
+                               <p className="text-sm text-gray-400 mt-2 max-w-xs">{t('discoverDesc')}</p>
                             </div>
                           )}
                         </AnimatePresence>
@@ -242,16 +266,16 @@ const Nav = () => {
             </div>
 
             <Link href="/vendors" className="text-sm font-bold text-gray-700 hover:text-yellow-600 transition-colors">
-              Vendors
+              {t('vendors')}
             </Link>
             <Link href="/partnerships" className="text-sm font-bold text-gray-700 hover:text-yellow-600 transition-colors">
-              Partnerships
+              {t('partnerships')}
             </Link>
             <Link href="/resources" className="text-sm font-bold text-gray-700 hover:text-yellow-600 transition-colors">
-              Resources
+              {t('resources')}
             </Link>
             <Link href="/about" className="text-sm font-bold text-gray-700 hover:text-yellow-600 transition-colors">
-              About
+              {t('about')}
             </Link>
           </div>
 
@@ -266,6 +290,49 @@ const Nav = () => {
             </button>
           </div>
 
+          {/* Language Selector */}
+          <div className="relative">
+            <button
+              onClick={() => setIsLangOpen(!isLangOpen)}
+              className="flex items-center gap-2 px-3 py-2 rounded-xl bg-gray-50 hover:bg-yellow-50 border border-gray-100 transition-all duration-300 group"
+            >
+              <Globe className="w-4 h-4 text-gray-500 group-hover:text-yellow-600" />
+              <span className="text-sm font-bold text-gray-700 group-hover:text-yellow-600">{currentLanguage.name}</span>
+              <ChevronDown className={`w-4 h-4 text-gray-400 transition-transform ${isLangOpen ? 'rotate-180' : ''}`} />
+            </button>
+            
+            <AnimatePresence>
+              {isLangOpen && (
+                <>
+                  <div className="fixed inset-0 z-40" onClick={() => setIsLangOpen(false)} />
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="absolute right-0 mt-2 w-48 bg-white rounded-2xl shadow-xl border border-gray-100 py-2 z-50"
+                  >
+                    {languages.map((lang) => (
+                      <button
+                        key={lang.code}
+                        onClick={() => switchLanguage(lang.code)}
+                        className={`w-full px-4 py-2.5 text-left text-sm font-medium transition-colors flex items-center justify-between ${
+                          currentLocale === lang.code
+                            ? 'bg-yellow-50 text-yellow-700'
+                            : 'text-gray-700 hover:bg-gray-50'
+                        }`}
+                      >
+                        <span>{lang.name}</span>
+                        {currentLocale === lang.code && (
+                          <span className="w-2 h-2 rounded-full bg-yellow-500" />
+                        )}
+                      </button>
+                    ))}
+                  </motion.div>
+                </>
+              )}
+            </AnimatePresence>
+          </div>
+
           {/* Right-side buttons */}
           <div className="hidden lg:flex items-center space-x-6">
             {status === 'authenticated' ? (
@@ -274,7 +341,7 @@ const Nav = () => {
                 className="bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-3 rounded-2xl text-sm font-black tracking-wide transition-all duration-300 shadow-xl shadow-yellow-200 hover:shadow-yellow-300 active:scale-95 flex items-center"
               >
                 <LayoutDashboard className="w-4 h-4 mr-2" />
-                Go to Dashboard
+                {t('dashboard')}
               </Link>
             ) : (
               <>
@@ -282,13 +349,13 @@ const Nav = () => {
                   <div className="bg-gray-100 p-2 rounded-xl mr-2 group-hover:bg-yellow-50 group-hover:text-yellow-600 transition-colors">
                     <User className="h-5 w-5" />
                   </div>
-                  Login
+                  {t('login')}
                 </Link>
                 <Link 
                   href="/register" 
                   className="bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-3 rounded-2xl text-sm font-black tracking-wide transition-all duration-300 shadow-xl shadow-yellow-200 hover:shadow-yellow-300 active:scale-95"
                 >
-                  Get Started
+                  {t('register')}
                 </Link>
               </>
             )}
@@ -322,7 +389,7 @@ const Nav = () => {
                 <input
                   type="text"
                   className="w-full pl-12 pr-4 py-4 bg-gray-50 border-0 rounded-2xl focus:ring-2 focus:ring-yellow-500 outline-none"
-                  placeholder="What are you looking for?"
+                  placeholder={t('search')}
                 />
               </div>
 
@@ -365,7 +432,7 @@ const Nav = () => {
                               <div className="bg-yellow-500 text-white p-2 rounded-xl mr-4">
                                 {getCategoryIcon(category.slug, category.name)}
                               </div>
-                              {category.name}
+                              {ct(category.slug)}
                             </Link>
                           ))}
                         </div>
@@ -414,7 +481,7 @@ const Nav = () => {
                     className="col-span-2 flex items-center justify-center p-4 rounded-2xl bg-yellow-600 text-white font-black active:scale-95 transition-transform"
                   >
                     <LayoutDashboard className="w-5 h-5 mr-2" />
-                    Go to Dashboard
+                    {t('dashboard')}
                   </Link>
                 ) : (
                   <>
@@ -422,13 +489,13 @@ const Nav = () => {
                       href="/login" 
                       className="flex items-center justify-center p-4 rounded-2xl border border-gray-200 font-bold text-gray-700 active:bg-gray-50"
                     >
-                      Login
+                      {t('login')}
                     </Link>
                     <Link 
                       href="/register" 
                       className="flex items-center justify-center p-4 rounded-2xl bg-yellow-600 text-white font-black active:scale-95 transition-transform"
                     >
-                      Sign Up
+                      {t('register')}
                     </Link>
                   </>
                 )}
@@ -463,7 +530,7 @@ const Nav = () => {
                      value={searchQuery}
                      onChange={(e) => setSearchQuery(e.target.value)}
                      className="w-full pl-14 pr-16 py-6 bg-gray-50 border-0 rounded-3xl text-xl font-bold placeholder:text-gray-400 focus:ring-0"
-                     placeholder="What are you looking for?"
+                     placeholder={t('search')}
                    />
                    <div className="absolute inset-y-0 right-4 flex items-center">
                      <button 
@@ -478,7 +545,7 @@ const Nav = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                    {/* Quick Links / Recent */}
                    <div>
-                      <h4 className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-6">Trending Categories</h4>
+                      <h4 className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-6">{t('trendingCategories')}</h4>
                       <div className="space-y-2">
                         {parentCategories.slice(0, 5).map(cat => (
                           <Link 
@@ -490,7 +557,7 @@ const Nav = () => {
                              <div className="bg-yellow-50 p-2.5 rounded-xl mr-4 group-hover:bg-yellow-500 group-hover:text-white transition-colors">
                                {getCategoryIcon(cat.slug, cat.name)}
                              </div>
-                             <span className="font-bold text-gray-700">{cat.name}</span>
+                             <span className="font-bold text-gray-700">{ct(cat.slug)}</span>
                              <ArrowRight className="ml-auto w-4 h-4 text-gray-200 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
                           </Link>
                         ))}
@@ -499,7 +566,7 @@ const Nav = () => {
 
                    {/* Quick Actions / Suggestions */}
                    <div className="bg-gray-50/50 -m-8 p-8 border-l border-gray-100 hidden md:block">
-                      <h4 className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-6">Quick Actions</h4>
+                      <h4 className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-6">{t('quickActions')}</h4>
                       <div className="space-y-4">
                         <Link 
                            href="/vendors" 
@@ -507,8 +574,8 @@ const Nav = () => {
                            className="block p-4 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
                         >
                            <Users className="w-5 h-5 text-yellow-600 mb-2" />
-                           <span className="block font-bold text-sm text-gray-800">Become a Vendor</span>
-                           <span className="text-[10px] text-gray-400 font-medium">Start selling your products globally</span>
+                           <span className="block font-bold text-sm text-gray-800">{t('becomeVendor')}</span>
+                           <span className="text-[10px] text-gray-400 font-medium">{t('becomeVendorSubtitle')}</span>
                         </Link>
                         <Link 
                            href="/resources" 
@@ -516,8 +583,8 @@ const Nav = () => {
                            className="block p-4 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
                         >
                            <Calculator className="w-5 h-5 text-yellow-600 mb-2" />
-                           <span className="block font-bold text-sm text-gray-800">Trade Resources</span>
-                           <span className="text-[10px] text-gray-400 font-medium">Currency and logistics data</span>
+                           <span className="block font-bold text-sm text-gray-800">{t('tradeResources')}</span>
+                           <span className="text-[10px] text-gray-400 font-medium">{t('tradeResourcesSubtitle')}</span>
                         </Link>
                       </div>
                    </div>
@@ -525,9 +592,9 @@ const Nav = () => {
               </div>
               
               <div className="bg-yellow-500 py-4 px-8 flex justify-between items-center">
-                 <span className="text-white text-xs font-black uppercase tracking-widest">Global African Hub</span>
+                 <span className="text-white text-xs font-black uppercase tracking-widest">{t('globalHub')}</span>
                  <div className="flex gap-4 text-white/50 text-[10px] font-black uppercase tracking-tighter">
-                    <span>Press <kbd className="text-white font-bold bg-white/20 px-1 rounded">Esc</kbd> to close</span>
+                    <span>{t('pressEsc')}</span>
                  </div>
               </div>
             </motion.div>

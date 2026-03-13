@@ -1,0 +1,16 @@
+.next/types/validator.ts(437,11): error TS1360: Type 'typeof import("E:/APPLICATIONS/applications/applications/bfa/src/app/[locale]/api/vendors/[vendorId]/route")' does not satisfy the expected type 'RouteHandlerConfig<"/[locale]/api/vendors/[vendorId]">'.
+  Types of property 'GET' are incompatible.
+    Type '(request: Request, { params }: { params: { vendorId: string; }; }) => Promise<NextResponse<{ error: string; }> | NextResponse<{ products: { id: string; name: string; createdAt: Date; ... 12 more ...; stock: number; }[]; } & { ...; }>>' is not assignable to type '(request: NextRequest, context: { params: Promise<{ locale: string; vendorId: string; }>; }) => void | Response | Promise<void | Response>'.
+      Types of parameters '__1' and 'context' are incompatible.
+        Type '{ params: Promise<{ locale: string; vendorId: string; }>; }' is not assignable to type '{ params: { vendorId: string; }; }'.
+          Types of property 'params' are incompatible.
+            Property 'vendorId' is missing in type 'Promise<{ locale: string; vendorId: string; }>' but required in type '{ vendorId: string; }'.
+.next/types/validator.ts(539,11): error TS1360: Type 'typeof import("E:/APPLICATIONS/applications/applications/bfa/src/app/api/vendors/[vendorId]/route")' does not satisfy the expected type 'RouteHandlerConfig<"/api/vendors/[vendorId]">'.
+  Types of property 'GET' are incompatible.
+    Type '(request: Request, { params }: { params: { vendorId: string; }; }) => Promise<NextResponse<{ error: string; }> | NextResponse<{ products: { id: string; name: string; createdAt: Date; ... 12 more ...; stock: number; }[]; } & { ...; }>>' is not assignable to type '(request: NextRequest, context: { params: Promise<{ vendorId: string; }>; }) => void | Response | Promise<void | Response>'.
+      Types of parameters '__1' and 'context' are incompatible.
+        Type '{ params: Promise<{ vendorId: string; }>; }' is not assignable to type '{ params: { vendorId: string; }; }'.
+          Types of property 'params' are incompatible.
+            Property 'vendorId' is missing in type 'Promise<{ vendorId: string; }>' but required in type '{ vendorId: string; }'.
+src/app/[locale]/products/[productId]/page.tsx(31,17): error TS2307: Cannot find module '../../../components/Nav' or its corresponding type declarations.
+src/app/[locale]/products/[productId]/page.tsx(32,20): error TS2307: Cannot find module '../../../components/Footer' or its corresponding type declarations.

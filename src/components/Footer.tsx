@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Facebook, Twitter, Instagram, Linkedin, Mail, PhoneCall, MapPin, Globe } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 interface FooterConfig {
   footer_company_name?: string;
@@ -28,6 +29,7 @@ interface Category {
 }
 
 const Footer = () => {
+  const t = useTranslations('Footer');
   const [config, setConfig] = useState<FooterConfig>({});
   const [categories, setCategories] = useState<Category[]>([]);
 
@@ -76,7 +78,7 @@ const Footer = () => {
               />
             </div>
             <p className="text-gray-700 mb-4">
-              {config.footer_description || "Connecting African vendors with global buyers. Discover authentic products and services from across Africa."}
+              {config.footer_description || t('description')}
             </p>
             <div className="flex space-x-4">
               {config.footer_facebook && (
@@ -120,31 +122,31 @@ const Footer = () => {
           
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Quick Links</h3>
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">{t('quickLinks')}</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/browse" className="text-gray-700 hover:text-yellow-600 transition">
-                  Browse Products
+                  {t('browseProducts')}
                 </Link>
               </li>
               <li>
                 <Link href="/vendors" className="text-gray-700 hover:text-yellow-600 transition">
-                  Find Vendors
+                  {t('findVendors')}
                 </Link>
               </li>
               <li>
                 <Link href="/register" className="text-gray-700 hover:text-yellow-600 transition">
-                  Become a Vendor
+                  {t('becomeVendor')}
                 </Link>
               </li>
               <li>
                 <Link href="/register" className="text-gray-700 hover:text-yellow-600 transition">
-                  Register as Buyer
+                  {t('registerBuyer')}
                 </Link>
               </li>
               <li>
                 <Link href="/about" className="text-gray-700 hover:text-yellow-600 transition">
-                  About Us
+                  {t('about')}
                 </Link>
               </li>
             </ul>
@@ -152,7 +154,7 @@ const Footer = () => {
           
           {/* Categories */}
           <div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Categories</h3>
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">{t('categories')}</h3>
             <ul className="space-y-2">
               {categories.length > 0 ? (
                 categories.map((cat) => (
@@ -196,12 +198,12 @@ const Footer = () => {
           
           {/* Contact */}
           <div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Contact Us</h3>
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">{t('contact')}</h3>
             <ul className="space-y-2">
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 text-yellow-600 mr-2 mt-0.5" />
                 <span className="text-gray-700">
-                  {config.footer_address || "Buy from Africa Headquarters, Lagos, Nigeria"}
+                  {config.footer_address || t('address')}
                 </span>
               </li>
               <li className="flex items-center">
@@ -233,13 +235,13 @@ const Footer = () => {
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link href="/terms" className="text-gray-700 hover:text-yellow-600 transition text-sm">
-                Terms of Service
+                {t('terms')}
               </Link>
               <Link href="/privacy" className="text-gray-700 hover:text-yellow-600 transition text-sm">
-                Privacy Policy
+                {t('privacy')}
               </Link>
               <Link href="/faq" className="text-gray-700 hover:text-yellow-600 transition text-sm">
-                FAQ
+                {t('faq')}
               </Link>
             </div>
           </div>

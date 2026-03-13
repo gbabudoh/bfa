@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import { useTranslations } from 'next-intl';
 import ProductCard from './ProductCard';
 
 interface Vendor {
@@ -34,6 +34,8 @@ interface ProductGridProps {
 }
 
 export default function ProductGrid({ products, viewMode = 'grid', isLoading = false }: ProductGridProps) {
+  const t = useTranslations('Products.emptyState');
+
   if (isLoading) {
     return (
       <div className={`grid gap-6 ${viewMode === 'grid' ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1'}`}>
@@ -52,8 +54,8 @@ export default function ProductGrid({ products, viewMode = 'grid', isLoading = f
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
           </svg>
         </div>
-        <h3 className="text-xl font-bold text-gray-900 mb-2">No products found</h3>
-        <p className="text-gray-500">Try adjusting your filters or browse other categories.</p>
+        <h3 className="text-xl font-bold text-gray-900 mb-2">{t('title')}</h3>
+        <p className="text-gray-500">{t('subtitle')}</p>
       </div>
     );
   }

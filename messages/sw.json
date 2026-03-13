@@ -1,0 +1,675 @@
+{
+  "Index": {
+    "title": "Karibu kwenye Buy From Africa",
+    "description": "Kuunganisha wauzaji wa Kiafrika na soko la kimataifa."
+  },
+  "Hero": {
+    "title": "Ungana na Wauzaji wa Kiafrika Kote Duniani",
+    "description": "Gundua bidhaa na huduma halisi moja kwa moja kutoka kwa biashara za Kiafrika zilizothibitishwa.",
+    "explore": "Chunguza Bidhaa",
+    "becomeVendor": "Kuwa Muuzaji"
+  },
+  "HowItWorks": {
+    "title": "Jinsi Buy from Africa Inavyofanya Kazi",
+    "subtitle": "Ungana na wauzaji wa Kiafrika waliothibitishwa na upate bidhaa na huduma za kipekee kwa urahisi",
+    "step1": {
+      "title": "Jisajili",
+      "desc": "Fungua akaunti yako ili kupata kitambulisho cha kipekee."
+    },
+    "step2": {
+      "title": "Vinjari",
+      "desc": "Chunguza bidhaa halisi kutoka kwa wauzaji waliohakikiwa."
+    },
+    "step3": {
+      "title": "Ungana",
+      "desc": "Wasiliana na wauzaji kwa usalama na fanya mazungumzo."
+    }
+  },
+  "FeaturedCategories": {
+    "title": "Kategoria Zilizoangaziwa",
+    "subtitle": "Gundua bidhaa zilizotengenezwa Afrika katika viwanda mbalimbali",
+    "viewAll": "Tazama Kategoria Zote"
+  },
+  "PlatformFeatures": {
+    "title": "Vipengele Muhimu vya Jukwaa",
+    "subtitle": "Kila kitu unachohitaji ili kuungana, kuwasiliana, na kufanya biashara na wauzaji wa Kiafrika",
+    "storefronts": {
+      "title": "Maduka ya Wauzaji",
+      "desc": "Maduka yanayoweza kubadilishwa kwa wauzaji kuonyesha bidhaa na huduma zao na maelezo ya kina."
+    },
+    "messaging": {
+      "title": "Ujumbe Salama",
+      "desc": "Mfumo wa barua pepe wa ndani kwa mawasiliano salama kati ya wanunuzi na wauzaji."
+    },
+    "video": {
+      "title": "Mikutano ya Video",
+      "desc": "Omba simu za video au sauti ili kujadili bidhaa, kufanya mazungumzo ya biashara, na kujenga uhusiano."
+    },
+    "payments": {
+      "title": "Malipo Salama",
+      "desc": "Chaguzi nyingi za malipo zilizoidhinishwa ili kuhakikisha miamala salama na rahisi."
+    },
+    "shipping": {
+      "title": "Suluhisho za Usafirishaji",
+      "desc": "Washirika wa usafirishaji wanaoaminika ili kufikisha bidhaa kote duniani kwa ufanisi na kwa bei nafuu."
+    },
+    "global": {
+      "title": "Upatikanaji wa Kimataifa",
+      "desc": "Ungana na wauzaji wa Kiafrika kutoka mahali popote duniani na ugundue fursa za kipekee."
+    }
+  },
+  "CTA": {
+    "title": "Tayari Kununua kutoka Afrika?",
+    "subtitle": "Jiunge na jamii yetu inayokua ya wanunuzi na wauzaji inayounganisha bidhaa za Kiafrika na masoko ya kimataifa.",
+    "register": "Jisajili Sasa",
+    "browse": "Vinjari Bidhaa"
+  },
+  "Testimonials": {
+    "title": "Watumiaji Wetu Wanasema Nini",
+    "subtitle": "Hadithi za mafanikio kutoka kwa wanunuzi na wauzaji kwenye jukwaa letu"
+  },
+  "Newsletter": {
+    "title": "Pata Taarifa kuhusu Hazina Mpya za Kiafrika",
+    "subtitle": "Jiunge na mduara wetu wa kipekee wa wanunuzi wasomi. Gundua wauzaji wapya waliothibitishwa na bidhaa za toleo mdogo kwanza.",
+    "placeholder": "jina@barua-pepe.com",
+    "button": "Jiunge Sasa",
+    "privacy": "Tunaheshimu faragha yako. Jiondoe wakati wowote."
+  },
+  "Nav": {
+    "browse": "Vinjari",
+    "categories": "Kategoria",
+    "vendors": "Wauzaji",
+    "partnerships": "Ushirikiano",
+    "resources": "Rasilimali",
+    "about": "Kuhusu",
+    "login": "Ingia",
+    "register": "Anza Sasa",
+    "dashboard": "Nenda kwenye Dashibodi",
+    "search": "Unatafuta nini?",
+    "industries": "Viwanda Vikuu",
+    "viewAll": "Tazama Zote",
+    "nicheFallback": "Bidhaa za hali ya juu zinakuja hivi karibuni kwenye eneo hili",
+    "discover": "Gundua Kilicho Bora Afrika",
+    "discoverDesc": "Weka kielekezi kwenye kategoria iliyo upande wa kushoto ili kuchunguza bidhaa maalum na wauzaji waliothibitishwa.",
+    "pressEsc": "Bonyeza Esc kufunga",
+    "trendingCategories": "Kategoria Zinazovuma",
+    "quickActions": "Hatua za Haraka",
+    "becomeVendor": "Kuwa Muuzaji",
+    "becomeVendorSubtitle": "Anza kuuza bidhaa zako ulimwenguni kote",
+    "tradeResources": "Rasilimali za Biashara",
+    "tradeResourcesSubtitle": "Data ya sarafu na vifaa",
+    "globalHub": "Kitovu cha Kiafrika cha Ulimwenguni"
+  },
+  "Categories": {
+    "manufacturers": "Wazalishaji",
+    "textiles-and-fabrics": "Nguo na vitambaa",
+    "apparel-and-fashion-accessories": "Mavazi na vifaa vya mitindo",
+    "leather-and-leather-goods": "Ngozi na bidhaa za ngozi",
+    "footwear": "Viatu",
+    "automotive-assembly-and-components": "Uunganishaji wa magari na vipuri",
+    "electrical-equipment-and-cables": "Vifaa vya umeme na nyaya",
+    "electronics-and-small-appliances": "Vifaa vya kielektroniki na vifaa vidogo vya nyumbani",
+    "industrial-machinery-and-equipment": "Mashine na vifaa vya viwandani",
+    "furniture-and-fittings": "Samani na vifaa vya ndani",
+    "packaging-materials": "Vifaa vya ufungaji",
+    "artisans": "Mafundi",
+    "handicrafts-and-souvenirs": "Kazi za mikono na zawadi",
+    "home-decor-and-interior-items": "Mapambo ya nyumbani na vitu vya ndani",
+    "traditional-art-sculpture-and-carvings": "Sanaa ya jadi, uchongaji na vinyago",
+    "jewellery-and-adornments": "Vito na pambo",
+    "cultural-and-religious-items": "Vitu vya kitamaduni na kidini",
+    "miners": "Wachimbaji",
+    "minerals-and-ores": "Madini na madini ghafi",
+    "precious-metals-and-gemstones": "Metali za thamani na mawe ya thamani",
+    "industrial-minerals": "Madini ya viwandani",
+    "industrial": "Viwandani",
+    "building-materials-and-construction-products": "Vifaa vya ujenzi na bidhaa za ujenzi",
+    "metals-and-metal-products": "Metali na bidhaa za metali",
+    "wood-and-wood-products": "Mbao na bidhaa za mbao",
+    "paper-pulp-and-printed-materials": "Karatasi, majimaji ya karatasi na vifaa vilivyochapishwa",
+    "chemicals-and-petrochemicals": "Kemikali na bidhaa za mafuta",
+    "fertilizers-and-agro-inputs": "Mbolea na pembejeo za kilimo",
+    "paints-coatings-and-adhesives": "Rangi, mipako na gundi",
+    "plastics-and-rubber-products": "Bidhaa za plastiki na mpira",
+    "food-and-agriculture": "Chakula na Kilimo",
+    "agricultural-commodities": "Bidhaa za kilimo",
+    "processed-foods-and-beverages": "Chakula na vinywaji vilivyosindikwa",
+    "livestock-and-animal-products": "Mifugo na bidhaa za wanyama",
+    "fisheries-and-aquaculture-products": "Uvuvi na bidhaa za ufugaji wa viumbe vya majini",
+    "health-and-wellness": "Afya na Ustawi",
+    "pharmaceuticals-and-medical-supplies": "Dawa na vifaa vya matibabu",
+    "cosmetics-beauty-and-personal-care": "Vipodozi, urembo na usafi wa kibinafsi",
+    "health-and-wellness-products": "Bidhaa za afya na ustawi",
+    "home-and-living": "Nyumbani na Maisha",
+    "cleaning-and-household-care-products": "Bidhaa za usafi na utunzaji wa nyumbani",
+    "eco-friendly-and-sustainable-products": "Bidhaa rafiki wa mazingira na endelevu",
+    "educational-and-office-supplies": "Vifaa vya elimu na ofisi",
+    "technology-and-energy": "Teknolojia na Nishati",
+    "renewable-energy-equipment": "Vifaa vya nishati mbadala",
+    "ict-hardware-assembly": "Uunganishaji wa vifaa vya TEHAMA",
+    "digital-content-tied-to-physical-goods": "Maudhui ya kidijitali yanayohusiana na bidhaa za kimwili",
+    "textiles": "Nguo na Mavazi",
+    "crafts": "Sanaa na Ufundi",
+    "food": "Chakula na Kilimo",
+    "minerals": "Madini na Vifaa",
+    "jewelry": "Vito na Vifaa",
+    "beauty": "Afya na Urembo",
+    "tech": "Teknolojia na Huduma",
+    "home": "Nyumbani na Mapambo",
+    "viewAll": "Tazama Kategoria Zote"
+  },
+  "CategoryPage": {
+    "home": "Mwanzo",
+    "breadcrumb": "Kategoria",
+    "description": "Gundua bidhaa halisi za {category} kutoka kwa wauzaji waliohakikiwa kote Afrika.",
+    "specialized": "Bidhaa na huduma maalum",
+    "sectionTitle": "Kategoria za Bidhaa",
+    "sectionSubtitle": "Gundua bidhaa zilizopangwa kwa kategoria kutoka kwa wauzaji wa Kiafrika",
+    "browseAll": "Vinjari Bidhaa Zote",
+    "browse": "Vinjari",
+    "category": "Kategoria"
+  },
+  "Browse": {
+    "title": "Vinjari Bidhaa za Kiafrika",
+    "searchPlaceholder": "Tafuta bidhaa kwa jina au maelezo...",
+    "searchButton": "Tafuta",
+    "popular": "Maarufu:",
+    "filters": "Vichujio",
+    "clearAll": "Futa zote",
+    "view": "Mwonekano:",
+    "showing": "Inaonyesha bidhaa {count}",
+    "sortBy": "Panga kwa:",
+    "sortOptions": {
+      "newest": "Mpya Zaidi Kwanza",
+      "price-low": "Bei: Chini hadi Juu",
+      "price-high": "Bei: Juu hadi Chini",
+      "popular": "Maarufu Zaidi"
+    },
+    "loading": "Inapakia bidhaa bora...",
+    "viewProducts": "Angalia Bidhaa",
+    "resetFilters": "Weka upya vichujio",
+    "viewDetails": "Angalia Maelezo",
+    "viewDetailsOrder": "Angalia Maelezo na Agiza",
+    "bulk": "Jumla:",
+    "unit": "/kipande",
+    "verified": "Iliidhinishwa",
+    "outOfStock": "Hazipo",
+    "wholesale": "Jumla"
+  },
+  "Filters": {
+    "categories": "Kategoria",
+    "allCategories": "Kategoria Zote",
+    "country": "Nchi",
+    "salesType": "Aina ya Mauzo",
+    "vendorOrigin": "Asili ya Muuzaji",
+    "inStockOnly": "Zilizopo pekee"
+  },
+  "Countries": {
+    "all": "Nchi Zote",
+    "Nigeria": "Nigeria",
+    "Ghana": "Ghana",
+    "Kenya": "Kenya",
+    "South Africa": "Afrika Kusini",
+    "Ethiopia": "Ethiopia",
+    "Tanzania": "Tanzania",
+    "Morocco": "Morocco",
+    "Senegal": "Senegal",
+    "Egypt": "Misri",
+    "Rwanda": "Rwanda",
+    "Uganda": "Uganda",
+    "Cameroon": "Kamerun",
+    "Ivory Coast": "Ivory Coast",
+    "Zambia": "Zambia",
+    "Angola": "Angola"
+  },
+  "Vendors": {
+    "title": "Wauzaji wa Kiafrika",
+    "subtitle": "Unganisha na biashara zilizothibitishwa katika mnyororo mzima wa ugavi wa Afrika",
+    "breadcrumbHome": "Mwanzo",
+    "breadcrumbVendors": "Wauzaji",
+    "becomeVendor": "Kuwa Muuzaji",
+    "allVendors": "Wauzaji Wote",
+    "searchPlaceholder": "Tafuta wauzaji kwa jina, bidhaa, au eneo...",
+    "ctaTitle": "Kuwa Muuzaji kwenye Buy from Africa",
+    "ctaSubtitle": "Onyesha bidhaa zako na uunganishwe na wanunuzi kutoka kote ulimwenguni",
+    "ctaButton": "Jisajili kama Muuzaji",
+    "verificationSystem": "Mfumo Wetu wa Uhakiki wa Wauzaji",
+    "blueBadgeTitle": "Wauzaji wa Beji ya Bluu",
+    "blueBadgeDesc": "Uhakiki wa kimsingi kwa wajasiriamali binafsi",
+    "goldBadgeTitle": "Wauzaji wa Beji ya Dhahabu",
+    "goldBadgeDesc": "Uhakiki wa hali ya juu kwa biashara zilizosajiliwa",
+    "filters": "Vichujio",
+    "businessType": "Aina ya Biashara",
+    "allBusinessTypes": "Aina Zote za Biashara",
+    "artisanBadge": "SANAA",
+    "brandBadge": "MBUNIFU",
+    "factoryBadge": "KIWANDA",
+    "exportBadge": "Uuzaji",
+    "paginationPrevious": "Iliyopita",
+    "paginationNext": "Inayofuata",
+    "defaultVendorDescription": "Mshirika wa biashara wa Kiafrika aliyethibitishwa anayetoa bidhaa na huduma bora.",
+    "artisanMakers": "Mafundi / Watengenezaji wa Kiafrika",
+    "brandDesigners": "Bidhaa / Wabunifu wa Kiafrika",
+    "manufacturerFactories": "Viwanda / Wazalishaji wa Kiafrika",
+    "distributorExport": "Wasambazaji / Mawakala wa Mauzo ya Nje wa Kiafrika",
+    "verificationLevel": "Kiwango cha Uhakiki",
+    "goldBadge": "Wauzaji wa Beji ya Dhahabu",
+    "blueBadge": "Wauzaji wa Beji ya Bluu",
+    "activeFilters": "Vichujio Amilifu:",
+    "searchLabel": "Tafuta:",
+    "typeLabel": "Aina:",
+    "badgeLabel": "Beji:",
+    "countryLabel": "Nchi:",
+    "categoryLabel": "Kategoria:",
+    "clearAll": "Futa Zote",
+    "loading": "Inapakia wauzaji waliothibitishwa...",
+    "gold": "DHAHABU",
+    "blue": "BLUU",
+    "noLocation": "Eneo halijabainishwa",
+    "spotlight": "Mwangaza",
+    "viewProfile": "Tazama Wasifu wa Boutique",
+    "emptyTitle": "Hakuna Wauzaji Waliothibitishwa",
+    "emptyText": "Hatukuweza kupata wauzaji wowote wanaolingana na utafutaji wako au vichujio vya sasa. Jaribu kupanua upeo wako wa utafutaji.",
+    "resetAll": "Weka Upya Vigezo Vyote"
+  },
+  "VendorTypes": {
+    "title": "Washirika wa Biashara wa Kiafrika Waliothibitishwa",
+    "subtitle": "Jukwaa letu linakuunganisha na biashara zilizothibitishwa katika mnyororo mzima wa ugavi wa Afrika",
+    "artisanTitle": "Mafundi / Watengenezaji wa Kiafrika",
+    "artisanBadge": "FUNDI",
+    "artisanDesc": "Ufikiaji wa moja kwa moja kwa mafundi stadi wa Kiafrika na mafundi stadi wanaozalisha bidhaa halisi za mikono. Pata bidhaa za kipekee zinazoonyesha urithi tajiri wa kitamaduni.",
+    "brandTitle": "Bidhaa / Wabunifu wa Kiafrika",
+    "brandBadge": "MBUNIFU",
+    "brandDesc": "Bidhaa na wabunifu imara wa Kiafrika wanaochanganya urembo wa kisasa na mbinu za jadi. Inafaa kwa wale wanaotafuta bidhaa bora za Kiafrika zinazoongozwa na ubunifu.",
+    "factoryTitle": "Viwanda / Wazalishaji wa Kiafrika",
+    "factoryBadge": "KIWANDA",
+    "factoryDesc": "Vifaa vya utengenezaji wa Kiafrika vya kiwango kikubwa vyenye uwezo wa kushughulikia uzalishaji wa kiasi kikubwa. Ungana na viwanda vinavyokidhi viwango vya kimataifa kwa usambazaji wa wingi.",
+    "exportTitle": "Wasambazaji / Mawakala wa Mauzo ya Nje wa Kiafrika",
+    "exportBadge": "MAUZO NJE",
+    "exportDesc": "Washirika wa kuaminika wa vifaa na mawakala wa mauzo ya nje waliobobea katika kusafirisha bidhaa za Kiafrika kote ulimwenguni. Rahisisha mnyororo wako wa ugavi na wataalam wa biashara na usafirishaji wa kimataifa.",
+    "badgeSystemTitle": "Mfumo wa Beji za Uhakiki",
+    "blueTitle": "Beji ya Bluu",
+    "blueSubtitle": "Uhakiki wa Kimsingi",
+    "goldTitle": "Beji ya Dhahabu",
+    "goldSubtitle": "Uhakiki wa Hali ya Juu",
+    "checkIdentity": "Uhakiki wa utambulisho",
+    "checkContact": "Maelezo ya mawasiliano yamethibitishwa",
+    "checkProductBasic": "Uhakiki wa kimsingi wa uhalisi wa bidhaa",
+    "checkRegistration": "Uhakiki wa usajili wa biashara",
+    "checkBluePlus": "Uhakiki wote wa Beji ya Bluu",
+    "checkRegistrationOfficial": "Usajili rasmi wa biashara umethibitishwa",
+    "checkProductExtended": "Uhakiki wa hali ya juu wa uhalisi wa bidhaa",
+    "checkTradeDocs": "Leseni ya biashara na nyaraka za mauzo ya nje",
+    "blue": {
+      "title": "Wauzaji wa Beji ya Bluu",
+      "badge": "BLUU",
+      "desc": "Uthibitishaji wa kimsingi kwa wajasiriamali binafsi. Fikia zana za kimsingi za kuuza."
+    },
+    "gold": {
+      "title": "Wauzaji wa Beji ya Dhahabu",
+      "badge": "DHAHABU",
+      "desc": "Uthibitishaji wa malipo kwa biashara zilizosajiliwa. Ufikiaji wa zana zote za kuuza na uchanganuzi."
+    }
+  },
+  "SalesTypes": {
+    "all": "Bidhaa Zote",
+    "retail": "Rejareja Pekee",
+    "wholesale": "Jumla Pekee"
+  },
+  "VendorOrigins": {
+    "all": "Asili Zote",
+    "artisan": "Msanii / Mtengenezaji",
+    "brand": "Chapa / Mbunifu",
+    "factory": "Kiwanda / Mtengenezaji",
+    "export": "Msambazaji / Wakala wa Mauzo ya Nje"
+  },
+  "Products": {
+    "emptyState": {
+      "title": "Hakuna bidhaa zilizopatikana",
+      "subtitle": "Jaribu kurekebisha vichujio vyako au vinjari kategoria nyingine."
+    }
+  },
+  "Footer": {
+    "description": "Kuunganisha wauzaji wa Kiafrika na wanunuzi wa kimataifa. Gundua bidhaa na huduma halisi kutoka kote Afrika.",
+    "quickLinks": "Viungo vya Haraka",
+    "browseProducts": "Vinjari Bidhaa",
+    "findVendors": "Tafuta Wauzaji",
+    "becomeVendor": "Kuwa Muuzaji",
+    "registerBuyer": "Jisajili kama Mnunuzi",
+    "about": "Kuhusu Sisi",
+    "categories": "Kategoria",
+    "contact": "Wasiliana Nasi",
+    "address": "Makao Makuu ya Buy from Africa, Lagos, Nigeria",
+    "terms": "Sheria na Masharti",
+    "privacy": "Sera ya Faragha",
+    "faq": "Maswali Yanayoulizwa Sana"
+  },
+  "Admin": {
+    "navigation": {
+      "dashboard": "Dashibodi",
+      "team": "Sajili ya Timu",
+      "management": "Usanifu wa Mfumo",
+      "settings": "Usanidi wa Ulimwengu",
+      "analytics": "Ujasusi wa Soko"
+    }
+  },
+  "NotFound": {
+    "title": "Ukurasa Haujapata",
+    "goHome": "Rudi Kwenye Makao Makuu ya Ulimwengu"
+  },
+  "Partnerships": {
+    "heroTitle": "Ushirikiano wa Kimkakati",
+    "heroSubtitle": "Kuunganisha soko la BFA na uti wa mgongo wa taasisi ya biashara ya Afrika—kutoka kwa mashirika ya udhibiti hadi mashirika makubwa ya kifedha.",
+    "keyPartners": "Washirika Muhimu",
+    "tradeIntelligence": "Kanda za Biashara & Miundombinu",
+    "tradeIntelligenceSubtitle": "Akili muhimu kwenye kambi za kibara na mifumo ya kifedha inayoendesha enzi ijayo ya biashara ya Afrika.",
+    "continentalIntelligence": "Ujasusi wa Bara",
+    "learnMore": "JIFUNZE ZAIDI",
+    "ctaTitle": "Shirikiana na Mfumo wa BFA",
+    "ctaSubtitle": "Je, wewe ni taasisi au mtoa huduma anayeunga mkono biashara ya Afrika? Jiunge na mtandao wetu ili kutoa huduma zilizothibitishwa kwa maelfu ya wauzaji na wanunuzi.",
+    "applyButton": "Omba Ushirikiano",
+    "ministriesCategory": "Wizara za Biashara",
+    "ministriesDesc": "Mashirika rasmi ya serikali yanayosimamia na kusaidia biashara ya kimataifa ndani ya mataifa ya Afrika.",
+    "chambersCategory": "Mavyumba ya Biashara",
+    "chambersDesc": "Vyama vya sekta binafsi vinavyochochea ukuaji wa biashara na mtandao kati ya mipaka.",
+    "banksCategory": "Benki za Biashara & Taasisi za Kifedha",
+    "banksDesc": "Washirika maalum wa kifedha wanaotoa ufadhili wa biashara, mkopo, na usaidizi wa uwekezaji.",
+    "paymentCategory": "Mchakato wa Malipo",
+    "paymentDesc": "Miundombinu ya kidijitali kwa miamala salama ya kuvuka mipaka na utatuzi wa sarafu.",
+    "microfinanceCategory": "Benki za Mikopo Midogo",
+    "microfinanceDesc": "Kuwezesha wafanyabiashara wadogo na mafundi na huduma za kifedha zinazoweza kufikiwa.",
+    "regionRegional": "Kikanda",
+    "regionPanAfrican": "Afrika-Nzima",
+    "regionEastAfrica": "Afrika Mashariki",
+    "regionWestAfrica": "Afrika Magharibi",
+    "afcftaTitle": "Eneo Huru la Biashara la Bara la Afrika (AfCFTA)",
+    "afcftaDesc": "Eneo kubwa zaidi huru la biashara duniani kwa idadi ya nchi zinazoshiriki, linalolenga kuunganisha nchi 54 kati ya 55 wanachama wa Umoja wa Afrika katika soko moja la watu bilioni 1.4.",
+    "afcftaBadge": "Soko Moja la AU",
+    "papssTitle": "Mfumo wa Malipo na Suluhu wa Afrika-Nzima (PAPSS)",
+    "papssDesc": "Miundombinu hii ya kifedha ni muhimu kwa kupunguza utegemezi wa sarafu za kigeni kama dola ya Marekani kwa kuwezesha malipo ya papo hapo ya kuvuka mipaka kwa sarafu za ndani.",
+    "papssBadge": "Miundombinu ya Kifedha",
+    "ecowasTitle": "Jumuiya ya Kiuchumi ya Nchi za Afrika Magharibi (ECOWAS)",
+    "ecowasDesc": "Kambi hii imekuwa na eneo huru la biashara tangu 1990. Mnamo Januari 2025, Mali, Burkina Faso, na Niger zilijiondoa rasmi, ingawa usafiri huru kwa raia unatarajiwa kuendelea.",
+    "ecowasBadge": "Afrika Magharibi",
+    "eacTitle": "Jumuiya ya Afrika Mashariki (EAC)",
+    "eacDesc": "EAC imefanikisha Umoja wa Forodha na kuanzisha soko la pamoja kwa bidhaa, na biashara kati ya wanachama ikiwa bila ushuru na kuunganishwa chini ya eneo moja la forodha.",
+    "eacBadge": "Afrika Mashariki",
+    "sadcTitle": "Jumuiya ya Maendeleo Kusini mwa Afrika (SADC)",
+    "sadcDesc": "Eneo Huru la Biashara la SADC lilianzishwa mnamo 2008 na lina nchi wanachama 16, ingawa kwa sasa 13 wanatekeleza kikamilifu hatua za eneo huru la biashara kwa ukuaji wa kikanda.",
+    "sadcBadge": "Kusini mwa Afrika",
+    "comesaTitle": "Soko la Pamoja la Mashariki na Kusini mwa Afrika (COMESA)",
+    "comesaDesc": "Inawakilisha soko la watu zaidi ya milioni 500, COMESA ilianzisha umoja wa forodha mnamo 2009 ili kuwezesha ujumuishaji wa kikanda na maendeleo ya kiuchumi.",
+    "comesaBadge": "Kambi ya Kikanda"
+  },
+  "Resources": {
+    "heroTitle": "Rasilimali za ",
+    "heroTitleHighlight": "Biashara",
+    "heroSubtitle": "Kuzipa biashara za Kiafrika data za sarafu za wakati halisi, akili ya udhibiti, na miongozo ya usafirishaji ili kutawala biashara ya kimataifa.",
+    "currencyTitle": "Ujasusi wa Sarafu",
+    "youConvert": "Zinayobadilishwa",
+    "youReceive": "Zinayopokelewa",
+    "liveRatesInfo": "Viwango vya soko vya moja kwa moja vinatolewa kwa madhumuni ya habari tu.",
+    "liveRatesTitle": "Viwango vya Moja kwa Moja",
+    "liveRatesUpdated": "Imesasishwa",
+    "tradeRegionsTitle": "Mikoa Mikuu ya Biashara",
+    "tradeRegionsSubtitle": "Kuelewa umoja wa kikanda unaochochea ushirikiano wa kiuchumi na kupunguza ushuru katika bara hili.",
+    "memberStates": "Nchi Wanachama: {count}",
+    "logisticsTitle": "Usafirishaji na Lojistiki",
+    "logisticsIntra": "Korido za Ndani ya Afrika",
+    "logisticsIntraDesc": "Njia zilizoboreshwa za biashara ya kikanda kati ya Kusini, Mashariki na Magharibi mwa Afrika.",
+    "logisticsInsurance": "Bima ya Bahari na Mizigo",
+    "logisticsInsuranceDesc": "Ulinzi kamili kwa bidhaa za thamani za ufundi na viwanda.",
+    "logisticsTracking": "Ufuatiliaji wa Bandari hadi Bandari",
+    "logisticsTrackingDesc": "Ufuatiliaji wa wakati halisi wa shehena za kimataifa kutoka bandari kuu za Afrika.",
+    "complianceTitle": "Ushuru na Tozo",
+    "complianceSubtitle": "Kodi na ushuru wa forodha hutofautiana sana kulingana na asili ya bidhaa na mkataba wa biashara uliopo.",
+    "exportDuties": "Ushuru wa Usafirishaji Nje",
+    "exportVariable": "Inabadilika (0 - 5%)",
+    "customLevies": "Tozo za Forodha",
+    "customProductBased": "Kulingana na Bidhaa",
+    "afcftaExemption": "Msamaha wa AfCFTA",
+    "afcftaReduced": "Imepunguzwa Hadi 90%",
+    "ctaTitle": "Unahitaji ushauri maalum wa biashara?",
+    "ctaSubtitle": "Washirika wetu wa kufuata taratibu za biashara wako tayari kukusaidia kupitia ugumu wa biashara ya kuvuka mipaka.",
+    "ctaContact": "Wasiliana na Mtaalam",
+    "ctaDownload": "Pakua Mwongozo wa Biashara",
+    "currencies": {
+      "USD": "Dola ya Marekani",
+      "EUR": "Yuro",
+      "GBP": "Pauni ya Uingereza",
+      "CNY": "Yuan ya Uchina",
+      "NGN": "Naira ya Nigeria",
+      "ZAR": "Randi ya Afrika Kusini",
+      "KES": "Shilingi ya Kenya",
+      "GHS": "Sedi ya Ghana",
+      "EGP": "Pauni ya Misri",
+      "ETB": "Birr ya Ethiopia"
+    },
+    "regions": {
+      "AfCFTA": {
+        "name": "AfCFTA",
+        "fullName": "Eneo Huru la Biashara la Bara la Afrika",
+        "description": "Eneo kubwa zaidi la biashara huru ulimwenguni, lenye lengo la kuondoa asilimia 90 ya ushuru wa forodha kwa bidhaa kote barani Afrika."
+      },
+      "ECOWAS": {
+        "name": "ECOWAS",
+        "fullName": "Jumuiya ya Kiuchumi ya Nchi za Afrika Magharibi",
+        "description": "Kukuza ukuzaji wa kiuchumi katika nchi 15 za Afrika Magharibi kupitia masoko ya pamoja."
+      },
+      "EAC": {
+        "name": "EAC",
+        "fullName": "Jumuiya ya Afrika Mashariki",
+        "description": "Kuimarisha ushirikiano kati ya mataifa ya Afrika Mashariki kupitia Umoja wa Forodha shirikishi."
+      },
+      "SADC": {
+        "name": "SADC",
+        "fullName": "Jumuiya ya Maendeleo Kusini mwa Afrika",
+        "description": "Utengamano wa kikanda kwa maendeleo ya kiuchumi na kijamii na usalama Kusini mwa Afrika."
+      }
+    }
+  },
+  "About": {
+    "loading": "Kuthibitisha Urithi",
+    "ourJourney": "Safiri Yetu",
+    "heroTitle": "Kuhusu Nunua kutoka Afrika",
+    "heroDescription": "Kuunganisha biashara za Kiafrika na masoko ya kimataifa, kuwezesha ukuaji wa kiuchumi, na kuonyesha utajiri wa bidhaa za Kiafrika.",
+    "heroCTA": "Chunguza Wauzaji Wetu",
+    "getStarted": "Anza Sasa",
+    "impactStats": {
+      "verifiedVendors": "Wauzaji Waliothibitishwa",
+      "countries": "Nchi za Kiafrika",
+      "revenue": "Pato Lililozalishwa",
+      "vendorGrowth": "Wastani wa Ukuaji wa Wauzaji"
+    },
+    "missionLabel": "Kusudi Letu",
+    "missionTitle": "Dhamira Yetu",
+    "missionSubtitle": "Iwe wewe ni mfanyabiashara wa Kiafrika unayetafuta kupanuka kimataifa au mnunuzi anayetafuta bidhaa halisi za Kiafrika, kuwa sehemu ya jumuiya yetu inayokua leo.",
+    "missionPoints": {
+      "connect": {
+        "title": "Unganisha",
+        "description": "Kuunganisha wauzaji wa Kiafrika na wanunuzi wa kimataifa, na kuunda soko la kidijitali linalovuka mipaka ya kijiografia."
+      },
+      "empower": {
+        "title": "Wezesha",
+        "description": "Kuziwezesha biashara za Kiafrika na zana, kujulikana, na ufikiaji soko wanaohitaji ili kukua na kustawi kimataifa."
+      },
+      "sustain": {
+        "title": "Endeleza",
+        "description": "Kukuza mazoea endelevu ya biashara, biashara ya haki, na uzalishaji unaozingatia maadili kote katika mnyororo wa usambazaji wa Afrika."
+      }
+    },
+    "buildingBridgesLabel": "Kujenga Madaraja",
+    "buildingBridgesTitle": "Biashara isiyo na mipaka.",
+    "storyTitle": "Hadithi",
+    "storyTitleHighlight": "Kamili.",
+    "storyParagraphs": [
+      "Nunua kutoka Afrika ilianzishwa mwaka 2023 kwa maono ya kubadilisha jinsi ulimwengu unavyogundua na kupata bidhaa za Kiafrika. Mwanzilishi wetu, Sarah Johnson, alitumia zaidi ya muongo mmoja kufanya kazi katika mataifa mbalimbali ya Afrika, akishuhudia kwa macho ubora wa ajabu na utofauti wa bidhaa ambazo zilitatizika kufika kwenye masoko ya kimataifa.",
+      "Kile kilichoanza kama jukwaa dogo lililo na wauzaji 20 pekee kimekua na kuwa soko linaloongoza barani Afrika linalounganisha maelfu ya biashara zilizothibitishwa na wanunuzi duniani kote. Tumewasaidia wauzaji kuongeza mapato yao ya mauzo ya nje kwa wastani wa asilimia 40 huku tukihakikisha bidhaa zao zinafika kwenye masoko ambayo hapo awali yalikuwa hayafikiki kwao.",
+      "Leo, tunafanya kazi katika nchi 15 za Kiafrika huku tukiwa na mipango ya kujipanua kote katika bara zima, tukiendeleza dhamira yetu ya kuonyesha ujasiriamali na ustadi wa Kiafrika kwa ulimwengu."
+    ],
+    "storyStats": {
+      "countriesServiced": "Nchi Zinazohudumiwa",
+      "verifiedVendors": "Wauzaji Waliothibitishwa",
+      "vendorGrowth": "Ukuaji wa Wauzaji",
+      "totalRevenue": "Jumla ya Mapato"
+    },
+    "teamLabel": "Nyuma ya Maono",
+    "teamTitle": "Kutana na Timu",
+    "teamDescription": "Ikiendeshwa na wataalamu wenye mapenzi yaliyokita mizizi barani Afrika, timu yetu tofauti huleta pamoja uzoefu katika teknolojia, biashara ya kimataifa, na usimamizi wa ugavi.",
+    "teamMembers": {
+      "sarah": {
+        "role": "Mwanzilishi & Mkurugenzi Mtendaji",
+        "bio": "Sarah alianzisha Nunua kutoka Afrika baada ya muongo mmoja wa kufanya kazi katika maendeleo ya kimataifa katika nchi mbalimbali za Afrika. Anashikilia MBA kutoka Shule ya Biashara ya Harvard na ana shauku ya kuwezesha uchumi kupitia biashara."
+      },
+      "daniel": {
+        "role": "Mkurugenzi Mkuu wa Teknolojia (CTO)",
+        "bio": "Daniel anaongoza timu yetu ya teknolojia akiwa na uzoefu wa zaidi ya miaka 15 katika kujenga mifumo hatarishi. Hapo awali akiwa Amazon na Microsoft, alirejea nchini kwao Nigeria kusaidia kujenga teknolojia inayowezesha biashara za Kiafrika."
+      },
+      "amina": {
+        "role": "Afisa Mkuu wa Uendeshaji",
+        "bio": "Akiwa na uzoefu mkubwa katika masuala ya ugavi na usimamizi kote Afrika Magharibi, Amina anahakikisha kwamba jukwaa letu linafanya kazi kwa ufanisi na wauzaji wanaweza kutimiza ahadi zao."
+      }
+    },
+    "countriesTitle": "Tunapofanyia Kazi",
+    "countriesDescription": "Tunawaunganisha kikamilifu wauzaji na wanunuzi katika nchi hizi za Kiafrika, tukiwa na mipango ya kupanua ufikiaji wetu kote barani.",
+    "partnersLabel": "Washirika wa Kuaminika wa Kimazingira",
+    "ctaTitle": "JIUNGE NA HARAKATI.",
+    "ctaApplyVendor": "Omba kama Muuzaji",
+    "ctaApplyBuyer": "Jisajili kama Mnunuzi"
+  },
+  "Terms": {
+    "title": "Sheria na Masharti",
+    "subtitle": "Tafadhali soma masharti haya kwa uangalifu kabla ya kutumia jukwaa letu. Ufikiaji wako na utumiaji wa Buy from Africa unategemea kukubali kwako makubaliano haya.",
+    "lastUpdated": "Ilisasishwa Mwisho",
+    "tableOfContents": "Yaliyomo",
+    "backToTop": "Rudi Juu",
+    "downloadPdf": "Pakua PDF",
+    "printTerms": "Chapisha Masharti",
+    "sections": {
+      "introduction": {
+        "title": "1. Utangulizi",
+        "content": "Karibu kwenye Buy from Africa. Sheria hizi za Huduma (\"Masharti\") zinasimamia ufikiaji wako na matumizi ya tovuti yetu, huduma, na maombi (kwa pamoja, \"Huduma\"). Kwa kupata ufikiaji au kutumia Huduma, unakubali kufungwa na Masharti haya na Sera yetu ya Faragha. Ikiwa haukubaliani na sehemu yoyote ya masharti haya, hauruhusiwi kufikia Huduma."
+      },
+      "account": {
+        "title": "2. Usajili wa Akaunti & Majukumu",
+        "content": "Ili kupata vipengele maalum vya Huduma, lazima usajili akaunti. Unakubali kutoa taarifa sahihi, za kisasa, na kamili wakati wa usajili na kusasisha maelezo ya akaunti yako. Unajibika kikamilifu kwa kudumisha usiri wa vitambulisho vya akaunti yako na kwa shughuli zote zinazofanyika chini ya akaunti yako."
+      },
+      "vendors": {
+        "title": "3. Masharti na Vigezo vya Mchuuzi",
+        "content": "Wachuuzi kwenye Buy from Africa lazima wawe mashirika yaliyosajiliwa kisheria na haki ya kuuza bidhaa zao zilizoorodheshwa kuvuka mipaka ya kimataifa. Wachuuzi wanakubali kutoa maelezo sahihi ya bidhaa, kuheshimu bei zilizotajwa, na kutimiza maagizo kwa wakati. Tunahifadhi haki ya kuthibitisha vitambulisho vya biashara yako, kuzuia malipo kwa miamala inayogombaniwa, au kusimamisha akaunti yako kwa kukiuka viwango vya ubora."
+      },
+      "buyers": {
+        "title": "4. Masharti na Vigezo vya Mnunuzi",
+        "content": "Wanunuzi wanakubali kutumia jukwaa hili kwa madhumuni halali ya biashara pekee. Unakubali kulipa gharama zote zilizopatikana kwako au mtumiaji yeyote wa akaunti yako kwa bei zinazotumika wakati gharama hizo zinapatikana. Lazima uzingatie sheria zote za kuagiza, kodi, na ushuru wa forodha katika nchi yako inayopokea."
+      },
+      "fees": {
+        "title": "5. Ada, Malipo, & Usajili",
+        "content": "Buy from Africa inatoza ada za huduma kwa miamala iliyofanikiwa iliyowezeshwa kupitia jukwaa hili. Miundo maalum ya ada imeelezewa kwa kina kwenye ukurasa wetu wa Bei na inaweza kusasishwa mara kwa mara kwa taarifa ya awali. Malipo yote yanachakatwa kupitia watoa huduma wetu salama wa malipo wa tatu."
+      },
+      "content": {
+        "title": "6. Maudhui Yanayotengenezwa na Mtumiaji & Hakimiliki",
+        "content": "Unabaki na haki zako zote za umiliki katika maudhui unayotuma kwenye jukwaa hili. Kwa kutuma maudhui (ikiwa ni pamoja na picha za bidhaa, uhakiki, na jumbe), unatupa leseni ya kimataifa, isiyo ya kipekee, isiyo na mrabaha ya kutumia, kuzalisha upya, kuonyesha, na kusambaza maudhui hayo kuhusiana na kutoa na kutangaza Huduma."
+      },
+      "dispute": {
+        "title": "7. Utatuzi wa Migogoro & Marejesho",
+        "content": "Katika tukio la mzozo kati ya mnunuzi na mchuuzi, pande husika kwanza zinapaswa kujaribu kutatua suala hilo kwa amani kupitia mfumo wetu wa ujumbe. Ikiwa haijatatuliwa, timu yetu ya usuluhishi itaingilia kati. Sera za kurejesha pesa huamuliwa na wachuuzi binafsi lakini lazima zizingatie viwango vyetu vya chini vya ulinzi."
+      },
+      "termination": {
+        "title": "8. Kusitisha",
+        "content": "Tunaweza kusitisha au kusimamisha akaunti yako na kuzuia ufikiaji wa Huduma mara moja, bila onyo au dhima, kwa uamuzi wetu pekee, kwa sababu yoyote ile na bila kikomo, ikiwa ni pamoja na, lakini si tu, ukiukaji wa Masharti haya."
+      },
+      "limitation": {
+        "title": "9. Kikomo cha Dhima",
+        "content": "Hakuna tukio ambalo Buy from Africa, au wakurugenzi wake, wafanyikazi, washirika, mawakala, wauzaji, au washirika wenza, watawajibika kwa uharibifu wowote usio wa moja kwa moja, wa bahati nasibu, maalum, wa matokeo au wa adhabu, ikijumuisha bila kikomo, upotevu wa faida, data, matumizi, nia njema, au hasara nyingine yoyote isiyoonekana, inayotokana na ufikiaji wako, matumizi, au kutoweza kufikia au kutumia Huduma."
+      }
+    },
+    "backToHome": "Kurudi Nyumbani"
+  },
+  "Privacy": {
+    "title": "Sera ya Faragha",
+    "subtitle": "Faragha yako ni muhimu kwetu. Sera hii ya Faragha inaeleza jinsi Buy from Africa inavyokusanya, kutumia, na kulinda taarifa zako za kibinafsi unaposhughulika na jukwaa letu.",
+    "lastUpdated": "Ilisasishwa Mwisho",
+    "tableOfContents": "Yaliyomo",
+    "backToTop": "Rudi Juu",
+    "downloadPdf": "Pakua PDF",
+    "printTerms": "Chapisha Sera",
+    "sections": {
+      "introduction": {
+        "title": "1. Utangulizi",
+        "content": "Karibu kwenye Sera ya Faragha ya Buy from Africa. Tunaheshimu faragha yako na tumejitolea kulinda data yako ya kibinafsi. Sera hii ya faragha itakujulisha jinsi tunavyotunza data yako ya kibinafsi unapotembelea tovuti yetu (bila kujali unaitokea wapi) na kukuambia kuhusu haki zako za faragha na jinsi sheria inavyokulinda."
+      },
+      "dataWeCollect": {
+        "title": "2. Data Tunayokusanya Kukuhusu",
+        "content": "Data ya kibinafsi, au taarifa za kibinafsi, inamaanisha taarifa yoyote kuhusu mtu binafsi ambayo kwayo mtu huyo anaweza kutambuliwa. Tunaweza kukusanya, kutumia, kuhifadhi na kuhamisha aina tofauti za data ya kibinafsi kukuhusu, ikiwa ni pamoja na Data ya Utambulisho (jina la kwanza, jina la mwisho, jina la mtumiaji), Data ya Mawasiliano (anwani ya bili, anwani ya kuwasilisha, anwani ya barua pepe, nambari za simu), Data ya Kifedha (akaunti ya benki na maelezo ya kadi ya malipo), na Data ya Muamala (maelezo kuhusu malipo kutoka na kwako na maelezo mengine ya bidhaa na huduma ambazo umenunua kutoka kwetu)."
+      },
+      "howWeCollect": {
+        "title": "3. Data Yako ya Kibinafsi Inakusanywaje?",
+        "content": "Tunatumia njia tofauti kukusanya data kutoka na kukuhusu ikiwa ni pamoja na kupitia: Mwingiliano wa moja kwa moja. Unaweza kutupa Utambulisho, Mawasiliano na Data ya Kifedha kwa kujaza fomu au kwa kuwasiliana nasi kwa posta, simu, barua pepe au vinginevyo. Teknolojia za kiotomatiki au mwingiliano. Unapoingiliana na tovuti yetu, tutakusanya kiotomatiki Data ya Kiufundi kuhusu vifaa vyako, vitendo vya kuvinjari na mifumo."
+      },
+      "howWeUse": {
+        "title": "4. Jinsi Tunavyotumia Data Yako ya Kibinafsi",
+        "content": "Tutatumia data yako ya kibinafsi tu wakati sheria inaturuhusu. Kwa kawaida, tutatumia data yako ya kibinafsi katika mazingira yafuatayo: Pale tunapohitaji kutekeleza mkataba tunaokaribia kuingia au tumeingia nawe. Ambapo ni muhimu kwa maslahi yetu halali (au ya mtu wa tatu) na mambo yanayokuvutia na haki za kimsingi hazizidishi maslahi hayo. Pale tunapohitaji kutii wajibu wa kisheria."
+      },
+      "dataSecurity": {
+        "title": "5. Usalama wa Data",
+        "content": "Tumeweka hatua zinazofaa za usalama ili kuzuia data yako ya kibinafsi kupotea kwa bahati mbaya, kutumika au kufikiwa isivyoidhinishwa, kubadilishwa au kufichuliwa. Kwa kuongeza, tunaweka kikomo ufikiaji wa data yako ya kibinafsi kwa wafanyikazi, mawakala, wakandarasi na wahusika wengine ambao wana hitaji la biashara la kujua. Watachakata tu data yako ya kibinafsi kwa maagizo yetu na wako chini ya usiri."
+      },
+      "dataRetention": {
+        "title": "6. Kuhifadhi Data",
+        "content": "Tutahifadhi data yako ya kibinafsi tu kwa muda ambao tunahitajika ili kutimiza madhumuni tulipokusanya, ikiwa ni pamoja na madhumuni ya kukidhi mahitaji yoyote ya kisheria, udhibiti, kodi, uhasibu au kuripoti. Tunaweza kuhifadhi data yako ya kibinafsi kwa muda mrefu katika tukio la malalamiko au ikiwa tunaamini kwa njia inayofaa kuna matarajio ya madai kuhusiana na uhusiano wetu na wewe."
+      },
+      "yourRights": {
+        "title": "7. Haki Zako za Kisheria",
+        "content": "Chini ya hali fulani, una haki chini ya sheria za ulinzi wa data kuhusiana na data yako ya kibinafsi. Hizi ni pamoja na haki ya: Kuomba ufikiaji wa data yako ya kibinafsi. Kuomba usahihishaji wa data yako ya kibinafsi. Omba ufutaji wa data yako ya kibinafsi. Kitu kinachopinga usindikaji wa data yako ya kibinafsi. Omba kizuizi cha kuchakata data yako ya kibinafsi. Kuomba uhamisho wa data yako ya kibinafsi. Haki ya kuondoa idhini."
+      },
+      "cookies": {
+        "title": "8. Vidakuzi (Cookies)",
+        "content": "Unaweza kuweka kivinjari chako kukataa vidakuzi vyote au baadhi ya vidakuzi, au kukuarifu tovuti zinapoweka au kufikia vidakuzi. Ukizima au kukataa vidakuzi, tafadhali kumbuka kuwa baadhi ya sehemu za tovuti hii zinaweza zisifikiwe au kutofanya kazi vizuri. Kwa habari zaidi kuhusu vidakuzi tunavyotumia, tafadhali angalia Sera yetu ya Vidakuzi (Cookie Policy)."
+      },
+      "contact": {
+        "title": "9. Wasiliana Nasi",
+        "content": "Ikiwa una maswali yoyote kuhusu sera hii ya faragha au desturi zetu za faragha, tafadhali wasiliana nasi kwa privacy@buyfromafrica.com."
+      }
+    },
+    "backToHome": "Kurudi Nyumbani"
+  },
+  "FAQ": {
+    "title": "Maswali Yanayoulizwa Mara kwa Mara",
+    "subtitle": "Pata majibu ya maswali ya kawaida kuhusu kununua na kuuza kwenye Buy from Africa. Ikiwa huwezi kupata kile unachotafuta, jisikie huru kuwasiliana na timu yetu ya usaidizi.",
+    "categories": {
+      "general": "Jumla",
+      "buyers": "Kwa Wanunuzi",
+      "vendors": "Kwa Wachuuzi",
+      "shipping": "Usafirishaji & Usafirishaji"
+    },
+    "questions": {
+      "whatIsBfa": {
+        "question": "Je, Buy from Africa ni nini?",
+        "answer": "Buy from Africa ni jukwaa kuu la biashara ya mtandaoni la B2B na B2C linalojishughulisha na kuwaunganisha wazalishaji, mafundi, na wafanyabiashara wa Kiafrika na wanunuzi wa kimataifa. Tunarahisisha biashara salama, usafirishaji, na utatuzi wa migogoro ili kuhakikisha uzoefu wa biashara mipakani unaendelea vizuri."
+      },
+      "howToRegister": {
+        "question": "Ninajisajili vipi kwa akaunti?",
+        "answer": "Unaweza kujisajili kwa kubofya kitufe cha 'Jisajili' kwenye kona ya juu kulia ya tovuti. Utahitaji kuchagua iwapo unajisajili kama Mnunuzi au Mchuuzi, na kutoa taarifa muhimu za biashara au za kibinafsi."
+      },
+      "buyerFees": {
+        "question": "Je, kuna ada yoyote kwa wanunuzi?",
+        "answer": "Kuunda akaunti ya mnunuzi ni bure kabisa. Unalipa tu bidhaa unazonunua, pamoja na usafirishaji utakaotumika na ushuru wa forodha ambao huonyeshwa kwa uwazi wakati wa kulipa."
+      },
+      "vendorRequirements": {
+        "question": "Ni mahitaji gani ili kuwa mchuuzi?",
+        "answer": "Ili kuwa mchuuzi, lazima uwe na biashara iliyosajiliwa katika nchi ya Kiafrika, kupita mchakato wetu wa uthibitishaji, na kukubaliana na viwango vyetu vya ubora na sera za utimilifu. Tunahitaji uthibitisho wa usajili wa biashara na utambulisho."
+      },
+      "shippingMethods": {
+        "question": "Ni njia gani za usafirishaji zinapatikana?",
+        "answer": "Tunashirikiana na watoa huduma wakuu wa kimataifa wa uchukuzi (kama vile DHL, FedEx, na UPS) na pia wasafirishaji walioidhinishwa wa nchini Afrika. Chaguzi na gharama za usafirishaji hutofautiana kulingana na eneo lako, uzito, na vipimo vya agizo lako."
+      },
+      "disputeResolution": {
+        "question": "Mnatatua vipi migogoro kati ya wanunuzi na wauzaji?",
+        "answer": "Tuna timu maalum ya usuluhishi inayoingilia kati ikiwa wanunuzi na wauzaji hawawezi kutatua suala moja kwa moja. Tunaweka pesa hadi wakati wowote mnunuzi atakapothibitisha kupokea bidhaa katika hali ya kuridhisha, kutoa safu ya ulinzi kwa pande zote mbili."
+      }
+    },
+    "contactSupport": "Wasiliana na Usaidizi",
+    "stillHaveQuestions": "Bado una maswali?",
+    "backToHome": "Kurudi Nyumbani"
+  }
+}

@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ShoppingBag, Heart, Shield, MapPin, Star, Store } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 interface Vendor {
   id: string;
@@ -35,6 +36,12 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product, viewMode = 'grid' }: ProductCardProps) {
+  const ct = useTranslations('Categories');
+  
+  const getCategorySlug = (name: string) => {
+    return name.toLowerCase().replace(/ & /g, '-and-').replace(/ /g, '-');
+  };
+
   if (viewMode === 'list') {
     return (
       <div className="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 active:scale-[0.995]">
@@ -74,7 +81,7 @@ export default function ProductCard({ product, viewMode = 'grid' }: ProductCardP
               <div className="flex justify-between items-start mb-2">
                  <div>
                     <span className="inline-block bg-yellow-100 text-yellow-800 text-[10px] font-black uppercase tracking-widest px-1.5 py-0.5 rounded-sm mb-2">
-                      {product.category}
+                      {ct(getCategorySlug(product.category))}
                     </span>
                     <h3 className="text-2xl font-black text-gray-900 group-hover:text-yellow-600 transition-colors">
                       {product.name}

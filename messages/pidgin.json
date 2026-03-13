@@ -1,0 +1,675 @@
+{
+  "Index": {
+    "title": "Welcome to Buy From Africa",
+    "description": "We dey connect African vendors with global market."
+  },
+  "Hero": {
+    "title": "Link up with African Vendors for everywhere",
+    "description": "Find correct products and services directly from businesses wey we don check well-well for Africa.",
+    "explore": "Check Beta Products",
+    "becomeVendor": "Join as Vendor"
+  },
+  "HowItWorks": {
+    "title": "How Buy from Africa dey Work",
+    "subtitle": "Connect with verified African vendors and get better products and services easily",
+    "step1": {
+      "title": "Register",
+      "desc": "Create your account to get your own ID."
+    },
+    "step2": {
+      "title": "Browse",
+      "desc": "Check authentic products from verified vendors."
+    },
+    "step3": {
+      "title": "Connect",
+      "desc": "Talk to vendors safely and negotiate better price."
+    }
+  },
+  "FeaturedCategories": {
+    "title": "Special Categories",
+    "subtitle": "Check better products wey dem make for Africa for different industries",
+    "viewAll": "See All Categories"
+  },
+  "PlatformFeatures": {
+    "title": "Key Platform Features",
+    "subtitle": "Everything wey you need to connect, talk and do business with African vendors",
+    "storefronts": {
+      "title": "Vendor Storefronts",
+      "desc": "Vendors fit set dia own shop to show dia products and services with full gist."
+    },
+    "messaging": {
+      "title": "Secure Messaging",
+      "desc": "Internal email system for safe communication between buyers and vendors."
+    },
+    "video": {
+      "title": "Video Call",
+      "desc": "Ask for video or voice call to talk about products, negotiate and build trust."
+    },
+    "payments": {
+      "title": "Safe Payments",
+      "desc": "Different confirmed payment options to make sure your money safe."
+    },
+    "shipping": {
+      "title": "Shipping Solutions",
+      "desc": "Trusted people wey go carry your goods go everywhere for better price."
+    },
+    "global": {
+      "title": "Global Access",
+      "desc": "Connect with African vendors from any part of the world and find better opportunities."
+    }
+  },
+  "CTA": {
+    "title": "You ready to Buy from Africa?",
+    "subtitle": "Join our community of buyers and sellers as we connect African products with the whole world.",
+    "register": "Register Now",
+    "browse": "Check Products"
+  },
+  "Testimonials": {
+    "title": "Wetin our People dey Talk",
+    "subtitle": "Success stories from buyers and vendors for our platform"
+  },
+  "Newsletter": {
+    "title": "Get update on new correct things from Africa",
+    "subtitle": "Join the special group of people wey dey buy from us. Find new vendors and special products first.",
+    "placeholder": "name@email.com",
+    "button": "Subscribe Now",
+    "privacy": "We respect your privacy. You fit stop the update any time."
+  },
+  "Nav": {
+    "browse": "Browse",
+    "categories": "Categories",
+    "vendors": "Vendors",
+    "partnerships": "Partnerships",
+    "resources": "Resources",
+    "about": "About",
+    "login": "Login",
+    "register": "Start Now",
+    "dashboard": "Go Dashboard",
+    "search": "Wetin you dey find?",
+    "industries": "Main Industries",
+    "viewAll": "See All",
+    "nicheFallback": "Better things dey come soon for here",
+    "discover": "Find Africa' Finest",
+    "discoverDesc": "Put your mouth (cursor) for any category for left to see special products and verified vendors.",
+    "pressEsc": "Press Esc to close",
+    "trendingCategories": "Trending Categories",
+    "quickActions": "Quick Actions",
+    "becomeVendor": "Become Vendor",
+    "becomeVendorSubtitle": "Start to sell your products for the whole world",
+    "tradeResources": "Trade Resources",
+    "tradeResourcesSubtitle": "Currency and logistics information",
+    "globalHub": "Global African Hub"
+  },
+  "Categories": {
+    "manufacturers": "People wey dey Make things",
+    "textiles-and-fabrics": "Cloth and materials",
+    "apparel-and-fashion-accessories": "Wears and fashion things",
+    "leather-and-leather-goods": "Leather and things dem make with leather",
+    "footwear": "Shoes and sandals",
+    "automotive-assembly-and-components": "Motor assembly and parts",
+    "electrical-equipment-and-cables": "Light things and wires",
+    "electronics-and-small-appliances": "Electronics and small house things",
+    "industrial-machinery-and-equipment": "Industrial machine and tools",
+    "furniture-and-fittings": "Chair, table and house fittings",
+    "packaging-materials": "Packaging materials",
+    "artisans": "Hand-work People",
+    "handicrafts-and-souvenirs": "Hand-made things and gifts",
+    "home-decor-and-interior-items": "House decoration things",
+    "traditional-art-sculpture-and-carvings": "Traditional art and wood work",
+    "jewellery-and-adornments": "Jewelries and beads",
+    "cultural-and-religious-items": "Culture and religion things",
+    "miners": "Minerals People",
+    "minerals-and-ores": "Minerals and ores",
+    "precious-metals-and-gemstones": "Gold, silver and expensive stones",
+    "industrial-minerals": "Industrial minerals",
+    "industrial": "Industrial",
+    "building-materials-and-construction-products": "Building materials and construction things",
+    "metals-and-metal-products": "Iron and metal things",
+    "wood-and-wood-products": "Wood and wood things",
+    "paper-pulp-and-printed-materials": "Paper and printed things",
+    "chemicals-and-petrochemicals": "Chemical and petrol things",
+    "fertilizers-and-agro-inputs": "Fertilizer and farm things",
+    "paints-coatings-and-adhesives": "Paint and gum things",
+    "plastics-and-rubber-products": "Plastic and rubber things",
+    "food-and-agriculture": "Food and Farm work",
+    "agricultural-commodities": "Farm products",
+    "processed-foods-and-beverages": "Food wey dem don process and drinks",
+    "livestock-and-animal-products": "Animals and animal things",
+    "fisheries-and-aquaculture-products": "Fish and water things",
+    "health-and-wellness": "Body Wellness",
+    "pharmaceuticals-and-medical-supplies": "Medicine and hospital things",
+    "cosmetics-beauty-and-personal-care": "Cream, beauty and body care",
+    "health-and-wellness-products": "Health and wellness things",
+    "home-and-living": "House and Living",
+    "cleaning-and-household-care-products": "Cleaning and house care products",
+    "eco-friendly-and-sustainable-products": "Nature-friendly things",
+    "educational-and-office-supplies": "School and office things",
+    "technology-and-energy": "Tech and Energy",
+    "renewable-energy-equipment": "Solar and clean energy things",
+    "ict-hardware-assembly": "Computer and ICT assembly",
+    "digital-content-tied-to-physical-goods": "Digital things for physical goods",
+    "textiles": "Cloth and Wears",
+    "crafts": "Art and Hand-work",
+    "food": "Food and Farm",
+    "minerals": "Minerals and Materials",
+    "jewelry": "Jewelry and Beads",
+    "beauty": "Health and Beauty",
+    "tech": "Tech and Services",
+    "home": "Home and Decor",
+    "viewAll": "See All Categories"
+  },
+  "CategoryPage": {
+    "home": "Home",
+    "breadcrumb": "Categories",
+    "description": "Find correct {category} products directly from businesses wey we don check well-well for Africa.",
+    "specialized": "Specialized products and services",
+    "sectionTitle": "Product Categories",
+    "sectionSubtitle": "Find products wey dem arrange by category from African vendors",
+    "browseAll": "Browse All Products",
+    "browse": "Browse",
+    "category": "Category"
+  },
+  "Browse": {
+    "title": "Browse African Products",
+    "searchPlaceholder": "Search products by name or description...",
+    "searchButton": "Search",
+    "popular": "Popular:",
+    "filters": "Filters",
+    "clearAll": "Clear All",
+    "view": "View:",
+    "showing": "Show {count} products",
+    "sortBy": "Arrange by:",
+    "sortOptions": {
+      "newest": "New things first",
+      "price-low": "Price: Small to Big",
+      "price-high": "Price: Big to Small",
+      "popular": "People choice"
+    },
+    "loading": "Wait make we carry beta products come...",
+    "viewProducts": "See Products",
+    "resetFilters": "Change filters to zero",
+    "viewDetails": "See Details",
+    "viewDetailsOrder": "See Details & Order",
+    "bulk": "Bulk:",
+    "unit": "/one",
+    "verified": "Verified",
+    "outOfStock": "E don finish",
+    "wholesale": "Wholesale"
+  },
+  "Filters": {
+    "categories": "Categories",
+    "allCategories": "All Categories",
+    "country": "Country",
+    "salesType": "Sales Type",
+    "vendorOrigin": "Vendor Origin",
+    "inStockOnly": "Only the ones wey still dey"
+  },
+  "Countries": {
+    "all": "All Countries",
+    "Nigeria": "Nigeria",
+    "Ghana": "Ghana",
+    "Kenya": "Kenya",
+    "South Africa": "South Africa",
+    "Ethiopia": "Ethiopia",
+    "Tanzania": "Tanzania",
+    "Morocco": "Morocco",
+    "Senegal": "Senegal",
+    "Egypt": "Egypt",
+    "Rwanda": "Rwanda",
+    "Uganda": "Uganda",
+    "Cameroon": "Cameroon",
+    "Ivory Coast": "Ivory Coast",
+    "Zambia": "Zambia",
+    "Angola": "Angola"
+  },
+  "Vendors": {
+    "title": "African Vendors",
+    "subtitle": "Connect with confirmed businesses for inside the African supply chain",
+    "breadcrumbHome": "Home",
+    "breadcrumbVendors": "Vendors",
+    "becomeVendor": "Become Vendor",
+    "allVendors": "All Vendors",
+    "searchPlaceholder": "Search for vendors by name, products, or location...",
+    "ctaTitle": "Become a Vendor for Buy from Africa",
+    "ctaSubtitle": "Show your products and link up with buyers for everywhere for world",
+    "ctaButton": "Register as Vendor",
+    "verificationSystem": "Our Vendor Verification System",
+    "blueBadgeTitle": "Blue Badge Vendors",
+    "blueBadgeDesc": "Basic follow-up for people wey dey run dia own small-small",
+    "goldBadgeTitle": "Gold Badge Vendors",
+    "goldBadgeDesc": "Premium check-up for businesses wey register well-well",
+    "filters": "Filters",
+    "businessType": "Business Type",
+    "allBusinessTypes": "All Business Types",
+    "artisanBadge": "ARTISAN",
+    "brandBadge": "DESIGNER",
+    "factoryBadge": "FACTORY",
+    "exportBadge": "EXPORT",
+    "paginationPrevious": "Previous",
+    "paginationNext": "Next",
+    "defaultVendorDescription": "Correct African business partner wey dey supply beta goods and services.",
+    "artisanMakers": "African Artisan / Makers",
+    "brandDesigners": "African Brand / Designers",
+    "manufacturerFactories": "African Manufacturer / Factories",
+    "distributorExport": "African Distributor / Export Agents",
+    "verificationLevel": "Verification Level",
+    "goldBadge": "Gold Badge Vendors",
+    "blueBadge": "Blue Badge Vendors",
+    "activeFilters": "Active Filters:",
+    "searchLabel": "Search:",
+    "typeLabel": "Type:",
+    "badgeLabel": "Badge:",
+    "countryLabel": "Country:",
+    "categoryLabel": "Category:",
+    "clearAll": "Clear All",
+    "loading": "Wait make we carry confirmed vendors come...",
+    "gold": "GOLD",
+    "blue": "BLUE",
+    "noLocation": "Location no dey",
+    "spotlight": "Spotlight",
+    "viewProfile": "See Boutique Profile",
+    "emptyTitle": "Confirmed Vendors no dey",
+    "emptyText": "We no find any vendors wey match wetin you dey find or your filters. Try search for other ways.",
+    "resetAll": "Reset Everything"
+  },
+  "VendorTypes": {
+    "title": "Confirmed African Business Partners",
+    "subtitle": "Our platform dey connect you with confirmed businesses for inside the African supply chain",
+    "artisanTitle": "African Artisan / Makers",
+    "artisanBadge": "ARTISAN",
+    "artisanDesc": "Direct link for better African artisans and master makers wey dey make original hand-made things. Get special products wey show our better culture.",
+    "brandTitle": "African Brand / Designers",
+    "brandBadge": "DESIGNER",
+    "brandDesc": "Big African brands and designers wey dey mix new style with old way. Correct for people wey dey find premium African items.",
+    "factoryTitle": "African Manufacturer / Factories",
+    "factoryBadge": "FACTORY",
+    "factoryDesc": "Big-big African factories wey fit make plenty things at once. Connect with factories wey standard high for mass distribution.",
+    "exportTitle": "African Distributor / Export Agents",
+    "exportBadge": "EXPORT",
+    "exportDesc": "Reliable logistics partners and export agents wey sabi how to carry African goods go world. Make your business easy with experts for international trade.",
+    "badgeSystemTitle": "Verification Badge System",
+    "blueTitle": "Blue Badge",
+    "blueSubtitle": "Basic Check-up",
+    "goldTitle": "Gold Badge",
+    "goldSubtitle": "Premium Check-up",
+    "checkIdentity": "Identity check",
+    "checkContact": "Contact info confirmed",
+    "checkProductBasic": "Basic product original check",
+    "checkRegistration": "Business registration check",
+    "checkBluePlus": "All Blue Badge check-up",
+    "checkRegistrationOfficial": "Official business registration confirmed",
+    "checkProductExtended": "Full product original check-up",
+    "checkTradeDocs": "Trade license and export papers",
+    "blue": {
+      "title": "Blue Badge Vendors",
+      "badge": "BLUE",
+      "desc": "Basic check for single business men and women. Fit use some small-small selling tools."
+    },
+    "gold": {
+      "title": "Gold Badge Vendors",
+      "badge": "GOLD",
+      "desc": "Oga check for registered businesses. Fit use all di selling tools and see how your market dey move."
+    }
+  },
+  "SalesTypes": {
+    "all": "All Products",
+    "retail": "Retail Only",
+    "wholesale": "Wholesale Only"
+  },
+  "VendorOrigins": {
+    "all": "All Origins",
+    "artisan": "Artisan / Maker",
+    "brand": "Brand / Designer",
+    "factory": "Manufacturer / Factory",
+    "export": "Distributor / Export Agent"
+  },
+  "Products": {
+    "emptyState": {
+      "title": "We no find any products",
+      "subtitle": "Try change how you dey search or check other categories."
+    }
+  },
+  "Footer": {
+    "description": "We dey connect African vendors with global buyers. Find original products and services for Africa.",
+    "quickLinks": "Quick Links",
+    "browseProducts": "Check Products",
+    "findVendors": "Find Vendors",
+    "becomeVendor": "Become Vendor",
+    "registerBuyer": "Register as Buyer",
+    "about": "About Us",
+    "categories": "Categories",
+    "contact": "Talk to Us",
+    "address": "Buy from Africa HQ, Lagos, Nigeria",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "faq": "FAQ"
+  },
+  "Admin": {
+    "navigation": {
+      "dashboard": "Dashboard",
+      "team": "Team Registry",
+      "management": "System Architecture",
+      "settings": "Global Config",
+      "analytics": "Market Intel"
+    }
+  },
+  "NotFound": {
+    "title": "Page no dey",
+    "goHome": "Carry me go home"
+  },
+  "Partnerships": {
+    "heroTitle": "Strong Partnerships",
+    "heroSubtitle": "Connecting di BFA market with di big big institutions for African trade—from government people to big banks.",
+    "keyPartners": "Main Partners",
+    "tradeIntelligence": "Market Areas & Structure",
+    "tradeIntelligenceSubtitle": "Important info on all di continental blocks and financial systems driving African market level.",
+    "continentalIntelligence": "Continental Intel",
+    "learnMore": "LEARN MORE",
+    "ctaTitle": "Join BFA Network",
+    "ctaSubtitle": "Are you an institution or service provider supporting African market? Join our network to provide trusted services to thousands of sellers and buyers.",
+    "applyButton": "Apply for Partnership",
+    "ministriesCategory": "Ministries of Trade",
+    "ministriesDesc": "Government blocks handling and supporting international trade inside African countries.",
+    "chambersCategory": "Chambers of Commerce",
+    "chambersDesc": "Private sector bodies pushing business growth and cross-border networking.",
+    "banksCategory": "Trade Banks & Financial Institutions",
+    "banksDesc": "Specialized money partners giving trade finance, credit, and investment backup.",
+    "paymentCategory": "Payment Processing",
+    "paymentDesc": "Digital ground-work for safe cross-border money transactions and currency sorting.",
+    "microfinanceCategory": "Microfinance Banks",
+    "microfinanceDesc": "Supporting small market traders and artisans with easy financial services.",
+    "regionRegional": "Regional",
+    "regionPanAfrican": "Pan-African",
+    "regionEastAfrica": "East Africa",
+    "regionWestAfrica": "West Africa",
+    "afcftaTitle": "African Continental Free Trade Area (AfCFTA)",
+    "afcftaDesc": "Di biggest free trade area inside di world by number of countries, planning to link 54 inside 55 African Union states into one market of 1.4 billion people.",
+    "afcftaBadge": "AU Single Market",
+    "papssTitle": "Pan-African Payment and Settlement System (PAPSS)",
+    "papssDesc": "Dis financial step dey critical to reduce depending on foreign money like US dollar by making instant cross-border payments inside local money.",
+    "papssBadge": "Money Structure",
+    "ecowasTitle": "Economic Community of West African States (ECOWAS)",
+    "ecowasDesc": "Dis bloc get free trade area since 1990. For January 2025, Mali, Burkina Faso, and Niger pull out officially, though free movement for pipo still dey expected.",
+    "ecowasBadge": "West Africa",
+    "eacTitle": "East African Community (EAC)",
+    "eacDesc": "EAC don reach Customs Union and set up common market for goods, with trade among members paying no duty and united under one customs land.",
+    "eacBadge": "East Africa",
+    "sadcTitle": "Southern African Development Community (SADC)",
+    "sadcDesc": "Di SADC Free Trade Area start for 2008 and get 16 member states, though right now 13 dey actively practice di free trade area rules for regional growth.",
+    "sadcBadge": "Southern Africa",
+    "comesaTitle": "Common Market for Eastern and Southern Africa (COMESA)",
+    "comesaDesc": "Standing for a market of over 500 million people, COMESA start customs union for 2009 to help regional joining and economic growth.",
+    "comesaBadge": "Regional Bloc"
+  },
+  "Resources": {
+    "heroTitle": "Trade ",
+    "heroTitleHighlight": "Resources",
+    "heroSubtitle": "Giving African businesses live currency data, rules to follow, and transport guides so dem go rule global trade.",
+    "currencyTitle": "Currency Intelligence",
+    "youConvert": "You Convert",
+    "youReceive": "You Receive",
+    "liveRatesInfo": "Live market rates wey we put here na just for information.",
+    "liveRatesTitle": "Live Rates",
+    "liveRatesUpdated": "Updated",
+    "tradeRegionsTitle": "Major Trade Regions",
+    "tradeRegionsSubtitle": "Make you understand the groups wey dey push economic unity and help reduce tax across the continent.",
+    "memberStates": "Member States: {count}",
+    "logisticsTitle": "Shipping & Logistics",
+    "logisticsIntra": "Intra-African Routes",
+    "logisticsIntraDesc": "Better routes for trading between West, East, and Southern Africa.",
+    "logisticsInsurance": "Marine & Cargo Insurance",
+    "logisticsInsuranceDesc": "Complete cover for big artisanal and industrial goods.",
+    "logisticsTracking": "Port-to-Port Tracking",
+    "logisticsTrackingDesc": "See your international shipments live as dem dey comot big African ports.",
+    "complianceTitle": "Duties & Levies",
+    "complianceSubtitle": "Tax and custom money dey different well-well based on where goods come from and the agreement wey dey ground.",
+    "exportDuties": "Export Duties",
+    "exportVariable": "Variable (0 - 5%)",
+    "customLevies": "Custom Levies",
+    "customProductBased": "Product Based",
+    "afcftaExemption": "AfCFTA Exemption",
+    "afcftaReduced": "Up to 90% Reduced",
+    "ctaTitle": "You need special advice for trade?",
+    "ctaSubtitle": "Our trade compliance partners dey ready to help you navigate cross-border business without stress.",
+    "ctaContact": "Contact Expert",
+    "ctaDownload": "Download Trade Guide",
+    "currencies": {
+      "USD": "US Dollar",
+      "EUR": "Euro",
+      "GBP": "British Pound",
+      "CNY": "Chinese Yuan",
+      "NGN": "Naija Naira",
+      "ZAR": "South African Rand",
+      "KES": "Kenyan Shilling",
+      "GHS": "Ghanaian Cedi",
+      "EGP": "Egyptian Pound",
+      "ETB": "Ethiopian Birr"
+    },
+    "regions": {
+      "AfCFTA": {
+        "name": "AfCFTA",
+        "fullName": "African Continental Free Trade Area",
+        "description": "The biggest free trade area for the whole world, aiming to remove 90% of tax on goods for Africa."
+      },
+      "ECOWAS": {
+        "name": "ECOWAS",
+        "fullName": "Economic Community of West African States",
+        "description": "Pushing economic unity for 15 West African countries through common markets."
+      },
+      "EAC": {
+        "name": "EAC",
+        "fullName": "East African Community",
+        "description": "Deepening cooperation among East African states with one Customs Union."
+      },
+      "SADC": {
+        "name": "SADC",
+        "fullName": "Southern African Development Community",
+        "description": "Regional integration to develop and secure Southern Africa."
+      }
+    }
+  },
+  "About": {
+    "loading": "Checking Heritage",
+    "ourJourney": "Our Waka",
+    "heroTitle": "About Buy from Africa",
+    "heroDescription": "Connecting African business pipo to world markets, pumping up economic growth, and showing how African products better reach.",
+    "heroCTA": "Check Our Sellers",
+    "getStarted": "Start Now",
+    "impactStats": {
+      "verifiedVendors": "Verified Sellers",
+      "countries": "African Countries",
+      "revenue": "Money Wey Enter",
+      "vendorGrowth": "Average Seller Growth"
+    },
+    "missionLabel": "Our Mind",
+    "missionTitle": "Our Mission",
+    "missionSubtitle": "Whether you be African business wey dey try expand enter world or buyer wey dey find original African products, show your face for our growing community today.",
+    "missionPoints": {
+      "connect": {
+        "title": "Connect",
+        "description": "Joining African sellers wit buyers everywhere, making one digital market wey cross any border matter."
+      },
+      "empower": {
+        "title": "Empower",
+        "description": "Giving African businesses di tools, shine, and market access wey dem need to blow and succeed globally."
+      },
+      "sustain": {
+        "title": "Sustain",
+        "description": "Pushing for sustainable business logic, fair trade, and clean production across all African supply chain."
+      }
+    },
+    "buildingBridgesLabel": "Building Bridges",
+    "buildingBridgesTitle": "Trade without big border.",
+    "storyTitle": "The Full",
+    "storyTitleHighlight": "Story.",
+    "storyParagraphs": [
+      "Buy from Africa start for 2023 with vision to change how di whole world dey discover and access African products. Our founder, Sarah Johnson, spend over 10 years working across different African countries, seeing correct quality and plenty products wey dey struggle to reach international market.",
+      "Wetin start as small platform with just 20 sellers don grow enter Africa leading marketplace connecting thousands of verified businesses with buyers worldwide. We don help sellers boost exactly how much money dem dey make from export by average of 40% while making sure dem goods reach market wey dem no fit touch before.",
+      "Today, we dey function for 15 African countries with big big plans to spread across di whole continent, continuing our mission to showcase African hustle and craftsmanship to di world."
+    ],
+    "storyStats": {
+      "countriesServiced": "Countries Serviced",
+      "verifiedVendors": "Verified Sellers",
+      "vendorGrowth": "Seller Growth",
+      "totalRevenue": "Total Money"
+    },
+    "teamLabel": "Behind the Vision",
+    "teamTitle": "Meet The Team",
+    "teamDescription": "Led by experts wey get strong root for Africa, our different team don bring together experience in technology, international trade, and supply chain management.",
+    "teamMembers": {
+      "sarah": {
+        "role": "Founder & CEO",
+        "bio": "Sarah start Buy from Africa after running 10 years working for international development across different African countries. She get MBA from Harvard Business School and she too passonate about economic empowerment through trade."
+      },
+      "daniel": {
+        "role": "CTO",
+        "bio": "Daniel lead our technology team with over 15 years proper experience building massive platforms. Before before e dey Amazon and Microsoft, e return come im native Nigeria to help fix technology wey empower African businesses."
+      },
+      "amina": {
+        "role": "Chief Operating Officer",
+        "bio": "With plenty experience for logistics and supply chain management across West Africa, Amina dey make sure say our platform operate without stress and sellers fit deliver wetin dem promise."
+      }
+    },
+    "countriesTitle": "Where We Dey Work",
+    "countriesDescription": "We dey actively join sellers and buyers across these African countries, with better plans to reach out throughout di continent.",
+    "partnersLabel": "Trusted Ecosystem Partners",
+    "ctaTitle": "JOIN DI MOVEMENT.",
+    "ctaApplyVendor": "Apply as Seller",
+    "ctaApplyBuyer": "Register as Buyer"
+  },
+  "Terms": {
+    "title": "Terms & Conditions",
+    "subtitle": "Abeg read these terms carefully before you use our platform. As you dey access and use Buy from Africa, e mean say you don accept this agreement.",
+    "lastUpdated": "Last Update",
+    "tableOfContents": "Wetin dey inside",
+    "backToTop": "Go back Top",
+    "downloadPdf": "Download PDF",
+    "printTerms": "Print Details",
+    "sections": {
+      "introduction": {
+        "title": "1. Quick Intro",
+        "content": "Welcome to Buy from Africa. These Terms of Service (\"Terms\") go control how you access and use our website, services, and applications (all combined, the \"Service\"). As you access or use the Service, e mean say you agree to follow these Terms and our Privacy Policy. If you no gree with any part of these terms, you no fit access the Service."
+      },
+      "account": {
+        "title": "2. Account Registration & Your Duty",
+        "content": "To access some features of the Service, you must register for an account. You agree to give correct, current, and complete information during registration and keep your account details updated. You dey totally responsible for keeping your account details secret and for everything wey happen inside your account."
+      },
+      "vendors": {
+        "title": "3. Vendor Terms & Conditions",
+        "content": "Sellers on Buy from Africa must be legally registered bodies wey get the right to sell their listed products across international borders. Sellers agree to provide correct product descriptions, honour their stated prices, and fulfill orders in good time. We get the right to check your business details, hold payouts for disputed transactions, or suspend your account if you break quality standards."
+      },
+      "buyers": {
+        "title": "4. Buyer Terms & Conditions",
+        "content": "Buyers gree to use the platform for correct trade purposes only. You agree to pay all charges wey you or any users of your account make, using the prices wey dey valid when those charges happen. You must follow all import laws, taxes, and customs duties for your receiving country."
+      },
+      "fees": {
+        "title": "5. Fees, Payments, & Subscriptions",
+        "content": "Buy from Africa dey charge service fees for successful transactions wey happen through the platform. We explain the fee structures correctly on our Pricing page, and we fit update dem sometimes but we go tell you before. We process all payments through our secure third-party payment providers."
+      },
+      "content": {
+        "title": "6. User Content & IP",
+        "content": "You keep all your ownership rights for the content you put on the platform. By putting content (including product pictures, reviews, and messages), you give us a worldwide, non-exclusive, royalty-free license to use, reproduce, display, and share that content to provide and promote the Service."
+      },
+      "dispute": {
+        "title": "7. Dispute Settling & Refunds",
+        "content": "If kasala burst between a buyer and a seller, both sides should first try to settle the issue peacefully using our messaging system. If e no solve, our mediation team go enter the matter. Refund policies depend on individual sellers but must follow our minimum protection standards."
+      },
+      "termination": {
+        "title": "8. Account Closing",
+        "content": "We fit close or suspend your account and block access to the Service immediately, without telling you before or paying liability, based on our sole decision, for any reason at all and without limit, including but not just limited to breaking the Terms."
+      },
+      "limitation": {
+        "title": "9. Limit of Blame",
+        "content": "Under no condition shall Buy from Africa, or its directors, workers, partners, agents, suppliers, or affiliates, carry the blame for any indirect, accidental, special, consequential or punishing damages, including without limit, loss of profit, data, use, goodwill, or other unseeable losses, coming from your access to or use of or failure to access or use the Service."
+      }
+    },
+    "backToHome": "Go back to Home"
+  },
+  "Privacy": {
+    "title": "Privacy Policy",
+    "subtitle": "Your matter dey important to us. This Privacy Policy explain how Buy from Africa dey collect, use, and protect your personal information when you use our platform.",
+    "lastUpdated": "Last Update",
+    "tableOfContents": "Wetin dey inside",
+    "backToTop": "Go back Top",
+    "downloadPdf": "Download PDF",
+    "printTerms": "Print Details",
+    "sections": {
+      "introduction": {
+        "title": "1. Quick Intro",
+        "content": "Welcome to the Buy from Africa Privacy Policy. We respect your matter and we dey committed to protecting your personal data. This privacy policy go tell you how we dey look after your personal data when you visit our website (no matter where you visit am from) and tell you about your privacy rights and how the law protect you."
+      },
+      "dataWeCollect": {
+        "title": "2. The Data Weey We Collect About You",
+        "content": "Personal data, or personal information, mean any information about person wey dem fit use identify that person. We fit collect, use, store and transfer different kinds of personal data about you, including Identity Data (first name, last name, username), Contact Data (billing address, delivery address, email address, telephone numbers), Financial Data (bank account and payment card details), and Transaction Data (details about payments to and from you and other details of products and services you don buy from us)."
+      },
+      "howWeCollect": {
+        "title": "3. How Dem Dey Collect Your Personal Data?",
+        "content": "We dey use different methods collect data from and about you including through: Direct interactions. You fit give us your Identity, Contact and Financial Data by filling forms or by dropping message with us by post, phone, email or otherwise. Automated technologies or interactions. As you dey interact with our website, we go automatically collect Technical Data about your equipment, browsing actions and patterns."
+      },
+      "howWeUse": {
+        "title": "4. How We Dey Use Your Personal Data",
+        "content": "We go only use your personal data when the law gree make we use am. Most times, we go use your personal data in these situations: Where we need to perform the contract we wan enter or don enter with you. Where e important for our legitimate interests (or those of a third party) and your interests and fundamental rights no bypass those interests. Where we need to follow legal obligation."
+      },
+      "dataSecurity": {
+        "title": "5. Data Security",
+        "content": "We don put correct security measures to prevent your personal data from getting lost accidentally, used or accessed in an unauthorised way, changed or exposed. Also, we reduce access to your personal data to only those employees, agents, contractors and other third parties wey get business need to know. Dem go only process your personal data on our instructions and dem dey subject to a duty of confidentiality."
+      },
+      "dataRetention": {
+        "title": "6. Data Keeping",
+        "content": "We go only keep your personal data for as long as we really need am to fulfil wetin we collect am for, including for satisfying any legal, regulatory, tax, accounting or reporting requirements. We fit keep your personal data for a longer time if complain dey or if we really believe say matter fit enter court relating to our relationship with you."
+      },
+      "yourRights": {
+        "title": "7. Your Legal Rights",
+        "content": "Under some conditions, you get rights under data protection laws relating to your personal data. This include the right to: Request access to your personal data. Request correction of your personal data. Request removal of your personal data. Object to processing of your personal data. Request restriction of processing your personal data. Request transfer of your personal data. Right to withdraw consent."
+      },
+      "cookies": {
+        "title": "8. Cookies",
+        "content": "You fit set your browser to reject all or some browser cookies, or to alert you when websites set or access cookies. If you disable or reject cookies, abeg note say some parts of this website fit stop working or no function well. For more information about the cookies we dey use, abeg check our Cookie Policy."
+      },
+      "contact": {
+        "title": "9. Contact Us",
+        "content": "If you get any question about this privacy policy or our privacy practices, abeg contact us at privacy@buyfromafrica.com."
+      }
+    },
+    "backToHome": "Go back to Home"
+  },
+  "FAQ": {
+    "title": "Questions Dem Dey Ask Steady",
+    "subtitle": "Find answers to everyday questions about buying and selling on Buy from Africa. If you no see wetin you dey look for, feel free to contact our support team.",
+    "categories": {
+      "general": "General Matter",
+      "buyers": "For Buyers",
+      "vendors": "For Sellers",
+      "shipping": "Shipping & Moving Load"
+    },
+    "questions": {
+      "whatIsBfa": {
+        "question": "Wetin be Buy from Africa?",
+        "answer": "Buy from Africa be beta B2B and B2C e-commerce platform wey dey dedicated to joining African manufacturers, artisans, and businesses with buyers around the globe. We dey make sure say secure trade, logistics, and dispute settlement happen so that trading across borders go be without stress."
+      },
+      "howToRegister": {
+        "question": "How I fit open account?",
+        "answer": "You fit register by clicking the 'Register' button for the top right corner of the website. You go need to choose whether you dey register as Buyer or Seller, and give the necessary business or personal information."
+      },
+      "buyerFees": {
+        "question": "Any money to pay to be buyer?",
+        "answer": "Opening buyer account no get price at all. Na only the products you buy you go pay for, plus any shipping and customs money wey dem go carefully show you as you dey checkout."
+      },
+      "vendorRequirements": {
+        "question": "Wetin I go bring before I be seller?",
+        "answer": "To be seller, you must get registered business for African country, pass our checking process, and agree to our quality standard and delivery rules. We go ask for proof of business registration and ID."
+      },
+      "shippingMethods": {
+        "question": "Which way dem dey send market?",
+        "answer": "We dey partner with big big global logistics providers (like DHL, FedEx, and UPS) and certified local African couriers. The shipping options and money you go pay go depend on the place you dey go, the weight, and size of your market."
+      },
+      "disputeResolution": {
+        "question": "How una dey settle fight between buyer and seller?",
+        "answer": "We get special mediation team wey dey enter the matter if buyer and seller no fit settle among demself. We go hold money put for one side until buyer conform say the market don reach and no spoil, bringing protection for the two side."
+      }
+    },
+    "contactSupport": "Chat Support",
+    "stillHaveQuestions": "You still get questions?",
+    "backToHome": "Go back to Home"
+  }
+}
