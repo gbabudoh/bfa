@@ -837,5 +837,67 @@
     "artisanal": "الحرف اليدوية والمنتجات المصنوعة يدوياً",
     "manufacturing": "التصنيع المتقدم والفضاء",
     "professional": "الخدمات المهنية والتجارية"
+  },
+  "VendorDashboard": {
+    "nav": {
+      "dashboard": "لوحة التحكم",
+      "orders": "الطلبات",
+      "inventory": "المخزون",
+      "customers": "العملاء",
+      "messages": "الرسائل",
+      "storefront": "واجهة المتجر"
+    },
+    "sidebar": {
+      "mainMenu": "القائمة الرئيسية",
+      "storeHealth": "صحة المتجر",
+      "healthDesc": "دعم البائعين المحترف نشط. تواصل معنا للمساعدة في التصدير.",
+      "openTerminal": "فتح الطرفية",
+      "terminateSession": "إنهاء الجلسة"
+    },
+    "header": {
+      "searchPlaceholder": "مسح الشبكة...",
+      "authorizedOps": "العمليات المصرح بها",
+      "privilegedAccess": "وصول مميز",
+      "accountSettings": "إعدادات الحساب",
+      "signOut": "تسجيل الخروج"
+    },
+    "footer": {
+      "ecosystem": "النظام البيئي العالمي لـ Buy From Africa",
+      "compliance": "الامتثال",
+      "architecture": "البنية",
+      "support": "الدعم"
+    },
+    "dashboard": {
+      "liveStatus": "حالة الحساب المباشر: نشط",
+      "hello": "مرحباً، {name}!",
+      "storeOwner": "صاحب المتجر",
+      "welcomeMessage": "محطة التجارة العالمية الخاصة بك جاهزة. لديك {count} طلبات معلقة تحتاج إلى مزامنة.",
+      "manageProducts": "إدارة المنتجات"
+    },
+    "stats": {
+      "orders": "الطلبات",
+      "pending": "معلق",
+      "delivered": "تم التسليم",
+      "inventory": "المخزون"
+    },
+    "transactions": {
+      "title": "المعاملات الأخيرة",
+      "subtitle": "مراقبة أحدث تدفقات المخزون الخاصة بك",
+      "product": "المنتج",
+      "id": "المعرف",
+      "amount": "المبلغ",
+      "status": "الحالة",
+      "statuses": {
+        "processing": "قيد المعالجة",
+        "shipped": "تم الشحن",
+        "delivered": "تم التسليم"
+      }
+    },
+    "inventory": {
+      "health": "صحة المخزون",
+      "lowStockTitle": "تنبيهات المخزون المنخفض",
+      "lowStockMessage": "منتجات حالياً أقل من حدود العتبة. يوصى بإعادة التخزين الفوري.",
+      "stockAlert": "تنبيه مزامنة المخزون #{number}"
+    }
   }
 }
