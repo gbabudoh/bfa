@@ -1021,6 +1021,8 @@
     "consumer": "Biens de consommation",
     "artisanal": "Artisanat et produits faits main",
     "manufacturing": "Fabrication avancée et aérospatiale",
+    "professional": "Services Professionnels"
+  },
   "VendorDashboard": {
     "nav": {
       "dashboard": "Tableau de Bord",
