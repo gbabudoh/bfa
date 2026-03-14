@@ -30,7 +30,6 @@ import {
 export default function RegisterPage() {
   const t = useTranslations('Register');
   const tc = useTranslations('RegistrationCategories');
-  const tCountries = useTranslations('Countries');
   const [selectedRole, setSelectedRole] = useState('buyer');
   const [selectedVendorType, setSelectedVendorType] = useState('artisan');
   const [badgeType, setBadgeType] = useState('blue');
@@ -199,7 +198,7 @@ export default function RegisterPage() {
                     <option value="">{t('countrySelect')}</option>
                     {globalCountries.map((country) => (
                       <option key={country.value} value={country.value}>
-                        {tCountries(country.name, { defaultValue: country.name })}
+                        {country.name}
                       </option>
                     ))}
                   </select>
