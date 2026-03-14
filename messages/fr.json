@@ -1051,6 +1051,38 @@
       "compliance": "Conformité",
       "architecture": "Architecture",
       "support": "Support"
+    },
+    "dashboard": {
+      "liveStatus": "Statut du Compte en Direct : Actif",
+      "hello": "Bonjour, {name} !",
+      "storeOwner": "Propriétaire de Boutique",
+      "welcomeMessage": "Votre terminal de commerce mondial est prêt. Vous avez {count} commandes en attente nécessitant une synchronisation.",
+      "manageProducts": "Gérer les Produits"
+    },
+    "stats": {
+      "orders": "Commandes",
+      "pending": "En Attente",
+      "delivered": "Livrées",
+      "inventory": "Inventaire"
+    },
+    "transactions": {
+      "title": "Transactions Récentes",
+      "subtitle": "Surveillance de vos derniers flux d'inventaire",
+      "product": "Produit",
+      "id": "ID",
+      "amount": "Montant",
+      "status": "Statut",
+      "statuses": {
+        "processing": "en cours",
+        "shipped": "expédié",
+        "delivered": "livré"
+      }
+    },
+    "inventory": {
+      "health": "Santé de l'Inventaire",
+      "lowStockTitle": "Alertes Stock Faible",
+      "lowStockMessage": "produits sont actuellement en dessous des seuils limites. Réapprovisionnement immédiat recommandé.",
+      "stockAlert": "Alerte Sync Stock #{number}"
     }
   }
 }
