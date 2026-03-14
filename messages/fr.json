@@ -1021,6 +1021,35 @@
     "consumer": "Biens de consommation",
     "artisanal": "Artisanat et produits faits main",
     "manufacturing": "Fabrication avancée et aérospatiale",
-    "professional": "Services professionnels et aux entreprises"
+  "VendorDashboard": {
+    "nav": {
+      "dashboard": "Tableau de Bord",
+      "orders": "Commandes",
+      "inventory": "Inventaire",
+      "customers": "Clients",
+      "messages": "Messages",
+      "storefront": "Vitrine"
+    },
+    "sidebar": {
+      "mainMenu": "Menu Principal",
+      "storeHealth": "Santé de la Boutique",
+      "healthDesc": "Support Pro Vendeurs Actif. Contactez-nous pour l'aide à l'export.",
+      "openTerminal": "Ouvrir le Terminal",
+      "terminateSession": "Terminer la Session"
+    },
+    "header": {
+      "searchPlaceholder": "Analyse du Réseau...",
+      "authorizedOps": "Opérations Autorisées",
+      "privilegedAccess": "Accès Privilégié",
+      "accountSettings": "Paramètres du Compte",
+      "signOut": "Déconnexion"
+    },
+    "footer": {
+      "ecosystem": "Écosystème Mondial Buy From Africa",
+      "compliance": "Conformité",
+      "architecture": "Architecture",
+      "support": "Support"
+    }
   }
 }
+

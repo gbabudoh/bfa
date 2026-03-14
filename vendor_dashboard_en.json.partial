@@ -1,0 +1,57 @@
+"VendorDashboard": {
+    "nav": {
+      "dashboard": "Dashboard",
+      "orders": "Orders",
+      "inventory": "Inventory",
+      "customers": "Customers",
+      "messages": "Messages",
+      "storefront": "Storefront"
+    },
+    "sidebar": {
+      "mainMenu": "Main Menu",
+      "storeHealth": "Store Health",
+      "healthDesc": "Vendors Pro Support Active. Reach out for export assistance.",
+      "openTerminal": "Open Terminal",
+      "terminateSession": "Terminate Session"
+    },
+    "header": {
+      "searchPlaceholder": "Scan Network...",
+      "authorizedOps": "Authorized Ops",
+      "privilegedAccess": "Privileged Access",
+      "accountSettings": "Account Settings",
+      "signOut": "Sign Out"
+    },
+    "footer": {
+      "ecosystem": "Buy From Africa Global Ecosystem",
+      "compliance": "Compliance",
+      "architecture": "Architecture",
+      "support": "Support"
+    },
+    "page": {
+      "welcome": "Hello, {name}!",
+      "statusActive": "Live Account Status: Active",
+      "syncOrders": "Your global trade terminal is ready. You have <span className=\"underline decoration-2 underline-offset-4 font-black\">{count} pending orders</span> requiring synchronization.",
+      "manageProducts": "Manage Products",
+      "stats": {
+        "orders": "Orders",
+        "pending": "Pending",
+        "delivered": "Delivered",
+        "inventory": "Inventory"
+      },
+      "transactions": {
+        "title": "Recent Transactions",
+        "subtitle": "Monitoring your latest inventory flows",
+        "product": "Product",
+        "id": "ID",
+        "amount": "Amount",
+        "status": "Status"
+      },
+      "inventoryHealth": {
+        "title": "Inventory Health",
+        "lowStock": "Low Stock Alerts",
+        "restockDesc": "<span className=\"text-red-500 font-extrabold text-lg\">{count}</span> products are currently below threshold limits. Immediate restock recommended.",
+        "syncAlert": "Stock Sync Alert #{id}"
+      }
+    }
+  }
+}

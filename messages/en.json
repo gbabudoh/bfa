@@ -1027,6 +1027,37 @@
     "consumer": "Consumer Goods",
     "artisanal": "Handmade Crafts & Artisanal Goods",
     "manufacturing": "Advanced Manufacturing & Aerospace",
-    "professional": "Professional & Business Services"
+    "professional": "Professional Services"
+  },
+  "VendorDashboard": {
+    "nav": {
+      "dashboard": "Dashboard",
+      "orders": "Orders",
+      "inventory": "Inventory",
+      "customers": "Customers",
+      "messages": "Messages",
+      "storefront": "Storefront"
+    },
+    "sidebar": {
+      "mainMenu": "Main Menu",
+      "storeHealth": "Store Health",
+      "healthDesc": "Vendors Pro Support Active. Reach out for export assistance.",
+      "openTerminal": "Open Terminal",
+      "terminateSession": "Terminate Session"
+    },
+    "header": {
+      "searchPlaceholder": "Scan Network...",
+      "authorizedOps": "Authorized Ops",
+      "privilegedAccess": "Privileged Access",
+      "accountSettings": "Account Settings",
+      "signOut": "Sign Out"
+    },
+    "footer": {
+      "ecosystem": "Buy From Africa Global Ecosystem",
+      "compliance": "Compliance",
+      "architecture": "Architecture",
+      "support": "Support"
+    }
   }
 }
+

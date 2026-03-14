@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from '@/i18n/navigation';
+import { useParams } from 'next/navigation';
 import { 
   LayoutDashboard, 
   ShoppingBag, 
@@ -18,10 +19,14 @@ import {
   ExternalLink,
   Settings,
   ChevronDown,
-  LucideIcon
+  LucideIcon,
+  Globe
 } from 'lucide-react';
 import { signOut, useSession } from 'next-auth/react';
 import Image from 'next/image';
+import { languages } from '@/i18n/config';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
 interface NavItem {
   name: string;
@@ -30,12 +35,12 @@ interface NavItem {
 }
 
 const navigation: NavItem[] = [
-  { name: 'Dashboard', href: '/vendor/dashboard', icon: LayoutDashboard },
-  { name: 'Orders', href: '/vendor/dashboard/orders', icon: ShoppingBag },
-  { name: 'Inventory', href: '/vendor/dashboard/products', icon: Package },
-  { name: 'Customers', href: '/vendor/dashboard/customers', icon: Users },
-  { name: 'Messages', href: '/vendor/dashboard/messages', icon: MessageSquare },
-  { name: 'Storefront', href: '/vendor/dashboard/storefront', icon: Store },
+  { name: 'nav.dashboard', href: '/vendor/dashboard', icon: LayoutDashboard },
+  { name: 'nav.orders', href: '/vendor/dashboard/orders', icon: ShoppingBag },
+  { name: 'nav.inventory', href: '/vendor/dashboard/products', icon: Package },
+  { name: 'nav.customers', href: '/vendor/dashboard/customers', icon: Users },
+  { name: 'nav.messages', href: '/vendor/dashboard/messages', icon: MessageSquare },
+  { name: 'nav.storefront', href: '/vendor/dashboard/storefront', icon: Store },
 ];
 
 export default function VendorDashboardLayout({
@@ -43,11 +48,26 @@ export default function VendorDashboardLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const t = useTranslations('VendorDashboard');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
+  const params = useParams();
   const { data: session } = useSession();
+  const [isLangOpen, setIsLangOpen] = useState(false);
+
+  // Get current locale
+  const currentLocale = (params?.locale as string) || 'en';
+  const currentLanguage = languages.find(lang => lang.code === currentLocale) || languages[0];
+
+  const switchLanguage = (newLocale: string) => {
+    const searchParams = new URLSearchParams(window.location.search);
+    const queryString = searchParams.toString();
+    const targetPath = queryString ? `${pathname}?${queryString}` : pathname;
+    router.replace(targetPath, { locale: newLocale });
+  };
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
@@ -95,7 +115,7 @@ export default function VendorDashboardLayout({
                   <Search className="absolute left-4 w-4 h-4 text-zinc-400" />
                   <input 
                     type="text" 
-                    placeholder="Scan Network..." 
+                    placeholder={t('header.searchPlaceholder')}
                     className="bg-gray-100/50 border border-gray-200 rounded-full py-2.5 pl-11 pr-6 w-[350px] text-xs font-bold focus:outline-none focus:ring-2 focus:ring-[#D9A606]/30 focus:bg-white transition-all placeholder:text-zinc-400 uppercase tracking-widest"
                   />
                 </div>
@@ -103,6 +123,52 @@ export default function VendorDashboardLayout({
 
               <div className="flex items-center gap-3 sm:gap-6">
                 <div className="flex items-center gap-2 pr-4 border-r border-gray-200">
+                  {/* Language Selector */}
+                  <div className="relative mr-2">
+                    <button
+                      onClick={() => setIsLangOpen(!isLangOpen)}
+                      className="flex items-center gap-2 p-2.5 rounded-xl bg-gray-100 hover:bg-white text-zinc-500 hover:text-[#D9A606] border border-gray-200/50 transition-all active:scale-90 shadow-sm group"
+                      title="Switch Language"
+                    >
+                      <Globe className="w-5 h-5 group-hover:rotate-12 transition-transform duration-500" />
+                      <span className="hidden sm:block text-[10px] font-black uppercase tracking-widest">{currentLanguage.code}</span>
+                    </button>
+                    
+                    <AnimatePresence>
+                      {isLangOpen && (
+                        <>
+                          <div className="fixed inset-0 z-40" onClick={() => setIsLangOpen(false)} />
+                          <motion.div
+                            initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                            exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                            className="absolute right-0 mt-3 w-48 bg-white/80 backdrop-blur-2xl rounded-2xl border border-white/60 shadow-2xl py-2 z-50 overflow-hidden"
+                          >
+                            {languages.map((lang) => (
+                              <button
+                                key={lang.code}
+                                onClick={() => {
+                                  switchLanguage(lang.code);
+                                  setIsLangOpen(false);
+                                }}
+                                className={`w-full px-5 py-3 text-left text-[11px] font-black uppercase tracking-widest transition-all flex items-center justify-between ${
+                                  currentLocale === lang.code
+                                    ? 'bg-[#D9A606] text-white'
+                                    : 'text-zinc-600 hover:bg-white/50 hover:text-zinc-900'
+                                }`}
+                              >
+                                <span>{lang.name}</span>
+                                {currentLocale === lang.code && (
+                                  <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                                )}
+                              </button>
+                            ))}
+                          </motion.div>
+                        </>
+                      )}
+                    </AnimatePresence>
+                  </div>
+
                   <button className="relative p-2.5 rounded-xl bg-gray-100 hover:bg-white text-zinc-500 hover:text-[#D9A606] border border-gray-200/50 transition-all active:scale-90 shadow-sm">
                     <Bell className="w-5 h-5" />
                     <span className="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
@@ -118,8 +184,8 @@ export default function VendorDashboardLayout({
                     className="flex items-center gap-3 pl-2 group cursor-pointer hover:bg-white/50 p-1 rounded-2xl transition-all"
                   >
                     <div className="hidden md:flex flex-col items-end leading-none gap-1">
-                      <span className="text-xs font-black text-zinc-900 group-hover:text-[#D9A606] transition-colors uppercase tracking-widest">{session?.user?.name || 'Authorized Ops'}</span>
-                      <span className="text-[9px] font-black text-[#D9A606] uppercase tracking-widest opacity-70">Privileged Access</span>
+                      <span className="text-xs font-black text-zinc-900 group-hover:text-[#D9A606] transition-colors uppercase tracking-widest">{session?.user?.name || t('header.authorizedOps')}</span>
+                      <span className="text-[9px] font-black text-[#D9A606] uppercase tracking-widest opacity-70">{t('header.privilegedAccess')}</span>
                     </div>
                     <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#D9A606] to-[#F2B705] border-2 border-white shadow-lg overflow-hidden flex items-center justify-center text-white font-black text-sm relative">
                       {session?.user?.name?.[0] || 'A'}
@@ -143,7 +209,7 @@ export default function VendorDashboardLayout({
                             className="flex items-center gap-3 px-5 py-4 rounded-2xl text-zinc-600 hover:text-zinc-900 hover:bg-white/50 transition-all group"
                           >
                             <Settings className="w-5 h-5 text-zinc-400 group-hover:text-[#D9A606] transition-colors" />
-                            <span className="text-sm font-bold tracking-tight">Account Settings</span>
+                            <span className="text-sm font-bold tracking-tight">{t('header.accountSettings')}</span>
                           </Link>
                           
                           <div className="h-[1px] bg-gray-100/50 mx-4 my-2"></div>
@@ -156,7 +222,7 @@ export default function VendorDashboardLayout({
                             className="w-full flex items-center gap-3 px-5 py-4 rounded-2xl text-red-500 hover:bg-red-50/50 transition-all group"
                           >
                             <LogOut className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-                            <span className="text-sm font-bold tracking-tight">Sign Out</span>
+                            <span className="text-sm font-bold tracking-tight">{t('header.signOut')}</span>
                           </button>
                         </div>
                       </div>
@@ -176,7 +242,7 @@ export default function VendorDashboardLayout({
               <div className="absolute -right-20 -bottom-20 w-40 h-40 bg-[#D9A606]/5 rounded-full blur-3xl group-hover:bg-[#D9A606]/10 transition-colors duration-1000"></div>
               
               <div className="px-5 py-6">
-                <span className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-400">Main Menu</span>
+                <span className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-400">{t('sidebar.mainMenu')}</span>
               </div>
 
               <nav className="flex flex-col gap-2 flex-1">
@@ -193,7 +259,7 @@ export default function VendorDashboardLayout({
                       }`}
                     >
                       <item.icon className={`w-5 h-5 transition-transform duration-500 group-hover:rotate-12 ${isActive ? "text-white" : "text-zinc-400 group-hover:text-[#D9A606]"}`} />
-                      <span className="text-[11px] font-black uppercase tracking-widest">{item.name}</span>
+                      <span className="text-[11px] font-black uppercase tracking-widest">{t(item.name)}</span>
                       {isActive && (
                         <div className="absolute right-4 w-1.5 h-1.5 rounded-full bg-white animate-ping"></div>
                       )}
@@ -210,10 +276,10 @@ export default function VendorDashboardLayout({
                     <div className="p-2 rounded-xl bg-[#D9A606]/10 text-[#D9A606]">
                       <ExternalLink className="w-4 h-4" />
                     </div>
-                    <span className="text-[10px] font-black text-zinc-900 uppercase tracking-widest">Store Health</span>
+                    <span className="text-[10px] font-black text-zinc-900 uppercase tracking-widest">{t('sidebar.storeHealth')}</span>
                   </div>
-                  <p className="text-[10px] text-zinc-500 leading-relaxed font-bold mb-4">Vendors Pro Support Active. Reach out for export assistance.</p>
-                  <button className="text-[9px] font-black text-[#D9A606] uppercase tracking-[0.2em] hover:underline underline-offset-4 decoration-[#D9A606]/30">Open Terminal</button>
+                  <p className="text-[10px] text-zinc-500 leading-relaxed font-bold mb-4">{t('sidebar.healthDesc')}</p>
+                  <button className="text-[9px] font-black text-[#D9A606] uppercase tracking-[0.2em] hover:underline underline-offset-4 decoration-[#D9A606]/30">{t('sidebar.openTerminal')}</button>
                 </div>
               </div>
 
@@ -223,7 +289,7 @@ export default function VendorDashboardLayout({
                   className="w-full group flex items-center gap-4 px-5 py-4 rounded-2xl text-[11px] font-black text-red-600 transition-all hover:bg-red-50 hover:shadow-[0_10px_20px_rgba(220,38,38,0.1)] border border-transparent hover:border-red-100"
                 >
                   <LogOut className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-                  <span className="uppercase tracking-widest">Terminate Session</span>
+                  <span className="uppercase tracking-widest">{t('sidebar.terminateSession')}</span>
                 </button>
               </div>
             </div>
@@ -277,7 +343,7 @@ export default function VendorDashboardLayout({
                     }`}
                   >
                     <item.icon className="w-5 h-5" />
-                    <span className="uppercase tracking-widest">{item.name}</span>
+                    <span className="uppercase tracking-widest">{t(item.name)}</span>
                   </Link>
                 );
               })}
@@ -288,7 +354,7 @@ export default function VendorDashboardLayout({
                 className="w-full flex items-center gap-4 px-5 py-4 rounded-2xl text-[13px] font-black text-red-600 hover:bg-red-50 transition-all"
               >
                 <LogOut className="w-5 h-5" />
-                <span className="uppercase tracking-widest">Sign Out</span>
+                <span className="uppercase tracking-widest">{t('header.signOut')}</span>
               </button>
             </div>
           </div>
