@@ -1025,5 +1025,35 @@
     "artisanal": "Artesanato e Produtos Feitos à Mão",
     "manufacturing": "Manufatura Avançada e Aeroespacial",
     "professional": "Serviços Profissionais e Empresariais"
+  },
+  "VendorDashboard": {
+    "nav": {
+      "dashboard": "Painel",
+      "orders": "Pedidos",
+      "inventory": "Inventário",
+      "customers": "Clientes",
+      "messages": "Mensagens",
+      "storefront": "Vitrine"
+    },
+    "sidebar": {
+      "mainMenu": "Menu Principal",
+      "storeHealth": "Saúde da Loja",
+      "healthDesc": "Suporte Pro para Vendedores Ativo. Entre em contato para assistência de exportação.",
+      "openTerminal": "Abrir Terminal",
+      "terminateSession": "Encerrar Sessão"
+    },
+    "header": {
+      "searchPlaceholder": "Pesquisar Rede...",
+      "authorizedOps": "Operações Autorizadas",
+      "privilegedAccess": "Acesso Privilegiado",
+      "accountSettings": "Configurações da Conta",
+      "signOut": "Sair"
+    },
+    "footer": {
+      "ecosystem": "Ecossistema Global Buy From Africa",
+      "compliance": "Conformidade",
+      "architecture": "Arquitetura",
+      "support": "Suporte"
+    }
   }
 }
