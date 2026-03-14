@@ -941,6 +941,7 @@
     "errorLogin": "Email ou mot de passe invalide"
   },
   "Register": {
+    "goBack": "Retour",
     "title": "Rejoindre Buy from Africa",
     "description": "Inscrivez-vous en tant qu'acheteur pour vous connecter avec des vendeurs africains ou en tant que partenaire commercial pour présenter vos produits mondialement",
     "asBuyer": "S'inscrire en tant qu'acheteur",

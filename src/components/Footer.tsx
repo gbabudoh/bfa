@@ -30,6 +30,7 @@ interface Category {
 
 const Footer = () => {
   const t = useTranslations('Footer');
+  const ct = useTranslations('Categories');
   const [config, setConfig] = useState<FooterConfig>({});
   const [categories, setCategories] = useState<Category[]>([]);
 
@@ -167,28 +168,28 @@ const Footer = () => {
               ) : (
                 <>
                   <li>
-                    <Link href="/category/textiles" className="text-gray-700 hover:text-yellow-600 transition">
-                      Textiles &amp; Clothing
+                    <Link href="/category/manufacturers" className="text-gray-700 hover:text-yellow-600 transition">
+                      {ct('manufacturers')}
                     </Link>
                   </li>
                   <li>
-                    <Link href="/category/crafts" className="text-gray-700 hover:text-yellow-600 transition">
-                      Arts &amp; Crafts
+                    <Link href="/category/artisans" className="text-gray-700 hover:text-yellow-600 transition">
+                      {ct('artisans')}
                     </Link>
                   </li>
                   <li>
-                    <Link href="/category/food" className="text-gray-700 hover:text-yellow-600 transition">
-                      Food &amp; Agriculture
+                    <Link href="/category/miners" className="text-gray-700 hover:text-yellow-600 transition">
+                      {ct('miners')}
                     </Link>
                   </li>
                   <li>
-                    <Link href="/category/minerals" className="text-gray-700 hover:text-yellow-600 transition">
-                      Minerals &amp; Materials
+                    <Link href="/category/industrial" className="text-gray-700 hover:text-yellow-600 transition">
+                      {ct('industrial')}
                     </Link>
                   </li>
                   <li>
-                    <Link href="/category/services" className="text-gray-700 hover:text-yellow-600 transition">
-                      Services
+                    <Link href="/category/food-and-agriculture" className="text-gray-700 hover:text-yellow-600 transition">
+                      {ct('food-and-agriculture')}
                     </Link>
                   </li>
                 </>

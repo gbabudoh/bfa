@@ -944,6 +944,7 @@
     "errorLogin": "E-mail ou senha inválidos"
   },
   "Register": {
+    "goBack": "Voltar",
     "title": "Junte-se ao Buy from Africa",
     "description": "Registre-se como comprador para se conectar com vendedores africanos ou como parceiro comercial para exibir seus produtos globalmente",
     "asBuyer": "Registrar como Comprador",

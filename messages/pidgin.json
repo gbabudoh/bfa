@@ -758,6 +758,7 @@
     "errorLogin": "Email or Password no correct"
   },
   "Register": {
+    "goBack": "Go Back",
     "title": "Join Buy from Africa",
     "description": "Register as buyer to connect with African vendors or as business partner to show your products to the whole world",
     "asBuyer": "Register as Buyer",

@@ -947,6 +947,7 @@
     "errorLogin": "Invalid email or password"
   },
   "Register": {
+    "goBack": "Back",
     "title": "Join Buy from Africa",
     "description": "Register as a buyer to connect with African vendors or as a business partner to showcase your products globally",
     "asBuyer": "Register as Buyer",

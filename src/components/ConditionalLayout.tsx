@@ -1,17 +1,21 @@
 "use client";
 
-import { usePathname } from 'next/navigation';
+import { usePathname } from '@/i18n/navigation';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 
 export default function ConditionalLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const isAdminRoute = pathname?.startsWith('/admin');
-  const isVendorRoute = pathname?.startsWith('/vendor');
-  const isDashboardRoute = pathname?.startsWith('/dashboard');
-  const isBuyerRoute = pathname?.startsWith('/buyer');
+  
+  // Routes that should NOT have the global Nav and Footer
+  const noLayoutPrefixes = ['/admin', '/vendor', '/dashboard', '/buyer'];
+  
+  // Check if current path matches any of the prefixes
+  const shouldHideLayout = noLayoutPrefixes.some(prefix => 
+    pathname === prefix || pathname?.startsWith(`${prefix}/`)
+  );
 
-  if (isAdminRoute || isVendorRoute || isDashboardRoute || isBuyerRoute) {
+  if (shouldHideLayout) {
     return <>{children}</>;
   }
 
