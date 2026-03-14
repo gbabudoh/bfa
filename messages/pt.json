@@ -1054,6 +1054,38 @@
       "compliance": "Conformidade",
       "architecture": "Arquitetura",
       "support": "Suporte"
+    },
+    "dashboard": {
+      "liveStatus": "Status da Conta Ativo: Ativo",
+      "hello": "Olá, {name}!",
+      "storeOwner": "Proprietário da Loja",
+      "welcomeMessage": "Seu terminal de comércio global está pronto. Você tem {count} pedidos pendentes que precisam de sincronização.",
+      "manageProducts": "Gerenciar Produtos"
+    },
+    "stats": {
+      "orders": "Pedidos",
+      "pending": "Pendentes",
+      "delivered": "Entregues",
+      "inventory": "Inventário"
+    },
+    "transactions": {
+      "title": "Transações Recentes",
+      "subtitle": "Monitorando seus últimos fluxos de inventário",
+      "product": "Produto",
+      "id": "ID",
+      "amount": "Valor",
+      "status": "Status",
+      "statuses": {
+        "processing": "processando",
+        "shipped": "enviado",
+        "delivered": "entregue"
+      }
+    },
+    "inventory": {
+      "health": "Saúde do Inventário",
+      "lowStockTitle": "Alertas de Estoque Baixo",
+      "lowStockMessage": "produtos estão atualmente abaixo dos limites. Reabastecimento imediato recomendado.",
+      "stockAlert": "Alerta de Sincronização #{number}"
     }
   }
 }

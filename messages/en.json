@@ -1057,6 +1057,38 @@
       "compliance": "Compliance",
       "architecture": "Architecture",
       "support": "Support"
+    },
+    "dashboard": {
+      "liveStatus": "Live Account Status: Active",
+      "hello": "Hello, {name}!",
+      "storeOwner": "Store Owner",
+      "welcomeMessage": "Your global trade terminal is ready. You have {count} pending orders requiring synchronization.",
+      "manageProducts": "Manage Products"
+    },
+    "stats": {
+      "orders": "Orders",
+      "pending": "Pending",
+      "delivered": "Delivered",
+      "inventory": "Inventory"
+    },
+    "transactions": {
+      "title": "Recent Transactions",
+      "subtitle": "Monitoring your latest inventory flows",
+      "product": "Product",
+      "id": "ID",
+      "amount": "Amount",
+      "status": "Status",
+      "statuses": {
+        "processing": "processing",
+        "shipped": "shipped",
+        "delivered": "delivered"
+      }
+    },
+    "inventory": {
+      "health": "Inventory Health",
+      "lowStockTitle": "Low Stock Alerts",
+      "lowStockMessage": "products are currently below threshold limits. Immediate restock recommended.",
+      "stockAlert": "Stock Sync Alert #{number}"
     }
   }
 }
