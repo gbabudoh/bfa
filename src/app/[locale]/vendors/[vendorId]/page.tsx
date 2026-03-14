@@ -4,11 +4,15 @@ import React from 'react';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
+import Image from 'next/image';
 import { 
   Star, 
-  ShoppingBag,
   ArrowUpDown,
-  Heart
+  Heart,
+  Eye,
+  ShoppingCart,
+  ArrowRight,
+  Tag
 } from 'lucide-react';
 
 // Import new components
@@ -164,7 +168,7 @@ export default function VendorDetailPage() {
   return (
     <div className="min-h-screen bg-[#FFFDF5]">
       {/* Vendor Banner & Profile Section */}
-      <VendorHeader vendor={vendor} getCountryFlag={getCountryFlag} />
+      <VendorHeader vendor={vendor} />
       
       {/* Manufacturer Highlight Section */}
       {(vendor.businessType === 'manufacturer' || vendor.businessType === 'artisan') && (
@@ -201,79 +205,115 @@ export default function VendorDetailPage() {
         
         {/* Products Tab Content */}
         {activeTab === 'products' && (
-          <div>
-            <div className="flex justify-between items-center mb-10">
-              <h2 className="text-2xl font-bold text-gray-900">{t('tabs.products')} ({products.length})</h2>
-              <div className="flex items-center gap-3">
-                <select className="bg-white border border-gray-200 rounded-xl text-sm px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#D9A606] focus:border-transparent shadow-sm cursor-pointer">
-                  <option>{t('allCategories')}</option>
-                  <option>Textiles</option>
-                  <option>Clothing</option>
-                  <option>Crafts</option>
-                </select>
-                <button className="bg-white border border-gray-200 px-4 py-2 rounded-xl text-sm font-bold flex items-center hover:bg-gray-50 transition-colors shadow-sm cursor-pointer">
-                  <ArrowUpDown className="h-4 w-4 mr-2 text-[#D9A606]" />
-                  {t('sort')}
-                </button>
+          <div className="space-y-12 animate-in fade-in duration-700">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+              <div>
+                <h2 className="text-3xl font-black text-gray-900 tracking-tight">
+                  {t('tabs.products')} <span className="text-yellow-600 ml-2">{products.length}</span>
+                </h2>
+                <div className="h-1.5 w-12 bg-yellow-500 rounded-full mt-2"></div>
+              </div>
+              
+              <div className="flex items-center gap-4 w-full md:w-auto">
+                <div className="relative flex-1 md:w-64">
+                  <select className="w-full appearance-none bg-white border border-gray-100 rounded-2xl text-sm font-bold px-6 py-4 focus:outline-none focus:ring-4 focus:ring-yellow-500/10 focus:border-yellow-500 shadow-sm cursor-pointer transition-all">
+                    <option>{t('allCategories')}</option>
+                    <option>Textiles</option>
+                    <option>Clothing</option>
+                    <option>Crafts</option>
+                  </select>
+                  <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-gray-400">
+                    <ArrowUpDown className="h-4 w-4" />
+                  </div>
+                </div>
               </div>
             </div>
-            
+
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
               {products.map((product) => (
-                <div key={product.id} className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-50 group">
-                  <Link href={`/products/${product.id}`} className="block cursor-pointer">
-                    <div className="h-60 bg-gray-100 relative overflow-hidden">
-                      <div className="absolute inset-0 flex items-center justify-center text-gray-300 font-bold group-hover:scale-110 transition-transform duration-500">
-                        {product.category}
-                      </div>
+                <div key={product.id} className="group relative">
+                  <div className="glass-card rounded-[2.5rem] overflow-hidden border-white/50 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 h-full flex flex-col">
+                    <div className="aspect-square relative overflow-hidden bg-gray-50">
+                      {product.images?.[0] ? (
+                        <Image
+                          src={product.images[0]}
+                          alt={product.name}
+                          fill
+                          className="object-cover transition-transform duration-700 group-hover:scale-110"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center text-gray-200 bg-gray-50/50">
+                           <Tag size={48} className="opacity-20" />
+                        </div>
+                      )}
                       
-                      {/* Product badges */}
+                      {/* Status Badges */}
                       <div className="absolute top-4 left-4 flex flex-col gap-2">
                         {product.isWholesale && (
-                          <span className="bg-[#1D4ED8] text-white text-[10px] font-black px-2 py-1 rounded-sm uppercase tracking-tighter">
+                          <span className="bg-blue-600 text-white text-[10px] font-black px-3 py-1.5 rounded-xl uppercase tracking-widest shadow-lg border border-blue-500/50">
                             {t('wholesale')}
                           </span>
                         )}
-                        {product.stock <= 0 && (
-                          <span className="bg-[#DC2626] text-white text-[10px] font-black px-2 py-1 rounded-sm uppercase tracking-tighter">
-                            {t('outOfStock')}
-                          </span>
-                        )}
+                      </div>
+
+                      {/* Hover Actions */}
+                      <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
+                         <div className="h-12 w-12 glass-dark rounded-2xl flex items-center justify-center text-white scale-90 group-hover:scale-100 transition-all duration-300">
+                            <Eye className="h-5 w-5" />
+                         </div>
+                         <div className="h-12 w-12 glass-gold rounded-2xl flex items-center justify-center text-white scale-90 group-hover:scale-100 transition-all duration-300 delay-75">
+                            <ShoppingCart className="h-5 w-5" />
+                         </div>
                       </div>
                     </div>
                     
-                    <div className="p-5">
-                      <h3 className="text-base font-bold text-gray-900 mb-3 group-hover:text-[#D9A606] transition-colors line-clamp-2 min-h-[3rem]">{product.name}</h3>
+                    <div className="p-6 flex-1 flex flex-col">
+                      <div className="flex-1">
+                        <Link href={`/products/${product.id}`} className="block">
+                          <h3 className="text-lg font-black text-gray-900 mb-1 group-hover:text-yellow-600 transition-colors line-clamp-2">
+                            {product.name}
+                          </h3>
+                        </Link>
+                        <div className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-4">
+                          {product.category || 'CATEGORY'}
+                        </div>
+                      </div>
                       
-                      <div className="flex flex-col gap-1">
+                      <div className="pt-4 border-t border-gray-100/50 flex flex-col gap-1">
                         {product.isRetail && (
-                          <div className="text-lg font-black text-gray-900">
-                            {product.currency} {product.price.toFixed(2)}
-                            <span className="text-[10px] text-gray-400 font-bold ml-1 uppercase">retail</span>
+                          <div className="flex items-baseline gap-2 text-gray-400">
+                            <span className="text-xl font-black text-gray-900">
+                              {product.currency} {product.price?.toFixed(2)}
+                            </span>
+                            <span className="text-[10px] font-black uppercase tracking-tighter">retail</span>
                           </div>
                         )}
                         
                         {product.isWholesale && (
-                          <div className="text-[#1D4ED8] text-xs font-bold">
-                            {product.currency} {product.wholesalePrice?.toFixed(2)}
-                            <span className="text-gray-400 font-medium ml-1">
-                              (min. {product.minWholesaleQty} units)
+                          <div className="flex items-center gap-2">
+                            <span className="text-blue-600 text-xs font-black">
+                              {product.currency} {product.wholesalePrice?.toFixed(2)}
+                            </span>
+                            <span className="text-[10px] font-bold text-gray-400">
+                              (min. {product.minWholesaleQty})
                             </span>
                           </div>
                         )}
                       </div>
+
+                      <div className="mt-6 flex gap-2">
+                        <Link 
+                          href={`/products/${product.id}`}
+                          className="flex-1 h-12 bg-white border border-gray-100 rounded-2xl text-[10px] font-black uppercase tracking-widest text-gray-900 shadow-sm hover:bg-yellow-600 hover:text-white hover:border-yellow-500 transition-all flex items-center justify-center gap-2"
+                        >
+                          {t('viewDetails')}
+                          <ArrowRight size={14} />
+                        </Link>
+                        <button className="h-12 w-12 glass-panel border-gray-100 rounded-2xl flex items-center justify-center text-gray-400 hover:text-red-500 hover:bg-red-50 transition-all">
+                          <Heart className="h-4 w-4" />
+                        </button>
+                      </div>
                     </div>
-                  </Link>
-                  
-                  <div className="px-5 pb-5 pt-0 flex justify-between items-center mt-2">
-                    <Link href={`/products/${product.id}`} className="bg-[#D9A606] hover:bg-[#A37304] text-white px-4 py-2 rounded-lg text-xs font-bold transition-colors flex items-center shadow-sm cursor-pointer">
-                      <ShoppingBag className="h-3.5 w-3.5 mr-2" />
-                      {t('viewDetails')}
-                    </Link>
-                    
-                    <button className="text-gray-300 hover:text-[#DC2626] transition-colors p-2 cursor-pointer">
-                      <Heart className="h-5 w-5" />
-                    </button>
                   </div>
                 </div>
               ))}

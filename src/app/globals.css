@@ -29,12 +29,61 @@ i,
   animation: blob 7s infinite;
 }
 
+.animate-tilt {
+  animation: tilt 10s infinite linear;
+}
+
+@keyframes tilt {
+  0%, 50%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(0.5deg);
+  }
+  75% {
+    transform: rotate(-0.5deg);
+  }
+}
+
 .animation-delay-2000 {
   animation-delay: 2s;
 }
 
 .animation-delay-4000 {
   animation-delay: 4s;
+}
+
+/* Glassmorphism Utilities */
+.glass-card {
+  @apply bg-white/70 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)];
+}
+
+.glass-panel {
+  @apply bg-white/40 backdrop-blur-md border border-white/30 shadow-sm;
+}
+
+.glass-dark {
+  @apply bg-gray-900/40 backdrop-blur-xl border border-white/10 shadow-2xl;
+}
+
+.glass-gold {
+  @apply bg-yellow-500/10 backdrop-blur-md border border-yellow-200/30;
+}
+
+.glass-light {
+  @apply bg-white/20 backdrop-blur-lg border border-white/40 shadow-xl;
+}
+
+.glass-surface {
+  @apply bg-white/5 backdrop-blur-sm border border-white/5;
+}
+
+.text-gradient-gold {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-yellow-600 to-yellow-400;
+}
+
+.animation-delay-1000 {
+  animation-delay: 1s;
 }
 
 /* Custom focus styles */
