@@ -839,5 +839,67 @@
     "artisanal": "Ufundi na Bidhaa za Mikono",
     "manufacturing": "Utengenezaji wa Hali ya Juu na Anga",
     "professional": "Huduma za Kitaalamu na Biashara"
+  },
+  "VendorDashboard": {
+    "nav": {
+      "dashboard": "Dashibodi",
+      "orders": "Maagizo",
+      "inventory": "Hesabu ya Bidhaa",
+      "customers": "Wateja",
+      "messages": "Ujumbe",
+      "storefront": "Duka"
+    },
+    "sidebar": {
+      "mainMenu": "Menyu Kuu",
+      "storeHealth": "Afya ya Duka",
+      "healthDesc": "Msaada wa Wauzaji Pro Unaendelea. Wasiliana nasi kwa msaada wa usafirishaji.",
+      "openTerminal": "Fungua Terminali",
+      "terminateSession": "Maliza Kipindi"
+    },
+    "header": {
+      "searchPlaceholder": "Tafuta Mtandao...",
+      "authorizedOps": "Shughuli Zilizoidhinishwa",
+      "privilegedAccess": "Ufikiaji wa Kipekee",
+      "accountSettings": "Mipangilio ya Akaunti",
+      "signOut": "Ondoka"
+    },
+    "footer": {
+      "ecosystem": "Mfumo wa Kimataifa wa Buy From Africa",
+      "compliance": "Uzingatiaji",
+      "architecture": "Usanifu",
+      "support": "Msaada"
+    },
+    "dashboard": {
+      "liveStatus": "Hali ya Akaunti Hai: Inaendelea",
+      "hello": "Habari, {name}!",
+      "storeOwner": "Mmiliki wa Duka",
+      "welcomeMessage": "Terminali yako ya biashara ya kimataifa iko tayari. Una maagizo {count} yanayosubiri usawazishaji.",
+      "manageProducts": "Simamia Bidhaa"
+    },
+    "stats": {
+      "orders": "Maagizo",
+      "pending": "Inasubiri",
+      "delivered": "Imewasilishwa",
+      "inventory": "Hesabu"
+    },
+    "transactions": {
+      "title": "Miamala ya Hivi Karibuni",
+      "subtitle": "Kufuatilia mtiririko wako wa hivi karibuni wa hesabu",
+      "product": "Bidhaa",
+      "id": "Kitambulisho",
+      "amount": "Kiasi",
+      "status": "Hali",
+      "statuses": {
+        "processing": "inachakatwa",
+        "shipped": "imetumwa",
+        "delivered": "imewasilishwa"
+      }
+    },
+    "inventory": {
+      "health": "Afya ya Hesabu",
+      "lowStockTitle": "Tahadhari za Hisa Chache",
+      "lowStockMessage": "bidhaa kwa sasa ziko chini ya mipaka ya kizingiti. Kujaza upya haraka kunapendekezwa.",
+      "stockAlert": "Tahadhari ya Usawazishaji wa Hisa #{number}"
+    }
   }
 }
