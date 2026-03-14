@@ -11,22 +11,19 @@ import {
   MoreVertical,
   Phone,
   Video,
-  Star,
-  Archive,
-  Trash2,
   Check,
   CheckCheck,
   Clock,
-  X,
   ChevronLeft,
   Image as ImageIcon,
   Smile,
-  Filter,
   Bell,
   BellOff,
   Pin,
-  User
+  Archive,
+  Trash2
 } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface Message {
   id: string;
@@ -216,6 +213,24 @@ export default function VendorMessagesPage() {
     setNewMessage('');
     inputRef.current?.focus();
   };
+  
+  const handleArchiveConversation = (id: string) => {
+    setConversations(prev => prev.filter(c => c.id !== id));
+    if (selectedConversation?.id === id) setSelectedConversation(null);
+    setShowOptions(false);
+  };
+
+  const handleDeleteConversation = (id: string) => {
+    if (confirm('Are you sure you want to delete this conversation? This action cannot be undone.')) {
+      setConversations(prev => prev.filter(c => c.id !== id));
+      if (selectedConversation?.id === id) setSelectedConversation(null);
+      setShowOptions(false);
+    }
+  };
+
+  const handleActionStub = (action: string) => {
+    alert(`${action} functionality is currently in demonstration mode.`);
+  };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {
@@ -275,7 +290,41 @@ export default function VendorMessagesPage() {
   const totalUnread = conversations.reduce((sum, conv) => sum + conv.unreadCount, 0);
 
   return (
-    <div className="space-y-6 font-sans">
+    <div className="relative min-h-screen font-sans overflow-hidden">
+      {/* Dynamic Animated Background */}
+      <div className="fixed inset-0 -z-10 bg-[#f8f9fa]">
+        <motion.div 
+          animate={{
+            scale: [1, 1.2, 1],
+            rotate: [0, 90, 0],
+            x: [0, 50, 0],
+            y: [0, 30, 0],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+          className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-gradient-to-br from-yellow-200/20 to-amber-200/20 rounded-full blur-[120px] pointer-events-none"
+        />
+        <motion.div 
+          animate={{
+            scale: [1.2, 1, 1.2],
+            rotate: [0, -90, 0],
+            x: [0, -50, 0],
+            y: [0, -30, 0],
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+          className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-gradient-to-tr from-orange-200/10 to-yellow-100/20 rounded-full blur-[120px] pointer-events-none"
+        />
+        <div className="absolute top-1/4 left-1/3 w-[30%] h-[30%] bg-amber-100/10 rounded-full blur-[100px] pointer-events-none animate-pulse" />
+      </div>
+
+      <div className="relative z-10 p-4 md:p-8 max-w-7xl mx-auto space-y-6">
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
@@ -292,7 +341,11 @@ export default function VendorMessagesPage() {
       </div>
 
       {/* Main Chat Container */}
-      <div className="bg-white border-2 border-gray-200 rounded-2xl overflow-hidden h-[calc(100vh-280px)] min-h-[500px] flex">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="bg-white/40 backdrop-blur-2xl border border-white/60 rounded-[2.5rem] shadow-2xl shadow-yellow-900/5 overflow-hidden h-[calc(100vh-280px)] min-h-[600px] flex"
+      >
         {/* Conversations List */}
         <div className={`w-full md:w-96 border-r border-gray-200 flex flex-col ${!showMobileList && selectedConversation ? 'hidden md:flex' : 'flex'}`}>
           {/* Search and Filter */}
@@ -304,7 +357,7 @@ export default function VendorMessagesPage() {
                 placeholder="Search conversations..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl pl-10 pr-4 py-2.5 text-sm focus:outline-none focus:border-[#D9A606] transition-all"
+                className="w-full bg-white/40 backdrop-blur-md border border-white/60 rounded-2xl pl-10 pr-4 py-3 text-sm font-medium text-zinc-900 focus:outline-none focus:bg-white/60 focus:border-[#D9A606] focus:ring-4 focus:ring-[#D9A606]/10 transition-all placeholder:text-zinc-400 shadow-sm"
               />
             </div>
             <div className="flex gap-2 overflow-x-auto pb-1">
@@ -317,10 +370,10 @@ export default function VendorMessagesPage() {
                 <button
                   key={filter.value}
                   onClick={() => setFilterType(filter.value)}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
+                  className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest whitespace-nowrap transition-all cursor-pointer shadow-sm ${
                     filterType === filter.value
-                      ? 'bg-[#D9A606] text-white'
-                      : 'bg-gray-100 text-zinc-600 hover:bg-gray-200'
+                      ? 'bg-[#D9A606] text-white shadow-[#D9A606]/30'
+                      : 'bg-white/40 backdrop-blur-md border border-white/60 text-zinc-600 hover:bg-white/60 hover:text-[#D9A606]'
                   }`}
                 >
                   {filter.label}
@@ -340,8 +393,10 @@ export default function VendorMessagesPage() {
                     setShowMobileList(false);
                     markAsRead(conv.id);
                   }}
-                  className={`p-4 border-b border-gray-100 cursor-pointer transition-all hover:bg-gray-50 ${
-                    selectedConversation?.id === conv.id ? 'bg-[#D9A606]/5 border-l-4 border-l-[#D9A606]' : ''
+                  className={`p-5 mx-2 rounded-2xl cursor-pointer transition-all duration-300 group ${
+                    selectedConversation?.id === conv.id 
+                      ? 'bg-white/60 shadow-lg border border-white/60' 
+                      : 'hover:bg-white/40 border border-transparent hover:border-white/40'
                   }`}
                 >
                   <div className="flex items-start gap-3">
@@ -425,8 +480,8 @@ export default function VendorMessagesPage() {
                       />
                     </div>
                   ) : (
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#D9A606] to-[#F2B705] flex items-center justify-center text-white font-bold text-sm">
-                      {selectedConversation.participant.name.split(' ').map(n => n[0]).join('')}
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#D9A606] to-[#F2B705] flex items-center justify-center text-white font-black text-xs shadow-lg shadow-yellow-600/20">
+                      {selectedConversation.participant.name.split(' ').map(n => n?.[0]).join('')}
                     </div>
                   )}
                   {selectedConversation.participant.isOnline && (
@@ -435,12 +490,12 @@ export default function VendorMessagesPage() {
                 </div>
 
                 <div>
-                  <h3 className="font-bold text-zinc-900">{selectedConversation.participant.name}</h3>
-                  <p className="text-xs text-zinc-500">
+                  <h3 className="font-extrabold text-zinc-900 tracking-tight">{selectedConversation.participant.name}</h3>
+                  <p className="text-[10px] font-black uppercase tracking-wider text-[#D9A606]">
                     {selectedConversation.participant.isOnline 
-                      ? 'Online' 
+                      ? 'Active Now' 
                       : selectedConversation.participant.lastSeen 
-                        ? `Last seen ${formatTime(selectedConversation.participant.lastSeen)}`
+                        ? `Seen ${formatTime(selectedConversation.participant.lastSeen)}`
                         : 'Offline'
                     }
                   </p>
@@ -448,10 +503,18 @@ export default function VendorMessagesPage() {
               </div>
 
               <div className="flex items-center gap-2">
-                <button className="p-2 rounded-lg hover:bg-gray-100 text-zinc-500 hover:text-[#D9A606] transition-all cursor-pointer" title="Voice Call">
+                <button 
+                  onClick={() => handleActionStub('Voice Call')}
+                  className="p-2 rounded-lg hover:bg-white/60 text-zinc-500 hover:text-[#D9A606] transition-all cursor-pointer" 
+                  title="Voice Call"
+                >
                   <Phone className="w-5 h-5" />
                 </button>
-                <button className="p-2 rounded-lg hover:bg-gray-100 text-zinc-500 hover:text-[#D9A606] transition-all cursor-pointer" title="Video Call">
+                <button 
+                  onClick={() => handleActionStub('Video Call')}
+                  className="p-2 rounded-lg hover:bg-white/60 text-zinc-500 hover:text-[#D9A606] transition-all cursor-pointer" 
+                  title="Video Call"
+                >
                   <Video className="w-5 h-5" />
                 </button>
                 <div className="relative">
@@ -468,31 +531,38 @@ export default function VendorMessagesPage() {
                       <div className="absolute right-0 top-full mt-2 w-48 bg-white border border-gray-200 rounded-xl shadow-xl z-20 overflow-hidden">
                         <button
                           onClick={() => {
-                            togglePin(selectedConversation.id);
+                            if (selectedConversation) togglePin(selectedConversation.id);
                             setShowOptions(false);
                           }}
-                          className="w-full px-4 py-3 text-left text-sm font-medium text-zinc-700 hover:bg-gray-50 flex items-center gap-3 cursor-pointer"
+                          className="w-full px-4 py-3 text-left text-[10px] font-black uppercase tracking-widest text-zinc-600 hover:bg-[#D9A606]/10 hover:text-[#D9A606] flex items-center gap-3 cursor-pointer transition-colors"
                         >
                           <Pin className="w-4 h-4" />
-                          {selectedConversation.isPinned ? 'Unpin' : 'Pin'} Conversation
+                          {selectedConversation.isPinned ? 'Unpin' : 'Pin'} Chat
                         </button>
                         <button
                           onClick={() => {
-                            toggleMute(selectedConversation.id);
+                            if (selectedConversation) toggleMute(selectedConversation.id);
                             setShowOptions(false);
                           }}
-                          className="w-full px-4 py-3 text-left text-sm font-medium text-zinc-700 hover:bg-gray-50 flex items-center gap-3 cursor-pointer"
+                          className="w-full px-4 py-3 text-left text-[10px] font-black uppercase tracking-widest text-zinc-600 hover:bg-[#D9A606]/10 hover:text-[#D9A606] flex items-center gap-3 cursor-pointer transition-colors"
                         >
                           {selectedConversation.isMuted ? <Bell className="w-4 h-4" /> : <BellOff className="w-4 h-4" />}
-                          {selectedConversation.isMuted ? 'Unmute' : 'Mute'} Notifications
+                          {selectedConversation.isMuted ? 'Unmute' : 'Mute'}
                         </button>
-                        <button className="w-full px-4 py-3 text-left text-sm font-medium text-zinc-700 hover:bg-gray-50 flex items-center gap-3 cursor-pointer">
+                        <button 
+                          onClick={() => selectedConversation && handleArchiveConversation(selectedConversation.id)}
+                          className="w-full px-4 py-3 text-left text-[10px] font-black uppercase tracking-widest text-zinc-600 hover:bg-emerald-50 hover:text-emerald-600 flex items-center gap-3 cursor-pointer transition-colors"
+                        >
                           <Archive className="w-4 h-4" />
-                          Archive Chat
+                          Archive
                         </button>
-                        <button className="w-full px-4 py-3 text-left text-sm font-medium text-red-600 hover:bg-red-50 flex items-center gap-3 cursor-pointer">
+                        <div className="h-[1px] bg-zinc-100 my-1" />
+                        <button 
+                          onClick={() => selectedConversation && handleDeleteConversation(selectedConversation.id)}
+                          className="w-full px-4 py-3 text-left text-[10px] font-black uppercase tracking-widest text-red-600 hover:bg-red-50 flex items-center gap-3 cursor-pointer transition-colors"
+                        >
                           <Trash2 className="w-4 h-4" />
-                          Delete Chat
+                          Purge Thread
                         </button>
                       </div>
                     </>
@@ -502,61 +572,78 @@ export default function VendorMessagesPage() {
             </div>
 
             {/* Messages */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50">
-              {selectedConversation.messages.map((message, index) => {
-                const showDate = index === 0 || 
-                  new Date(message.timestamp).toDateString() !== 
-                  new Date(selectedConversation.messages[index - 1].timestamp).toDateString();
+            <div className="flex-1 overflow-y-auto p-6 space-y-6 bg-zinc-900/5 custom-scrollbar">
+              <AnimatePresence initial={false}>
+                {selectedConversation.messages.map((message, index) => {
+                  const showDate = index === 0 || 
+                    new Date(message.timestamp).toDateString() !== 
+                    new Date(selectedConversation.messages[index - 1].timestamp).toDateString();
 
-                return (
-                  <React.Fragment key={message.id}>
-                    {showDate && (
-                      <div className="flex justify-center">
-                        <span className="px-3 py-1 rounded-full bg-white text-xs text-zinc-500 font-medium shadow-sm">
-                          {new Date(message.timestamp).toLocaleDateString('en-US', { 
-                            weekday: 'long', 
-                            month: 'short', 
-                            day: 'numeric' 
-                          })}
-                        </span>
-                      </div>
-                    )}
-                    
-                    <div className={`flex ${message.isOwn ? 'justify-end' : 'justify-start'}`}>
-                      <div className={`max-w-[70%] ${message.isOwn ? 'order-2' : 'order-1'}`}>
-                        <div
-                          className={`px-4 py-3 rounded-2xl ${
-                            message.isOwn
-                              ? 'bg-[#D9A606] text-white rounded-br-md'
-                              : 'bg-white text-zinc-900 rounded-bl-md shadow-sm'
-                          }`}
-                        >
-                          <p className="text-sm leading-relaxed">{message.content}</p>
-                        </div>
-                        <div className={`flex items-center gap-1 mt-1 ${message.isOwn ? 'justify-end' : 'justify-start'}`}>
-                          <span className="text-[10px] text-zinc-400">
-                            {new Date(message.timestamp).toLocaleTimeString('en-US', { 
-                              hour: '2-digit', 
-                              minute: '2-digit' 
+                  return (
+                    <motion.div
+                      key={message.id}
+                      initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.95 }}
+                      transition={{ duration: 0.2 }}
+                      className="space-y-4"
+                    >
+                      {showDate && (
+                        <div className="flex justify-center my-8">
+                          <span className="px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/60 text-[10px] font-black uppercase tracking-widest text-zinc-500 shadow-sm">
+                            {new Date(message.timestamp).toLocaleDateString('en-US', { 
+                              weekday: 'long', 
+                              month: 'short', 
+                              day: 'numeric' 
                             })}
                           </span>
-                          {message.isOwn && getMessageStatus(message.status)}
+                        </div>
+                      )}
+                      
+                      <div className={`flex ${message.isOwn ? 'justify-end' : 'justify-start'}`}>
+                        <div className={`max-w-[70%] ${message.isOwn ? 'order-2' : 'order-1'}`}>
+                          <div
+                            className={`px-5 py-3.5 rounded-[1.5rem] shadow-sm relative group/msg transition-all ${
+                              message.isOwn
+                                ? 'bg-zinc-900 text-white rounded-br-none shadow-zinc-900/10 hover:bg-zinc-800'
+                                : 'bg-white/80 backdrop-blur-md border border-white/60 text-zinc-900 rounded-bl-none hover:bg-white'
+                            }`}
+                          >
+                            <p className="text-sm font-medium leading-relaxed">{message.content}</p>
+                          </div>
+                          <div className={`flex items-center gap-1.5 mt-1.5 ${message.isOwn ? 'justify-end' : 'justify-start'}`}>
+                            <span className="text-[10px] font-bold text-zinc-400">
+                              {new Date(message.timestamp).toLocaleTimeString('en-US', { 
+                                hour: '2-digit', 
+                                minute: '2-digit' 
+                              })}
+                            </span>
+                            {message.isOwn && getMessageStatus(message.status)}
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </React.Fragment>
-                );
-              })}
+                    </motion.div>
+                  );
+                })}
+              </AnimatePresence>
               <div ref={messagesEndRef} />
             </div>
 
             {/* Message Input */}
             <div className="p-4 border-t border-gray-200 bg-white">
               <div className="flex items-center gap-3">
-                <button className="p-2 rounded-lg hover:bg-gray-100 text-zinc-500 hover:text-[#D9A606] transition-all cursor-pointer" title="Attach File">
+                <button 
+                  onClick={() => handleActionStub('File Attachment')}
+                  className="p-2 rounded-lg hover:bg-zinc-100 text-zinc-500 hover:text-[#D9A606] transition-all cursor-pointer" 
+                  title="Attach File"
+                >
                   <Paperclip className="w-5 h-5" />
                 </button>
-                <button className="p-2 rounded-lg hover:bg-gray-100 text-zinc-500 hover:text-[#D9A606] transition-all cursor-pointer" title="Send Image">
+                <button 
+                  onClick={() => handleActionStub('Image Upload')}
+                  className="p-2 rounded-lg hover:bg-zinc-100 text-zinc-500 hover:text-[#D9A606] transition-all cursor-pointer" 
+                  title="Send Image"
+                >
                   <ImageIcon className="w-5 h-5" />
                 </button>
                 
@@ -596,6 +683,7 @@ export default function VendorMessagesPage() {
             </div>
           </div>
         )}
+      </motion.div>
       </div>
     </div>
   );

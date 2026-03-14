@@ -19,7 +19,9 @@ import {
   MapPin,
   Palette,
   Shirt,
-  Globe
+  Warehouse,
+  Pickaxe,
+  Leaf
 } from 'lucide-react';
 
 // Define types for live data
@@ -485,10 +487,13 @@ function FilterContent({
         <div className="space-y-3">
           {[
             { id: 'all', icon: <MapPin className="h-4 w-4" /> },
+            { id: 'retailer', icon: <Store className="h-4 w-4 text-indigo-600" /> },
+            { id: 'manufacturer', icon: <Shirt className="h-4 w-4 text-green-600" /> },
             { id: 'artisan', icon: <Palette className="h-4 w-4 text-blue-600" /> },
-            { id: 'brand', icon: <Shirt className="h-4 w-4 text-green-600" /> },
+            { id: 'wholesaler', icon: <Warehouse className="h-4 w-4 text-purple-600" /> },
             { id: 'factory', icon: <Factory className="h-4 w-4 text-yellow-600" /> },
-            { id: 'export', icon: <Globe className="h-4 w-4 text-purple-600" /> }
+            { id: 'miner', icon: <Pickaxe className="h-4 w-4 text-zinc-600" /> },
+            { id: 'agribusiness', icon: <Leaf className="h-4 w-4 text-emerald-600" /> }
           ].map((type) => (
             <label key={type.id} className="flex items-center group cursor-pointer">
               <input

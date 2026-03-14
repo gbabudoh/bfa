@@ -11,8 +11,7 @@ import {
   Shield, 
   Star, 
   Mail, 
-  Factory, 
-  Globe,
+  Factory,
   Shirt,
   Palette,
   Leaf,
@@ -24,6 +23,8 @@ import {
   Briefcase,
   Package,
   ShoppingBag,
+  Warehouse,
+  Pickaxe,
   ArrowRight,
   CheckCircle2,
   Lock,
@@ -348,10 +349,13 @@ export default function RegisterPage() {
                       <label className="text-sm font-black uppercase tracking-widest text-gray-400 mb-6 block ml-1">{t('businessType')}</label>
                       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                         {[
-                          { id: 'artisan', icon: Palette, color: 'blue', label: t('artisanType') },
-                          { id: 'brand', icon: Shirt, color: 'green', label: t('brandType') },
-                          { id: 'factory', icon: Factory, color: 'yellow', label: t('factoryType') },
-                          { id: 'export', icon: Globe, color: 'purple', label: t('exportType') }
+                          { id: 'retailer', icon: ShoppingBag, color: 'blue', label: 'Retailer' },
+                          { id: 'manufacturer', icon: Shirt, color: 'green', label: 'Manufacturer' },
+                          { id: 'artisan', icon: Palette, color: 'yellow', label: 'Artisan' },
+                          { id: 'wholesaler', icon: Warehouse, color: 'purple', label: 'Wholesaler' },
+                          { id: 'factory', icon: Factory, color: 'orange', label: 'Factory' },
+                          { id: 'miner', icon: Pickaxe, color: 'zinc', label: 'Miner' },
+                          { id: 'agribusiness', icon: Leaf, color: 'emerald', label: 'Agribusiness' }
                         ].map((type) => (
                           <motion.div
                             key={type.id}
@@ -366,7 +370,7 @@ export default function RegisterPage() {
                           >
                             <type.icon className={`w-8 h-8 mb-4 ${
                               selectedVendorType === type.id 
-                                ? type.id === 'artisan' ? 'text-blue-500' : type.id === 'brand' ? 'text-green-500' : type.id === 'factory' ? 'text-yellow-500' : 'text-purple-500'
+                                ? type.color === 'blue' ? 'text-blue-500' : type.color === 'green' ? 'text-green-500' : type.color === 'yellow' ? 'text-yellow-500' : type.color === 'purple' ? 'text-purple-500' : type.color === 'orange' ? 'text-orange-500' : type.color === 'zinc' ? 'text-zinc-600' : 'text-emerald-500'
                                 : 'text-gray-600'
                             }`} />
                             <span className="text-xs font-black uppercase tracking-tight leading-tight">{type.label}</span>
@@ -441,10 +445,10 @@ export default function RegisterPage() {
                              </h4>
                           </div>
 
-                          {selectedVendorType !== 'export' ? (
+                          {selectedVendorType !== 'wholesaler' ? (
                             <div className="space-y-4">
                               <label className="text-sm font-black uppercase tracking-widest text-gray-500 ml-1">
-                                {selectedVendorType === 'factory' ? t('factoryCategories') : t('craftedCategories')}
+                                {selectedVendorType === 'factory' || selectedVendorType === 'manufacturer' ? t('factoryCategories') : t('craftedCategories')}
                               </label>
                               <CategorySelection />
                               

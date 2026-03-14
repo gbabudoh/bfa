@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
-import { ChevronLeft, ChevronRight, Filter, MapPin, Star, Shield, Tag, Factory, Store, XCircle, Loader2, Users, Palette, Shirt, Globe } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Filter, MapPin, Star, Shield, Tag, Factory, Store, XCircle, Loader2, Users, Palette, Shirt, Briefcase, Pickaxe, Leaf, Warehouse } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 // Define country flags
@@ -77,17 +77,26 @@ interface BusinessTypeInfo {
 const getBusinessTypeInfo = (type: string): BusinessTypeInfo => {
   const t = (type || '').toLowerCase();
   
+  if (t.includes('retailer')) {
+    return { icon: <Store className="h-4 w-4" />, color: 'bg-indigo-100 text-indigo-800' };
+  }
+  if (t.includes('manufacturer')) {
+    return { icon: <Shirt className="h-4 w-4" />, color: 'bg-green-100 text-green-800' };
+  }
   if (t.includes('artisan') || t.includes('maker')) {
     return { icon: <Palette className="h-4 w-4" />, color: 'bg-blue-100 text-blue-800' };
   }
-  if (t.includes('brand') || t.includes('designer')) {
-    return { icon: <Shirt className="h-4 w-4" />, color: 'bg-green-100 text-green-800' };
+  if (t.includes('wholesaler')) {
+    return { icon: <Briefcase className="h-4 w-4" />, color: 'bg-purple-100 text-purple-800' };
   }
-  if (t.includes('manufacturer') || t.includes('factory')) {
-    return { icon: <Factory className="h-4 w-4" />, color: 'bg-yellow-100 text-yellow-800' };
+  if (t.includes('factory')) {
+    return { icon: <Factory className="h-4 w-4" />, color: 'bg-orange-100 text-orange-800' };
   }
-  if (t.includes('distributor') || t.includes('export')) {
-    return { icon: <Globe className="h-4 w-4" />, color: 'bg-purple-100 text-purple-800' };
+  if (t.includes('miner')) {
+    return { icon: <Pickaxe className="h-4 w-4" />, color: 'bg-zinc-100 text-zinc-800' };
+  }
+  if (t.includes('agribusiness')) {
+    return { icon: <Leaf className="h-4 w-4" />, color: 'bg-emerald-100 text-emerald-800' };
   }
 
   // Fallback for any other types
@@ -214,10 +223,13 @@ export default function VendorsPage() {
                   <div className="space-y-3">
                     {[
                       { id: 'all', label: t('allBusinessTypes'), icon: <Users /> },
-                      { id: 'artisan', label: t('artisanMakers'), icon: <Palette />, color: 'text-blue-600' },
-                      { id: 'brand', label: t('brandDesigners'), icon: <Shirt />, color: 'text-green-600' },
-                      { id: 'factory', label: t('manufacturerFactories'), icon: <Factory />, color: 'text-yellow-600' },
-                      { id: 'export', label: t('distributorExport'), icon: <Globe />, color: 'text-purple-600' }
+                      { id: 'retailer', label: 'Retailer', icon: <Store />, color: 'text-indigo-600' },
+                      { id: 'manufacturer', label: 'Manufacturer', icon: <Shirt />, color: 'text-green-600' },
+                      { id: 'artisan', label: 'Artisan', icon: <Palette />, color: 'text-blue-600' },
+                      { id: 'wholesaler', label: 'Wholesaler', icon: <Warehouse />, color: 'text-purple-600' },
+                      { id: 'factory', label: 'Factory', icon: <Factory />, color: 'text-orange-600' },
+                      { id: 'miner', label: 'Miner', icon: <Pickaxe />, color: 'text-zinc-600' },
+                      { id: 'agribusiness', label: 'Agribusiness', icon: <Leaf />, color: 'text-emerald-600' }
                     ].map((item) => (
                       <button
                         key={item.id}

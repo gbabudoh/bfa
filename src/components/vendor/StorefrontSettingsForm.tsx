@@ -39,11 +39,13 @@ interface VendorData {
 }
 
 const BUSINESS_TYPES = [
-  { value: 'retailer', label: 'Retailer', desc: 'Sells products from various sources' },
-  { value: 'manufacturer', label: 'Manufacturer', desc: 'Produces own products directly' },
+  { value: 'retailer', label: 'Retailer', desc: 'Reseller of diverse product collections' },
+  { value: 'manufacturer', label: 'Manufacturer', desc: 'Own-brand product creator' },
   { value: 'artisan', label: 'Artisan', desc: 'Handcrafted goods specialist' },
-  { value: 'wholesaler', label: 'Wholesaler', desc: 'Bulk sales specialist' },
-  { value: 'factory', label: 'Factory', desc: 'Industrial production facility' },
+  { value: 'wholesaler', label: 'Wholesaler', desc: 'Bulk supply & B2B specialist' },
+  { value: 'factory', label: 'Factory', desc: 'Industrial-scale production' },
+  { value: 'miner', label: 'Miner', desc: 'Natural resource extraction' },
+  { value: 'agribusiness', label: 'Agribusiness', desc: 'Food & agricultural production' },
 ];
 
 const PAYMENT_OPTIONS = [
