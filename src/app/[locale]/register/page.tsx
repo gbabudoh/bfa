@@ -341,7 +341,7 @@ export default function RegisterPage() {
                       <option value="">{t('countrySelect')}</option>
                       {globalCountries.map((country) => (
                         <option key={country.value} value={country.value}>
-                          {tCountries(country.name, { defaultValue: country.name })}
+                          {country.name}
                         </option>
                       ))}
                     </select>
