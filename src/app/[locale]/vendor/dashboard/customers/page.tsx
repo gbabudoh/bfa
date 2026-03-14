@@ -1,13 +1,11 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import { useSession } from 'next-auth/react';
+import React, { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import { 
   Search, 
   Filter, 
-  MoreVertical, 
   Mail, 
   Phone, 
   MapPin,
@@ -116,8 +114,8 @@ const mockCustomers: Customer[] = [
 ];
 
 export default function VendorCustomersPage() {
-  const { data: session } = useSession();
-  const [customers, setCustomers] = useState<Customer[]>(mockCustomers);
+  const t = useTranslations('VendorDashboard.customers');
+  const [customers] = useState<Customer[]>(mockCustomers);
   const [searchQuery, setSearchQuery] = useState('');
   const [statusFilter, setStatusFilter] = useState<string>('all');
   const [sortBy, setSortBy] = useState<string>('recent');
@@ -194,11 +192,11 @@ export default function VendorCustomersPage() {
   const getStatusBadge = (status: string) => {
     switch (status) {
       case 'active':
-        return <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase bg-green-100 text-green-700">Active</span>;
+        return <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase bg-green-100 text-green-700">{t('filters.statuses.active')}</span>;
       case 'inactive':
-        return <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase bg-gray-100 text-gray-600">Inactive</span>;
+        return <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase bg-gray-100 text-gray-600">{t('filters.statuses.inactive')}</span>;
       case 'new':
-        return <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase bg-blue-100 text-blue-700">New</span>;
+        return <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase bg-blue-100 text-blue-700">{t('filters.statuses.new')}</span>;
       default:
         return null;
     }
@@ -210,9 +208,9 @@ export default function VendorCustomersPage() {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <div className="flex items-center gap-2 mb-2">
-            <span className="text-[10px] font-black text-[#D9A606] uppercase tracking-[0.4em] italic">Audience Intelligence</span>
+            <span className="text-[10px] font-black text-[#D9A606] uppercase tracking-[0.4em] italic">{t('subtitle')}</span>
           </div>
-          <h1 className="text-4xl font-black text-zinc-900 tracking-tighter">Client <span className="text-zinc-400">Network.</span></h1>
+          <h1 className="text-4xl font-black text-zinc-900 tracking-tighter">{t('title').split(' ')[0]} <span className="text-zinc-400">{t('title').split(' ').slice(1).join(' ')}.</span></h1>
         </div>
         <div className="flex items-center gap-3">
           <button 
@@ -226,7 +224,7 @@ export default function VendorCustomersPage() {
             className="flex items-center gap-2 px-5 py-3 rounded-xl bg-white border-2 border-gray-200 text-zinc-700 hover:border-[#D9A606] hover:text-[#D9A606] transition-all cursor-pointer"
           >
             <Download className="w-4 h-4" />
-            <span className="text-xs font-bold uppercase tracking-wider">Export</span>
+            <span className="text-xs font-bold uppercase tracking-wider">{t('export')}</span>
           </button>
         </div>
       </div>
@@ -241,7 +239,7 @@ export default function VendorCustomersPage() {
             <TrendingUp className="w-4 h-4 text-green-500" />
           </div>
           <p className="text-2xl font-black text-zinc-900">{totalCustomers}</p>
-          <p className="text-xs text-zinc-500 font-medium mt-1">Total Customers</p>
+          <p className="text-xs text-zinc-500 font-medium mt-1">{t('stats.total')}</p>
         </div>
 
         <div className="p-6 rounded-2xl bg-white border-2 border-gray-200 hover:border-[#D9A606]/30 transition-all cursor-pointer group">
@@ -252,7 +250,7 @@ export default function VendorCustomersPage() {
             <span className="text-xs font-bold text-green-600">+12%</span>
           </div>
           <p className="text-2xl font-black text-zinc-900">{activeCustomers}</p>
-          <p className="text-xs text-zinc-500 font-medium mt-1">Active Customers</p>
+          <p className="text-xs text-zinc-500 font-medium mt-1">{t('stats.active')}</p>
         </div>
 
         <div className="p-6 rounded-2xl bg-white border-2 border-gray-200 hover:border-[#D9A606]/30 transition-all cursor-pointer group">
@@ -262,7 +260,7 @@ export default function VendorCustomersPage() {
             </div>
           </div>
           <p className="text-2xl font-black text-zinc-900">${totalRevenue.toLocaleString()}</p>
-          <p className="text-xs text-zinc-500 font-medium mt-1">Total Revenue</p>
+          <p className="text-xs text-zinc-500 font-medium mt-1">{t('stats.revenue')}</p>
         </div>
 
         <div className="p-6 rounded-2xl bg-white border-2 border-gray-200 hover:border-[#D9A606]/30 transition-all cursor-pointer group">
@@ -272,7 +270,7 @@ export default function VendorCustomersPage() {
             </div>
           </div>
           <p className="text-2xl font-black text-zinc-900">${avgOrderValue.toFixed(2)}</p>
-          <p className="text-xs text-zinc-500 font-medium mt-1">Avg. Order Value</p>
+          <p className="text-xs text-zinc-500 font-medium mt-1">{t('stats.avgValue')}</p>
         </div>
       </div>
 
@@ -283,7 +281,7 @@ export default function VendorCustomersPage() {
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-400" />
           <input
             type="text"
-            placeholder="Search customers by name, email, or location..."
+            placeholder={t('filters.searchPlaceholder')}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full bg-white border-2 border-gray-200 rounded-xl pl-12 pr-4 py-3 text-sm font-medium text-zinc-900 focus:outline-none focus:border-[#D9A606] transition-all placeholder:text-zinc-400"
@@ -309,7 +307,7 @@ export default function VendorCustomersPage() {
           >
             <Filter className="w-4 h-4" />
             <span className="text-xs font-bold uppercase tracking-wider">
-              {statusFilter === 'all' ? 'All Status' : statusFilter}
+              {statusFilter === 'all' ? t('filters.status') : t(`filters.statuses.${statusFilter}`)}
             </span>
             <ChevronDown className={`w-4 h-4 transition-transform ${showFilterDropdown ? 'rotate-180' : ''}`} />
           </button>
@@ -328,7 +326,7 @@ export default function VendorCustomersPage() {
                     statusFilter === status ? 'bg-[#D9A606]/10 text-[#D9A606]' : 'text-zinc-600'
                   }`}
                 >
-                  {status === 'all' ? 'All Status' : status}
+                  {status === 'all' ? t('filters.statuses.all') : t(`filters.statuses.${status}`)}
                 </button>
               ))}
             </div>
@@ -344,7 +342,7 @@ export default function VendorCustomersPage() {
             }}
             className="flex items-center gap-2 px-5 py-3 rounded-xl bg-white border-2 border-gray-200 text-zinc-700 hover:border-[#D9A606] transition-all cursor-pointer"
           >
-            <span className="text-xs font-bold uppercase tracking-wider">Sort by</span>
+            <span className="text-xs font-bold uppercase tracking-wider">{t('filters.sortBy')}</span>
             <ChevronDown className={`w-4 h-4 transition-transform ${showSortDropdown ? 'rotate-180' : ''}`} />
           </button>
           
@@ -366,7 +364,7 @@ export default function VendorCustomersPage() {
                     sortBy === option.value ? 'bg-[#D9A606]/10 text-[#D9A606]' : 'text-zinc-600'
                   }`}
                 >
-                  {option.label}
+                  {t(`filters.sortOptions.${option.value}`)}
                 </button>
               ))}
             </div>
@@ -378,12 +376,12 @@ export default function VendorCustomersPage() {
       <div className="bg-white border-2 border-gray-200 rounded-2xl overflow-hidden">
         {/* Table Header */}
         <div className="hidden md:grid grid-cols-12 gap-4 px-6 py-4 bg-gray-50 border-b border-gray-200">
-          <div className="col-span-4 text-[10px] font-black text-zinc-500 uppercase tracking-widest">Customer</div>
-          <div className="col-span-2 text-[10px] font-black text-zinc-500 uppercase tracking-widest">Location</div>
-          <div className="col-span-2 text-[10px] font-black text-zinc-500 uppercase tracking-widest text-center">Orders</div>
-          <div className="col-span-2 text-[10px] font-black text-zinc-500 uppercase tracking-widest text-center">Total Spent</div>
-          <div className="col-span-1 text-[10px] font-black text-zinc-500 uppercase tracking-widest text-center">Status</div>
-          <div className="col-span-1 text-[10px] font-black text-zinc-500 uppercase tracking-widest text-center">Actions</div>
+          <div className="col-span-4 text-[10px] font-black text-zinc-500 uppercase tracking-widest">{t('table.customer')}</div>
+          <div className="col-span-2 text-[10px] font-black text-zinc-500 uppercase tracking-widest">{t('table.location')}</div>
+          <div className="col-span-2 text-[10px] font-black text-zinc-500 uppercase tracking-widest text-center">{t('table.orders')}</div>
+          <div className="col-span-2 text-[10px] font-black text-zinc-500 uppercase tracking-widest text-center">{t('table.spent')}</div>
+          <div className="col-span-1 text-[10px] font-black text-zinc-500 uppercase tracking-widest text-center">{t('table.status')}</div>
+          <div className="col-span-1 text-[10px] font-black text-zinc-500 uppercase tracking-widest text-center">{t('table.actions')}</div>
         </div>
 
         {/* Customer Rows */}
@@ -413,7 +411,7 @@ export default function VendorCustomersPage() {
               {/* Orders */}
               <div className="col-span-2 text-center">
                 <span className="text-sm font-bold text-zinc-900">{customer.totalOrders}</span>
-                <span className="text-xs text-zinc-400 ml-1">orders</span>
+                <span className="text-xs text-zinc-400 ml-1">{t('table.ordersCount')}</span>
               </div>
 
               {/* Total Spent */}
@@ -431,21 +429,21 @@ export default function VendorCustomersPage() {
                 <button 
                   onClick={() => setSelectedCustomer(customer)}
                   className="p-2 rounded-lg hover:bg-[#D9A606]/10 text-zinc-400 hover:text-[#D9A606] transition-all cursor-pointer"
-                  title="View Details"
+                  title={t('table.viewDetails')}
                 >
                   <Eye className="w-4 h-4" />
                 </button>
                 <Link 
                   href={`/vendor/dashboard/messages?customer=${customer.id}`}
                   className="p-2 rounded-lg hover:bg-blue-50 text-zinc-400 hover:text-blue-600 transition-all cursor-pointer"
-                  title="Send Message"
+                  title={t('table.sendMessage')}
                 >
                   <MessageSquare className="w-4 h-4" />
                 </Link>
                 <a 
                   href={`mailto:${customer.email}`}
                   className="p-2 rounded-lg hover:bg-green-50 text-zinc-400 hover:text-green-600 transition-all cursor-pointer"
-                  title="Send Email"
+                  title={t('table.sendEmail')}
                 >
                   <Mail className="w-4 h-4" />
                 </a>
@@ -455,8 +453,8 @@ export default function VendorCustomersPage() {
         ) : (
           <div className="px-6 py-16 text-center">
             <Users className="w-12 h-12 text-zinc-300 mx-auto mb-4" />
-            <p className="text-zinc-500 font-medium">No customers found</p>
-            <p className="text-zinc-400 text-sm mt-1">Try adjusting your search or filters</p>
+            <p className="text-zinc-900 font-black text-xl">{t('table.noCustomers')}</p>
+            <p className="text-zinc-500 text-sm mt-2 max-w-xs mx-auto">{t('table.noCustomersDesc')}</p>
           </div>
         )}
       </div>
@@ -465,7 +463,11 @@ export default function VendorCustomersPage() {
       {totalPages > 1 && (
         <div className="flex items-center justify-between">
           <p className="text-sm text-zinc-500">
-            Showing {((currentPage - 1) * itemsPerPage) + 1} to {Math.min(currentPage * itemsPerPage, filteredCustomers.length)} of {filteredCustomers.length} customers
+            {t('table.showing', { 
+              start: ((currentPage - 1) * itemsPerPage) + 1, 
+              end: Math.min(currentPage * itemsPerPage, filteredCustomers.length), 
+              total: filteredCustomers.length 
+            })}
           </p>
           <div className="flex items-center gap-2">
             <button
@@ -528,7 +530,7 @@ export default function VendorCustomersPage() {
               <div className="flex items-center gap-3 p-4 rounded-xl bg-gray-50">
                 <Mail className="w-5 h-5 text-zinc-400" />
                 <div>
-                  <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Email</p>
+                  <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider">{t('modal.email')}</p>
                   <a href={`mailto:${selectedCustomer.email}`} className="text-sm font-medium text-zinc-900 hover:text-[#D9A606] cursor-pointer">
                     {selectedCustomer.email}
                   </a>
@@ -539,7 +541,7 @@ export default function VendorCustomersPage() {
                 <div className="flex items-center gap-3 p-4 rounded-xl bg-gray-50">
                   <Phone className="w-5 h-5 text-zinc-400" />
                   <div>
-                    <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Phone</p>
+                    <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider">{t('modal.phone')}</p>
                     <a href={`tel:${selectedCustomer.phone}`} className="text-sm font-medium text-zinc-900 hover:text-[#D9A606] cursor-pointer">
                       {selectedCustomer.phone}
                     </a>
@@ -550,18 +552,18 @@ export default function VendorCustomersPage() {
               <div className="flex items-center gap-3 p-4 rounded-xl bg-gray-50">
                 <MapPin className="w-5 h-5 text-zinc-400" />
                 <div>
-                  <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Location</p>
+                  <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider">{t('modal.location')}</p>
                   <p className="text-sm font-medium text-zinc-900">{selectedCustomer.location}</p>
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div className="p-4 rounded-xl bg-[#D9A606]/10">
-                  <p className="text-[10px] font-bold text-[#D9A606] uppercase tracking-wider">Total Orders</p>
+                  <p className="text-[10px] font-bold text-[#D9A606] uppercase tracking-wider">{t('modal.orders')}</p>
                   <p className="text-2xl font-black text-zinc-900 mt-1">{selectedCustomer.totalOrders}</p>
                 </div>
                 <div className="p-4 rounded-xl bg-green-50">
-                  <p className="text-[10px] font-bold text-green-600 uppercase tracking-wider">Total Spent</p>
+                  <p className="text-[10px] font-bold text-green-600 uppercase tracking-wider">{t('modal.spent')}</p>
                   <p className="text-2xl font-black text-zinc-900 mt-1">${selectedCustomer.totalSpent.toLocaleString()}</p>
                 </div>
               </div>
@@ -569,7 +571,7 @@ export default function VendorCustomersPage() {
               <div className="flex items-center gap-3 p-4 rounded-xl bg-gray-50">
                 <Calendar className="w-5 h-5 text-zinc-400" />
                 <div>
-                  <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Customer Since</p>
+                  <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider">{t('modal.since')}</p>
                   <p className="text-sm font-medium text-zinc-900">
                     {new Date(selectedCustomer.joinedDate).toLocaleDateString('en-US', { 
                       year: 'numeric', 
@@ -587,14 +589,14 @@ export default function VendorCustomersPage() {
                 className="flex-1 flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#D9A606] text-white font-bold text-sm hover:bg-[#C49505] transition-all cursor-pointer"
               >
                 <MessageSquare className="w-4 h-4" />
-                Send Message
+                {t('modal.message')}
               </Link>
               <a 
                 href={`mailto:${selectedCustomer.email}`}
                 className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl border-2 border-gray-200 text-zinc-700 font-bold text-sm hover:border-[#D9A606] hover:text-[#D9A606] transition-all cursor-pointer"
               >
                 <Mail className="w-4 h-4" />
-                Email
+                {t('table.sendEmail').split(' ').pop()}
               </a>
             </div>
           </div>

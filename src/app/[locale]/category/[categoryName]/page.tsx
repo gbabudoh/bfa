@@ -92,21 +92,21 @@ export default async function CategoryPage({ params, searchParams }: CategoryPag
             <>
               <ChevronRight className="h-4 w-4 mx-2" />
               <Link href={`/category/${category.parent.slug}`} className="hover:text-yellow-600 transition font-medium">
-                {ct(category.parent.slug)}
+                {ct.has(category.parent.slug) ? ct(category.parent.slug) : category.parent.name}
               </Link>
             </>
           )}
           <ChevronRight className="h-4 w-4 mx-2" />
-          <span className="text-gray-900 font-bold">{ct(category.slug)}</span>
+          <span className="text-gray-900 font-bold">{ct.has(category.slug) ? ct(category.slug) : category.name}</span>
         </nav>
 
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
           <div>
             <h1 className="text-4xl font-black text-gray-900 tracking-tight">
-              {ct(category.slug)}
+              {ct.has(category.slug) ? ct(category.slug) : category.name}
             </h1>
             <p className="mt-2 text-gray-600 text-lg font-medium">
-              {tCat('description', { category: ct(category.slug) })}
+              {tCat('description', { category: ct.has(category.slug) ? ct(category.slug) : category.name })}
             </p>
           </div>
           
@@ -135,7 +135,7 @@ export default async function CategoryPage({ params, searchParams }: CategoryPag
                 href={`/category/${sub.slug}`}
                 className="bg-white hover:bg-yellow-50 border border-gray-100 px-4 py-2 rounded-full text-sm font-bold text-gray-700 transition shadow-sm hover:shadow-md"
               >
-                {ct(sub.slug)}
+                {ct.has(sub.slug) ? ct(sub.slug) : sub.name}
               </Link>
             ))}
           </div>

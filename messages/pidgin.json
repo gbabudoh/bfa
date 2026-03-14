@@ -101,62 +101,59 @@
     "globalHub": "Global African Hub"
   },
   "Categories": {
-    "manufacturers": "People wey dey Make things",
-    "textiles-and-fabrics": "Cloth and materials",
-    "apparel-and-fashion-accessories": "Wears and fashion things",
-    "leather-and-leather-goods": "Leather and things dem make with leather",
-    "footwear": "Shoes and sandals",
-    "automotive-assembly-and-components": "Motor assembly and parts",
-    "electrical-equipment-and-cables": "Light things and wires",
-    "electronics-and-small-appliances": "Electronics and small house things",
-    "industrial-machinery-and-equipment": "Industrial machine and tools",
-    "furniture-and-fittings": "Chair, table and house fittings",
-    "packaging-materials": "Packaging materials",
-    "artisans": "Hand-work People",
-    "handicrafts-and-souvenirs": "Hand-made things and gifts",
-    "home-decor-and-interior-items": "House decoration things",
-    "traditional-art-sculpture-and-carvings": "Traditional art and wood work",
-    "jewellery-and-adornments": "Jewelries and beads",
-    "cultural-and-religious-items": "Culture and religion things",
-    "miners": "Minerals People",
-    "minerals-and-ores": "Minerals and ores",
-    "precious-metals-and-gemstones": "Gold, silver and expensive stones",
-    "industrial-minerals": "Industrial minerals",
-    "industrial": "Industrial",
-    "building-materials-and-construction-products": "Building materials and construction things",
-    "metals-and-metal-products": "Iron and metal things",
-    "wood-and-wood-products": "Wood and wood things",
-    "paper-pulp-and-printed-materials": "Paper and printed things",
-    "chemicals-and-petrochemicals": "Chemical and petrol things",
-    "fertilizers-and-agro-inputs": "Fertilizer and farm things",
-    "paints-coatings-and-adhesives": "Paint and gum things",
-    "plastics-and-rubber-products": "Plastic and rubber things",
-    "food-and-agriculture": "Food and Farm work",
-    "agricultural-commodities": "Farm products",
-    "processed-foods-and-beverages": "Food wey dem don process and drinks",
-    "livestock-and-animal-products": "Animals and animal things",
-    "fisheries-and-aquaculture-products": "Fish and water things",
-    "health-and-wellness": "Body Wellness",
-    "pharmaceuticals-and-medical-supplies": "Medicine and hospital things",
-    "cosmetics-beauty-and-personal-care": "Cream, beauty and body care",
-    "health-and-wellness-products": "Health and wellness things",
-    "home-and-living": "House and Living",
-    "cleaning-and-household-care-products": "Cleaning and house care products",
-    "eco-friendly-and-sustainable-products": "Nature-friendly things",
-    "educational-and-office-supplies": "School and office things",
-    "technology-and-energy": "Tech and Energy",
-    "renewable-energy-equipment": "Solar and clean energy things",
-    "ict-hardware-assembly": "Computer and ICT assembly",
-    "digital-content-tied-to-physical-goods": "Digital things for physical goods",
-    "textiles": "Cloth and Wears",
-    "crafts": "Art and Hand-work",
+    "manufacturers": "People wey dey make things",
+    "artisans": "Hand work people",
+    "miners": "Stone diggers",
+    "industrial": "Factory things",
+    "foodAndAgriculture": "Farm bizness",
+    "textiles": "Wears and Clothes",
+    "crafts": "Hand things and Art",
     "food": "Food and Farm",
-    "minerals": "Minerals and Materials",
-    "jewelry": "Jewelry and Beads",
-    "beauty": "Health and Beauty",
-    "tech": "Tech and Services",
-    "home": "Home and Decor",
-    "viewAll": "See All Categories"
+    "food-and-agriculture": "Food & Agriculture",
+    "minerals": "Stone and Materials",
+    "jewelry": "Fine-fine things and Jewelry",
+    "beauty": "Body care and Health",
+    "tech": "Computer and Service",
+    "home": "House decoration",
+    "textilesAndFabrics": "Clothes materials and wrapper",
+    "apparelAndFashionAccessories": "Wears and fashion things",
+    "leatherAndLeatherGoods": "Leather and leather work",
+    "footwear": "Shoes and slippers",
+    "automotiveAssemblyAndComponents": "Motor parts and fixing",
+    "electricalEquipmentAndCables": "Light materials and wire",
+    "electronicsAndSmallAppliances": "Electronics and small gadgets",
+    "industrialMachineryAndEquipment": "Big engines and machines",
+    "furnitureAndFittings": "Chairs, table and house fittings",
+    "packagingMaterials": "Things to pack load",
+    "handicraftsAndSouvenirs": "Hand work and gift items",
+    "homeDecorAndInteriorItems": "Home decoration things",
+    "traditionalArtSculptureAndCarvings": "Olden days art",
+    "jewelleryAndAdornments": "Jewelry and fine things",
+    "culturalAndReligiousItems": "Culture and church things",
+    "mineralsAndOres": "Stone from ground",
+    "preciousMetalsAndGemstones": "Gold, silver and fine stones",
+    "industrialMinerals": "Minerals for factory",
+    "buildingMaterialsAndConstructionProducts": "Building materials",
+    "metalsAndMetalProducts": "Iron and metal things",
+    "woodAndWoodWork": "Wood and wood work",
+    "paperPulpAndPrintedMaterials": "Paper and print work",
+    "chemicalsAndPetrochemicals": "Chemicals and oil things",
+    "fertilizersAndAgroInputs": "Fertilizer and farm things",
+    "paintsCoatingsAndAdhesives": "Paint and glue things",
+    "plasticsAndRubberProducts": "Plastic and rubber work",
+    "agriculturalCommodities": "Market farm things",
+    "processedFoodsAndBeverages": "Packaged food and drinks",
+    "livestockAndAnimalProducts": "Animal and and animal things",
+    "fisheriesAndAquacultureProducts": "Fish business",
+    "pharmaceuticalsAndMedicalSupplies": "Medicine and hospital things",
+    "cosmeticsBeautyAndPersonalCare": "Cream and body care",
+    "healthAndWellnessProducts": "Health and wellness things",
+    "cleaningAndHouseholdCareProducts": "Cleaning things",
+    "ecoFriendlyAndSustainableProducts": "Nature friendly things",
+    "educationalAndOfficeSupplies": "School and office things",
+    "renewableEnergyEquipment": "Solar and clean light",
+    "ictHardwareAssembly": "Computer fixing",
+    "digitalContentTiedToPhysicalGoods": "Digital things for market"
   },
   "CategoryPage": {
     "home": "Home",
@@ -839,5 +836,370 @@
     "artisanal": "Artisanal & Handcrafted",
     "manufacturing": "Manufacturing & Export",
     "professional": "Professional Services"
+  },
+  "VendorDashboard": {
+    "nav": {
+      "dashboard": "Dashboard",
+      "orders": "Orders",
+      "inventory": "Stock",
+      "customers": "Customers",
+      "messages": "Messages",
+      "storefront": "Shop Front"
+    },
+    "sidebar": {
+      "mainMenu": "Main Menu",
+      "storeHealth": "Shop Health",
+      "healthDesc": "Vendor Pro Support dey active. Holla us for export help.",
+      "openTerminal": "Open Terminal",
+      "terminateSession": "Close Session"
+    },
+    "header": {
+      "searchPlaceholder": "Scan Network...",
+      "authorizedOps": "Authorized Ops",
+      "privilegedAccess": "Privileged Access",
+      "accountSettings": "Account Settings",
+      "signOut": "Comot"
+    },
+    "footer": {
+      "ecosystem": "Buy From Africa Global Ecosystem",
+      "compliance": "Compliance",
+      "architecture": "Architecture",
+      "support": "Support"
+    },
+    "dashboard": {
+      "liveStatus": "Account Status: Active",
+      "hello": "Ahow, {name}!",
+      "storeOwner": "Shop Oga",
+      "welcomeMessage": "Your global trade terminal ready. You get {count} orders wey need monitoring.",
+      "manageProducts": "Manage Products"
+    },
+    "stats": {
+      "orders": "Orders",
+      "pending": "Wey dey wait",
+      "delivered": "Wey don reach",
+      "inventory": "Stock"
+    },
+    "transactions": {
+      "title": "Recent Transactions",
+      "subtitle": "Monitoring your latest stock flow",
+      "product": "Product",
+      "id": "ID",
+      "amount": "Money",
+      "status": "Level",
+      "statuses": {
+        "processing": "wey dey process",
+        "shipped": "wey don start waka",
+        "delivered": "wey don reach"
+      }
+    },
+    "inventory": {
+      "health": "Stock Health",
+      "lowStockTitle": "Stock dey small Alarms",
+      "lowStockMessage": "products don dey finish for stock. Replenish quick quick.",
+      "stockAlert": "Stock Sync Alert #{number}"
+    },
+    "orders": {
+      "title": "Manage Orders",
+      "subtitle": "Operations Logs",
+      "refresh": "Refresh",
+      "export": "Export",
+      "stats": {
+        "total": "All di Orders",
+        "pending": "Orders wey dey wait",
+        "processing": "Wey dey process",
+        "revenue": "All di Money wey enter",
+        "actionRequired": "You need to do somtin"
+      },
+      "filters": {
+        "searchPlaceholder": "Find order with number, name, or email...",
+        "status": "Level",
+        "date": "Date",
+        "allOrders": "All Orders",
+        "statuses": {
+          "pending": "Wey dey wait",
+          "processing": "Wey dey process",
+          "shipped": "Wey don start waka",
+          "delivered": "Wey don reach",
+          "cancelled": "Wey don cancel"
+        },
+        "dateOptions": {
+          "all": "Since since",
+          "today": "Today",
+          "week": "This week",
+          "month": "This month"
+        }
+      },
+      "table": {
+        "orderDetails": "Order Details",
+        "customer": "Customer",
+        "amount": "Money",
+        "status": "Level",
+        "actions": "Things to do",
+        "noOrders": "No order here",
+        "noOrdersDesc": "We no find any order with wetin you type o.",
+        "showing": "You dey see {start} to {end} out of {total} orders",
+        "viewDetails": "See Details",
+        "printInvoice": "Print Receipt",
+        "contactCustomer": "Talk to Customer"
+      },
+      "modal": {
+        "reviewShipment": "Check Shipment",
+        "logisticsData": "Logistic Information",
+        "customer": "Customer",
+        "destination": "Destination",
+        "shippingStrategy": "How to Send am",
+        "trackingId": "ID",
+        "internalNote": "Private Message",
+        "inventoryManifest": "Stock List",
+        "qty": "Qty",
+        "financialTotal": "Total Money",
+        "updateProgress": "Update Level",
+        "close": "Close"
+      },
+      "statusController": {
+        "title": "Level Control",
+        "subtitle": "Workflow Update",
+        "target": "Target",
+        "close": "Close Controller"
+      },
+      "payment": {
+        "paid": "Money don enter",
+        "pending": "Money never enter",
+        "refunded": "Money don go back"
+      }
+    },
+    "products": {
+      "title": "Vault Stock",
+      "subtitle": "Stock & Logistics",
+      "empty": {
+        "title": "Vault Ready.",
+        "description": "Your product architecture dey undergo indexing. Stock sync go manifest as you upload your collections.",
+        "button": "Start Collection"
+      }
+    },
+    "customers": {
+      "title": "Client Network",
+      "subtitle": "Audience Intelligence",
+      "export": "Export",
+      "stats": {
+        "total": "Total Customas",
+        "active": "Customas wey active",
+        "revenue": "Total Money wey enter",
+        "avgValue": "Wetin one customa dey spend"
+      },
+      "filters": {
+        "searchPlaceholder": "Find customas with name, email, or place...",
+        "status": "All Level",
+        "sortBy": "Arrange am",
+        "statuses": {
+          "all": "All Level",
+          "active": "Active",
+          "inactive": "No active",
+          "new": "New"
+        },
+        "sortOptions": {
+          "recent": "Wetin happen just now",
+          "spent": "All di money wey dem spend",
+          "orders": "How many orders",
+          "name": "Name A-Z"
+        }
+      },
+      "table": {
+        "customer": "Customa",
+        "location": "Place",
+        "orders": "Orders",
+        "spent": "Total Money",
+        "status": "Level",
+        "actions": "Things to do",
+        "ordersCount": "orders",
+        "noCustomers": "No customa here",
+        "noCustomersDesc": "Try check wetin you type o",
+        "showing": "Dey show {start} to {end} out of {total} customas",
+        "viewDetails": "See Details",
+        "sendMessage": "Send Message",
+        "sendEmail": "Send Email"
+      },
+      "modal": {
+        "email": "Email",
+        "phone": "Phone",
+        "location": "Place",
+        "orders": "All di Orders",
+        "spent": "All di Money",
+        "since": "Customa since",
+        "message": "Send Message"
+      }
+    },
+    "messages": {
+      "title": "Messages",
+      "subtitle": "Communications Hub",
+      "newMessages": "{count} new ones",
+      "searchPlaceholder": "Find talks...",
+      "noConversations": "No talk here",
+      "selectConversation": "Choose one talk",
+      "selectConversationDesc": "Pick one talk from di list make you start to message",
+      "typePlaceholder": "Write message...",
+      "demoMode": "{action} level still dey for test mode.",
+      "purgeConfirm": "You sure say you wan delete dis talk? Wetin you do you no fit change am o.",
+      "yesterday": "Yesterday",
+      "filters": {
+        "all": "All",
+        "unread": "We never read",
+        "customer": "Customas",
+        "support": "Support"
+      },
+      "status": {
+        "online": "E dey active now",
+        "offline": "E no dey online",
+        "seen": "We see am {time}"
+      },
+      "actions": {
+        "voiceCall": "Call for voice",
+        "videoCall": "Call for video",
+        "attachFile": "Put file join",
+        "sendImage": "Send picture",
+        "emoji": "Emoji",
+        "pin": "Pin Chat",
+        "unpin": "Unpin Chat",
+        "mute": "No make noise",
+        "unmute": "Make noise",
+        "archive": "Keep am",
+        "purge": "Kpai di thread"
+      }
+    },
+    "storefront": {
+      "title": "Set Your Storefront",
+      "subtitle": "Storefront Management",
+      "description": "Make your store look fine for customas to see for marketplace",
+      "loading": "We still dey load your store settings...",
+      "saveSuccess": "E don save fine!",
+      "saveError": "Ting no gree save",
+      "saving": "E dey save...",
+      "saveChanges": "Save Change Dem",
+      "viewPublic": "See as e be for public",
+      "tabs": {
+        "identity": "Who be your Brand",
+        "contact": "How to reach you",
+        "business": "Business Level",
+        "shipping": "Shipping dem",
+        "preview": "See am first"
+      },
+      "sections": {
+        "assets": "Brand Properties",
+        "info": "Store Level",
+        "categories": "Kind of things you dey sell",
+        "contact": "Reach us here",
+        "businessType": "Wetin you dey do",
+        "regCert": "Registration and Papers",
+        "minOrder": "How many person must buy",
+        "payment": "How you go collect money",
+        "shipping": "Where you dey reach",
+        "livePreview": "Show am as e be"
+      },
+      "form": {
+        "logo": "Store Picture",
+        "banner": "Top Banner",
+        "bannerPlaceholder": "Put your banner (21:9)",
+        "logoPlaceholder": "Put your logo",
+        "storeName": "Name of Store *",
+        "location": "Where you dey",
+        "shortDesc": "Small story",
+        "fullDesc": "Big story",
+        "email": "Email Address",
+        "phone": "Phone Number",
+        "website": "Web Link",
+        "hours": "Time you dey work",
+        "address": "Where your office dey",
+        "regNumber": "Company Papa Number",
+        "capacity": "How much you fit produce",
+        "certifications": "Your Papers",
+        "wholesaleMin": "Wholesale Smallest Amount",
+        "retailMin": "Retail Smallest Amount",
+        "addCert": "Put another paper (e.g., ISO 9001)",
+        "storeNamePlaceholder": "Wetin be your store name",
+        "locationPlaceholder": "City, Country",
+        "shortDescPlaceholder": "Small gist about your store",
+        "fullDescPlaceholder": "Big gist about wetin you dey do and wetin you dey sell",
+        "addressPlaceholder": "Your office address for full",
+        "hoursPlaceholder": "Mon-Fri: 9am-5pm WAT",
+        "capacityPlaceholder": "e.g., 10,000 per month",
+        "wholesalePlaceholder": "e.g., 100 or $500",
+        "retailPlaceholder": "e.g., Anyone fit buy",
+        "paymentDesc": "Select all how you won collect your money",
+        "shippingDesc": "Select areas where you fit reach",
+        "emailError": "That email no correct",
+        "websiteError": "Website must start with http:// or https://"
+      },
+      "preview": {
+        "liveNotice": "Na so customas go see your store o. If you no click \"Save Change\", e no go change.",
+        "verified": "CONFIRM",
+        "locationNotSet": "Location no dey yet",
+        "about": "About Us",
+        "noDesc": "No gist here yet",
+        "businessType": "Kind of Business",
+        "notSpecified": "We no know yet",
+        "categories": "Kinds of Market",
+        "payment": "How you go pay",
+        "shipsTo": "E dey reach"
+      },
+      "businessTypes": {
+        "retailer": {
+          "label": "Retailer",
+          "desc": "Person wey dey sell small small things"
+        },
+        "manufacturer": {
+          "label": "Manufacturer",
+          "desc": "Person wey dey make things by himself"
+        },
+        "artisan": {
+          "label": "Artisan",
+          "desc": "Person wey dey use hand make things"
+        },
+        "wholesaler": {
+          "label": "Wholesaler",
+          "desc": "Person wey dey sell big big for bulk"
+        },
+        "factory": {
+          "label": "Factory",
+          "desc": "Big place wey dem dey make many things"
+        },
+        "miner": {
+          "label": "Miner",
+          "desc": "Person wey dey pull things from ground"
+        },
+        "agribusiness": {
+          "label": "Agribusiness",
+          "desc": "Farmer wey dey do big business"
+        }
+      },
+      "paymentOptions": {
+        "Bank Transfer": "Bank Transfer",
+        "Credit Card": "Credit Card",
+        "PayPal": "PayPal",
+        "Mobile Money": "Mobile Money",
+        "Cash on Delivery": "Pay when you see am",
+        "Letter of Credit": "Paper from Bank",
+        "Western Union": "Western Union",
+        "Crypto": "Bitcoin/Crypto"
+      },
+      "shippingRegions": {
+        "Nigeria": "Naija",
+        "Ghana": "Ghana",
+        "Kenya": "Kenya",
+        "South Africa": "South Africa",
+        "Egypt": "Egypt",
+        "Morocco": "Morocco",
+        "Tanzania": "Tanzania",
+        "Ethiopia": "Ethiopia",
+        "Uganda": "Uganda",
+        "Senegal": "Senegal",
+        "Cameroon": "Cameroon",
+        "Côte d'Ivoire": "Ivory Coast",
+        "Europe": "Europe",
+        "North America": "America/Canada",
+        "Asia": "Asia",
+        "Middle East": "Middle East",
+        "Worldwide": "Everywhere"
+      }
+    }
   }
 }

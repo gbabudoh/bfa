@@ -102,61 +102,58 @@
   },
   "Categories": {
     "manufacturers": "Manufacturers",
-    "textiles-and-fabrics": "Textiles and fabrics",
-    "apparel-and-fashion-accessories": "Apparel and fashion accessories",
-    "leather-and-leather-goods": "Leather and leather goods",
-    "footwear": "Footwear",
-    "automotive-assembly-and-components": "Automotive assembly and components",
-    "electrical-equipment-and-cables": "Electrical equipment and cables",
-    "electronics-and-small-appliances": "Electronics and small appliances",
-    "industrial-machinery-and-equipment": "Industrial machinery and equipment",
-    "furniture-and-fittings": "Furniture and fittings",
-    "packaging-materials": "Packaging materials",
     "artisans": "Artisans",
-    "handicrafts-and-souvenirs": "Handicrafts and souvenirs",
-    "home-decor-and-interior-items": "Home décor and interior items",
-    "traditional-art-sculpture-and-carvings": "Traditional art, sculpture, and carvings",
-    "jewellery-and-adornments": "Jewellery and adornments",
-    "cultural-and-religious-items": "Cultural and religious items",
     "miners": "Miners",
-    "minerals-and-ores": "Minerals and ores",
-    "precious-metals-and-gemstones": "Precious metals and gemstones",
-    "industrial-minerals": "Industrial minerals",
     "industrial": "Industrial",
-    "building-materials-and-construction-products": "Building materials and construction products",
-    "metals-and-metal-products": "Metals and metal products",
-    "wood-and-wood-products": "Wood and wood products",
-    "paper-pulp-and-printed-materials": "Paper, pulp, and printed materials",
-    "chemicals-and-petrochemicals": "Chemicals and petrochemicals",
-    "fertilizers-and-agro-inputs": "Fertilizers and agro-inputs",
-    "paints-coatings-and-adhesives": "Paints, coatings, and adhesives",
-    "plastics-and-rubber-products": "Plastics and rubber products",
-    "food-and-agriculture": "Food and Agriculture",
-    "agricultural-commodities": "Agricultural commodities",
-    "processed-foods-and-beverages": "Processed foods and beverages",
-    "livestock-and-animal-products": "Livestock and animal products",
-    "fisheries-and-aquaculture-products": "Fisheries and aquaculture products",
-    "health-and-wellness": "Health & Wellness",
-    "pharmaceuticals-and-medical-supplies": "Pharmaceuticals and medical supplies",
-    "cosmetics-beauty-and-personal-care": "Cosmetics, beauty, and personal care",
-    "health-and-wellness-products": "Health and wellness products",
-    "home-and-living": "Home & Living",
-    "cleaning-and-household-care-products": "Cleaning and household care products",
-    "eco-friendly-and-sustainable-products": "Eco-friendly and sustainable products",
-    "educational-and-office-supplies": "Educational and office supplies",
-    "technology-and-energy": "Technology & Energy",
-    "renewable-energy-equipment": "Renewable energy equipment",
-    "ict-hardware-assembly": "ICT hardware assembly",
-    "digital-content-tied-to-physical-goods": "Digital content tied to physical goods",
+    "foodAndAgriculture": "Agribusiness",
     "textiles": "Textiles & Clothing",
     "crafts": "Arts & Crafts",
     "food": "Food & Agriculture",
+    "food-and-agriculture": "Food & Agriculture",
     "minerals": "Minerals & Materials",
     "jewelry": "Jewelry & Accessories",
     "beauty": "Health & Beauty",
     "tech": "Technology & Services",
     "home": "Home & Decor",
-    "viewAll": "View All Categories"
+    "textilesAndFabrics": "Textiles and fabrics",
+    "apparelAndFashionAccessories": "Apparel and fashion accessories",
+    "leatherAndLeatherGoods": "Leather and leather goods",
+    "footwear": "Footwear",
+    "automotiveAssemblyAndComponents": "Automotive assembly and components",
+    "electricalEquipmentAndCables": "Electrical equipment and cables",
+    "electronicsAndSmallAppliances": "Electronics and small appliances",
+    "industrialMachineryAndEquipment": "Industrial machinery and equipment",
+    "furnitureAndFittings": "Furniture and fittings",
+    "packagingMaterials": "Packaging materials",
+    "handicraftsAndSouvenirs": "Handicrafts and souvenirs",
+    "homeDecorAndInteriorItems": "Home décor and interior items",
+    "traditionalArtSculptureAndCarvings": "Traditional art, sculpture, and carvings",
+    "jewelleryAndAdornments": "Jewellery and adornments",
+    "culturalAndReligiousItems": "Cultural and religious items",
+    "mineralsAndOres": "Minerals and ores",
+    "preciousMetalsAndGemstones": "Precious metals and gemstones",
+    "industrialMinerals": "Industrial minerals",
+    "buildingMaterialsAndConstructionProducts": "Building materials",
+    "metalsAndMetalProducts": "Metals and metal products",
+    "woodAndWoodProducts": "Wood and wood products",
+    "paperPulpAndPrintedMaterials": "Paper and print work",
+    "chemicalsAndPetrochemicals": "Chemicals and petrochemicals",
+    "fertilizersAndAgroInputs": "Fertilizers and agro-inputs",
+    "paintsCoatingsAndAdhesives": "Paints, coatings, and adhesives",
+    "plasticsAndRubberProducts": "Plastics and rubber products",
+    "agriculturalCommodities": "Agricultural commodities",
+    "processedFoodsAndBeverages": "Processed foods and beverages",
+    "livestockAndAnimalProducts": "Livestock and animal products",
+    "fisheriesAndAquacultureProducts": "Fisheries and aquaculture products",
+    "pharmaceuticalsAndMedicalSupplies": "Pharmaceuticals and medical supplies",
+    "cosmeticsBeautyAndPersonalCare": "Cosmetics, beauty and personal care",
+    "healthAndWellnessProducts": "Health and wellness products",
+    "cleaningAndHouseholdCareProducts": "Cleaning and household care products",
+    "ecoFriendlyAndSustainableProducts": "Eco-friendly and sustainable products",
+    "educationalAndOfficeSupplies": "Educational and office supplies",
+    "renewableEnergyEquipment": "Renewable energy equipment",
+    "ictHardwareAssembly": "ICT hardware assembly",
+    "digitalContentTiedToPhysicalGoods": "Digital content tied to physical goods"
   },
   "CategoryPage": {
     "home": "Home",
@@ -1089,7 +1086,309 @@
       "lowStockTitle": "Low Stock Alerts",
       "lowStockMessage": "products are currently below threshold limits. Immediate restock recommended.",
       "stockAlert": "Stock Sync Alert #{number}"
+    },
+    "orders": {
+      "title": "Manage Orders",
+      "subtitle": "Operations Logs",
+      "refresh": "Refresh",
+      "export": "Export",
+      "stats": {
+        "total": "Total Orders",
+        "pending": "Pending Orders",
+        "processing": "Processing",
+        "revenue": "Total Revenue",
+        "actionRequired": "Action Required"
+      },
+      "filters": {
+        "searchPlaceholder": "Search by order number, customer name, or email...",
+        "status": "Status",
+        "date": "Date",
+        "allOrders": "All Orders",
+        "statuses": {
+          "pending": "Pending",
+          "processing": "Processing",
+          "shipped": "Shipped",
+          "delivered": "Delivered",
+          "cancelled": "Cancelled"
+        },
+        "dateOptions": {
+          "all": "All Time",
+          "today": "Today",
+          "week": "This Week",
+          "month": "This Month"
+        }
+      },
+      "table": {
+        "orderDetails": "Order Details",
+        "customer": "Customer",
+        "amount": "Amount",
+        "status": "Status",
+        "actions": "Actions",
+        "noOrders": "No orders found",
+        "noOrdersDesc": "We couldn't find any orders matching your current search or filters.",
+        "showing": "Showing {start} to {end} of {total} entries",
+        "viewDetails": "View Details",
+        "printInvoice": "Print Invoice",
+        "contactCustomer": "Contact Customer"
+      },
+      "modal": {
+        "reviewShipment": "Review Shipment",
+        "logisticsData": "Logistics Data",
+        "customer": "Customer",
+        "destination": "Destination",
+        "shippingStrategy": "Shipping Strategy",
+        "trackingId": "ID",
+        "internalNote": "Internal Note",
+        "inventoryManifest": "Inventory Manifest",
+        "qty": "Qty",
+        "financialTotal": "Financial Total",
+        "updateProgress": "Update Progress",
+        "close": "Close"
+      },
+      "statusController": {
+        "title": "Status Control",
+        "subtitle": "Workflow Update",
+        "target": "Target",
+        "close": "Close Controller"
+      },
+      "payment": {
+        "paid": "Paid",
+        "pending": "Pending",
+        "refunded": "Refunded"
+      }
+    },
+    "products": {
+      "title": "Vault Inventory",
+      "subtitle": "Stock & Logistics",
+      "empty": {
+        "title": "Vault Ready.",
+        "description": "Your product architecture is currently being indexed. Inventory synchronization will manifest as you upload your collections.",
+        "button": "Initialize Collection"
+      }
+    },
+    "customers": {
+      "title": "Client Network",
+      "subtitle": "Audience Intelligence",
+      "export": "Export",
+      "stats": {
+        "total": "Total Customers",
+        "active": "Active Customers",
+        "revenue": "Total Revenue",
+        "avgValue": "Avg. Order Value"
+      },
+      "filters": {
+        "searchPlaceholder": "Search customers by name, email, or location...",
+        "status": "All Status",
+        "sortBy": "Sort by",
+        "statuses": {
+          "all": "All Status",
+          "active": "Active",
+          "inactive": "Inactive",
+          "new": "New"
+        },
+        "sortOptions": {
+          "recent": "Recent Activity",
+          "spent": "Total Spent",
+          "orders": "Order Count",
+          "name": "Name A-Z"
+        }
+      },
+      "table": {
+        "customer": "Customer",
+        "location": "Location",
+        "orders": "Orders",
+        "spent": "Total Spent",
+        "status": "Status",
+        "actions": "Actions",
+        "ordersCount": "orders",
+        "noCustomers": "No customers found",
+        "noCustomersDesc": "Try adjusting your search or filters",
+        "showing": "Showing {start} to {end} of {total} customers",
+        "viewDetails": "View Details",
+        "sendMessage": "Send Message",
+        "sendEmail": "Send Email"
+      },
+      "modal": {
+        "email": "Email",
+        "phone": "Phone",
+        "location": "Location",
+        "orders": "Total Orders",
+        "spent": "Total Spent",
+        "since": "Customer Since",
+        "message": "Send Message"
+      }
+    },
+    "messages": {
+      "title": "Messages",
+      "subtitle": "Communications Hub",
+      "newMessages": "{count} new",
+      "searchPlaceholder": "Search conversations...",
+      "noConversations": "No conversations found",
+      "selectConversation": "Select a conversation",
+      "selectConversationDesc": "Choose a conversation from the list to start messaging",
+      "typePlaceholder": "Type a message...",
+      "demoMode": "{action} functionality is currently in demonstration mode.",
+      "purgeConfirm": "Are you sure you want to delete this conversation? This action cannot be undone.",
+      "yesterday": "Yesterday",
+      "filters": {
+        "all": "All",
+        "unread": "Unread",
+        "customer": "Customers",
+        "support": "Support"
+      },
+      "status": {
+        "online": "Active Now",
+        "offline": "Offline",
+        "seen": "Seen {time}"
+      },
+      "actions": {
+        "voiceCall": "Voice Call",
+        "videoCall": "Video Call",
+        "attachFile": "Attach File",
+        "sendImage": "Send Image",
+        "emoji": "Emoji",
+        "pin": "Pin Chat",
+        "unpin": "Unpin Chat",
+        "mute": "Mute",
+        "unmute": "Unmute",
+        "archive": "Archive",
+        "purge": "Purge Thread"
+      }
+    },
+    "storefront": {
+      "title": "Manage Your Storefront",
+      "subtitle": "Storefront Management",
+      "description": "Customize how your store appears to buyers on the marketplace",
+      "loading": "Loading storefront settings...",
+      "saveSuccess": "Changes saved successfully!",
+      "saveError": "Failed to save changes",
+      "saving": "Saving...",
+      "saveChanges": "Save Changes",
+      "viewPublic": "View Public Page",
+      "tabs": {
+        "identity": "Brand Identity",
+        "contact": "Contact Info",
+        "business": "Business Details",
+        "shipping": "Shipping & Payment",
+        "preview": "Preview"
+      },
+      "sections": {
+        "assets": "Brand Assets",
+        "info": "Store Information",
+        "categories": "Product Categories",
+        "contact": "Contact Information",
+        "businessType": "Business Type",
+        "regCert": "Registration & Certifications",
+        "minOrder": "Minimum Order Requirements",
+        "payment": "Accepted Payment Methods",
+        "shipping": "Shipping Destinations",
+        "livePreview": "Live Preview"
+      },
+      "form": {
+        "logo": "Store Logo",
+        "banner": "Store Banner",
+        "bannerPlaceholder": "Upload Banner (21:9)",
+        "logoPlaceholder": "Upload Logo",
+        "storeName": "Store Name *",
+        "location": "Location",
+        "shortDesc": "Short Description",
+        "fullDesc": "Full Description",
+        "email": "Email Address",
+        "phone": "Phone Number",
+        "website": "Website",
+        "hours": "Business Hours",
+        "address": "Business Address",
+        "regNumber": "Registration Number",
+        "capacity": "Production Capacity",
+        "certifications": "Certifications",
+        "wholesaleMin": "Wholesale Minimum",
+        "retailMin": "Retail Minimum",
+        "addCert": "Add certification (e.g., ISO 9001, Fair Trade)",
+        "storeNamePlaceholder": "Your store name",
+        "locationPlaceholder": "City, Country",
+        "shortDescPlaceholder": "Brief description of your store (shown in search results)",
+        "fullDescPlaceholder": "Detailed description of your business, products, and services",
+        "addressPlaceholder": "Full business address",
+        "hoursPlaceholder": "Mon-Fri: 9am-5pm WAT",
+        "capacityPlaceholder": "e.g., 10,000 units/month",
+        "wholesalePlaceholder": "e.g., 100 units or $500",
+        "retailPlaceholder": "e.g., No minimum",
+        "paymentDesc": "Select all payment methods you accept",
+        "shippingDesc": "Select regions where you can ship products",
+        "emailError": "Invalid email format",
+        "websiteError": "Website must start with http:// or https://"
+      },
+      "preview": {
+        "liveNotice": "This is how your storefront will appear to buyers. Changes are not saved until you click \"Save Changes\".",
+        "verified": "VERIFIED",
+        "locationNotSet": "Location not set",
+        "about": "About",
+        "noDesc": "No description provided",
+        "businessType": "Business Type",
+        "notSpecified": "Not specified",
+        "categories": "Categories",
+        "payment": "Payment Options",
+        "shipsTo": "Ships To"
+      },
+      "businessTypes": {
+        "retailer": {
+          "label": "Retailer",
+          "desc": "Reseller of diverse product collections"
+        },
+        "manufacturer": {
+          "label": "Manufacturer",
+          "desc": "Own-brand product creator"
+        },
+        "artisan": {
+          "label": "Artisan",
+          "desc": "Handcrafted goods specialist"
+        },
+        "wholesaler": {
+          "label": "Wholesaler",
+          "desc": "Bulk supply & B2B specialist"
+        },
+        "factory": {
+          "label": "Factory",
+          "desc": "Industrial-scale production"
+        },
+        "miner": {
+          "label": "Miner",
+          "desc": "Natural resource extraction"
+        },
+        "agribusiness": {
+          "label": "Agribusiness",
+          "desc": "Food & agricultural production"
+        }
+      },
+      "paymentOptions": {
+        "Bank Transfer": "Bank Transfer",
+        "Credit Card": "Credit Card",
+        "PayPal": "PayPal",
+        "Mobile Money": "Mobile Money",
+        "Cash on Delivery": "Cash on Delivery",
+        "Letter of Credit": "Letter of Credit",
+        "Western Union": "Western Union",
+        "Crypto": "Crypto"
+      },
+      "shippingRegions": {
+        "Nigeria": "Nigeria",
+        "Ghana": "Ghana",
+        "Kenya": "Kenya",
+        "South Africa": "South Africa",
+        "Egypt": "Egypt",
+        "Morocco": "Morocco",
+        "Tanzania": "Tanzania",
+        "Ethiopia": "Ethiopia",
+        "Uganda": "Uganda",
+        "Senegal": "Senegal",
+        "Cameroon": "Cameroon",
+        "Côte d'Ivoire": "Côte d'Ivoire",
+        "Europe": "Europe",
+        "North America": "North America",
+        "Asia": "Asia",
+        "Middle East": "Middle East",
+        "Worldwide": "Worldwide"
+      }
     }
   }
 }
-

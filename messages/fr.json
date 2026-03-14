@@ -102,61 +102,58 @@
   },
   "Categories": {
     "manufacturers": "Fabricants",
-    "textiles-and-fabrics": "Textiles et tissus",
-    "apparel-and-fashion-accessories": "Vêtements et accessoires de mode",
-    "leather-and-leather-goods": "Cuir et articles en cuir",
-    "footwear": "Chaussures",
-    "automotive-assembly-and-components": "Assemblage automobile et composants",
-    "electrical-equipment-and-cables": "Équipement électrique et câbles",
-    "electronics-and-small-appliances": "Électronique et petits appareils électroménagers",
-    "industrial-machinery-and-equipment": "Machines et équipements industriels",
-    "furniture-and-fittings": "Meubles et accessoires",
-    "packaging-materials": "Matériaux d'emballage",
     "artisans": "Artisans",
-    "handicrafts-and-souvenirs": "Artisanat et souvenirs",
-    "home-decor-and-interior-items": "Décoration d'intérieur et articles de maison",
-    "traditional-art-sculpture-and-carvings": "Art traditionnel, sculpture et gravure",
-    "jewellery-and-adornments": "Bijoux et parures",
-    "cultural-and-religious-items": "Articles culturels et religieux",
     "miners": "Mineurs",
-    "minerals-and-ores": "Minéraux et minerais",
-    "precious-metals-and-gemstones": "Métaux précieux et pierres gemmes",
-    "industrial-minerals": "Minéraux industriels",
     "industrial": "Industriel",
-    "building-materials-and-construction-products": "Matériaux de construction et produits de bâtiment",
-    "metals-and-metal-products": "Métaux et produits métalliques",
-    "wood-and-wood-products": "Bois et produits du bois",
-    "paper-pulp-and-printed-materials": "Papier, pâte et imprimés",
-    "chemicals-and-petrochemicals": "Produits chimiques et pétrochimiques",
-    "fertilizers-and-agro-inputs": "Engrais et intrants agricoles",
-    "paints-coatings-and-adhesives": "Peintures, revêtements et adhésifs",
-    "plastics-and-rubber-products": "Plastiques et produits en caoutchouc",
-    "food-and-agriculture": "Alimentation et Agriculture",
-    "agricultural-commodities": "Produits de base agricoles",
-    "processed-foods-and-beverages": "Aliments transformés et boissons",
-    "livestock-and-animal-products": "Élevage et produits d'origine animale",
-    "fisheries-and-aquaculture-products": "Produits de la pêche et de l'aquaculture",
-    "health-and-wellness": "Santé et Bien-être",
-    "pharmaceuticals-and-medical-supplies": "Produits pharmaceutiques et fournitures médicales",
-    "cosmetics-beauty-and-personal-care": "Cosmétiques, beauté et soins personnels",
-    "health-and-wellness-products": "Produits de santé et de bien-être",
-    "home-and-living": "Maison et Art de vivre",
-    "cleaning-and-household-care-products": "Produits d'entretien et de soins ménagers",
-    "eco-friendly-and-sustainable-products": "Produits écologiques et durables",
-    "educational-and-office-supplies": "Fournitures scolaires et de bureau",
-    "technology-and-energy": "Technologie et Énergie",
-    "renewable-energy-equipment": "Équipements d'énergie renouvelable",
-    "ict-hardware-assembly": "Assemblage de matériel informatique",
-    "digital-content-tied-to-physical-goods": "Contenu numérique lié aux biens physiques",
+    "foodAndAgriculture": "Agro-industrie",
     "textiles": "Textiles et Vêtements",
     "crafts": "Arts et Artisanat",
     "food": "Alimentation et Agriculture",
+    "food-and-agriculture": "Alimentation et Agriculture",
     "minerals": "Minéraux et Matériaux",
     "jewelry": "Bijoux et Accessoires",
     "beauty": "Santé et Beauté",
     "tech": "Technologie et Services",
     "home": "Maison et Décoration",
-    "viewAll": "Toutes les Catégories"
+    "textilesAndFabrics": "Textiles et tissus",
+    "apparelAndFashionAccessories": "Vêtements et accessoires de mode",
+    "leatherAndLeatherGoods": "Cuir et articles en cuir",
+    "footwear": "Chaussures",
+    "automotiveAssemblyAndComponents": "Assemblage automobile",
+    "electricalEquipmentAndCables": "Matériel électrique",
+    "electronicsAndSmallAppliances": "Électronique",
+    "industrialMachineryAndEquipment": "Machines industrielles",
+    "furnitureAndFittings": "Meubles et accessoires",
+    "packagingMaterials": "Matériaux d'emballage",
+    "handicraftsAndSouvenirs": "Artisanat et souvenirs",
+    "homeDecorAndInteriorItems": "Décoration d'intérieur",
+    "traditionalArtSculptureAndCarvings": "Art traditionnel",
+    "jewelleryAndAdornments": "Bijoux et ornements",
+    "culturalAndReligiousItems": "Articles culturels",
+    "mineralsAndOres": "Minéraux et minerais",
+    "preciousMetalsAndGemstones": "Métaux précieux",
+    "industrialMinerals": "Minéraux industriels",
+    "buildingMaterialsAndConstructionProducts": "Matériaux de construction",
+    "metalsAndMetalProducts": "Métaux et produits métalliques",
+    "woodAndWoodProducts": "Bois et produits en bois",
+    "paperPulpAndPrintedMaterials": "Papier et imprimés",
+    "chemicalsAndPetrochemicals": "Produits chimiques",
+    "fertilizersAndAgroInputs": "Engrais",
+    "paintsCoatingsAndAdhesives": "Peintures et adhésifs",
+    "plasticsAndRubberProducts": "Plastiques et caoutchouc",
+    "agriculturalCommodities": "Produits agricoles",
+    "processedFoodsAndBeverages": "Aliments transformés",
+    "livestockAndAnimalProducts": "Élevage",
+    "fisheriesAndAquacultureProducts": "Pêche",
+    "pharmaceuticalsAndMedicalSupplies": "Produits pharmaceutiques",
+    "cosmeticsBeautyAndPersonalCare": "Cosmétiques",
+    "healthAndWellnessProducts": "Santé et bien-être",
+    "cleaningAndHouseholdCareProducts": "Produits d'entretien",
+    "ecoFriendlyAndSustainableProducts": "Produits écologiques",
+    "educationalAndOfficeSupplies": "Fournitures scolaires",
+    "renewableEnergyEquipment": "Équipements d'énergie renouvelable",
+    "ictHardwareAssembly": "Matériel informatique",
+    "digitalContentTiedToPhysicalGoods": "Contenu numérique"
   },
   "CategoryPage": {
     "home": "Accueil",
@@ -1083,7 +1080,309 @@
       "lowStockTitle": "Alertes Stock Faible",
       "lowStockMessage": "produits sont actuellement en dessous des seuils limites. Réapprovisionnement immédiat recommandé.",
       "stockAlert": "Alerte Sync Stock #{number}"
+    },
+    "orders": {
+      "title": "Gérer les Commandes",
+      "subtitle": "Registres des Opérations",
+      "refresh": "Actualiser",
+      "export": "Exporter",
+      "stats": {
+        "total": "Total des Commandes",
+        "pending": "Commandes en attente",
+        "processing": "En traitement",
+        "revenue": "Revenu Total",
+        "actionRequired": "Action Requise"
+      },
+      "filters": {
+        "searchPlaceholder": "Rechercher par numéro de commande, nom du client ou e-mail...",
+        "status": "Statut",
+        "date": "Date",
+        "allOrders": "Toutes les Commandes",
+        "statuses": {
+          "pending": "En attente",
+          "processing": "En traitement",
+          "shipped": "Expédié",
+          "delivered": "Livré",
+          "cancelled": "Annulé"
+        },
+        "dateOptions": {
+          "all": "Tout le temps",
+          "today": "Aujourd'hui",
+          "week": "Cette semaine",
+          "month": "Ce mois-ci"
+        }
+      },
+      "table": {
+        "orderDetails": "Détails de la Commande",
+        "customer": "Client",
+        "amount": "Montant",
+        "status": "Statut",
+        "actions": "Actions",
+        "noOrders": "Aucune commande trouvée",
+        "noOrdersDesc": "Nous n'avons trouvé aucune commande correspondant à votre recherche ou à vos filtres actuels.",
+        "showing": "Affichage de {start} à {end} sur {total} entrées",
+        "viewDetails": "Voir les Détails",
+        "printInvoice": "Imprimer la Facture",
+        "contactCustomer": "Contacter le Client"
+      },
+      "modal": {
+        "reviewShipment": "Réviser l'Expédition",
+        "logisticsData": "Données Logistiques",
+        "customer": "Client",
+        "destination": "Destination",
+        "shippingStrategy": "Stratégie d'Expédition",
+        "trackingId": "ID",
+        "internalNote": "Note Interne",
+        "inventoryManifest": "Manifeste d'Inventaire",
+        "qty": "Qté",
+        "financialTotal": "Total Financier",
+        "updateProgress": "Mettre à jour la Progression",
+        "close": "Fermer"
+      },
+      "statusController": {
+        "title": "Contrôle du Statut",
+        "subtitle": "Mise à jour du Workflow",
+        "target": "Cible",
+        "close": "Fermer le Contrôleur"
+      },
+      "payment": {
+        "paid": "Payé",
+        "pending": "En attente",
+        "refunded": "Remboursé"
+      }
+    },
+    "products": {
+      "title": "Inventaire du Coffre",
+      "subtitle": "Stock et Logistique",
+      "empty": {
+        "title": "Coffre Prêt.",
+        "description": "L'architecture de vos produits est en cours d'indexation. La synchronisation de l'inventaire se manifestera au fur et à mesure que vous téléchargerez vos collections.",
+        "button": "Initialiser la Collection"
+      }
+    },
+    "customers": {
+      "title": "Réseau Clients",
+      "subtitle": "Intelligence de l'Audience",
+      "export": "Exporter",
+      "stats": {
+        "total": "Total Clients",
+        "active": "Clients Actifs",
+        "revenue": "Revenu Total",
+        "avgValue": "Valeur Moyenne Commande"
+      },
+      "filters": {
+        "searchPlaceholder": "Rechercher des clients par nom, e-mail ou lieu...",
+        "status": "Tous les Statuts",
+        "sortBy": "Trier par",
+        "statuses": {
+          "all": "Tous les Statuts",
+          "active": "Actif",
+          "inactive": "Inactif",
+          "new": "Nouveau"
+        },
+        "sortOptions": {
+          "recent": "Activité Récente",
+          "spent": "Total Dépensé",
+          "orders": "Nombre de Commandes",
+          "name": "Nom A-Z"
+        }
+      },
+      "table": {
+        "customer": "Client",
+        "location": "Lieu",
+        "orders": "Commandes",
+        "spent": "Total Dépensé",
+        "status": "Statut",
+        "actions": "Actions",
+        "ordersCount": "commandes",
+        "noCustomers": "Aucun client trouvé",
+        "noCustomersDesc": "Essayez d'ajuster votre recherche ou vos filtres",
+        "showing": "Affichage de {start} à {end} sur {total} clients",
+        "viewDetails": "Voir les Détails",
+        "sendMessage": "Envoyer un Message",
+        "sendEmail": "Envoyer un E-mail"
+      },
+      "modal": {
+        "email": "E-mail",
+        "phone": "Téléphone",
+        "location": "Lieu",
+        "orders": "Total Commandes",
+        "spent": "Total Dépensé",
+        "since": "Client Depuis",
+        "message": "Envoyer un Message"
+      }
+    },
+    "messages": {
+      "title": "Messages",
+      "subtitle": "Centre de Communications",
+      "newMessages": "{count} nouveaux",
+      "searchPlaceholder": "Rechercher des conversations...",
+      "noConversations": "Aucune conversation trouvée",
+      "selectConversation": "Sélectionnez une conversation",
+      "selectConversationDesc": "Choisissez une conversation dans la liste pour commencer à envoyer des messages",
+      "typePlaceholder": "Tapez un message...",
+      "demoMode": "La fonctionnalité {action} est actuellement en mode démonstration.",
+      "purgeConfirm": "Êtes-vous sûr de vouloir supprimer cette conversation ? Cette action est irréversible.",
+      "yesterday": "Hier",
+      "filters": {
+        "all": "Tout",
+        "unread": "Non lus",
+        "customer": "Clients",
+        "support": "Support"
+      },
+      "status": {
+        "online": "En ligne",
+        "offline": "Hors ligne",
+        "seen": "Vu {time}"
+      },
+      "actions": {
+        "voiceCall": "Appel vocal",
+        "videoCall": "Appel vidéo",
+        "attachFile": "Joindre un fichier",
+        "sendImage": "Envoyer une image",
+        "emoji": "Emoji",
+        "pin": "Épingler la discussion",
+        "unpin": "Désépingler la discussion",
+        "mute": "Mettre en sourdine",
+        "unmute": "Rétablir le son",
+        "archive": "Archiver",
+        "purge": "Supprimer la discussion"
+      }
+    },
+    "storefront": {
+      "title": "Gérer votre vitrine",
+      "subtitle": "Gestion de la vitrine",
+      "description": "Personnalisez l'apparence de votre boutique pour les acheteurs sur le marché",
+      "loading": "Chargement des paramètres de la vitrine...",
+      "saveSuccess": "Modifications enregistrées avec succès !",
+      "saveError": "Échec de l'enregistrement des modifications",
+      "saving": "Enregistrement...",
+      "saveChanges": "Enregistrer les modifications",
+      "viewPublic": "Voir la page publique",
+      "tabs": {
+        "identity": "Identité de marque",
+        "contact": "Infos de contact",
+        "business": "Détails de l'entreprise",
+        "shipping": "Livraison et paiement",
+        "preview": "Aperçu"
+      },
+      "sections": {
+        "assets": "Atouts de la marque",
+        "info": "Informations de la boutique",
+        "categories": "Catégories de produits",
+        "contact": "Coordonnées",
+        "businessType": "Type d'entreprise",
+        "regCert": "Enregistrement et certifications",
+        "minOrder": "Exigences de commande minimale",
+        "payment": "Moyens de paiement acceptés",
+        "shipping": "Destinations de livraison",
+        "livePreview": "Aperçu en direct"
+      },
+      "form": {
+        "logo": "Logo de la boutique",
+        "banner": "Bannière de la boutique",
+        "bannerPlaceholder": "Télécharger la bannière (21:9)",
+        "logoPlaceholder": "Télécharger le logo",
+        "storeName": "Nom de la boutique *",
+        "location": "Emplacement",
+        "shortDesc": "Description courte",
+        "fullDesc": "Description complète",
+        "email": "Adresse e-mail",
+        "phone": "Numéro de téléphone",
+        "website": "Site Web",
+        "hours": "Heures d'ouverture",
+        "address": "Adresse de l'entreprise",
+        "regNumber": "Numéro d'enregistrement",
+        "capacity": "Capacité de production",
+        "certifications": "Certifications",
+        "wholesaleMin": "Minimum de gros",
+        "retailMin": "Minimum de détail",
+        "addCert": "Ajouter une certification (ex: ISO 9001, Commerce équitable)",
+        "storeNamePlaceholder": "Nom de votre boutique",
+        "locationPlaceholder": "Ville, Pays",
+        "shortDescPlaceholder": "Brève description de votre boutique (affichée dans les résultats de recherche)",
+        "fullDescPlaceholder": "Description détaillée de votre entreprise, de vos produits et services",
+        "addressPlaceholder": "Adresse professionnelle complète",
+        "hoursPlaceholder": "Lun-Ven : 9h-17h WAT",
+        "capacityPlaceholder": "ex: 10 000 unités/mois",
+        "wholesalePlaceholder": "ex: 100 unités ou 500 $",
+        "retailPlaceholder": "ex: Pas de minimum",
+        "paymentDesc": "Sélectionnez tous les moyens de paiement que vous acceptez",
+        "shippingDesc": "Sélectionnez les régions où vous pouvez expédier des produits",
+        "emailError": "Format d'email invalide",
+        "websiteError": "Le site web doit commencer par http:// ou https://"
+      },
+      "preview": {
+        "liveNotice": "Voici comment votre vitrine apparaîtra aux acheteurs. Les modifications ne sont enregistrées que lorsque vous cliquez sur « Enregistrer les modifications ».",
+        "verified": "VÉRIFIÉ",
+        "locationNotSet": "Emplacement non défini",
+        "about": "À propos",
+        "noDesc": "Aucune description fournie",
+        "businessType": "Type d'entreprise",
+        "notSpecified": "Non spécifié",
+        "categories": "Catégories",
+        "payment": "Options de paiement",
+        "shipsTo": "Livre à"
+      },
+      "businessTypes": {
+        "retailer": {
+          "label": "Détaillant",
+          "desc": "Revendeur de diverses collections de produits"
+        },
+        "manufacturer": {
+          "label": "Fabricant",
+          "desc": "Créateur de produits de sa propre marque"
+        },
+        "artisan": {
+          "label": "Artisan",
+          "desc": "Spécialiste des produits artisanaux"
+        },
+        "wholesaler": {
+          "label": "Grossiste",
+          "desc": "Spécialiste de l'approvisionnement en gros et B2B"
+        },
+        "factory": {
+          "label": "Usine",
+          "desc": "Production à l'échelle industrielle"
+        },
+        "miner": {
+          "label": "Mineur",
+          "desc": "Extraction de ressources naturelles"
+        },
+        "agribusiness": {
+          "label": "Agrobusiness",
+          "desc": "Production alimentaire et agricole"
+        }
+      },
+      "paymentOptions": {
+        "Bank Transfer": "Virement bancaire",
+        "Credit Card": "Carte de crédit",
+        "PayPal": "PayPal",
+        "Mobile Money": "Paiement mobile",
+        "Cash on Delivery": "Paiement à la livraison",
+        "Letter of Credit": "Lettre de crédit",
+        "Western Union": "Western Union",
+        "Crypto": "Crypto"
+      },
+      "shippingRegions": {
+        "Nigeria": "Nigéria",
+        "Ghana": "Ghana",
+        "Kenya": "Kenya",
+        "South Africa": "Afrique du Sud",
+        "Egypt": "Égypte",
+        "Morocco": "Maroc",
+        "Tanzania": "Tanzanie",
+        "Ethiopia": "Éthiopie",
+        "Uganda": "Ouganda",
+        "Senegal": "Sénégal",
+        "Cameroon": "Cameroun",
+        "Côte d'Ivoire": "Côte d'Ivoire",
+        "Europe": "Europe",
+        "North America": "Amérique du Nord",
+        "Asia": "Asie",
+        "Middle East": "Moyen-Orient",
+        "Worldwide": "Monde entier"
+      }
     }
   }
 }
-

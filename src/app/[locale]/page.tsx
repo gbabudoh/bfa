@@ -249,7 +249,9 @@ export default function HomePage() {
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
                   <div className="absolute bottom-0 left-0 p-4">
-                    <h3 className="text-white font-medium text-lg">{ct(category.slug)}</h3>
+                    <h3 className="text-white font-medium text-lg">
+                      {ct.has(category.slug) ? ct(category.slug) : category.name}
+                    </h3>
                   </div>
                 </Link>
               ))

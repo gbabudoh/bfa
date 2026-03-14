@@ -1,14 +1,16 @@
 "use client";
 
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 export default function VendorInventoryPage() {
+  const t = useTranslations('VendorDashboard.products');
   return (
     <div className="space-y-6 font-sans">
       <div className="flex items-center gap-2">
-        <span className="text-[10px] font-black text-[#D9A606] uppercase tracking-[0.4em] italic">Stock & Logistics</span>
+        <span className="text-[10px] font-black text-[#D9A606] uppercase tracking-[0.4em] italic">{t('subtitle')}</span>
       </div>
-      <h1 className="text-4xl font-black text-zinc-900 tracking-tighter">Vault <span className="text-zinc-400">Inventory.</span></h1>
+      <h1 className="text-4xl font-black text-zinc-900 tracking-tighter">{t('title').split(' ')[0]} <span className="text-zinc-400">{t('title').split(' ').slice(1).join(' ')}.</span></h1>
       
       <div className="mt-8 p-12 rounded-[3.5rem] bg-white/70 border border-white/50 backdrop-blur-xl transition-all duration-700 hover:bg-white shadow-[0_20px_40px_rgba(0,0,0,0.02)] min-h-[500px] flex flex-col items-center justify-center text-center relative overflow-hidden group">
         <div className="absolute inset-0 bg-gradient-to-br from-[#D9A606]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none"></div>
@@ -19,11 +21,11 @@ export default function VendorInventoryPage() {
              </svg>
            </div>
         </div>
-        <p className="text-2xl font-black text-zinc-900 mb-3 tracking-tighter relative z-10">Vault Ready.</p>
-        <p className="text-sm text-zinc-500 max-w-sm font-medium leading-relaxed relative z-10">Your product architecture is currently being indexed. Inventory synchronization will manifest as you upload your collections.</p>
+        <p className="text-2xl font-black text-zinc-900 mb-3 tracking-tighter relative z-10">{t('empty.title')}</p>
+        <p className="text-sm text-zinc-500 max-w-sm font-medium leading-relaxed relative z-10">{t('empty.description')}</p>
         <div className="mt-10 relative z-10">
            <Link href="/vendor/dashboard/products/add" className="inline-block px-10 py-4 rounded-2xl bg-[#D9A606] text-[11px] font-black text-white hover:bg-[#C49505] hover:scale-105 transition-all uppercase tracking-widest shadow-lg shadow-[#D9A606]/20 cursor-pointer">
-              Initialize Collection
+              {t('empty.button')}
            </Link>
         </div>
       </div>

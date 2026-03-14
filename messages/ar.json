@@ -101,62 +101,59 @@
     "globalHub": "المركز الأفريقي العالمي"
   },
   "Categories": {
-    "manufacturers": "المصنعون",
-    "textiles-and-fabrics": "المنسوجات والأقمشة",
-    "apparel-and-fashion-accessories": "الملابس وإكسسوارات الموضة",
-    "leather-and-leather-goods": "الجلود والسلع الجلدية",
-    "footwear": "الأحذية",
-    "automotive-assembly-and-components": "تجميع السيارات ومكوناتها",
-    "electrical-equipment-and-cables": "المعدات الكهربائية والكابلات",
-    "electronics-and-small-appliances": "الإلكترونيات والأجهزة الصغيرة",
-    "industrial-machinery-and-equipment": "آلات ومعدات صناعية",
-    "furniture-and-fittings": "الأثاث والتجهيزات",
-    "packaging-materials": "مواد التعبئة والتغليف",
-    "artisans": "الحرفيون",
-    "handicrafts-and-souvenirs": "الصناعات اليدوية والهدايا التذكارية",
-    "home-decor-and-interior-items": "ديكور المنزل والعناصر الداخلية",
-    "traditional-art-sculpture-and-carvings": "الفن التقليدي والنحت والنقوش",
-    "jewellery-and-adornments": "المجوهرات والحلي",
-    "cultural-and-religious-items": "الأدوات الثقافية والدينية",
+    "manufacturers": "المصنعين",
+    "artisans": "الحرفيين",
     "miners": "عمال المناجم",
-    "minerals-and-ores": "المعادن والخامات",
-    "precious-metals-and-gemstones": "المعادن الثمينة والأحجار الكريمة",
-    "industrial-minerals": "معادن صناعية",
     "industrial": "صناعي",
-    "building-materials-and-construction-products": "مواد البناء ومنتجات التشييد",
-    "metals-and-metal-products": "المعادن والمنتجات المعدنية",
-    "wood-and-wood-products": "الخشب والمنتجات الخشبية",
-    "paper-pulp-and-printed-materials": "الورق واللب والمواد المطبوعة",
-    "chemicals-and-petrochemicals": "الكيماويات والبتروكيماويات",
-    "fertilizers-and-agro-inputs": "الأسمدة والمدخلات الزراعية",
-    "paints-coatings-and-adhesives": "الدهانات والطلاءات والمواد اللاصقة",
-    "plastics-and-rubber-products": "منتجات البلاستيك والمطاط",
-    "food-and-agriculture": "الغذاء والزراعة",
-    "agricultural-commodities": "السلع الزراعية",
-    "processed-foods-and-beverages": "الأغذية والمشروبات المصنعة",
-    "livestock-and-animal-products": "الماشية والمنتجات الحيوانية",
-    "fisheries-and-aquaculture-products": "منتجات صيد الأسماك وتربية الأحياء المائية",
-    "health-and-wellness": "الصحة والعافية",
-    "pharmaceuticals-and-medical-supplies": "الأدوية والمستلزمات الطبية",
-    "cosmetics-beauty-and-personal-care": "مستحضرات التجميل والجمال والعناية الشخصية",
-    "health-and-wellness-products": "منتجات الصحة والعافية",
-    "home-and-living": "المنزل والمعيشة",
-    "cleaning-and-household-care-products": "منتجات التنظيف والعناية المنزلية",
-    "eco-friendly-and-sustainable-products": "منتجات صديقة للبيئة ومستدامة",
-    "educational-and-office-supplies": "المستلزمات التعليمية والمكتبية",
-    "technology-and-energy": "التكنولوجيا والطاقة",
-    "renewable-energy-equipment": "معدات الطاقة المتجددة",
-    "ict-hardware-assembly": "تجميع أجهزة تكنولوجيا المعلومات والاتصالات",
-    "digital-content-tied-to-physical-goods": "المحتوى الرقمي المرتبط بالسلع المادية",
+    "foodAndAgriculture": "الزراعة والأعمال الزراعية",
     "textiles": "المنسوجات والملابس",
     "crafts": "الفنون والحرف",
     "food": "الغذاء والزراعة",
+    "food-and-agriculture": "الغذاء والزراعة",
     "minerals": "المعادن والمواد",
     "jewelry": "المجوهرات والإكسسوارات",
     "beauty": "الصحة والجمال",
     "tech": "التكنولوجيا والخدمات",
     "home": "المنزل والديكور",
-    "viewAll": "عرض جميع الفئات"
+    "textilesAndFabrics": "المنسوجات والأقمشة",
+    "apparelAndFashionAccessories": "الملابس والإكسسوارات",
+    "leatherAndLeatherGoods": "الجلود والمنتجات الجلدية",
+    "footwear": "الأحذية",
+    "automotiveAssemblyAndComponents": "تجميع السيارات",
+    "electricalEquipmentAndCables": "المعدات الكهربائية",
+    "electronicsAndSmallAppliances": "الإلكترونيات",
+    "industrialMachineryAndEquipment": "الآلات الصناعية",
+    "furnitureAndFittings": "الأثاث والتجهيزات",
+    "packagingMaterials": "مواد التعبئة والتغليف",
+    "handicraftsAndSouvenirs": "الصناعات اليدوية",
+    "homeDecorAndInteriorItems": "ديكور المنزل",
+    "traditionalArtSculptureAndCarvings": "الفن التقليدي",
+    "jewelleryAndAdornments": "المجوهرات والزينة",
+    "culturalAndReligiousItems": "الأدوات الثقافية",
+    "mineralsAndOres": "المعادن والخامات",
+    "preciousMetalsAndGemstones": "المعادن الثمينة",
+    "industrialMinerals": "المعادن الصناعية",
+    "buildingMaterialsAndConstructionProducts": "مواد البناء",
+    "metalsAndMetalProducts": "المعادن والمنتجات المعدنية",
+    "woodAndWoodProducts": "الخشب والمنتجات الخشبية",
+    "paperPulpAndPrintedMaterials": "الورق واللب",
+    "chemicalsAndPetrochemicals": "الكيماويات",
+    "fertilizersAndAgroInputs": "الأسمدة",
+    "paintsCoatingsAndAdhesives": "الدهانات والطلاء",
+    "plasticsAndRubberProducts": "البلاستيك والمطاط",
+    "agriculturalCommodities": "السلع الزراعية",
+    "processedFoodsAndBeverages": "الأطعمة المصنعة",
+    "livestockAndAnimalProducts": "المواشي",
+    "fisheriesAndAquacultureProducts": "الأسماك",
+    "pharmaceuticalsAndMedicalSupplies": "الأدوية",
+    "cosmeticsBeautyAndPersonalCare": "مستحضرات التجميل",
+    "healthAndWellnessProducts": "منتجات الصحة",
+    "cleaningAndHouseholdCareProducts": "منتجات التنظيف",
+    "ecoFriendlyAndSustainableProducts": "المنتجات المستدامة",
+    "educationalAndOfficeSupplies": "المستلزمات التعليمية",
+    "renewableEnergyEquipment": "طاقة متجددة",
+    "ictHardwareAssembly": "أجهزة تقنية",
+    "digitalContentTiedToPhysicalGoods": "محتوى رقمي"
   },
   "CategoryPage": {
     "home": "الرئيسية",
@@ -898,6 +895,309 @@
       "lowStockTitle": "تنبيهات المخزون المنخفض",
       "lowStockMessage": "منتجات حالياً أقل من حدود العتبة. يوصى بإعادة التخزين الفوري.",
       "stockAlert": "تنبيه مزامنة المخزون #{number}"
+    },
+    "orders": {
+      "title": "إدارة الطلبات",
+      "subtitle": "سجلات العمليات",
+      "refresh": "تحديث",
+      "export": "تصدير",
+      "stats": {
+        "total": "إجمالي الطلبات",
+        "pending": "الطلبات المعلقة",
+        "processing": "قيد المعالجة",
+        "revenue": "إجمالي الإيرادات",
+        "actionRequired": "الإجراء مطلوب"
+      },
+      "filters": {
+        "searchPlaceholder": "البحث برقم الطلب أو اسم العميل أو البريد الإلكتروني...",
+        "status": "الحالة",
+        "date": "التاريخ",
+        "allOrders": "جميع الطلبات",
+        "statuses": {
+          "pending": "معلق",
+          "processing": "قيد المعالجة",
+          "shipped": "تم الشحن",
+          "delivered": "تم التوصيل",
+          "cancelled": "ملغي"
+        },
+        "dateOptions": {
+          "all": "كل الأوقات",
+          "today": "اليوم",
+          "week": "هذا الأسبوع",
+          "month": "هذا الشهر"
+        }
+      },
+      "table": {
+        "orderDetails": "تفاصيل الطلب",
+        "customer": "العميل",
+        "amount": "المبلغ",
+        "status": "الحالة",
+        "actions": "الإجراءات",
+        "noOrders": "لم يتم العثور على طلبات",
+        "noOrdersDesc": "لم نتمكن من العثور على أي طلبات تطابق بحثك الحالي أو عوامل التصفية.",
+        "showing": "عرض {start} إلى {end} من {total} مدخلات",
+        "viewDetails": "عرض التفاصيل",
+        "printInvoice": "طباعة الفاتورة",
+        "contactCustomer": "الاتصال بالعميل"
+      },
+      "modal": {
+        "reviewShipment": "مراجعة الشحنة",
+        "logisticsData": "بيانات اللوجستيات",
+        "customer": "العميل",
+        "destination": "الوجهة",
+        "shippingStrategy": "استراتيجية الشحن",
+        "trackingId": "المعرف",
+        "internalNote": "ملاحظة داخلية",
+        "inventoryManifest": "بيان المخزون",
+        "qty": "الكمية",
+        "financialTotal": "الإجمالي المالي",
+        "updateProgress": "تحديث التقدم",
+        "close": "إغلاق"
+      },
+      "statusController": {
+        "title": "التحكم في الحالة",
+        "subtitle": "تحديث سير العمل",
+        "target": "الهدف",
+        "close": "إغلاق وحدة التحكم"
+      },
+      "payment": {
+        "paid": "مدفوع",
+        "pending": "معلق",
+        "refunded": "مسترد"
+      }
+    },
+    "products": {
+      "title": "مخزون القبو",
+      "subtitle": "المخزون والخدمات اللوجستية",
+      "empty": {
+        "title": "القبو جاهز.",
+        "description": "يتم حاليًا فهرسة بنية منتجك. سيظهر مزامنة المخزون بمجرد تحميل مجموعاتك.",
+        "button": "بدء المجموعة"
+      }
+    },
+    "customers": {
+      "title": "شبكة العملاء",
+      "subtitle": "ذكاء الجمهور",
+      "export": "تصدير",
+      "stats": {
+        "total": "إجمالي العملاء",
+        "active": "العملاء النشطون",
+        "revenue": "إجمالي الإيرادات",
+        "avgValue": "متوسط قيمة الطلب"
+      },
+      "filters": {
+        "searchPlaceholder": "البحث عن العملاء بالاسم أو البريد الإلكتروني أو الموقع...",
+        "status": "كل الحالات",
+        "sortBy": "ترتيب حسب",
+        "statuses": {
+          "all": "كل الحالات",
+          "active": "نشط",
+          "inactive": "غير نشط",
+          "new": "جديد"
+        },
+        "sortOptions": {
+          "recent": "النشاط الأخير",
+          "spent": "إجمالي الإنفاق",
+          "orders": "عدد الطلبات",
+          "name": "الاسم أ-ي"
+        }
+      },
+      "table": {
+        "customer": "العميل",
+        "location": "الموقع",
+        "orders": "الطلبات",
+        "spent": "إجمالي الإنفاق",
+        "status": "الحالة",
+        "actions": "الإجراءات",
+        "ordersCount": "طلبات",
+        "noCustomers": "لم يتم العثور على عملاء",
+        "noCustomersDesc": "حاول تعديل البحث أو عوامل التصفية",
+        "showing": "عرض {start} إلى {end} من {total} عملاء",
+        "viewDetails": "عرض التفاصيل",
+        "sendMessage": "إرسال رسالة",
+        "sendEmail": "إرسال بريد إلكتروني"
+      },
+      "modal": {
+        "email": "البريد الإلكتروني",
+        "phone": "الهاتف",
+        "location": "الموقع",
+        "orders": "إجمالي الطلبات",
+        "spent": "إجمالي الإنفاق",
+        "since": "عميل منذ",
+        "message": "إرسال رسالة"
+      }
+    },
+    "messages": {
+      "title": "الرسائل",
+      "subtitle": "مركز الاتصالات",
+      "newMessages": "{count} جديدة",
+      "searchPlaceholder": "البحث في المحادثات...",
+      "noConversations": "لم يتم العثور على محادثات",
+      "selectConversation": "اختر محادثة",
+      "selectConversationDesc": "اختر محادثة من القائمة لبدء المراسلة",
+      "typePlaceholder": "اكتب رسالة...",
+      "demoMode": "وظيفة {action} حاليًا في وضع العرض التجريبي.",
+      "purgeConfirm": "هل أنت متأكد أنك تريد حذف هذه المحادثة؟ لا يمكن التراجع عن هذا الإجراء.",
+      "yesterday": "أمس",
+      "filters": {
+        "all": "الكل",
+        "unread": "غير مقروءة",
+        "customer": "العملاء",
+        "support": "الدعم"
+      },
+      "status": {
+        "online": "نشط الآن",
+        "offline": "غير متصل",
+        "seen": "شوهد {time}"
+      },
+      "actions": {
+        "voiceCall": "مكالمة صوتية",
+        "videoCall": "مكالمة فيديو",
+        "attachFile": "إرفاق ملف",
+        "sendImage": "إرسال صورة",
+        "emoji": "رموز تعبيرية",
+        "pin": "تثبيت المحادثة",
+        "unpin": "إلغاء تثبيت المحادثة",
+        "mute": "كتم الصوت",
+        "unmute": "إلغاء كتم الصوت",
+        "archive": "أرشفة",
+        "purge": "حذف المحادثة"
+      }
+    },
+    "storefront": {
+      "title": "إدارة واجهة المتجر",
+      "subtitle": "إدارة واجهة المتجر",
+      "description": "خصص كيف يظهر متجرك للمشترين في السوق",
+      "loading": "جاري تحميل إعدادات واجهة المتجر...",
+      "saveSuccess": "تم حفظ التغييرات بنجاح!",
+      "saveError": "فشل في حفظ التغييرات",
+      "saving": "جاري الحفظ...",
+      "saveChanges": "حفظ التغييرات",
+      "viewPublic": "عرض الصفحة العامة",
+      "tabs": {
+        "identity": "هوية العلامة التجارية",
+        "contact": "معلومات الاتصال",
+        "business": "تفاصيل العمل",
+        "shipping": "الشحن والدفع",
+        "preview": "معاينة"
+      },
+      "sections": {
+        "assets": "أصول العلامة التجارية",
+        "info": "معلومات المتجر",
+        "categories": "فئات المنتجات",
+        "contact": "معلومات الاتصال",
+        "businessType": "نوع العمل",
+        "regCert": "التسجيل والشهادات",
+        "minOrder": "متطلبات الحد الأدنى للطلب",
+        "payment": "طرق الدفع المقبولة",
+        "shipping": "وجهات الشحن",
+        "livePreview": "المعاينة المباشرة"
+      },
+      "form": {
+        "logo": "شعار المتجر",
+        "banner": "بانر المتجر",
+        "bannerPlaceholder": "تحميل البانر (21:9)",
+        "logoPlaceholder": "تحميل الشعار",
+        "storeName": "اسم المتجر *",
+        "location": "الموقع",
+        "shortDesc": "وصف قصير",
+        "fullDesc": "وصف كامل",
+        "email": "عنوان البريد الإلكتروني",
+        "phone": "رقم الهاتف",
+        "website": "الموقع الإلكتروني",
+        "hours": "ساعات العمل",
+        "address": "عنوان العمل",
+        "regNumber": "رقم التسجيل",
+        "capacity": "الطاقة الإنتاجية",
+        "certifications": "الشهادات",
+        "wholesaleMin": "الحد الأدنى للجملة",
+        "retailMin": "الحد الأدنى للتجزئة",
+        "addCert": "إضافة شهادة (مثل ISO 9001، التجارة العادلة)",
+        "storeNamePlaceholder": "اسم متجرك",
+        "locationPlaceholder": "المدينة، البلد",
+        "shortDescPlaceholder": "وصف موجز لمتجرك (يظهر في نتائج البحث)",
+        "fullDescPlaceholder": "وصف تفصيلي لعملك ومنتجاتك وخدماتك",
+        "addressPlaceholder": "عنوان العمل الكامل",
+        "hoursPlaceholder": "الاثنين-الجمعة: 9 صباحًا - 5 مساءً بتوقيت WAT",
+        "capacityPlaceholder": "على سبيل المثال، 10,000 وحدة/شهر",
+        "wholesalePlaceholder": "على سبيل المثال، 100 وحدة أو 500 دولار",
+        "retailPlaceholder": "على سبيل المثال، لا يوجد حد أدنى",
+        "paymentDesc": "حدد جميع طرق الدفع التي تقبلها",
+        "shippingDesc": "حدد المناطق التي يمكنك شحن المنتجات إليها",
+        "emailError": "تنسيق البريد الإلكتروني غير صالح",
+        "websiteError": "يجب أن يبدأ الموقع بـ http:// أو https://"
+      },
+      "preview": {
+        "liveNotice": "هكذا سيظهر متجرك للمشترين. لن يتم حفظ التغييرات حتى تنقر على \"حفظ التغييرات\".",
+        "verified": "تم التحقق",
+        "locationNotSet": "لم يتم تحديد الموقع",
+        "about": "حول",
+        "noDesc": "لم يتم تقديم وصف",
+        "businessType": "نوع العمل",
+        "notSpecified": "غير محدد",
+        "categories": "الفئات",
+        "payment": "خيارات الدفع",
+        "shipsTo": "يشحن إلى"
+      },
+      "businessTypes": {
+        "retailer": {
+          "label": "تاجر تجزئة",
+          "desc": "بائع مجموعات منتجات متنوعة"
+        },
+        "manufacturer": {
+          "label": "مصنع",
+          "desc": "منشئ منتجات العلامة التجارية الخاصة"
+        },
+        "artisan": {
+          "label": "حرفي",
+          "desc": "أخصائي سلع مصنوعة يدويًا"
+        },
+        "wholesaler": {
+          "label": "تاجر جملة",
+          "desc": "أخصائي توريد بالجملة وB2B"
+        },
+        "factory": {
+          "label": "مصنع",
+          "desc": "إنتاج على نطاق صناعي"
+        },
+        "miner": {
+          "label": "عامل مناجم",
+          "desc": "استخراج الموارد الطبيعية"
+        },
+        "agribusiness": {
+          "label": "الأعمال الزراعية",
+          "desc": "إنتاج الغذاء والزراعة"
+        }
+      },
+      "paymentOptions": {
+        "Bank Transfer": "تحويل بنكي",
+        "Credit Card": "بطاقة ائتمان",
+        "PayPal": "بايبال",
+        "Mobile Money": "خدمة الدفع عبر الهاتف",
+        "Cash on Delivery": "الدفع عند الاستلام",
+        "Letter of Credit": "اعتماد مالي",
+        "Western Union": "ويسترن يونيون",
+        "Crypto": "عملات رقمية"
+      },
+      "shippingRegions": {
+        "Nigeria": "نيجيريا",
+        "Ghana": "غانا",
+        "Kenya": "كينيا",
+        "South Africa": "جنوب أفريقيا",
+        "Egypt": "مصر",
+        "Morocco": "المغرب",
+        "Tanzania": "تنزانيا",
+        "Ethiopia": "إثيوبيا",
+        "Uganda": "أوغندا",
+        "Senegal": "السنغال",
+        "Cameroon": "الكاميرون",
+        "Côte d'Ivoire": "ساحل العاج",
+        "Europe": "أوروبا",
+        "North America": "أمريكا الشمالية",
+        "Asia": "آسيا",
+        "Middle East": "الشرق الأوسط",
+        "Worldwide": "حول العالم"
+      }
     }
   }
 }

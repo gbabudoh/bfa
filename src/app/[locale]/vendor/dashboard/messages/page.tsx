@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import { 
   MessageSquare,
   Search,
@@ -137,6 +138,7 @@ const mockConversations: Conversation[] = [
 ];
 
 export default function VendorMessagesPage() {
+  const t = useTranslations('VendorDashboard.messages');
   const searchParams = useSearchParams();
   const [conversations, setConversations] = useState<Conversation[]>(mockConversations);
   const [selectedConversation, setSelectedConversation] = useState<Conversation | null>(null);
@@ -221,7 +223,7 @@ export default function VendorMessagesPage() {
   };
 
   const handleDeleteConversation = (id: string) => {
-    if (confirm('Are you sure you want to delete this conversation? This action cannot be undone.')) {
+    if (confirm(t('purgeConfirm'))) {
       setConversations(prev => prev.filter(c => c.id !== id));
       if (selectedConversation?.id === id) setSelectedConversation(null);
       setShowOptions(false);
@@ -229,7 +231,7 @@ export default function VendorMessagesPage() {
   };
 
   const handleActionStub = (action: string) => {
-    alert(`${action} functionality is currently in demonstration mode.`);
+    alert(t('demoMode', { action }));
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -266,7 +268,7 @@ export default function VendorMessagesPage() {
     if (days === 0) {
       return date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
     } else if (days === 1) {
-      return 'Yesterday';
+      return t('yesterday');
     } else if (days < 7) {
       return date.toLocaleDateString('en-US', { weekday: 'short' });
     } else {
@@ -329,14 +331,14 @@ export default function VendorMessagesPage() {
       <div className="flex items-center justify-between">
         <div>
           <div className="flex items-center gap-2 mb-2">
-            <span className="text-[10px] font-black text-[#D9A606] uppercase tracking-[0.4em] italic">Communications Hub</span>
+            <span className="text-[10px] font-black text-[#D9A606] uppercase tracking-[0.4em] italic">{t('subtitle')}</span>
             {totalUnread > 0 && (
               <span className="px-2 py-0.5 rounded-full bg-red-500 text-white text-[10px] font-bold">
-                {totalUnread} new
+                {t('newMessages', { count: totalUnread })}
               </span>
             )}
           </div>
-          <h1 className="text-4xl font-black text-zinc-900 tracking-tighter">Messages.</h1>
+          <h1 className="text-4xl font-black text-zinc-900 tracking-tighter">{t('title')}.</h1>
         </div>
       </div>
 
@@ -354,7 +356,7 @@ export default function VendorMessagesPage() {
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400" />
               <input
                 type="text"
-                placeholder="Search conversations..."
+                placeholder={t('searchPlaceholder')}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full bg-white/40 backdrop-blur-md border border-white/60 rounded-2xl pl-10 pr-4 py-3 text-sm font-medium text-zinc-900 focus:outline-none focus:bg-white/60 focus:border-[#D9A606] focus:ring-4 focus:ring-[#D9A606]/10 transition-all placeholder:text-zinc-400 shadow-sm"
@@ -376,7 +378,7 @@ export default function VendorMessagesPage() {
                       : 'bg-white/40 backdrop-blur-md border border-white/60 text-zinc-600 hover:bg-white/60 hover:text-[#D9A606]'
                   }`}
                 >
-                  {filter.label}
+                  {t(`filters.${filter.value}`)}
                 </button>
               ))}
             </div>
@@ -449,7 +451,7 @@ export default function VendorMessagesPage() {
             ) : (
               <div className="flex flex-col items-center justify-center h-full text-center p-8">
                 <MessageSquare className="w-12 h-12 text-zinc-300 mb-4" />
-                <p className="text-zinc-500 font-medium">No conversations found</p>
+                <p className="text-zinc-500 font-medium">{t('noConversations')}</p>
               </div>
             )}
           </div>
@@ -493,10 +495,10 @@ export default function VendorMessagesPage() {
                   <h3 className="font-extrabold text-zinc-900 tracking-tight">{selectedConversation.participant.name}</h3>
                   <p className="text-[10px] font-black uppercase tracking-wider text-[#D9A606]">
                     {selectedConversation.participant.isOnline 
-                      ? 'Active Now' 
+                      ? t('status.online') 
                       : selectedConversation.participant.lastSeen 
-                        ? `Seen ${formatTime(selectedConversation.participant.lastSeen)}`
-                        : 'Offline'
+                        ? t('status.seen', { time: formatTime(selectedConversation.participant.lastSeen) })
+                        : t('status.offline')
                     }
                   </p>
                 </div>
@@ -504,16 +506,16 @@ export default function VendorMessagesPage() {
 
               <div className="flex items-center gap-2">
                 <button 
-                  onClick={() => handleActionStub('Voice Call')}
+                  onClick={() => handleActionStub(t('actions.voiceCall'))}
                   className="p-2 rounded-lg hover:bg-white/60 text-zinc-500 hover:text-[#D9A606] transition-all cursor-pointer" 
-                  title="Voice Call"
+                  title={t('actions.voiceCall')}
                 >
                   <Phone className="w-5 h-5" />
                 </button>
                 <button 
-                  onClick={() => handleActionStub('Video Call')}
+                  onClick={() => handleActionStub(t('actions.videoCall'))}
                   className="p-2 rounded-lg hover:bg-white/60 text-zinc-500 hover:text-[#D9A606] transition-all cursor-pointer" 
-                  title="Video Call"
+                  title={t('actions.videoCall')}
                 >
                   <Video className="w-5 h-5" />
                 </button>
@@ -530,14 +532,14 @@ export default function VendorMessagesPage() {
                       <div className="fixed inset-0 z-10" onClick={() => setShowOptions(false)}></div>
                       <div className="absolute right-0 top-full mt-2 w-48 bg-white border border-gray-200 rounded-xl shadow-xl z-20 overflow-hidden">
                         <button
-                          onClick={() => {
+                           onClick={() => {
                             if (selectedConversation) togglePin(selectedConversation.id);
                             setShowOptions(false);
                           }}
                           className="w-full px-4 py-3 text-left text-[10px] font-black uppercase tracking-widest text-zinc-600 hover:bg-[#D9A606]/10 hover:text-[#D9A606] flex items-center gap-3 cursor-pointer transition-colors"
                         >
                           <Pin className="w-4 h-4" />
-                          {selectedConversation.isPinned ? 'Unpin' : 'Pin'} Chat
+                          {selectedConversation.isPinned ? t('actions.unpin') : t('actions.pin')}
                         </button>
                         <button
                           onClick={() => {
@@ -547,14 +549,14 @@ export default function VendorMessagesPage() {
                           className="w-full px-4 py-3 text-left text-[10px] font-black uppercase tracking-widest text-zinc-600 hover:bg-[#D9A606]/10 hover:text-[#D9A606] flex items-center gap-3 cursor-pointer transition-colors"
                         >
                           {selectedConversation.isMuted ? <Bell className="w-4 h-4" /> : <BellOff className="w-4 h-4" />}
-                          {selectedConversation.isMuted ? 'Unmute' : 'Mute'}
+                          {selectedConversation.isMuted ? t('actions.unmute') : t('actions.mute')}
                         </button>
                         <button 
                           onClick={() => selectedConversation && handleArchiveConversation(selectedConversation.id)}
                           className="w-full px-4 py-3 text-left text-[10px] font-black uppercase tracking-widest text-zinc-600 hover:bg-emerald-50 hover:text-emerald-600 flex items-center gap-3 cursor-pointer transition-colors"
                         >
                           <Archive className="w-4 h-4" />
-                          Archive
+                          {t('actions.archive')}
                         </button>
                         <div className="h-[1px] bg-zinc-100 my-1" />
                         <button 
@@ -562,7 +564,7 @@ export default function VendorMessagesPage() {
                           className="w-full px-4 py-3 text-left text-[10px] font-black uppercase tracking-widest text-red-600 hover:bg-red-50 flex items-center gap-3 cursor-pointer transition-colors"
                         >
                           <Trash2 className="w-4 h-4" />
-                          Purge Thread
+                          {t('actions.purge')}
                         </button>
                       </div>
                     </>
@@ -633,16 +635,16 @@ export default function VendorMessagesPage() {
             <div className="p-4 border-t border-gray-200 bg-white">
               <div className="flex items-center gap-3">
                 <button 
-                  onClick={() => handleActionStub('File Attachment')}
+                  onClick={() => handleActionStub(t('actions.attachFile'))}
                   className="p-2 rounded-lg hover:bg-zinc-100 text-zinc-500 hover:text-[#D9A606] transition-all cursor-pointer" 
-                  title="Attach File"
+                  title={t('actions.attachFile')}
                 >
                   <Paperclip className="w-5 h-5" />
                 </button>
                 <button 
-                  onClick={() => handleActionStub('Image Upload')}
+                  onClick={() => handleActionStub(t('actions.sendImage'))}
                   className="p-2 rounded-lg hover:bg-zinc-100 text-zinc-500 hover:text-[#D9A606] transition-all cursor-pointer" 
-                  title="Send Image"
+                  title={t('actions.sendImage')}
                 >
                   <ImageIcon className="w-5 h-5" />
                 </button>
@@ -651,13 +653,13 @@ export default function VendorMessagesPage() {
                   <input
                     ref={inputRef}
                     type="text"
-                    placeholder="Type a message..."
+                    placeholder={t('typePlaceholder')}
                     value={newMessage}
                     onChange={(e) => setNewMessage(e.target.value)}
                     onKeyPress={handleKeyPress}
                     className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 pr-12 text-sm focus:outline-none focus:border-[#D9A606] transition-all"
                   />
-                  <button className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-zinc-600 cursor-pointer" title="Emoji">
+                  <button className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-zinc-600 cursor-pointer" title={t('actions.emoji')}>
                     <Smile className="w-5 h-5" />
                   </button>
                 </div>
@@ -678,8 +680,8 @@ export default function VendorMessagesPage() {
               <div className="w-20 h-20 rounded-full bg-gray-100 flex items-center justify-center mx-auto mb-4">
                 <MessageSquare className="w-10 h-10 text-zinc-300" />
               </div>
-              <h3 className="text-lg font-bold text-zinc-900 mb-2">Select a conversation</h3>
-              <p className="text-sm text-zinc-500">Choose a conversation from the list to start messaging</p>
+              <h3 className="text-lg font-bold text-zinc-900 mb-2">{t('selectConversation')}</h3>
+              <p className="text-sm text-zinc-500">{t('selectConversationDesc')}</p>
             </div>
           </div>
         )}

@@ -308,12 +308,12 @@ export default function VendorDashboardLayout({
            <div className="flex flex-col md:flex-row justify-between items-center gap-6">
               <div className="flex items-center gap-2">
                  <div className="w-2 h-2 rounded-full bg-[#D9A606]"></div>
-                 <span className="text-[10px] font-black text-zinc-400 uppercase tracking-[0.4em]">Buy From Africa Global Ecosystem</span>
+                 <span className="text-[10px] font-black text-zinc-400 uppercase tracking-[0.4em]">{t('footer.ecosystem')}</span>
               </div>
               <div className="flex gap-8">
-                 <Link href="#" className="text-[10px] font-black text-zinc-500 hover:text-[#D9A606] uppercase tracking-widest transition-colors">Compliance</Link>
-                 <Link href="#" className="text-[10px] font-black text-zinc-500 hover:text-[#D9A606] uppercase tracking-widest transition-colors">Architecture</Link>
-                 <Link href="#" className="text-[10px] font-black text-zinc-500 hover:text-[#D9A606] uppercase tracking-widest transition-colors">Support</Link>
+                 <Link href="#" className="text-[10px] font-black text-zinc-500 hover:text-[#D9A606] uppercase tracking-widest transition-colors">{t('footer.compliance')}</Link>
+                 <Link href="#" className="text-[10px] font-black text-zinc-500 hover:text-[#D9A606] uppercase tracking-widest transition-colors">{t('footer.architecture')}</Link>
+                 <Link href="#" className="text-[10px] font-black text-zinc-500 hover:text-[#D9A606] uppercase tracking-widest transition-colors">{t('footer.support')}</Link>
               </div>
            </div>
         </footer>

@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import { 
   Search, 
   Filter, 
@@ -162,6 +163,7 @@ const mockOrders: Order[] = [
 ];
 
 export default function VendorOrdersPage() {
+  const t = useTranslations('VendorDashboard.orders');
   const [orders, setOrders] = useState<Order[]>(mockOrders);
   const [searchQuery, setSearchQuery] = useState('');
   const [statusFilter, setStatusFilter] = useState<string>('all');
@@ -244,35 +246,35 @@ export default function VendorOrdersPage() {
           icon: <Clock className="w-4 h-4" />, 
           bg: 'bg-amber-100/50 backdrop-blur-md border border-amber-200/50', 
           text: 'text-amber-700',
-          label: 'Pending'
+          label: t('filters.statuses.pending')
         };
       case 'processing':
         return { 
           icon: <Package className="w-4 h-4" />, 
           bg: 'bg-blue-100/50 backdrop-blur-md border border-blue-200/50', 
           text: 'text-blue-700',
-          label: 'Processing'
+          label: t('filters.statuses.processing')
         };
       case 'shipped':
         return { 
           icon: <Truck className="w-4 h-4" />, 
           bg: 'bg-purple-100/50 backdrop-blur-md border border-purple-200/50', 
           text: 'text-purple-700',
-          label: 'Shipped'
+          label: t('filters.statuses.shipped')
         };
       case 'delivered':
         return { 
           icon: <CheckCircle className="w-4 h-4" />, 
           bg: 'bg-emerald-100/50 backdrop-blur-md border border-emerald-200/50', 
           text: 'text-emerald-700',
-          label: 'Delivered'
+          label: t('filters.statuses.delivered')
         };
       case 'cancelled':
         return { 
           icon: <XCircle className="w-4 h-4" />, 
           bg: 'bg-rose-100/50 backdrop-blur-md border border-rose-200/50', 
           text: 'text-rose-700',
-          label: 'Cancelled'
+          label: t('filters.statuses.cancelled')
         };
     }
   };
@@ -280,11 +282,11 @@ export default function VendorOrdersPage() {
   const getPaymentBadge = (status: string) => {
     switch (status) {
       case 'paid':
-        return <span className="px-2 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider bg-emerald-100/40 text-emerald-700 border border-emerald-200/50 backdrop-blur-sm">Paid</span>;
+        return <span className="px-2 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider bg-emerald-100/40 text-emerald-700 border border-emerald-200/50 backdrop-blur-sm">{t('payment.paid')}</span>;
       case 'pending':
-        return <span className="px-2 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider bg-amber-100/40 text-amber-700 border border-amber-200/50 backdrop-blur-sm">Pending</span>;
+        return <span className="px-2 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider bg-amber-100/40 text-amber-700 border border-amber-200/50 backdrop-blur-sm">{t('payment.pending')}</span>;
       case 'refunded':
-        return <span className="px-2 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider bg-zinc-100/40 text-zinc-600 border border-zinc-200/50 backdrop-blur-sm">Refunded</span>;
+        return <span className="px-2 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider bg-zinc-100/40 text-zinc-600 border border-zinc-200/50 backdrop-blur-sm">{t('payment.refunded')}</span>;
     }
   };
 
@@ -328,9 +330,9 @@ export default function VendorOrdersPage() {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <div className="flex items-center gap-2 mb-2">
-            <span className="text-[10px] font-black text-[#D9A606] uppercase tracking-[0.4em] italic">Operations Logs</span>
+            <span className="text-[10px] font-black text-[#D9A606] uppercase tracking-[0.4em] italic">{t('subtitle')}</span>
           </div>
-          <h1 className="text-4xl font-black text-zinc-900 tracking-tighter">Manage <span className="text-zinc-400">Orders.</span></h1>
+          <h1 className="text-4xl font-black text-zinc-900 tracking-tighter">{t('title').split(' ')[0]} <span className="text-zinc-400">{t('title').split(' ').slice(1).join(' ')}.</span></h1>
         </div>
         <div className="flex items-center gap-3">
           <button 
@@ -344,7 +346,7 @@ export default function VendorOrdersPage() {
             className="flex items-center gap-2 px-5 py-3 rounded-xl bg-white border-2 border-gray-200 text-zinc-700 hover:border-[#D9A606] hover:text-[#D9A606] transition-all cursor-pointer"
           >
             <Download className="w-4 h-4" />
-            <span className="text-xs font-bold uppercase tracking-wider">Export</span>
+            <span className="text-xs font-bold uppercase tracking-wider">{t('export')}</span>
           </button>
         </div>
       </div>
@@ -366,7 +368,7 @@ export default function VendorOrdersPage() {
             </div>
           </div>
           <p className="text-3xl font-black text-zinc-900 tracking-tighter">{totalOrders}</p>
-          <p className="text-[10px] text-zinc-500 font-extrabold uppercase tracking-widest mt-1">Total Orders</p>
+          <p className="text-[10px] text-zinc-500 font-extrabold uppercase tracking-widest mt-1">{t('stats.total')}</p>
         </div>
 
         <div className="p-6 rounded-[2rem] bg-white/40 backdrop-blur-xl border border-white/60 shadow-xl shadow-yellow-900/5 hover:bg-white/60 hover:scale-[1.02] hover:shadow-2xl transition-all duration-500 cursor-pointer group">
@@ -374,10 +376,10 @@ export default function VendorOrdersPage() {
             <div className="p-3 rounded-2xl bg-yellow-100 text-yellow-600 group-hover:bg-yellow-500 group-hover:text-white group-hover:-rotate-12 transition-all duration-500">
               <Clock className="w-5 h-5" />
             </div>
-            {pendingOrders > 0 && <span className="px-2 py-1 rounded-full bg-yellow-100/50 text-yellow-600 text-[10px] font-bold animate-pulse">Action Required</span>}
+            {pendingOrders > 0 && <span className="px-2 py-1 rounded-full bg-yellow-100/50 text-yellow-600 text-[10px] font-bold animate-pulse">{t('stats.actionRequired')}</span>}
           </div>
           <p className="text-3xl font-black text-zinc-900 tracking-tighter">{pendingOrders}</p>
-          <p className="text-[10px] text-zinc-500 font-extrabold uppercase tracking-widest mt-1">Pending Orders</p>
+          <p className="text-[10px] text-zinc-500 font-extrabold uppercase tracking-widest mt-1">{t('stats.pending')}</p>
         </div>
 
         <div className="p-6 rounded-[2rem] bg-white/40 backdrop-blur-xl border border-white/60 shadow-xl shadow-yellow-900/5 hover:bg-white/60 hover:scale-[1.02] hover:shadow-2xl transition-all duration-500 cursor-pointer group">
@@ -387,7 +389,7 @@ export default function VendorOrdersPage() {
             </div>
           </div>
           <p className="text-3xl font-black text-zinc-900 tracking-tighter">{processingOrders}</p>
-          <p className="text-[10px] text-zinc-500 font-extrabold uppercase tracking-widest mt-1">Processing</p>
+          <p className="text-[10px] text-zinc-500 font-extrabold uppercase tracking-widest mt-1">{t('stats.processing')}</p>
         </div>
 
         <div className="p-6 rounded-[2rem] bg-white/40 backdrop-blur-xl border border-white/60 shadow-xl shadow-yellow-900/5 hover:bg-white/60 hover:scale-[1.02] hover:shadow-2xl transition-all duration-500 cursor-pointer group">
@@ -401,7 +403,7 @@ export default function VendorOrdersPage() {
             </div>
           </div>
           <p className="text-3xl font-black text-zinc-900 tracking-tighter">${totalRevenue.toLocaleString()}</p>
-          <p className="text-[10px] text-zinc-500 font-extrabold uppercase tracking-widest mt-1">Total Revenue</p>
+          <p className="text-[10px] text-zinc-500 font-extrabold uppercase tracking-widest mt-1">{t('stats.revenue')}</p>
         </div>
       </motion.div>
 
@@ -417,7 +419,7 @@ export default function VendorOrdersPage() {
           <Search className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-400 group-focus-within:text-[#D9A606] transition-colors" />
           <input
             type="text"
-            placeholder="Search by order number, customer name, or email..."
+            placeholder={t('filters.searchPlaceholder')}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full bg-white/40 backdrop-blur-md border border-white/60 rounded-2xl pl-14 pr-4 py-4 text-sm font-medium text-zinc-900 focus:outline-none focus:bg-white/60 focus:border-[#D9A606] focus:ring-4 focus:ring-[#D9A606]/10 transition-all placeholder:text-zinc-400 shadow-sm"
@@ -444,7 +446,7 @@ export default function VendorOrdersPage() {
             >
               <Filter className="w-4 h-4 text-zinc-400 group-hover:text-[#D9A606]" />
               <span className="text-xs font-black uppercase tracking-wider">
-                {statusFilter === 'all' ? 'Status' : statusFilter}
+                {statusFilter === 'all' ? t('filters.status') : t(`filters.statuses.${statusFilter}`)}
               </span>
               <ChevronDown className={`w-4 h-4 text-zinc-400 transition-transform duration-300 ${showFilterDropdown ? 'rotate-180 text-[#D9A606]' : ''}`} />
             </button>
@@ -469,7 +471,7 @@ export default function VendorOrdersPage() {
                         statusFilter === status ? 'bg-[#D9A606] text-white shadow-lg' : 'text-zinc-600'
                       }`}
                     >
-                      {status === 'all' ? 'All Orders' : status}
+                      {status === 'all' ? t('filters.allOrders') : t(`filters.statuses.${status}`)}
                     </button>
                   ))}
                 </motion.div>
@@ -487,7 +489,7 @@ export default function VendorOrdersPage() {
               className="flex items-center gap-2 px-6 py-4 rounded-2xl bg-white/40 backdrop-blur-md border border-white/60 text-zinc-700 hover:bg-white/60 hover:border-[#D9A606] transition-all cursor-pointer shadow-sm group"
             >
               <Calendar className="w-4 h-4 text-zinc-400 group-hover:text-[#D9A606]" />
-              <span className="text-xs font-black uppercase tracking-wider">Date</span>
+              <span className="text-xs font-black uppercase tracking-wider">{t('filters.date')}</span>
               <ChevronDown className={`w-4 h-4 text-zinc-400 transition-transform duration-300 ${showDateDropdown ? 'rotate-180 text-[#D9A606]' : ''}`} />
             </button>
             
@@ -500,10 +502,10 @@ export default function VendorOrdersPage() {
                   className="absolute top-full mt-3 right-0 w-56 bg-white/80 backdrop-blur-2xl border border-white/60 rounded-2xl shadow-2xl z-[100] overflow-hidden p-2 origin-top-right"
                 >
                   {[
-                    { value: 'all', label: 'All Time' },
-                    { value: 'today', label: 'Today' },
-                    { value: 'week', label: 'This Week' },
-                    { value: 'month', label: 'This Month' }
+                    { value: 'all', label: t('filters.dateOptions.all') },
+                    { value: 'today', label: t('filters.dateOptions.today') },
+                    { value: 'week', label: t('filters.dateOptions.week') },
+                    { value: 'month', label: t('filters.dateOptions.month') }
                   ].map((option) => (
                     <button
                       key={option.value}
@@ -534,11 +536,11 @@ export default function VendorOrdersPage() {
       >
         {/* Table Header */}
         <div className="hidden md:grid grid-cols-12 gap-4 px-8 py-6 bg-zinc-900/5 border-b border-white/40">
-          <div className="col-span-3 text-[10px] font-black text-zinc-500 uppercase tracking-[0.2em]">Order Details</div>
-          <div className="col-span-3 text-[10px] font-black text-zinc-500 uppercase tracking-[0.2em]">Customer</div>
-          <div className="col-span-2 text-[10px] font-black text-zinc-500 uppercase tracking-[0.2em] text-center">Amount</div>
-          <div className="col-span-2 text-[10px] font-black text-zinc-500 uppercase tracking-[0.2em] text-center">Status</div>
-          <div className="col-span-2 text-[10px] font-black text-zinc-500 uppercase tracking-[0.2em] text-center">Actions</div>
+          <div className="col-span-3 text-[10px] font-black text-zinc-500 uppercase tracking-[0.2em]">{t('table.orderDetails')}</div>
+          <div className="col-span-3 text-[10px] font-black text-zinc-500 uppercase tracking-[0.2em]">{t('table.customer')}</div>
+          <div className="col-span-2 text-[10px] font-black text-zinc-500 uppercase tracking-[0.2em] text-center">{t('table.amount')}</div>
+          <div className="col-span-2 text-[10px] font-black text-zinc-500 uppercase tracking-[0.2em] text-center">{t('table.status')}</div>
+          <div className="col-span-2 text-[10px] font-black text-zinc-500 uppercase tracking-[0.2em] text-center">{t('table.actions')}</div>
         </div>
 
         {/* Order Rows */}
@@ -604,21 +606,21 @@ export default function VendorOrdersPage() {
                     <button 
                       onClick={() => setSelectedOrder(order)}
                       className="p-2.5 rounded-xl hover:bg-[#D9A606] text-zinc-400 hover:text-white transition-all duration-300 cursor-pointer shadow-sm hover:shadow-lg hover:shadow-[#D9A606]/30"
-                      title="View Details"
+                      title={t('table.viewDetails')}
                     >
                       <Eye className="w-4 h-4" />
                     </button>
                     <button 
                       onClick={() => window.print()}
                       className="p-2.5 rounded-xl hover:bg-blue-600 text-zinc-400 hover:text-white transition-all duration-300 cursor-pointer shadow-sm hover:shadow-lg hover:shadow-blue-600/30"
-                      title="Print Invoice"
+                      title={t('table.printInvoice')}
                     >
                       <Printer className="w-4 h-4" />
                     </button>
                     <Link 
                       href={`/vendor/dashboard/messages?order=${order.id}`}
                       className="p-2.5 rounded-xl hover:bg-emerald-600 text-zinc-400 hover:text-white transition-all duration-300 cursor-pointer shadow-sm hover:shadow-lg hover:shadow-emerald-600/30"
-                      title="Contact Customer"
+                      title={t('table.contactCustomer')}
                     >
                       <MessageSquare className="w-4 h-4" />
                     </Link>
@@ -631,8 +633,8 @@ export default function VendorOrdersPage() {
               <div className="inline-flex p-6 rounded-full bg-zinc-900/5 mb-4">
                 <ShoppingBag className="w-12 h-12 text-zinc-300" />
               </div>
-              <p className="text-zinc-900 font-black text-xl">No orders found</p>
-              <p className="text-zinc-500 text-sm mt-2 max-w-xs mx-auto">We couldn&apos;t find any orders matching your current search or filters.</p>
+              <p className="text-zinc-900 font-black text-xl">{t('table.noOrders')}</p>
+              <p className="text-zinc-500 text-sm mt-2 max-w-xs mx-auto">{t('table.noOrdersDesc')}</p>
             </div>
           )}
         </div>
@@ -646,7 +648,11 @@ export default function VendorOrdersPage() {
           className="flex flex-col sm:flex-row items-center justify-between gap-4 px-2"
         >
           <p className="text-xs font-bold text-zinc-500 uppercase tracking-widest">
-            Showing <span className="text-zinc-900">{((currentPage - 1) * itemsPerPage) + 1}</span> to <span className="text-zinc-900">{Math.min(currentPage * itemsPerPage, filteredOrders.length)}</span> of <span className="text-zinc-900">{filteredOrders.length}</span> entries
+            {t('table.showing', { 
+              start: ((currentPage - 1) * itemsPerPage) + 1, 
+              end: Math.min(currentPage * itemsPerPage, filteredOrders.length), 
+              total: filteredOrders.length 
+            })}
           </p>
           <div className="flex items-center gap-2">
             <button
@@ -703,11 +709,11 @@ export default function VendorOrdersPage() {
               <div className="px-8 py-8 flex items-start justify-between bg-zinc-900/5">
                 <div>
                   <div className="flex items-center gap-3 mb-2">
-                    <span className="text-[10px] font-black text-[#D9A606] uppercase tracking-[0.4em] italic">Order Details</span>
+                    <span className="text-[10px] font-black text-[#D9A606] uppercase tracking-[0.4em] italic">{t('modal.logisticsData')}</span>
                     <div className="w-1 h-1 rounded-full bg-zinc-300" />
                     <span className="text-[10px] font-black text-zinc-400 uppercase tracking-[0.2em]">{selectedOrder.orderNumber}</span>
                   </div>
-                  <h3 className="text-3xl font-black text-zinc-900 tracking-tighter italic">Review <span className="text-[#D9A606]">Shipment.</span></h3>
+                  <h3 className="text-3xl font-black text-zinc-900 tracking-tighter italic">{t('modal.reviewShipment').split(' ')[0]} <span className="text-[#D9A606]">{t('modal.reviewShipment').split(' ').slice(1).join(' ')}.</span></h3>
                 </div>
                 <button 
                   onClick={() => setSelectedOrder(null)}
@@ -737,14 +743,14 @@ export default function VendorOrdersPage() {
                   {/* Left Column: Customer & Shipping */}
                   <div className="space-y-6">
                     <div className="p-6 rounded-3xl bg-zinc-900/5 group">
-                      <h4 className="text-[10px] font-black text-zinc-400 uppercase tracking-[0.3em] mb-6">Logistics Data</h4>
+                      <h4 className="text-[10px] font-black text-zinc-400 uppercase tracking-[0.3em] mb-6">{t('modal.logisticsData')}</h4>
                       <div className="space-y-6">
                         <div className="flex items-start gap-4">
                           <div className="p-3 rounded-2xl bg-white shadow-sm text-[#D9A606]">
                             <User className="w-5 h-5" />
                           </div>
                           <div>
-                            <p className="text-[10px] font-extrabold text-zinc-400 uppercase tracking-widest mb-1">Customer</p>
+                            <p className="text-[10px] font-extrabold text-zinc-400 uppercase tracking-widest mb-1">{t('modal.customer')}</p>
                             <p className="text-sm font-black text-zinc-900">{selectedOrder.customer.name}</p>
                             <p className="text-xs text-zinc-500 font-medium">{selectedOrder.customer.email}</p>
                           </div>
@@ -754,7 +760,7 @@ export default function VendorOrdersPage() {
                             <MapPin className="w-5 h-5" />
                           </div>
                           <div>
-                            <p className="text-[10px] font-extrabold text-zinc-400 uppercase tracking-widest mb-1">Destination</p>
+                            <p className="text-[10px] font-extrabold text-zinc-400 uppercase tracking-widest mb-1">{t('modal.destination')}</p>
                             <p className="text-sm font-bold text-zinc-800 leading-relaxed">{selectedOrder.customer.address}</p>
                           </div>
                         </div>
@@ -763,10 +769,10 @@ export default function VendorOrdersPage() {
                             <Truck className="w-5 h-5" />
                           </div>
                           <div>
-                            <p className="text-[10px] font-extrabold text-zinc-400 uppercase tracking-widest mb-1">Shipping Strategy</p>
+                            <p className="text-[10px] font-extrabold text-zinc-400 uppercase tracking-widest mb-1">{t('modal.shippingStrategy')}</p>
                             <p className="text-sm font-black text-zinc-900">{selectedOrder.shippingMethod}</p>
                             {selectedOrder.trackingNumber && (
-                              <p className="text-xs text-[#D9A606] font-black mt-1">ID: {selectedOrder.trackingNumber}</p>
+                              <p className="text-xs text-[#D9A606] font-black mt-1">{t('modal.trackingId')}: {selectedOrder.trackingNumber}</p>
                             )}
                           </div>
                         </div>
@@ -779,7 +785,7 @@ export default function VendorOrdersPage() {
                           <AlertCircle className="w-5 h-5" />
                         </div>
                         <div>
-                          <p className="text-[10px] font-black text-amber-700 uppercase tracking-widest mb-1">Internal Note</p>
+                          <p className="text-[10px] font-black text-amber-700 uppercase tracking-widest mb-1">{t('modal.internalNote')}</p>
                           <p className="text-sm text-amber-800 font-medium leading-relaxed">{selectedOrder.notes}</p>
                         </div>
                       </div>
@@ -789,7 +795,7 @@ export default function VendorOrdersPage() {
                   {/* Right Column: Inventory & Finance */}
                   <div className="space-y-6">
                     <div className="p-6 rounded-3xl bg-zinc-900/5">
-                      <h4 className="text-[10px] font-black text-zinc-400 uppercase tracking-[0.3em] mb-6">Inventory Manifest</h4>
+                      <h4 className="text-[10px] font-black text-zinc-400 uppercase tracking-[0.3em] mb-6">{t('modal.inventoryManifest')}</h4>
                       <div className="space-y-4">
                         {selectedOrder.items.map((item) => (
                           <div key={item.id} className="flex items-center justify-between p-4 rounded-2xl bg-white border border-zinc-100/50 shadow-sm group/item">
@@ -799,7 +805,7 @@ export default function VendorOrdersPage() {
                               </div>
                               <div>
                                 <p className="text-sm font-black text-zinc-900">{item.name}</p>
-                                <p className="text-[10px] text-zinc-500 font-bold uppercase">Qty: {item.quantity}</p>
+                                <p className="text-[10px] text-zinc-500 font-bold uppercase">{t('modal.qty')}: {item.quantity}</p>
                               </div>
                             </div>
                             <p className="text-sm font-black text-zinc-900">${(item.price * item.quantity).toLocaleString()}</p>
@@ -812,7 +818,7 @@ export default function VendorOrdersPage() {
                       <div className="absolute top-0 right-0 w-32 h-32 bg-[#D9A606]/10 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-[#D9A606]/20 transition-all duration-700" />
                       <div className="relative z-10 flex items-center justify-between">
                         <div>
-                          <p className="text-[10px] font-black text-zinc-500 uppercase tracking-[0.4em] mb-2">Financial Total</p>
+                          <p className="text-[10px] font-black text-zinc-500 uppercase tracking-[0.4em] mb-2">{t('modal.financialTotal')}</p>
                           <p className="text-4xl font-black text-white tracking-tighter italic">${selectedOrder.total.toLocaleString()}</p>
                         </div>
                         <div className="w-16 h-16 rounded-full bg-[#D9A606] flex items-center justify-center text-zinc-900 shadow-lg shadow-[#D9A606]/40 rotate-12 group-hover:rotate-0 transition-all duration-500">
@@ -834,7 +840,7 @@ export default function VendorOrdersPage() {
                   className="flex-1 flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-zinc-900 text-white font-black text-xs uppercase tracking-widest hover:bg-[#D9A606] transition-all duration-300 shadow-xl shadow-zinc-900/20 hover:shadow-[#D9A606]/40 cursor-pointer"
                 >
                   <Package className="w-5 h-5" />
-                  Update Progress
+                  {t('modal.updateProgress')}
                 </button>
                 <div className="flex gap-2 w-full sm:w-auto">
                   <button 
@@ -878,10 +884,10 @@ export default function VendorOrdersPage() {
             >
               <div className="mb-8">
                 <div className="flex items-center gap-3 mb-2">
-                  <span className="text-[10px] font-black text-[#D9A606] uppercase tracking-[0.4em] italic">Workflow Update</span>
+                  <span className="text-[10px] font-black text-[#D9A606] uppercase tracking-[0.4em] italic">{t('statusController.subtitle')}</span>
                 </div>
-                <h3 className="text-2xl font-black text-zinc-900 tracking-tighter italic">Status <span className="text-zinc-400">Control.</span></h3>
-                <p className="text-xs font-bold text-zinc-500 uppercase tracking-wider mt-2">Target: {orderToUpdate.orderNumber}</p>
+                <h3 className="text-2xl font-black text-zinc-900 tracking-tighter italic">{t('statusController.title').split(' ')[0]} <span className="text-zinc-400">{t('statusController.title').split(' ').slice(1).join(' ')}.</span></h3>
+                <p className="text-xs font-bold text-zinc-500 uppercase tracking-wider mt-2">{t('statusController.target')}: {orderToUpdate.orderNumber}</p>
               </div>
               
               <div className="space-y-3">
@@ -919,7 +925,7 @@ export default function VendorOrdersPage() {
                 }}
                 className="w-full mt-8 px-8 py-4 rounded-2xl bg-zinc-100 text-zinc-600 font-black text-xs uppercase tracking-[0.2em] hover:bg-zinc-900 hover:text-white transition-all duration-500 cursor-pointer border border-zinc-200 shadow-sm"
               >
-                Close Controller
+                {t('statusController.close')}
               </button>
             </motion.div>
           </div>

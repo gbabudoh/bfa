@@ -102,61 +102,58 @@
   },
   "Categories": {
     "manufacturers": "Wazalishaji",
-    "textiles-and-fabrics": "Nguo na vitambaa",
-    "apparel-and-fashion-accessories": "Mavazi na vifaa vya mitindo",
-    "leather-and-leather-goods": "Ngozi na bidhaa za ngozi",
-    "footwear": "Viatu",
-    "automotive-assembly-and-components": "Uunganishaji wa magari na vipuri",
-    "electrical-equipment-and-cables": "Vifaa vya umeme na nyaya",
-    "electronics-and-small-appliances": "Vifaa vya kielektroniki na vifaa vidogo vya nyumbani",
-    "industrial-machinery-and-equipment": "Mashine na vifaa vya viwandani",
-    "furniture-and-fittings": "Samani na vifaa vya ndani",
-    "packaging-materials": "Vifaa vya ufungaji",
-    "artisans": "Mafundi",
-    "handicrafts-and-souvenirs": "Kazi za mikono na zawadi",
-    "home-decor-and-interior-items": "Mapambo ya nyumbani na vitu vya ndani",
-    "traditional-art-sculpture-and-carvings": "Sanaa ya jadi, uchongaji na vinyago",
-    "jewellery-and-adornments": "Vito na pambo",
-    "cultural-and-religious-items": "Vitu vya kitamaduni na kidini",
-    "miners": "Wachimbaji",
-    "minerals-and-ores": "Madini na madini ghafi",
-    "precious-metals-and-gemstones": "Metali za thamani na mawe ya thamani",
-    "industrial-minerals": "Madini ya viwandani",
-    "industrial": "Viwandani",
-    "building-materials-and-construction-products": "Vifaa vya ujenzi na bidhaa za ujenzi",
-    "metals-and-metal-products": "Metali na bidhaa za metali",
-    "wood-and-wood-products": "Mbao na bidhaa za mbao",
-    "paper-pulp-and-printed-materials": "Karatasi, majimaji ya karatasi na vifaa vilivyochapishwa",
-    "chemicals-and-petrochemicals": "Kemikali na bidhaa za mafuta",
-    "fertilizers-and-agro-inputs": "Mbolea na pembejeo za kilimo",
-    "paints-coatings-and-adhesives": "Rangi, mipako na gundi",
-    "plastics-and-rubber-products": "Bidhaa za plastiki na mpira",
-    "food-and-agriculture": "Chakula na Kilimo",
-    "agricultural-commodities": "Bidhaa za kilimo",
-    "processed-foods-and-beverages": "Chakula na vinywaji vilivyosindikwa",
-    "livestock-and-animal-products": "Mifugo na bidhaa za wanyama",
-    "fisheries-and-aquaculture-products": "Uvuvi na bidhaa za ufugaji wa viumbe vya majini",
-    "health-and-wellness": "Afya na Ustawi",
-    "pharmaceuticals-and-medical-supplies": "Dawa na vifaa vya matibabu",
-    "cosmetics-beauty-and-personal-care": "Vipodozi, urembo na usafi wa kibinafsi",
-    "health-and-wellness-products": "Bidhaa za afya na ustawi",
-    "home-and-living": "Nyumbani na Maisha",
-    "cleaning-and-household-care-products": "Bidhaa za usafi na utunzaji wa nyumbani",
-    "eco-friendly-and-sustainable-products": "Bidhaa rafiki wa mazingira na endelevu",
-    "educational-and-office-supplies": "Vifaa vya elimu na ofisi",
-    "technology-and-energy": "Teknolojia na Nishati",
-    "renewable-energy-equipment": "Vifaa vya nishati mbadala",
-    "ict-hardware-assembly": "Uunganishaji wa vifaa vya TEHAMA",
-    "digital-content-tied-to-physical-goods": "Maudhui ya kidijitali yanayohusiana na bidhaa za kimwili",
+    "artisans": "Mafundi Sanifu",
+    "miners": "Wachimba Madini",
+    "industrial": "Kiwanda",
+    "foodAndAgriculture": "Kilimo-biashara",
     "textiles": "Nguo na Mavazi",
     "crafts": "Sanaa na Ufundi",
     "food": "Chakula na Kilimo",
-    "minerals": "Madini na Vifaa",
+    "food-and-agriculture": "Chakula na Kilimo",
+    "minerals": "Madini na Malighafi",
     "jewelry": "Vito na Vifaa",
     "beauty": "Afya na Urembo",
     "tech": "Teknolojia na Huduma",
     "home": "Nyumbani na Mapambo",
-    "viewAll": "Tazama Kategoria Zote"
+    "textilesAndFabrics": "Nguo na vitambaa",
+    "apparelAndFashionAccessories": "Mavazi na mitindo",
+    "leatherAndLeatherGoods": "Ngozi na bidhaa za ngozi",
+    "footwear": "Viatu",
+    "automotiveAssemblyAndComponents": "Uunganishaji wa magari",
+    "electricalEquipmentAndCables": "Vifaa vya umeme",
+    "electronicsAndSmallAppliances": "Vifaa vya kielektroniki",
+    "industrialMachineryAndEquipment": "Mashine za viwandani",
+    "furnitureAndFittings": "Samani",
+    "packagingMaterials": "Vifaa vya ufungaji",
+    "handicraftsAndSouvenirs": "Sanaa za mikono",
+    "homeDecorAndInteriorItems": "Mapambo ya nyumbani",
+    "traditionalArtSculptureAndCarvings": "Sanaa ya asili",
+    "jewelleryAndAdornments": "Vito na mapambo",
+    "culturalAndReligiousItems": "Vifaa vya kitamaduni",
+    "mineralsAndOres": "Madini na mawe",
+    "preciousMetalsAndGemstones": "Metali za thamani",
+    "industrialMinerals": "Madini ya viwandani",
+    "buildingMaterialsAndConstructionProducts": "Vifaa vya ujenzi",
+    "metalsAndMetalProducts": "Metali",
+    "woodAndWoodProducts": "Mbao",
+    "paperPulpAndPrintedMaterials": "Karatasi",
+    "chemicalsAndPetrochemicals": "Kemikali",
+    "fertilizersAndAgroInputs": "Mbolea",
+    "paintsCoatingsAndAdhesives": "Rangi na mipako",
+    "plasticsAndRubberProducts": "Plastiki na mpira",
+    "agriculturalCommodities": "Bidhaa za kilimo",
+    "processedFoodsAndBeverages": "Chakula kilichosindikwa",
+    "livestockAndAnimalProducts": "Mifugo",
+    "fisheriesAndAquacultureProducts": "Samaki",
+    "pharmaceuticalsAndMedicalSupplies": "Dawa na vifaa",
+    "cosmeticsBeautyAndPersonalCare": "Vipodozi",
+    "healthAndWellnessProducts": "Afya na ustawi",
+    "cleaningAndHouseholdCareProducts": "Usafi wa nyumbani",
+    "ecoFriendlyAndSustainableProducts": "Bidhaa endelevu",
+    "educationalAndOfficeSupplies": "Vifaa vya ofisi",
+    "renewableEnergyEquipment": "Nishati mbadala",
+    "ictHardwareAssembly": "Vifaa vya ICT",
+    "digitalContentTiedToPhysicalGoods": "Maudhui ya dijitali"
   },
   "CategoryPage": {
     "home": "Mwanzo",
@@ -900,6 +897,309 @@
       "lowStockTitle": "Tahadhari za Hisa Chache",
       "lowStockMessage": "bidhaa kwa sasa ziko chini ya mipaka ya kizingiti. Kujaza upya haraka kunapendekezwa.",
       "stockAlert": "Tahadhari ya Usawazishaji wa Hisa #{number}"
+    },
+    "orders": {
+      "title": "Simamia Maagizo",
+      "subtitle": "Kumbukumbu za Operesheni",
+      "refresh": "Onyesha upya",
+      "export": "Hamisha",
+      "stats": {
+        "total": "Jumla ya Maagizo",
+        "pending": "Maagizo Yanayosubiri",
+        "processing": "Inashughulikiwa",
+        "revenue": "Jumla ya Mapato",
+        "actionRequired": "Hatua Inahitajika"
+      },
+      "filters": {
+        "searchPlaceholder": "Tafuta kwa nambari ya agizo, jina la mteja, au barua pepe...",
+        "status": "Hali",
+        "date": "Tarehe",
+        "allOrders": "Maagizo Yote",
+        "statuses": {
+          "pending": "Inasubiri",
+          "processing": "Inashughulikiwa",
+          "shipped": "Imesafirishwa",
+          "delivered": "Imefikishwa",
+          "cancelled": "Imeghairiwa"
+        },
+        "dateOptions": {
+          "all": "Wakati Wote",
+          "today": "Leo",
+          "week": "Wiki Hii",
+          "month": "Mwezi Huu"
+        }
+      },
+      "table": {
+        "orderDetails": "Maelezo ya Agizo",
+        "customer": "Mteja",
+        "amount": "Kiasi",
+        "status": "Hali",
+        "actions": "Hatua",
+        "noOrders": "Hakuna maagizo yaliyopatikana",
+        "noOrdersDesc": "Hatukuweza kupata maagizo yoyote yanayolingana na utafiti wako wa sasa au vichujio.",
+        "showing": "Inaonyesha {start} hadi {end} kati ya viingilio {total}",
+        "viewDetails": "Angalia Maelezo",
+        "printInvoice": "Chapa Ankara",
+        "contactCustomer": "Wasiliana na Mteja"
+      },
+      "modal": {
+        "reviewShipment": "Pitia Usafirishaji",
+        "logisticsData": "Takwimu za Usafirishaji",
+        "customer": "Mteja",
+        "destination": "Mahali Inapoenda",
+        "shippingStrategy": "Mkakati wa Usafirishaji",
+        "trackingId": "ID",
+        "internalNote": "Ujumbe wa Ndani",
+        "inventoryManifest": "Orodha ya Bidhaa",
+        "qty": "Idadi",
+        "financialTotal": "Jumla ya Kifedha",
+        "updateProgress": "Sasisha Maendeleo",
+        "close": "Funga"
+      },
+      "statusController": {
+        "title": "Udhibiti wa Hali",
+        "subtitle": "Sasisho la Mtiririko wa Kazi",
+        "target": "Lengo",
+        "close": "Funga Kidhibiti"
+      },
+      "payment": {
+        "paid": "Imelipwa",
+        "pending": "Inasubiri",
+        "refunded": "Imerejeshwa"
+      }
+    },
+    "products": {
+      "title": "Hesabu ya Vault",
+      "subtitle": "Hifadhi na Usafirishaji",
+      "empty": {
+        "title": "Vault Iko Tayari.",
+        "description": "Usanifu wa bidhaa yako unahakikiwa kwa sasa. Usawazishaji wa hesabu utajidhihirisha unapakia makusanyo yako.",
+        "button": "Anzisha Mkusanyiko"
+      }
+    },
+    "customers": {
+      "title": "Mtandao wa Wateja",
+      "subtitle": "Ujasusi wa Hadhira",
+      "export": "Hamisha",
+      "stats": {
+        "total": "Jumla ya Wateja",
+        "active": "Wateja Wanaoshiriki",
+        "revenue": "Jumla ya Mapato",
+        "avgValue": "Thamani ya Wastani ya Agizo"
+      },
+      "filters": {
+        "searchPlaceholder": "Tafuta wateja kwa jina, barua pepe, au eneo...",
+        "status": "Hali Zote",
+        "sortBy": "Panga kwa",
+        "statuses": {
+          "all": "Hali Zote",
+          "active": "Hai",
+          "inactive": "Siyo Hai",
+          "new": "Mpya"
+        },
+        "sortOptions": {
+          "recent": "Shughuli ya Hivi Karibuni",
+          "spent": "Jumla ya Matumizi",
+          "orders": "Idadi ya Maagizo",
+          "name": "Jina A-Z"
+        }
+      },
+      "table": {
+        "customer": "Mteja",
+        "location": "Eneo",
+        "orders": "Maagizo",
+        "spent": "Jumla ya Matumizi",
+        "status": "Hali",
+        "actions": "Vitendo",
+        "ordersCount": "maagizo",
+        "noCustomers": "Hakuna wateja waliopatikana",
+        "noCustomersDesc": "Jaribu kurekebisha utafutaji wako au vichujio",
+        "showing": "Inaonyesha {start} hadi {end} kati ya wateja {total}",
+        "viewDetails": "Angalia Maelezo",
+        "sendMessage": "Tuma Ujumbe",
+        "sendEmail": "Tuma Barua Pepe"
+      },
+      "modal": {
+        "email": "Barua Pepe",
+        "phone": "Simu",
+        "location": "Eneo",
+        "orders": "Jumla ya Maagizo",
+        "spent": "Jumla ya Matumizi",
+        "since": "Mteja Tangu",
+        "message": "Tuma Ujumbe"
+      }
+    },
+    "messages": {
+      "title": "Ujumbe",
+      "subtitle": "Kituo cha Mawasiliano",
+      "newMessages": "{count} mpya",
+      "searchPlaceholder": "Tafuta mazungumzo...",
+      "noConversations": "Hakuna mazungumzo yaliyopatikana",
+      "selectConversation": "Chagua mazungumzo",
+      "selectConversationDesc": "Chagua mazungumzo kutoka kwenye orodha ili kuanza kutuma ujumbe",
+      "typePlaceholder": "Andika ujumbe...",
+      "demoMode": "Utendaji wa {action} kwa sasa uko kwenye hali ya onyesho.",
+      "purgeConfirm": "Je, una uhakika unataka kufuta mazungumzo haya? Hatua hii haiwezi kutenguliwa.",
+      "yesterday": "Jana",
+      "filters": {
+        "all": "Yote",
+        "unread": "Yasiyosomwa",
+        "customer": "Wateja",
+        "support": "Msaada"
+      },
+      "status": {
+        "online": "Yuko Hewani Sasa",
+        "offline": "Hako Hewani",
+        "seen": "Imeonekana {time}"
+      },
+      "actions": {
+        "voiceCall": "Piga Simu ya Sauti",
+        "videoCall": "Piga Simu ya Video",
+        "attachFile": "Ambatisha Faili",
+        "sendImage": "Tuma Picha",
+        "emoji": "Emoji",
+        "pin": "Bandika Soga",
+        "unpin": "Ondoa Soga",
+        "mute": "Nyamazisha",
+        "unmute": "Washa Sauti",
+        "archive": "Hifadhi",
+        "purge": "Futa Mazungumzo"
+      }
+    },
+    "storefront": {
+      "title": "Dhibiti Duka Lako la Mtandaoni",
+      "subtitle": "Usimamizi wa Duka la Mtandaoni",
+      "description": "Binafsisha jinsi duka lako linavyoonekana kwa wanunuzi kwenye soko",
+      "loading": "Inapakia mipangilio ya duka la mtandaoni...",
+      "saveSuccess": "Mabadiliko yamehifadhiwa kwa mafanikio!",
+      "saveError": "Imeshindwa kuhifadhi mabadiliko",
+      "saving": "Inahifadhi...",
+      "saveChanges": "Hifadhi Mabadiliko",
+      "viewPublic": "Angalia Ukurasa wa Umma",
+      "tabs": {
+        "identity": "Utambulisho wa Chapa",
+        "contact": "Maelezo ya Mawasiliano",
+        "business": "Maelezo ya Biashara",
+        "shipping": "Usafirishaji na Malipo",
+        "preview": "Onyesho la Awali"
+      },
+      "sections": {
+        "assets": "Mali ya Chapa",
+        "info": "Maelezo ya Duka",
+        "categories": "Kategoria za Bidhaa",
+        "contact": "Maelezo ya Mawasiliano",
+        "businessType": "Aina ya Biashara",
+        "regCert": "Usajili na Vyeti",
+        "minOrder": "Mahitaji ya Chini ya Agizo",
+        "payment": "Njia za Malipo Zinazokubalika",
+        "shipping": "Maeneo ya Usafirishaji",
+        "livePreview": "Onyesho la Moja kwa Moja"
+      },
+      "form": {
+        "logo": "Nembo ya Duka",
+        "banner": "Bango la Duka",
+        "bannerPlaceholder": "Pakia Bango (21:9)",
+        "logoPlaceholder": "Pakia Nembo",
+        "storeName": "Jina la Duka *",
+        "location": "Mahali",
+        "shortDesc": "Maelezo Mafupi",
+        "fullDesc": "Maelezo Kamili",
+        "email": "Barua Pepe",
+        "phone": "Namba ya Simu",
+        "website": "Tovuti",
+        "hours": "Saa za Kazi",
+        "address": "Anwani ya Biashara",
+        "regNumber": "Namba ya Usajili",
+        "capacity": "Uwezo wa Uzalishaji",
+        "certifications": "Vyeti",
+        "wholesaleMin": "Kiwango cha Chini cha Jumla",
+        "retailMin": "Kiwango cha Chini cha Rejareja",
+        "addCert": "Ongeza cheti (mfano, ISO 9001, Fair Trade)",
+        "storeNamePlaceholder": "Jina la duka lako",
+        "locationPlaceholder": "Mji, Nchi",
+        "shortDescPlaceholder": "Maelezo mafupi ya duka lako (yanaonekana kwenye matokeo ya utafutaji)",
+        "fullDescPlaceholder": "Maelezo ya kina ya biashara yako, bidhaa, na huduma",
+        "addressPlaceholder": "Anwani kamili ya biashara",
+        "hoursPlaceholder": "Jumatatu-Ijumaa: 9am-5pm WAT",
+        "capacityPlaceholder": "mfano, vitengo 10,000/mwezi",
+        "wholesalePlaceholder": "mfano, vitengo 100 au $500",
+        "retailPlaceholder": "mfano, Hakuna kiwango cha chini",
+        "paymentDesc": "Chagua njia zote za malipo unazokubali",
+        "shippingDesc": "Chagua kanda ambapo unaweza kusafirisha bidhaa",
+        "emailError": "Muundo wa barua pepe si sahihi",
+        "websiteError": "Tovuti lazima ianze na http:// au https://"
+      },
+      "preview": {
+        "liveNotice": "Hivi ndivyo duka lako litakavyoonekana kwa wanunuzi. Mabadiliko hayahifadhiwi hadi ubonyeze \"Hifadhi Mabadiliko\".",
+        "verified": "IMETHIBITISHWA",
+        "locationNotSet": "Mahali palipopangwa",
+        "about": "Kuhusu",
+        "noDesc": "Hakuna maelezo yaliyotolewa",
+        "businessType": "Aina ya Biashara",
+        "notSpecified": "Haijabainishwa",
+        "categories": "Kategoria",
+        "payment": "Chaguo za Malipo",
+        "shipsTo": "Inatuma kwa"
+      },
+      "businessTypes": {
+        "retailer": {
+          "label": "Muuzaji wa Rejareja",
+          "desc": "Muuzaji wa makusanyo mbalimbali ya bidhaa"
+        },
+        "manufacturer": {
+          "label": "Mtengenezaji",
+          "desc": "Muundaji ya bidhaa za chapa yake mwenyewe"
+        },
+        "artisan": {
+          "label": "Fundi",
+          "desc": "Mtaalam wa bidhaa zilizotengenezwa kwa mkono"
+        },
+        "wholesaler": {
+          "label": "Muuzaji wa Jumla",
+          "desc": "Mtaalam wa ugavi wa wingi na B2B"
+        },
+        "factory": {
+          "label": "Kiwanda",
+          "desc": "Uzalishaji wa kiwango cha kiviwanda"
+        },
+        "miner": {
+          "label": "Mchimba Madini",
+          "desc": "Uchimbaji wa rasilimali asili"
+        },
+        "agribusiness": {
+          "label": "Biashara ya Kilimo",
+          "desc": "Uzalishaji wa chakula na kilimo"
+        }
+      },
+      "paymentOptions": {
+        "Bank Transfer": "Uhamisho wa Benki",
+        "Credit Card": "Kadi ya Mkopo",
+        "PayPal": "PayPal",
+        "Mobile Money": "Pesa ya Simu",
+        "Cash on Delivery": "Lipia unapopokea",
+        "Letter of Credit": "Barua ya Mkopo",
+        "Western Union": "Western Union",
+        "Crypto": "Crypto"
+      },
+      "shippingRegions": {
+        "Nigeria": "Nigeria",
+        "Ghana": "Ghana",
+        "Kenya": "Kenya",
+        "South Africa": "Afrika Kusini",
+        "Egypt": "Misri",
+        "Morocco": "Morocco",
+        "Tanzania": "Tanzania",
+        "Ethiopia": "Ethiopia",
+        "Uganda": "Uganda",
+        "Senegal": "Senegal",
+        "Cameroon": "Cameroon",
+        "Côte d'Ivoire": "Côte d'Ivoire",
+        "Europe": "Ulaya",
+        "North America": "Amerika ya Kaskazini",
+        "Asia": "Asia",
+        "Middle East": "Mashariki ya Kati",
+        "Worldwide": "Ulimwenguni kote"
+      }
     }
   }
 }

@@ -9,6 +9,7 @@ import {
 import ImageUpload from './ImageUpload';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 interface VendorData {
   id: string;
@@ -93,6 +94,8 @@ const PRODUCT_CATEGORIES = [
 type TabType = 'identity' | 'contact' | 'business' | 'shipping' | 'preview';
 
 export default function StorefrontSettingsForm() {
+  const t = useTranslations('VendorDashboard.storefront');
+  const tc = useTranslations('Categories');
   const [vendor, setVendor] = useState<VendorData | null>(null);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -168,16 +171,16 @@ export default function StorefrontSettingsForm() {
 
   const validateForm = useCallback(() => {
     const newErrors: Record<string, string> = {};
-    if (!formData.storeName.trim()) newErrors.storeName = 'Store name is required';
+    if (!formData.storeName.trim()) newErrors.storeName = t('form.storeNamePlaceholder');
     if (formData.contactEmail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.contactEmail)) {
-      newErrors.contactEmail = 'Invalid email format';
+      newErrors.contactEmail = t('form.emailError');
     }
     if (formData.website && !/^https?:\/\/.+/.test(formData.website)) {
-      newErrors.website = 'Website must start with http:// or https://';
+      newErrors.website = t('form.websiteError');
     }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
-  }, [formData]);
+  }, [formData, t]);
 
   const handleSave = async () => {
     if (!validateForm()) return;
@@ -246,18 +249,18 @@ export default function StorefrontSettingsForm() {
       <div className="min-h-[60vh] flex items-center justify-center">
         <div className="flex flex-col items-center gap-4">
           <Loader2 className="h-10 w-10 text-[#D9A606] animate-spin" />
-          <p className="text-gray-500 font-medium">Loading storefront settings...</p>
+          <p className="text-gray-500 font-medium">{t('loading')}</p>
         </div>
       </div>
     );
   }
 
   const tabs: { id: TabType; label: string; icon: React.ReactNode }[] = [
-    { id: 'identity', label: 'Brand Identity', icon: <Store className="w-4 h-4" /> },
-    { id: 'contact', label: 'Contact Info', icon: <Phone className="w-4 h-4" /> },
-    { id: 'business', label: 'Business Details', icon: <Building2 className="w-4 h-4" /> },
-    { id: 'shipping', label: 'Shipping & Payment', icon: <Truck className="w-4 h-4" /> },
-    { id: 'preview', label: 'Preview', icon: <Eye className="w-4 h-4" /> },
+    { id: 'identity', label: t('tabs.identity'), icon: <Store className="w-4 h-4" /> },
+    { id: 'contact', label: t('tabs.contact'), icon: <Phone className="w-4 h-4" /> },
+    { id: 'business', label: t('tabs.business'), icon: <Building2 className="w-4 h-4" /> },
+    { id: 'shipping', label: t('tabs.shipping'), icon: <Truck className="w-4 h-4" /> },
+    { id: 'preview', label: t('tabs.preview'), icon: <Eye className="w-4 h-4" /> },
   ];
 
   return (
@@ -269,10 +272,10 @@ export default function StorefrontSettingsForm() {
             <div className="p-2 rounded-xl bg-[#D9A606]/10 text-[#D9A606]">
               <Store className="w-5 h-5" />
             </div>
-            <span className="text-xs font-bold text-[#D9A606] uppercase tracking-wider">Storefront Management</span>
+            <span className="text-xs font-bold text-[#D9A606] uppercase tracking-wider">{t('subtitle')}</span>
           </div>
-          <h1 className="text-3xl font-black text-gray-900 tracking-tight">Manage Your Storefront</h1>
-          <p className="text-gray-500 mt-1">Customize how your store appears to buyers on the marketplace</p>
+          <h1 className="text-3xl font-black text-gray-900 tracking-tight">{t('title')}</h1>
+          <p className="text-gray-500 mt-1">{t('description')}</p>
         </div>
         
         <div className="flex items-center gap-3">
@@ -283,7 +286,7 @@ export default function StorefrontSettingsForm() {
               className="flex items-center gap-2 px-4 py-2.5 border border-gray-200 rounded-xl text-sm font-bold text-gray-600 hover:bg-gray-50 transition-colors"
             >
               <ExternalLink className="w-4 h-4" />
-              View Public Page
+              {t('viewPublic')}
             </Link>
           )}
           <button
@@ -292,7 +295,7 @@ export default function StorefrontSettingsForm() {
             className="flex items-center gap-2 bg-[#D9A606] text-white px-6 py-2.5 rounded-xl text-sm font-bold hover:bg-[#B8890A] transition-colors disabled:opacity-50 shadow-lg shadow-yellow-200"
           >
             {saving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
-            {saving ? 'Saving...' : 'Save Changes'}
+            {saving ? t('saving') : t('saveChanges')}
           </button>
         </div>
       </div>
@@ -303,7 +306,7 @@ export default function StorefrontSettingsForm() {
           saveStatus === 'success' ? 'bg-green-500 text-white' : 'bg-red-500 text-white'
         }`}>
           {saveStatus === 'success' ? <CheckCircle className="w-5 h-5" /> : <AlertCircle className="w-5 h-5" />}
-          {saveStatus === 'success' ? 'Changes saved successfully!' : 'Failed to save changes'}
+          {saveStatus === 'success' ? t('saveSuccess') : t('saveError')}
         </div>
       )}
 
@@ -334,23 +337,23 @@ export default function StorefrontSettingsForm() {
             <div className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm">
               <h3 className="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2">
                 <div className="w-1 h-6 bg-[#D9A606] rounded-full"></div>
-                Brand Assets
+                {t('sections.assets')}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <ImageUpload
-                  label="Store Logo"
+                  label={t('form.logo')}
                   value={formData.logo}
                   onChange={(url) => updateField('logo', url)}
                   aspectRatio="square"
-                  placeholder="Upload Logo"
+                  placeholder={t('form.logoPlaceholder')}
                 />
                 <div className="md:col-span-1">
                   <ImageUpload
-                    label="Store Banner"
+                    label={t('form.banner')}
                     value={formData.banner}
                     onChange={(url) => updateField('banner', url)}
                     aspectRatio="video"
-                    placeholder="Upload Banner (21:9)"
+                    placeholder={t('form.bannerPlaceholder')}
                   />
                 </div>
               </div>
@@ -360,11 +363,11 @@ export default function StorefrontSettingsForm() {
             <div className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm">
               <h3 className="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2">
                 <div className="w-1 h-6 bg-[#D9A606] rounded-full"></div>
-                Store Information
+                {t('sections.info')}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-gray-700">Store Name *</label>
+                  <label className="text-sm font-bold text-gray-700">{t('form.storeName')}</label>
                   <input
                     type="text"
                     value={formData.storeName}
@@ -372,13 +375,13 @@ export default function StorefrontSettingsForm() {
                     className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-[#D9A606]/20 focus:border-[#D9A606] outline-none transition-all ${
                       errors.storeName ? 'border-red-300 bg-red-50' : 'border-gray-200'
                     }`}
-                    placeholder="Your store name"
+                    placeholder={t('form.storeNamePlaceholder')}
                   />
                   {errors.storeName && <p className="text-red-500 text-xs">{errors.storeName}</p>}
                 </div>
                 
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-gray-700">Location</label>
+                  <label className="text-sm font-bold text-gray-700">{t('form.location')}</label>
                   <div className="relative">
                     <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                     <input
@@ -386,30 +389,30 @@ export default function StorefrontSettingsForm() {
                       value={formData.location}
                       onChange={(e) => updateField('location', e.target.value)}
                       className="w-full pl-11 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#D9A606]/20 focus:border-[#D9A606] outline-none transition-all"
-                      placeholder="City, Country"
+                      placeholder={t('form.locationPlaceholder')}
                     />
                   </div>
                 </div>
 
                 <div className="md:col-span-2 space-y-2">
-                  <label className="text-sm font-bold text-gray-700">Short Description</label>
+                  <label className="text-sm font-bold text-gray-700">{t('form.shortDesc')}</label>
                   <textarea
                     value={formData.description}
                     onChange={(e) => updateField('description', e.target.value)}
                     rows={2}
                     className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#D9A606]/20 focus:border-[#D9A606] outline-none transition-all resize-none"
-                    placeholder="Brief description of your store (shown in search results)"
+                    placeholder={t('form.shortDescPlaceholder')}
                   />
                 </div>
 
                 <div className="md:col-span-2 space-y-2">
-                  <label className="text-sm font-bold text-gray-700">Full Description</label>
+                  <label className="text-sm font-bold text-gray-700">{t('form.fullDesc')}</label>
                   <textarea
                     value={formData.longDescription}
                     onChange={(e) => updateField('longDescription', e.target.value)}
                     rows={4}
                     className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#D9A606]/20 focus:border-[#D9A606] outline-none transition-all resize-none"
-                    placeholder="Detailed description of your business, products, and services"
+                    placeholder={t('form.fullDescPlaceholder')}
                   />
                 </div>
               </div>
@@ -420,9 +423,9 @@ export default function StorefrontSettingsForm() {
               <h3 className="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2">
                 <div className="w-1 h-6 bg-[#D9A606] rounded-full"></div>
                 <Tag className="w-5 h-5" />
-                Product Categories
+                {t('sections.categories')}
               </h3>
-              <p className="text-gray-500 text-sm mb-4">Select the categories that best describe your products</p>
+              <p className="text-gray-500 text-sm mb-4">{t('form.shortDescPlaceholder')}</p>
               <div className="flex flex-wrap gap-2">
                 {PRODUCT_CATEGORIES.map(cat => (
                   <button
@@ -434,7 +437,7 @@ export default function StorefrontSettingsForm() {
                         : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                     }`}
                   >
-                    {cat}
+                    {tc(cat.toLowerCase().replace(/ & /g, '-and-').replace(/, /g, '-').replace(/ /g, '-').replace(/\//g, '-'))}
                   </button>
                 ))}
               </div>
@@ -447,11 +450,11 @@ export default function StorefrontSettingsForm() {
           <div className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm">
             <h3 className="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2">
               <div className="w-1 h-6 bg-[#D9A606] rounded-full"></div>
-              Contact Information
+              {t('sections.contact')}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label className="text-sm font-bold text-gray-700">Email Address</label>
+                <label className="text-sm font-bold text-gray-700">{t('form.email')}</label>
                 <div className="relative">
                   <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                   <input
@@ -468,7 +471,7 @@ export default function StorefrontSettingsForm() {
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-bold text-gray-700">Phone Number</label>
+                <label className="text-sm font-bold text-gray-700">{t('form.phone')}</label>
                 <div className="relative">
                   <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                   <input
@@ -482,7 +485,7 @@ export default function StorefrontSettingsForm() {
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-bold text-gray-700">Website</label>
+                <label className="text-sm font-bold text-gray-700">{t('form.website')}</label>
                 <div className="relative">
                   <Globe className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                   <input
@@ -499,7 +502,7 @@ export default function StorefrontSettingsForm() {
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-bold text-gray-700">Business Hours</label>
+                <label className="text-sm font-bold text-gray-700">{t('form.hours')}</label>
                 <div className="relative">
                   <Clock className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                   <input
@@ -507,13 +510,13 @@ export default function StorefrontSettingsForm() {
                     value={formData.businessHours}
                     onChange={(e) => updateField('businessHours', e.target.value)}
                     className="w-full pl-11 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#D9A606]/20 focus:border-[#D9A606] outline-none transition-all"
-                    placeholder="Mon-Fri: 9am-5pm WAT"
+                    placeholder={t('form.hoursPlaceholder')}
                   />
                 </div>
               </div>
 
               <div className="md:col-span-2 space-y-2">
-                <label className="text-sm font-bold text-gray-700">Business Address</label>
+                <label className="text-sm font-bold text-gray-700">{t('form.address')}</label>
                 <div className="relative">
                   <MapPin className="absolute left-4 top-4 w-4 h-4 text-gray-400" />
                   <textarea
@@ -521,7 +524,7 @@ export default function StorefrontSettingsForm() {
                     onChange={(e) => updateField('address', e.target.value)}
                     rows={2}
                     className="w-full pl-11 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#D9A606]/20 focus:border-[#D9A606] outline-none transition-all resize-none"
-                    placeholder="Full business address"
+                    placeholder={t('form.addressPlaceholder')}
                   />
                 </div>
               </div>
@@ -537,7 +540,7 @@ export default function StorefrontSettingsForm() {
               <h3 className="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2">
                 <div className="w-1 h-6 bg-[#D9A606] rounded-full"></div>
                 <Building2 className="w-5 h-5" />
-                Business Type
+                {t('sections.businessType')}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {BUSINESS_TYPES.map(type => (
@@ -550,8 +553,8 @@ export default function StorefrontSettingsForm() {
                         : 'border-gray-200 hover:border-gray-300'
                     }`}
                   >
-                    <p className="font-bold text-gray-900">{type.label}</p>
-                    <p className="text-sm text-gray-500 mt-1">{type.desc}</p>
+                    <p className="font-bold text-gray-900">{t(`businessTypes.${type.value}.label`)}</p>
+                    <p className="text-sm text-gray-500 mt-1">{t(`businessTypes.${type.value}.desc`)}</p>
                   </button>
                 ))}
               </div>
@@ -562,33 +565,33 @@ export default function StorefrontSettingsForm() {
               <h3 className="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2">
                 <div className="w-1 h-6 bg-[#D9A606] rounded-full"></div>
                 <Award className="w-5 h-5" />
-                Registration & Certifications
+                {t('sections.regCert')}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-gray-700">Registration Number</label>
+                  <label className="text-sm font-bold text-gray-700">{t('form.regNumber')}</label>
                   <input
                     type="text"
                     value={formData.regNumber}
                     onChange={(e) => updateField('regNumber', e.target.value)}
                     className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#D9A606]/20 focus:border-[#D9A606] outline-none transition-all"
-                    placeholder="Business registration number"
+                    placeholder={t('form.regNumber')}
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-gray-700">Production Capacity</label>
+                  <label className="text-sm font-bold text-gray-700">{t('form.capacity')}</label>
                   <input
                     type="text"
                     value={formData.productionCapacity}
                     onChange={(e) => updateField('productionCapacity', e.target.value)}
                     className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#D9A606]/20 focus:border-[#D9A606] outline-none transition-all"
-                    placeholder="e.g., 10,000 units/month"
+                    placeholder={t('form.capacityPlaceholder')}
                   />
                 </div>
 
                 <div className="md:col-span-2 space-y-2">
-                  <label className="text-sm font-bold text-gray-700">Certifications</label>
+                  <label className="text-sm font-bold text-gray-700">{t('form.certifications')}</label>
                   <div className="flex gap-2">
                     <input
                       type="text"
@@ -596,7 +599,7 @@ export default function StorefrontSettingsForm() {
                       onChange={(e) => setNewCertification(e.target.value)}
                       onKeyPress={(e) => e.key === 'Enter' && addCertification()}
                       className="flex-1 px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#D9A606]/20 focus:border-[#D9A606] outline-none transition-all"
-                      placeholder="Add certification (e.g., ISO 9001, Fair Trade)"
+                      placeholder={t('form.addCert')}
                     />
                     <button
                       onClick={addCertification}
@@ -627,27 +630,27 @@ export default function StorefrontSettingsForm() {
               <h3 className="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2">
                 <div className="w-1 h-6 bg-[#D9A606] rounded-full"></div>
                 <Package className="w-5 h-5" />
-                Minimum Order Requirements
+                {t('sections.minOrder')}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-gray-700">Wholesale Minimum</label>
+                  <label className="text-sm font-bold text-gray-700">{t('form.wholesaleMin')}</label>
                   <input
                     type="text"
                     value={formData.minOrderWholesale}
                     onChange={(e) => updateField('minOrderWholesale', e.target.value)}
                     className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#D9A606]/20 focus:border-[#D9A606] outline-none transition-all"
-                    placeholder="e.g., 100 units or $500"
+                    placeholder={t('form.wholesalePlaceholder')}
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-gray-700">Retail Minimum</label>
+                  <label className="text-sm font-bold text-gray-700">{t('form.retailMin')}</label>
                   <input
                     type="text"
                     value={formData.minOrderRetail}
                     onChange={(e) => updateField('minOrderRetail', e.target.value)}
                     className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#D9A606]/20 focus:border-[#D9A606] outline-none transition-all"
-                    placeholder="e.g., No minimum"
+                    placeholder={t('form.retailPlaceholder')}
                   />
                 </div>
               </div>
@@ -663,9 +666,9 @@ export default function StorefrontSettingsForm() {
               <h3 className="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2">
                 <div className="w-1 h-6 bg-[#D9A606] rounded-full"></div>
                 <CreditCard className="w-5 h-5" />
-                Accepted Payment Methods
+                {t('sections.payment')}
               </h3>
-              <p className="text-gray-500 text-sm mb-4">Select all payment methods you accept</p>
+              <p className="text-gray-500 text-sm mb-4">{t('form.paymentDesc')}</p>
               <div className="flex flex-wrap gap-2">
                 {PAYMENT_OPTIONS.map(option => (
                   <button
@@ -677,7 +680,7 @@ export default function StorefrontSettingsForm() {
                         : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                     }`}
                   >
-                    {option}
+                    {t(`paymentOptions.${option}`)}
                   </button>
                 ))}
               </div>
@@ -688,9 +691,9 @@ export default function StorefrontSettingsForm() {
               <h3 className="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2">
                 <div className="w-1 h-6 bg-[#D9A606] rounded-full"></div>
                 <Truck className="w-5 h-5" />
-                Shipping Destinations
+                {t('sections.shipping')}
               </h3>
-              <p className="text-gray-500 text-sm mb-4">Select regions where you can ship products</p>
+              <p className="text-gray-500 text-sm mb-4">{t('form.shippingDesc')}</p>
               <div className="flex flex-wrap gap-2">
                 {SHIPPING_REGIONS.map(region => (
                   <button
@@ -702,7 +705,7 @@ export default function StorefrontSettingsForm() {
                         : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                     }`}
                   >
-                    {region}
+                    {t(`shippingRegions.${region}`)}
                   </button>
                 ))}
               </div>
@@ -716,8 +719,8 @@ export default function StorefrontSettingsForm() {
             <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 flex items-start gap-3">
               <Eye className="w-5 h-5 text-yellow-600 mt-0.5" />
               <div>
-                <p className="font-bold text-yellow-800">Live Preview</p>
-                <p className="text-sm text-yellow-700">This is how your storefront will appear to buyers. Changes are not saved until you click &quot;Save Changes&quot;.</p>
+                <p className="font-bold text-yellow-800">{t('sections.livePreview')}</p>
+                <p className="text-sm text-yellow-700">{t('preview.liveNotice')}</p>
               </div>
             </div>
 
@@ -726,7 +729,7 @@ export default function StorefrontSettingsForm() {
               {/* Banner */}
               <div className="h-48 bg-gradient-to-r from-gray-200 to-gray-300 relative">
                 {formData.banner && (
-                  <Image src={formData.banner} alt="Banner" fill className="object-cover" unoptimized />
+                  <Image src={formData.banner} alt={t('form.banner')} fill className="object-cover" unoptimized />
                 )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               </div>
@@ -736,7 +739,7 @@ export default function StorefrontSettingsForm() {
                 <div className="flex items-end gap-6">
                   <div className="w-32 h-32 rounded-2xl bg-white border-4 border-white shadow-lg overflow-hidden">
                     {formData.logo ? (
-                      <Image src={formData.logo} alt="Logo" fill className="object-cover" unoptimized />
+                      <Image src={formData.logo} alt={t('form.logo')} fill className="object-cover" unoptimized />
                     ) : (
                       <div className="w-full h-full bg-gray-100 flex items-center justify-center">
                         <Store className="w-12 h-12 text-gray-300" />
@@ -745,33 +748,37 @@ export default function StorefrontSettingsForm() {
                   </div>
                   <div className="pb-2">
                     <div className="flex items-center gap-2">
-                      <h2 className="text-2xl font-black text-gray-900">{formData.storeName || 'Your Store Name'}</h2>
+                      <h2 className="text-2xl font-black text-gray-900">{formData.storeName || t('form.storeNamePlaceholder')}</h2>
                       {vendor?.isVerified && (
-                        <span className="px-2 py-1 bg-yellow-100 text-yellow-700 text-xs font-bold rounded-full">VERIFIED</span>
+                        <span className="px-2 py-1 bg-yellow-100 text-yellow-700 text-xs font-bold rounded-full">{t('preview.verified')}</span>
                       )}
                     </div>
-                    <p className="text-gray-500">{formData.location || 'Location not set'}</p>
+                    <p className="text-gray-500">{formData.location || t('preview.locationNotSet')}</p>
                   </div>
                 </div>
 
                 {/* Preview Details */}
                 <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-2">About</h4>
-                    <p className="text-gray-600 text-sm">{formData.description || 'No description provided'}</p>
+                    <h4 className="font-bold text-gray-900 mb-2">{t('preview.about')}</h4>
+                    <p className="text-gray-600 text-sm">{formData.description || t('preview.noDesc')}</p>
                   </div>
                   
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-2">Business Type</h4>
-                    <p className="text-gray-600 text-sm capitalize">{formData.businessType || 'Not specified'}</p>
+                    <h4 className="font-bold text-gray-900 mb-2">{t('preview.businessType')}</h4>
+                    <p className="text-gray-600 text-sm capitalize">
+                      {formData.businessType ? t(`businessTypes.${formData.businessType}.label`) : t('preview.notSpecified')}
+                    </p>
                   </div>
 
                   {formData.categories.length > 0 && (
                     <div>
-                      <h4 className="font-bold text-gray-900 mb-2">Categories</h4>
+                      <h4 className="font-bold text-gray-900 mb-2">{t('preview.categories')}</h4>
                       <div className="flex flex-wrap gap-1">
                         {formData.categories.map(cat => (
-                          <span key={cat} className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">{cat}</span>
+                          <span key={cat} className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">
+                            {tc(cat.toLowerCase().replace(/ & /g, '-and-').replace(/, /g, '-').replace(/ /g, '-').replace(/\//g, '-'))}
+                          </span>
                         ))}
                       </div>
                     </div>
@@ -779,10 +786,10 @@ export default function StorefrontSettingsForm() {
 
                   {formData.paymentOptions.length > 0 && (
                     <div>
-                      <h4 className="font-bold text-gray-900 mb-2">Payment Options</h4>
+                      <h4 className="font-bold text-gray-900 mb-2">{t('preview.payment')}</h4>
                       <div className="flex flex-wrap gap-1">
                         {formData.paymentOptions.map(opt => (
-                          <span key={opt} className="px-2 py-1 bg-blue-100 text-blue-600 text-xs rounded-full">{opt}</span>
+                          <span key={opt} className="px-2 py-1 bg-blue-100 text-blue-600 text-xs rounded-full">{t(`paymentOptions.${opt}`)}</span>
                         ))}
                       </div>
                     </div>
@@ -790,10 +797,10 @@ export default function StorefrontSettingsForm() {
 
                   {formData.shippingCountries.length > 0 && (
                     <div>
-                      <h4 className="font-bold text-gray-900 mb-2">Ships To</h4>
+                      <h4 className="font-bold text-gray-900 mb-2">{t('preview.shipsTo')}</h4>
                       <div className="flex flex-wrap gap-1">
                         {formData.shippingCountries.map(country => (
-                          <span key={country} className="px-2 py-1 bg-green-100 text-green-600 text-xs rounded-full">{country}</span>
+                          <span key={country} className="px-2 py-1 bg-green-100 text-green-600 text-xs rounded-full">{t(`shippingRegions.${country}`)}</span>
                         ))}
                       </div>
                     </div>
@@ -801,7 +808,7 @@ export default function StorefrontSettingsForm() {
 
                   {formData.contactEmail && (
                     <div>
-                      <h4 className="font-bold text-gray-900 mb-2">Contact</h4>
+                      <h4 className="font-bold text-gray-900 mb-2">{t('sections.contact')}</h4>
                       <p className="text-gray-600 text-sm">{formData.contactEmail}</p>
                       {formData.contactPhone && <p className="text-gray-600 text-sm">{formData.contactPhone}</p>}
                     </div>
